@@ -1,0 +1,19 @@
+-- begin_signature
+-- memoriaROM
+-- end_signature
+WIDTH=4;
+DEPTH=8;
+
+ADDRESS_RADIX=UNS;
+DATA_RADIX=BIN;
+
+CONTENT BEGIN
+	7 :	0000;
+	6 :	0000;
+	5 :	0000;
+	4 :	0000;
+	3 :	0011;
+	2 :	0010;
+	1 :	0010;
+	0 :	0010;
+END;

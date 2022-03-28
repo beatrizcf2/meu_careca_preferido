@@ -1,0 +1,199 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/leviosa/Documents/Insper/descomp/atividades/atividade_3/simulation/qsim
+Edataflow
+Z1 w1647371490
+Z2 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 ^K2eeK[IVbX]]MLcdOEI91
+Z3 DPx8 cyclonev 19 cyclonev_components 0 22 GFL[QAd@dAZF:`jjOGn9>2
+Z4 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 3dzZ?YU_4FC5UU0cTXRET1
+Z5 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z6 DPx6 altera 11 dffeas_pack 0 22 H5F:RRfLz82T3`4>@b7mS3
+Z7 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z8 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z9 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+Z10 DPx6 altera 28 altera_primitives_components 0 22 VSD=32;3391kSOd?PDZYj3
+!i122 20
+R0
+Z11 8aula_3.vho
+Z12 Faula_3.vho
+l0
+L39 1
+VOSlJzKiU[6@aQOMWh0;7V0
+!s100 <CGkXGD^dcc1:`KLAIXS80
+Z13 OV;C;2020.1;71
+32
+Z14 !s110 1647371491
+!i10b 1
+Z15 !s108 1647371491.000000
+Z16 !s90 -work|work|aula_3.vho|
+Z17 !s107 aula_3.vho|
+!i113 1
+Z18 o-work work
+Z19 tExplicit 1 CvgOpt 0
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+R10
+DEx4 work 8 dataflow 0 22 OSlJzKiU[6@aQOMWh0;7V0
+!i122 20
+l115
+L49 692
+V[?AbMd`?F?e9N3l0dQ8e`0
+!s100 4OZccgkCG@RHYnHU7adi80
+R13
+32
+R14
+!i10b 1
+R15
+R16
+R17
+!i113 1
+R18
+R19
+Edataflow_vhd_vec_tst
+Z20 w1647371489
+R8
+R9
+!i122 21
+R0
+Z21 8Waveform1.vwf.vht
+Z22 FWaveform1.vwf.vht
+l0
+Z23 L32 1
+V>If`ZjV89DRjzhE6FYXgR1
+!s100 I[2gh9[I0=4R=<nJ9Mzmc1
+R13
+32
+R14
+!i10b 1
+R15
+Z24 !s90 -work|work|Waveform1.vwf.vht|
+Z25 !s107 Waveform1.vwf.vht|
+!i113 1
+R18
+R19
+Adataflow_arch
+R8
+R9
+Z26 DEx4 work 20 dataflow_vhd_vec_tst 0 22 >If`ZjV89DRjzhE6FYXgR1
+!i122 21
+l51
+Z27 L34 116
+Z28 VbVBD^S?@1k348WFOP9Ge11
+Z29 !s100 Ai:VbMgFV3H<n7N4mU5931
+R13
+32
+R14
+!i10b 1
+R15
+R24
+R25
+!i113 1
+R18
+R19
+Ememoriarom
+Z30 w1647368894
+R5
+R2
+R7
+R3
+R8
+R9
+R4
+!i122 2
+R0
+R11
+R12
+l0
+L37 1
+V:_`U1nlB3cbchOP;mW42>2
+!s100 Tad^D9>FFJ;lB<m77jRoB0
+R13
+32
+Z31 !s110 1647368895
+!i10b 1
+Z32 !s108 1647368895.000000
+R16
+R17
+!i113 1
+R18
+R19
+Astructure
+R5
+R2
+R7
+R3
+R8
+R9
+R4
+DEx4 work 10 memoriarom 0 22 :_`U1nlB3cbchOP;mW42>2
+!i122 2
+l68
+L44 137
+VZ1:c9eQTIl95Ze1L`U_AZ2
+!s100 KXG@]I]L61X_W>iLfMAkK0
+R13
+32
+R31
+!i10b 1
+R32
+R16
+R17
+!i113 1
+R18
+R19
+Ememoriarom_vhd_vec_tst
+Z33 w1647368893
+R8
+R9
+!i122 3
+R0
+Z34 8Waveform.vwf.vht
+Z35 FWaveform.vwf.vht
+l0
+R23
+VmEe:9HQJU:4H3OjaQI5C`0
+!s100 FTfi564kdA>HJ]]Tc8XQF3
+R13
+32
+R31
+!i10b 1
+R32
+Z36 !s90 -work|work|Waveform.vwf.vht|
+Z37 !s107 Waveform.vwf.vht|
+!i113 1
+R18
+R19
+Amemoriarom_arch
+R8
+R9
+DEx4 work 22 memoriarom_vhd_vec_tst 0 22 mEe:9HQJU:4H3OjaQI5C`0
+!i122 3
+l45
+L34 37
+V:f_Gg7S`o1=nnR8i4:U8J3
+!s100 [_IQ[MP@A:OPTgig6T8[W3
+R13
+32
+R31
+!i10b 1
+R32
+R36
+R37
+!i113 1
+R18
+R19

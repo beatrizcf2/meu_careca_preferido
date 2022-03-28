@@ -1,0 +1,20 @@
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity decoder is
+  port ( entrada : in std_logic_vector(3 downto 0);
+         saida : out std_logic_vector(3 downto 0)
+  );
+end entity;
+
+architecture comportamento of decoder3x8 is
+  begin
+	 -- reset (CLRA)
+	 
+	 saida <= "0010" when (entrada = "0000") else 
+				 "0100" when (entrada = "0001") else
+				 "1101" when (entrada = "0010") else
+				 "1100" when (entrada = "0011") else "0000";
+				 
+end architecture;

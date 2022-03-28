@@ -1,0 +1,24 @@
+Quartus Prime Archive log --	/home/leviosa/Documents/Insper/descomp/atividades/atividade_4/atividade_4.qarlog
+
+Archive:	/home/leviosa/Documents/Insper/descomp/atividades/atividade_4/atividade_4.qar
+Date:		Thu Mar 24 16:44:06 2022
+Quartus Prime		20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+	=========== Files Selected: ===========
+/home/leviosa/Documents/Insper/descomp/atividades/atividade_4/ULASomaSub.vhd
+/home/leviosa/Documents/Insper/descomp/atividades/atividade_4/Waveform1.vwf
+/home/leviosa/Documents/Insper/descomp/atividades/atividade_4/atividade_4.qpf
+/home/leviosa/Documents/Insper/descomp/atividades/atividade_4/atividade_4.qsf
+/home/leviosa/Documents/Insper/descomp/atividades/atividade_4/dataFlow.vhd
+/home/leviosa/Documents/Insper/descomp/atividades/atividade_4/decoder.vhd
+/home/leviosa/Documents/Insper/descomp/atividades/atividade_4/edgeDetector.vhd
+/home/leviosa/Documents/Insper/descomp/atividades/atividade_4/memoria.vhd
+/home/leviosa/Documents/Insper/descomp/atividades/atividade_4/memoriaRAM.vhd
+/home/leviosa/Documents/Insper/descomp/atividades/atividade_4/muxGenerico2x1.vhd
+/home/leviosa/Documents/Insper/descomp/atividades/atividade_4/registradorGenerico.vhd
+/home/leviosa/Documents/Insper/descomp/atividades/atividade_4/somaUm.vhd
+/home/leviosa/intelFPGA_lite/20.1/quartus/linux64/assignment_defaults.qdf
+	======= Total: 13 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

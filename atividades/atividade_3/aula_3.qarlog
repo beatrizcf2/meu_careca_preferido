@@ -1,0 +1,23 @@
+Quartus Prime Archive log --	/home/leviosa/Documents/Insper/descomp/atividades/atividade_3/aula_3.qarlog
+
+Archive:	/home/leviosa/Documents/Insper/descomp/atividades/atividade_3/aula_3.qar
+Date:		Mon Mar 21 13:07:46 2022
+Quartus Prime		20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+	=========== Files Selected: ===========
+/home/leviosa/Documents/Insper/descomp/atividades/atividade_3/ULASomaSub.vhd
+/home/leviosa/Documents/Insper/descomp/atividades/atividade_3/Waveform1.vwf
+/home/leviosa/Documents/Insper/descomp/atividades/atividade_3/aula_3.qpf
+/home/leviosa/Documents/Insper/descomp/atividades/atividade_3/aula_3.qsf
+/home/leviosa/Documents/Insper/descomp/atividades/atividade_3/dataFlow.vhd
+/home/leviosa/Documents/Insper/descomp/atividades/atividade_3/decoder.vhd
+/home/leviosa/Documents/Insper/descomp/atividades/atividade_3/edgeDetector.vhd
+/home/leviosa/Documents/Insper/descomp/atividades/atividade_3/memoria.vhd
+/home/leviosa/Documents/Insper/descomp/atividades/atividade_3/muxGenerico2x1.vhd
+/home/leviosa/Documents/Insper/descomp/atividades/atividade_3/registradorGenerico.vhd
+/home/leviosa/Documents/Insper/descomp/atividades/atividade_3/somaUm.vhd
+/home/leviosa/intelFPGA_lite/20.1/quartus/linux64/assignment_defaults.qdf
+	======= Total: 12 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
