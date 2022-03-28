@@ -17,18 +17,22 @@ architecture comportamento of decoder is
   constant LDI  : std_logic_vector(3 downto 0) := "0100";
   constant STA  : std_logic_vector(3 downto 0) := "0101";
   constant JMP  : std_logic_vector(3 downto 0) := "0110";
+  constant JEQ  : std_logic_vector(3 downto 0) := "0111";
+  constant CEQ  : std_logic_vector(3 downto 0) := "1000";
   
 
   begin
 	 -- reset (CLRA)
 	 
-	 saida <= "1000000" when (entrada = JMP)  else
-				 "0011010" when (entrada = LDA)  else
-				 "0010110" when (entrada = SUM)  else
-				 "0010010" when (entrada = SUB)  else 
-				 "0111000" when (entrada = LDI)  else
-				 "0000001" when (entrada = STA)  else 
-				 "0000000" when (entrada = NOP)  else
+	 saida <= "100000000" when (entrada = JMP)  else
+				 "010000000" when (entrada = JEQ)  else
+				 "000000100" when (entrada = CEQ)  else
+				 "000110010" when (entrada = LDA)  else
+				 "000101010" when (entrada = SUM)  else
+				 "000100010" when (entrada = SUB)  else 
+				 "001110000" when (entrada = LDI)  else
+				 "000000001" when (entrada = STA)  else 
+				 "000000000" when (entrada = NOP)  else
 				 "0000000";
 				 
 end architecture;

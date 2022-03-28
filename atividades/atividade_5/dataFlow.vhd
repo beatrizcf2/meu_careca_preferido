@@ -28,6 +28,7 @@ architecture arquitetura of dataFlow is
   signal MUX_ULA_B          : std_logic_vector (larguraDados-1 downto 0);
   signal REG1_out           : std_logic_vector (larguraDados-1 downto 0);
   signal Saida_ULA          : std_logic_vector (larguraDados-1 downto 0);
+  signal Saida_ULA_Igual    : std_logic; -- saida da ULA que alimenta a flag igual
   signal Sinais_Controle    : std_logic_vector (6 downto 0);
   signal barramento_addr    : std_logic_vector (larguraInstrucao-larguraOpCode-1 downto 0);
   signal PC_ROM             : std_logic_vector (larguraInstrucao-larguraOpCode-1 downto 0);
@@ -37,8 +38,9 @@ architecture arquitetura of dataFlow is
   signal Chave_Operacao_ULA : std_logic;
   signal CLK                : std_logic;
   signal SelMUX             : std_logic;
-  signal SelJMP				 : std_logic;
+  signal SelMUXJMP			 : std_logic;
   signal Habilita_A         : std_logic;
+  signal Habilita_Flag_Igual: std_logic;
   signal Operacao_ULA       : std_logic_vector(1 downto 0);
   signal opCode             : std_logic_vector(3 downto 0);
   signal habilitaLeituraMEM : std_logic;
@@ -92,14 +94,15 @@ incPC   :  entity work.somaUm  generic map (larguraDados => larguraEndereco, con
 MUX_JMP :  entity work.muxGenerico2x1  generic map (larguraDados => larguraInstrucao-larguraOpCode)
              port map(entradaA_MUX => saida_inc,
                       entradaB_MUX => enderecoRAM,
-                      seletor_MUX  => SelJMP,
+                      seletor_MUX  => SelMUXJMP,
                       saida_MUX    => proxPC);
 
 -- O port map completo da ULA:
 ULA1    : entity work.ULASomaSub  generic map(larguraDados => larguraDados)
             port map (entradaA => REG1_out, 
 							 entradaB => MUX_ULA_B, 
-							 saida    => Saida_ULA, 
+							 saida    => Saida_ULA,
+							 flagEqual => Saida_ULA_igual; 
 							 seletor  => Operacao_ULA);
 
 -- Falta acertar o conteudo da ROM (no arquivo memoriaROM.vhd)
@@ -119,15 +122,26 @@ RAM     : entity work.memoriaRAM  generic map (dataWidth => larguraDados, addrWi
 							 clk      => CLK,
 							 dado_in  => REG1_out,
 							 dado_out => memRAM_out);
+
+-- flip flop para armazenar o resultado da comparacao
+FLAG    : entity work.registradorGenerico  generic map (larguraDados => larguraDados)
+             port map (DIN     => Saida_ULA_igual, 
+						     DOUT    => Saida_ULA_igual, 
+				   		  ENABLE  => HabFlagIgual, 
+				   		  CLK     => CLK, 
+				   		  RST     => '0');
 							 
 								
 opCode <= instrucao(12 downto 9);
 barramento_addr <= enderecoRAM;
-SelJMP <= Sinais_Controle(6);		
-SelMUX <= Sinais_Controle(5);
-Habilita_A <= Sinais_Controle(4);
+
+--SelJEQ <= Sinais_Controle(7);
+--SelMUXJMP <= Sinais_Controle(6);	-- implementar logica de desvio	
+SelMUX <= Sinais_Controle(6);
+Habilita_A <= Sinais_Controle(5);
 --Reset_A <= CLK;
-Operacao_ULA <= Sinais_Controle(3 downto 2);
+Operacao_ULA <= Sinais_Controle(4 downto 3);
+Habilita_Flag_Igual <= Sinais_Controle(2);
 habilitaLeituraMEM <= Sinais_Controle(1);
 habilitaEscritaMEM <= Sinais_Controle(0);
 

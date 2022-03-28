@@ -1,5 +1,5 @@
 Analysis & Synthesis report for atividade_5
-Thu Mar 24 17:40:11 2022
+Mon Mar 28 18:29:22 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -55,7 +55,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Mar 24 17:40:11 2022       ;
+; Analysis & Synthesis Status     ; Successful - Mon Mar 28 18:29:22 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; atividade_5                                 ;
 ; Top-level Entity Name           ; dataFlow                                    ;
@@ -181,20 +181,20 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                 ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                          ; Library ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------+---------+
-; registradorGenerico.vhd          ; yes             ; User VHDL File  ; /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/registradorGenerico.vhd ;         ;
-; ULASomaSub.vhd                   ; yes             ; User VHDL File  ; /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/ULASomaSub.vhd          ;         ;
-; somaUm.vhd                       ; yes             ; User VHDL File  ; /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/somaUm.vhd              ;         ;
-; muxGenerico2x1.vhd               ; yes             ; User VHDL File  ; /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/muxGenerico2x1.vhd      ;         ;
-; memoriaRAM.vhd                   ; yes             ; User VHDL File  ; /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/memoriaRAM.vhd          ;         ;
-; memoria.vhd                      ; yes             ; User VHDL File  ; /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/memoria.vhd             ;         ;
-; decoder.vhd                      ; yes             ; User VHDL File  ; /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/decoder.vhd             ;         ;
-; dataFlow.vhd                     ; yes             ; User VHDL File  ; /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/dataFlow.vhd            ;         ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                    ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                             ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------+---------+
+; registradorGenerico.vhd          ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/registradorGenerico.vhd ;         ;
+; ULASomaSub.vhd                   ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/ULASomaSub.vhd          ;         ;
+; somaUm.vhd                       ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/somaUm.vhd              ;         ;
+; muxGenerico2x1.vhd               ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/muxGenerico2x1.vhd      ;         ;
+; memoriaRAM.vhd                   ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/memoriaRAM.vhd          ;         ;
+; memoria.vhd                      ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/memoria.vhd             ;         ;
+; decoder.vhd                      ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/decoder.vhd             ;         ;
+; dataFlow.vhd                     ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd            ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------+---------+
 
 
 +------------------------------------------------------------------------+
@@ -415,93 +415,93 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Thu Mar 24 17:40:00 2022
+    Info: Processing started: Mon Mar 28 18:29:07 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off atividade_5 -c atividade_5
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file registradorGenerico.vhd
-    Info (12022): Found design unit 1: registradorGenerico-comportamento File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/registradorGenerico.vhd Line: 16
-    Info (12023): Found entity 1: registradorGenerico File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/registradorGenerico.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file ULASomaSub.vhd
-    Info (12022): Found design unit 1: ULASomaSub-comportamento File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/ULASomaSub.vhd Line: 14
-    Info (12023): Found entity 1: ULASomaSub File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/ULASomaSub.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file somaUm.vhd
-    Info (12022): Found design unit 1: somaUm-comportamento File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/somaUm.vhd Line: 19
-    Info (12023): Found entity 1: somaUm File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/somaUm.vhd Line: 6
-Info (12021): Found 2 design units, including 1 entities, in source file muxGenerico2x1.vhd
-    Info (12022): Found design unit 1: muxGenerico2x1-comportamento File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/muxGenerico2x1.vhd Line: 15
-    Info (12023): Found entity 1: muxGenerico2x1 File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/muxGenerico2x1.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file memoriaRAM.vhd
-    Info (12022): Found design unit 1: memoriaRAM-rtl File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/memoriaRAM.vhd Line: 22
-    Info (12023): Found entity 1: memoriaRAM File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/memoriaRAM.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file registradorgenerico.vhd
+    Info (12022): Found design unit 1: registradorGenerico-comportamento File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/registradorGenerico.vhd Line: 16
+    Info (12023): Found entity 1: registradorGenerico File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/registradorGenerico.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file ulasomasub.vhd
+    Info (12022): Found design unit 1: ULASomaSub-comportamento File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/ULASomaSub.vhd Line: 14
+    Info (12023): Found entity 1: ULASomaSub File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/ULASomaSub.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file somaum.vhd
+    Info (12022): Found design unit 1: somaUm-comportamento File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/somaUm.vhd Line: 19
+    Info (12023): Found entity 1: somaUm File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/somaUm.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file muxgenerico2x1.vhd
+    Info (12022): Found design unit 1: muxGenerico2x1-comportamento File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/muxGenerico2x1.vhd Line: 15
+    Info (12023): Found entity 1: muxGenerico2x1 File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/muxGenerico2x1.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file memoriaram.vhd
+    Info (12022): Found design unit 1: memoriaRAM-rtl File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/memoriaRAM.vhd Line: 22
+    Info (12023): Found entity 1: memoriaRAM File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/memoriaRAM.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file memoria.vhd
-    Info (12022): Found design unit 1: memoriaROM-assincrona File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/memoria.vhd Line: 16
-    Info (12023): Found entity 1: memoriaROM File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/memoria.vhd Line: 5
-Info (12021): Found 3 design units, including 1 entities, in source file edgeDetector.vhd
-    Info (12022): Found design unit 1: edgeDetector-bordaSubida File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/edgeDetector.vhd Line: 10
-    Info (12022): Found design unit 2: edgeDetector-bordaDescida File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/edgeDetector.vhd Line: 23
-    Info (12023): Found entity 1: edgeDetector File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/edgeDetector.vhd Line: 4
+    Info (12022): Found design unit 1: memoriaROM-assincrona File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/memoria.vhd Line: 16
+    Info (12023): Found entity 1: memoriaROM File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/memoria.vhd Line: 5
+Info (12021): Found 3 design units, including 1 entities, in source file edgedetector.vhd
+    Info (12022): Found design unit 1: edgeDetector-bordaSubida File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/edgeDetector.vhd Line: 10
+    Info (12022): Found design unit 2: edgeDetector-bordaDescida File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/edgeDetector.vhd Line: 23
+    Info (12023): Found entity 1: edgeDetector File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/edgeDetector.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file decoder.vhd
-    Info (12022): Found design unit 1: decoder-comportamento File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/decoder.vhd Line: 11
-    Info (12023): Found entity 1: decoder File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/decoder.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file dataFlow.vhd
-    Info (12022): Found design unit 1: dataFlow-arquitetura File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/dataFlow.vhd Line: 23
-    Info (12023): Found entity 1: dataFlow File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/dataFlow.vhd Line: 4
+    Info (12022): Found design unit 1: decoder-comportamento File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/decoder.vhd Line: 11
+    Info (12023): Found entity 1: decoder File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/decoder.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file dataflow.vhd
+    Info (12022): Found design unit 1: dataFlow-arquitetura File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 23
+    Info (12023): Found entity 1: dataFlow File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 4
 Info (12127): Elaborating entity "dataFlow" for the top level hierarchy
-Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "muxGenerico2x1:MUX1" File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/dataFlow.vhd Line: 66
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:REGA" File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/dataFlow.vhd Line: 73
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:PC" File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/dataFlow.vhd Line: 81
-Info (12128): Elaborating entity "somaUm" for hierarchy "somaUm:incPC" File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/dataFlow.vhd Line: 88
-Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "muxGenerico2x1:MUX_JMP" File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/dataFlow.vhd Line: 92
-Info (12128): Elaborating entity "ULASomaSub" for hierarchy "ULASomaSub:ULA1" File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/dataFlow.vhd Line: 99
-Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM1" File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/dataFlow.vhd Line: 106
-Info (12128): Elaborating entity "decoder" for hierarchy "decoder:DECODER" File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/dataFlow.vhd Line: 110
-Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM" File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/dataFlow.vhd Line: 114
+Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "muxGenerico2x1:MUX1" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 66
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:REGA" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 73
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:PC" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 81
+Info (12128): Elaborating entity "somaUm" for hierarchy "somaUm:incPC" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 88
+Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "muxGenerico2x1:MUX_JMP" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 92
+Info (12128): Elaborating entity "ULASomaSub" for hierarchy "ULASomaSub:ULA1" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 99
+Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM1" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 106
+Info (12128): Elaborating entity "decoder" for hierarchy "decoder:DECODER" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 110
+Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 114
 Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276007): RAM logic "memoriaRAM:RAM|ram" is uninferred due to asynchronous read logic File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/memoriaRAM.vhd Line: 28
+    Info (276007): RAM logic "memoriaRAM:RAM|ram" is uninferred due to asynchronous read logic File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/memoriaRAM.vhd Line: 28
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
-    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM|dado_out[0]" feeding internal logic into a wire File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/memoriaRAM.vhd Line: 18
-    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM|dado_out[1]" feeding internal logic into a wire File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/memoriaRAM.vhd Line: 18
-    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM|dado_out[2]" feeding internal logic into a wire File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/memoriaRAM.vhd Line: 18
-    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM|dado_out[3]" feeding internal logic into a wire File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/memoriaRAM.vhd Line: 18
-    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM|dado_out[4]" feeding internal logic into a wire File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/memoriaRAM.vhd Line: 18
-    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM|dado_out[5]" feeding internal logic into a wire File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/memoriaRAM.vhd Line: 18
-    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM|dado_out[6]" feeding internal logic into a wire File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/memoriaRAM.vhd Line: 18
-    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM|dado_out[7]" feeding internal logic into a wire File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/memoriaRAM.vhd Line: 18
+    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM|dado_out[0]" feeding internal logic into a wire File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/memoriaRAM.vhd Line: 18
+    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM|dado_out[1]" feeding internal logic into a wire File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/memoriaRAM.vhd Line: 18
+    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM|dado_out[2]" feeding internal logic into a wire File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/memoriaRAM.vhd Line: 18
+    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM|dado_out[3]" feeding internal logic into a wire File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/memoriaRAM.vhd Line: 18
+    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM|dado_out[4]" feeding internal logic into a wire File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/memoriaRAM.vhd Line: 18
+    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM|dado_out[5]" feeding internal logic into a wire File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/memoriaRAM.vhd Line: 18
+    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM|dado_out[6]" feeding internal logic into a wire File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/memoriaRAM.vhd Line: 18
+    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM|dado_out[7]" feeding internal logic into a wire File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/memoriaRAM.vhd Line: 18
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "RESULTADO_ULA[0]" is stuck at GND File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/dataFlow.vhd Line: 17
-    Warning (13410): Pin "RESULTADO_ULA[1]" is stuck at GND File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/dataFlow.vhd Line: 17
-    Warning (13410): Pin "RESULTADO_ULA[2]" is stuck at GND File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/dataFlow.vhd Line: 17
-    Warning (13410): Pin "RESULTADO_ULA[3]" is stuck at GND File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/dataFlow.vhd Line: 17
-    Warning (13410): Pin "RESULTADO_ULA[4]" is stuck at GND File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/dataFlow.vhd Line: 17
-    Warning (13410): Pin "RESULTADO_ULA[5]" is stuck at GND File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/dataFlow.vhd Line: 17
-    Warning (13410): Pin "RESULTADO_ULA[6]" is stuck at GND File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/dataFlow.vhd Line: 17
-    Warning (13410): Pin "RESULTADO_ULA[7]" is stuck at GND File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/dataFlow.vhd Line: 17
+    Warning (13410): Pin "RESULTADO_ULA[0]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 17
+    Warning (13410): Pin "RESULTADO_ULA[1]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 17
+    Warning (13410): Pin "RESULTADO_ULA[2]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 17
+    Warning (13410): Pin "RESULTADO_ULA[3]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 17
+    Warning (13410): Pin "RESULTADO_ULA[4]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 17
+    Warning (13410): Pin "RESULTADO_ULA[5]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 17
+    Warning (13410): Pin "RESULTADO_ULA[6]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 17
+    Warning (13410): Pin "RESULTADO_ULA[7]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 17
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 14 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "CLOCK_50" File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/dataFlow.vhd Line: 13
-    Warning (15610): No output dependent on input pin "KEY[1]" File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/dataFlow.vhd Line: 14
-    Warning (15610): No output dependent on input pin "KEY[2]" File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/dataFlow.vhd Line: 14
-    Warning (15610): No output dependent on input pin "KEY[3]" File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/dataFlow.vhd Line: 14
-    Warning (15610): No output dependent on input pin "SW[0]" File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/dataFlow.vhd Line: 15
-    Warning (15610): No output dependent on input pin "SW[1]" File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/dataFlow.vhd Line: 15
-    Warning (15610): No output dependent on input pin "SW[2]" File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/dataFlow.vhd Line: 15
-    Warning (15610): No output dependent on input pin "SW[3]" File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/dataFlow.vhd Line: 15
-    Warning (15610): No output dependent on input pin "SW[4]" File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/dataFlow.vhd Line: 15
-    Warning (15610): No output dependent on input pin "SW[5]" File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/dataFlow.vhd Line: 15
-    Warning (15610): No output dependent on input pin "SW[6]" File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/dataFlow.vhd Line: 15
-    Warning (15610): No output dependent on input pin "SW[7]" File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/dataFlow.vhd Line: 15
-    Warning (15610): No output dependent on input pin "SW[8]" File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/dataFlow.vhd Line: 15
-    Warning (15610): No output dependent on input pin "SW[9]" File: /home/leviosa/Documents/Insper/descomp/atividades/atividade_5/dataFlow.vhd Line: 15
+    Warning (15610): No output dependent on input pin "CLOCK_50" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 13
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 14
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 14
+    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 14
+    Warning (15610): No output dependent on input pin "SW[0]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[1]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
 Info (21057): Implemented 48 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 17 output pins
     Info (21061): Implemented 16 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 33 warnings
-    Info: Peak virtual memory: 474 megabytes
-    Info: Processing ended: Thu Mar 24 17:40:11 2022
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:26
+    Info: Peak virtual memory: 4837 megabytes
+    Info: Processing ended: Mon Mar 28 18:29:22 2022
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:23
 
 
