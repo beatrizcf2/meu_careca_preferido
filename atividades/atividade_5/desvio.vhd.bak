@@ -14,6 +14,7 @@ architecture comportamento of desvio is
   
 
   begin
+	 -- reset (CLRA)
 	 
 	 saida <= '0'  when (JMP='0' AND JEQ='0')  else
 	 	       '1'  when (JMP='1' AND JEQ='0')  else

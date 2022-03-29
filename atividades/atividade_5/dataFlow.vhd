@@ -22,14 +22,12 @@ end entity;
 
 architecture arquitetura of dataFlow is
   
-  
-  
--- Faltam alguns sinais:
   signal MUX_ULA_B          : std_logic_vector (larguraDados-1 downto 0);
   signal REG1_out           : std_logic_vector (larguraDados-1 downto 0);
   signal Saida_ULA          : std_logic_vector (larguraDados-1 downto 0);
   signal Saida_ULA_Igual    : std_logic; -- saida da ULA que alimenta a flag igual
-  signal Sinais_Controle    : std_logic_vector (6 downto 0);
+  signal Saida_Flag         : std_logic;
+  signal Sinais_Controle    : std_logic_vector (8 downto 0);
   signal barramento_addr    : std_logic_vector (larguraInstrucao-larguraOpCode-1 downto 0);
   signal PC_ROM             : std_logic_vector (larguraInstrucao-larguraOpCode-1 downto 0);
   signal habilitaRAM        : std_logic;
@@ -38,7 +36,7 @@ architecture arquitetura of dataFlow is
   signal Chave_Operacao_ULA : std_logic;
   signal CLK                : std_logic;
   signal SelMUX             : std_logic;
-  signal SelMUXJMP			 : std_logic;
+  signal SelDesvio			 : std_logic;
   signal Habilita_A         : std_logic;
   signal Habilita_Flag_Igual: std_logic;
   signal Operacao_ULA       : std_logic_vector(1 downto 0);
@@ -49,6 +47,7 @@ architecture arquitetura of dataFlow is
   alias  enderecoRAM        : std_logic_vector(8 downto 0) is instrucao(8 downto 0);
   alias  imediato           : std_logic_vector(7 downto 0) is instrucao(7 downto 0);
   signal memRAM_out 			 : std_logic_vector(larguraDados-1 downto 0);
+  signal HabFlagIgual       : std_logic;
 
 begin
 
@@ -94,7 +93,7 @@ incPC   :  entity work.somaUm  generic map (larguraDados => larguraEndereco, con
 MUX_JMP :  entity work.muxGenerico2x1  generic map (larguraDados => larguraInstrucao-larguraOpCode)
              port map(entradaA_MUX => saida_inc,
                       entradaB_MUX => enderecoRAM,
-                      seletor_MUX  => SelMUXJMP,
+                      seletor_MUX  => SelDesvio,
                       saida_MUX    => proxPC);
 
 -- O port map completo da ULA:
@@ -102,7 +101,7 @@ ULA1    : entity work.ULASomaSub  generic map(larguraDados => larguraDados)
             port map (entradaA => REG1_out, 
 							 entradaB => MUX_ULA_B, 
 							 saida    => Saida_ULA,
-							 flagEqual => Saida_ULA_igual; 
+							 flagEqual => Saida_ULA_igual,
 							 seletor  => Operacao_ULA);
 
 -- Falta acertar o conteudo da ROM (no arquivo memoriaROM.vhd)
@@ -113,6 +112,12 @@ ROM1    : entity work.memoriaROM   generic map (dataWidth => 13, addrWidth => 9)
 DECODER : entity work.decoder
 				port map (entrada  => opCode,
 							 saida    => Sinais_Controle);
+							 
+DESVIO : entity work.desvio
+				port map (JMP      => Sinais_Controle(7),
+						    JEQ      => Sinais_Controle(6),
+							 IGUAL    => Saida_ULA_igual,
+							 saida    => SelDesvio);
 
 RAM     : entity work.memoriaRAM  generic map (dataWidth => larguraDados, addrWidth => larguraDados)
 				port map (addr     => barramento_addr(7 downto 0),
@@ -124,9 +129,9 @@ RAM     : entity work.memoriaRAM  generic map (dataWidth => larguraDados, addrWi
 							 dado_out => memRAM_out);
 
 -- flip flop para armazenar o resultado da comparacao
-FLAG    : entity work.registradorGenerico  generic map (larguraDados => larguraDados)
+FLAG    : entity work.flipFlop
              port map (DIN     => Saida_ULA_igual, 
-						     DOUT    => Saida_ULA_igual, 
+						     DOUT    => Saida_Flag, 
 				   		  ENABLE  => HabFlagIgual, 
 				   		  CLK     => CLK, 
 				   		  RST     => '0');
@@ -135,9 +140,7 @@ FLAG    : entity work.registradorGenerico  generic map (larguraDados => larguraD
 opCode <= instrucao(12 downto 9);
 barramento_addr <= enderecoRAM;
 
---SelJEQ <= Sinais_Controle(7);
---SelMUXJMP <= Sinais_Controle(6);	-- implementar logica de desvio	
-SelMUX <= Sinais_Controle(6);
+
 Habilita_A <= Sinais_Controle(5);
 --Reset_A <= CLK;
 Operacao_ULA <= Sinais_Controle(4 downto 3);

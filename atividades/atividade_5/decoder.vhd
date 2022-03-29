@@ -4,7 +4,7 @@ use ieee.std_logic_1164.all;
 
 entity decoder is
   port ( entrada : in std_logic_vector(3 downto 0);
-         saida : out std_logic_vector(6 downto 0)
+         saida : out std_logic_vector(8 downto 0)
   );
 end entity;
 
@@ -33,6 +33,6 @@ architecture comportamento of decoder is
 				 "001110000" when (entrada = LDI)  else
 				 "000000001" when (entrada = STA)  else 
 				 "000000000" when (entrada = NOP)  else
-				 "0000000";
+				 "000000000";
 				 
 end architecture;
