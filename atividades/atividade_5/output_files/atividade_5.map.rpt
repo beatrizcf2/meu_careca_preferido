@@ -1,5 +1,5 @@
 Analysis & Synthesis report for atividade_5
-Tue Mar 29 00:29:45 2022
+Tue Mar 29 15:04:23 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -27,14 +27,13 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
  19. Parameter Settings for User Entity Instance: memoriaROM:ROM1
  20. Parameter Settings for User Entity Instance: memoriaRAM:RAM
  21. Port Connectivity Checks: "flipFlop:FLAG"
- 22. Port Connectivity Checks: "decoder:DECODER"
- 23. Port Connectivity Checks: "muxGenerico4x1:MUX_JMP"
- 24. Port Connectivity Checks: "registradorGenerico:END_RETORNO"
- 25. Port Connectivity Checks: "registradorGenerico:PC"
- 26. Port Connectivity Checks: "registradorGenerico:REGA"
- 27. Post-Synthesis Netlist Statistics for Top Partition
- 28. Elapsed Time Per Partition
- 29. Analysis & Synthesis Messages
+ 22. Port Connectivity Checks: "muxGenerico4x1:MUX_JMP"
+ 23. Port Connectivity Checks: "registradorGenerico:END_RETORNO"
+ 24. Port Connectivity Checks: "registradorGenerico:PC"
+ 25. Port Connectivity Checks: "registradorGenerico:REGA"
+ 26. Post-Synthesis Netlist Statistics for Top Partition
+ 27. Elapsed Time Per Partition
+ 28. Analysis & Synthesis Messages
 
 
 
@@ -61,14 +60,14 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Mar 29 00:29:45 2022       ;
+; Analysis & Synthesis Status     ; Successful - Tue Mar 29 15:04:23 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; atividade_5                                 ;
 ; Top-level Entity Name           ; dataFlow                                    ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 58                                          ;
-; Total pins                      ; 68                                          ;
+; Total registers                 ; 59                                          ;
+; Total pins                      ; 69                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -211,25 +210,25 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------+
 ; Resource                                    ; Usage        ;
 +---------------------------------------------+--------------+
-; Estimate of Logic utilization (ALMs needed) ; 69           ;
+; Estimate of Logic utilization (ALMs needed) ; 63           ;
 ;                                             ;              ;
-; Combinational ALUT usage for logic          ; 114          ;
+; Combinational ALUT usage for logic          ; 104          ;
 ;     -- 7 input functions                    ; 0            ;
-;     -- 6 input functions                    ; 20           ;
-;     -- 5 input functions                    ; 18           ;
-;     -- 4 input functions                    ; 21           ;
-;     -- <=3 input functions                  ; 55           ;
+;     -- 6 input functions                    ; 15           ;
+;     -- 5 input functions                    ; 21           ;
+;     -- 4 input functions                    ; 19           ;
+;     -- <=3 input functions                  ; 49           ;
 ;                                             ;              ;
-; Dedicated logic registers                   ; 58           ;
+; Dedicated logic registers                   ; 59           ;
 ;                                             ;              ;
-; I/O pins                                    ; 68           ;
+; I/O pins                                    ; 69           ;
 ;                                             ;              ;
 ; Total DSP Blocks                            ; 0            ;
 ;                                             ;              ;
 ; Maximum fan-out node                        ; KEY[0]~input ;
-; Maximum fan-out                             ; 58           ;
-; Total fan-out                               ; 744          ;
-; Average fan-out                             ; 2.42         ;
+; Maximum fan-out                             ; 59           ;
+; Total fan-out                               ; 708          ;
+; Average fan-out                             ; 2.35         ;
 +---------------------------------------------+--------------+
 
 
@@ -238,14 +237,14 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node           ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                       ; Entity Name         ; Library Name ;
 +--------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------+---------------------+--------------+
-; |dataFlow                            ; 114 (0)             ; 58 (0)                    ; 0                 ; 0          ; 68   ; 0            ; |dataFlow                                 ; dataFlow            ; work         ;
-;    |ULASomaSub:ULA1|                 ; 24 (24)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |dataFlow|ULASomaSub:ULA1                 ; ULASomaSub          ; work         ;
-;    |decoder:DECODER|                 ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |dataFlow|decoder:DECODER                 ; decoder             ; work         ;
-;    |desvio:DESVIO|                   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |dataFlow|desvio:DESVIO                   ; desvio              ; work         ;
+; |dataFlow                            ; 104 (0)             ; 59 (0)                    ; 0                 ; 0          ; 69   ; 0            ; |dataFlow                                 ; dataFlow            ; work         ;
+;    |ULASomaSub:ULA1|                 ; 17 (17)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |dataFlow|ULASomaSub:ULA1                 ; ULASomaSub          ; work         ;
+;    |decoder:DECODER|                 ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |dataFlow|decoder:DECODER                 ; decoder             ; work         ;
+;    |flipFlop:FLAG|                   ; 5 (5)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |dataFlow|flipFlop:FLAG                   ; flipFlop            ; work         ;
 ;    |memoriaRAM:RAM|                  ; 33 (33)             ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |dataFlow|memoriaRAM:RAM                  ; memoriaRAM          ; work         ;
-;    |memoriaROM:ROM1|                 ; 16 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |dataFlow|memoriaROM:ROM1                 ; memoriaROM          ; work         ;
-;    |muxGenerico2x1:MUX1|             ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |dataFlow|muxGenerico2x1:MUX1             ; muxGenerico2x1      ; work         ;
-;    |muxGenerico4x1:MUX_JMP|          ; 13 (13)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |dataFlow|muxGenerico4x1:MUX_JMP          ; muxGenerico4x1      ; work         ;
+;    |memoriaROM:ROM1|                 ; 13 (13)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |dataFlow|memoriaROM:ROM1                 ; memoriaROM          ; work         ;
+;    |muxGenerico2x1:MUX1|             ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |dataFlow|muxGenerico2x1:MUX1             ; muxGenerico2x1      ; work         ;
+;    |muxGenerico4x1:MUX_JMP|          ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |dataFlow|muxGenerico4x1:MUX_JMP          ; muxGenerico4x1      ; work         ;
 ;    |registradorGenerico:END_RETORNO| ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |dataFlow|registradorGenerico:END_RETORNO ; registradorGenerico ; work         ;
 ;    |registradorGenerico:PC|          ; 2 (2)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |dataFlow|registradorGenerico:PC          ; registradorGenerico ; work         ;
 ;    |registradorGenerico:REGA|        ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |dataFlow|registradorGenerico:REGA        ; registradorGenerico ; work         ;
@@ -364,7 +363,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 58    ;
+; Total registers                              ; 59    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 8     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -380,7 +379,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output               ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |dataFlow|registradorGenerico:PC|DOUT[4] ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |dataFlow|registradorGenerico:PC|DOUT[8] ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |dataFlow|registradorGenerico:PC|DOUT[0] ;
 ; 7:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |dataFlow|decoder:DECODER|saida[4]       ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
 
@@ -492,23 +491,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "flipFlop:FLAG"                                                                      ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; dout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; rst  ; Input  ; Info     ; Stuck at GND                                                                        ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "decoder:DECODER"                                                                        ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-; Port     ; Type   ; Severity ; Details                                                                             ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-; saida[2] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
++-------------------------------------------+
+; Port Connectivity Checks: "flipFlop:FLAG" ;
++------+-------+----------+-----------------+
+; Port ; Type  ; Severity ; Details         ;
++------+-------+----------+-----------------+
+; rst  ; Input ; Info     ; Stuck at GND    ;
++------+-------+----------+-----------------+
 
 
 +----------------------------------------------------+
@@ -553,27 +542,27 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 58                          ;
+; arriav_ff             ; 59                          ;
 ;     ENA               ; 41                          ;
 ;     ENA SLD           ; 8                           ;
-;     plain             ; 9                           ;
-; arriav_lcell_comb     ; 115                         ;
+;     plain             ; 10                          ;
+; arriav_lcell_comb     ; 105                         ;
 ;     arith             ; 18                          ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 9                           ;
 ;         3 data inputs ; 1                           ;
 ;         4 data inputs ; 7                           ;
-;     normal            ; 97                          ;
+;     normal            ; 87                          ;
 ;         0 data inputs ; 1                           ;
-;         2 data inputs ; 8                           ;
-;         3 data inputs ; 36                          ;
-;         4 data inputs ; 14                          ;
-;         5 data inputs ; 18                          ;
-;         6 data inputs ; 20                          ;
-; boundary_port         ; 68                          ;
+;         2 data inputs ; 6                           ;
+;         3 data inputs ; 32                          ;
+;         4 data inputs ; 12                          ;
+;         5 data inputs ; 21                          ;
+;         6 data inputs ; 15                          ;
+; boundary_port         ; 69                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 9.00                        ;
-; Average LUT depth     ; 6.66                        ;
+; Max LUT depth         ; 7.70                        ;
+; Average LUT depth     ; 5.27                        ;
 +-----------------------+-----------------------------+
 
 
@@ -592,7 +581,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Tue Mar 29 00:29:34 2022
+    Info: Processing started: Tue Mar 29 15:04:11 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off atividade_5 -c atividade_5
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file registradorGenerico.vhd
@@ -621,7 +610,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file decoder
     Info (12022): Found design unit 1: decoder-comportamento File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/decoder.vhd Line: 11
     Info (12023): Found entity 1: decoder File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/decoder.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file dataFlow.vhd
-    Info (12022): Found design unit 1: dataFlow-arquitetura File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 29
+    Info (12022): Found design unit 1: dataFlow-arquitetura File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 30
     Info (12023): Found entity 1: dataFlow File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file desvio.vhd
     Info (12022): Found design unit 1: desvio-comportamento File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/desvio.vhd Line: 13
@@ -633,9 +622,6 @@ Info (12021): Found 2 design units, including 1 entities, in source file muxGene
     Info (12022): Found design unit 1: muxGenerico4x1-comportamento File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/muxGenerico4x1.vhd Line: 15
     Info (12023): Found entity 1: muxGenerico4x1 File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/muxGenerico4x1.vhd Line: 5
 Info (12127): Elaborating entity "dataFlow" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at dataFlow.vhd(35): object "Saida_Flag" assigned a value but never read File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 35
-Warning (10036): Verilog HDL or VHDL warning at dataFlow.vhd(47): object "Habilita_Flag_Igual" assigned a value but never read File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 47
-Warning (10541): VHDL Signal Declaration warning at dataFlow.vhd(56): used implicit default value for signal "HabFlagIgual" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 56
 Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "muxGenerico2x1:MUX1" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 75
 Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:REGA" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 82
 Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:PC" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 90
@@ -681,14 +667,14 @@ Warning (21074): Design contains 14 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[7]" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
     Warning (15610): No output dependent on input pin "SW[8]" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
     Warning (15610): No output dependent on input pin "SW[9]" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
-Info (21057): Implemented 231 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 222 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
-    Info (21059): Implemented 53 output pins
-    Info (21061): Implemented 163 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 32 warnings
-    Info: Peak virtual memory: 476 megabytes
-    Info: Processing ended: Tue Mar 29 00:29:45 2022
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:25
+    Info (21059): Implemented 54 output pins
+    Info (21061): Implemented 153 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 29 warnings
+    Info: Peak virtual memory: 474 megabytes
+    Info: Processing ended: Tue Mar 29 15:04:23 2022
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:26
 
 

@@ -21,7 +21,8 @@ entity dataFlow is
 	 entradaA_ULA : out std_logic_vector(larguraDados-1 downto 0);
 	 entradaB_ULA : out std_logic_vector(larguraDados-1 downto 0);
 	 vImediato : out std_logic_vector(larguraDados-1 downto 0);
-	 sel_MUX_t : out std_logic
+	 sel_MUX_t : out std_logic;
+	 habilita_flag : out std_logic
   );
 end entity;
 
@@ -44,7 +45,6 @@ architecture arquitetura of dataFlow is
   signal SelMUX             : std_logic;
   signal SelDesvio			 : std_logic_vector(1 downto 0);
   signal Habilita_A         : std_logic;
-  signal Habilita_Flag_Igual: std_logic;
   signal Operacao_ULA       : std_logic_vector(1 downto 0);
   signal opCode             : std_logic_vector(3 downto 0);
   signal habilitaLeituraMEM : std_logic;
@@ -99,7 +99,7 @@ incPC   :  entity work.somaUm  generic map (larguraDados => larguraEndereco, con
 							saida     => saida_inc);
 
 END_RETORNO: entity work.registradorGenerico   generic map (larguraDados => larguraEndereco)
-            port map (DIN      => saida_inc, 
+            port map (DIN      => saida_inc,
 						    DOUT     => saidaEndRetorno, 
 						    ENABLE   => HabEscritaRetorno, 
 						    CLK      => CLK, 
@@ -135,7 +135,7 @@ DESVIO : entity work.desvio
 						    JEQ      => Sinais_Controle(7),
 						    JSR      => Sinais_Controle(8),
 						    JMP      => Sinais_Controle(10),
-							 IGUAL    => Saida_ULA_igual,
+							 IGUAL    => Saida_Flag,
 							 saida    => SelDesvio);
 
 RAM     : entity work.memoriaRAM  generic map (dataWidth => larguraDados, addrWidth => larguraDados)
@@ -165,7 +165,8 @@ SelMUX <= Sinais_Controle(6);
 Habilita_A <= Sinais_Controle(5);
 --Reset_A <= CLK;
 Operacao_ULA <= Sinais_Controle(4 downto 3);
-Habilita_Flag_Igual <= Sinais_Controle(2);
+HabFlagIgual <= Sinais_Controle(2);
+habilita_flag <= HabFlagIgual;
 habilitaLeituraMEM <= Sinais_Controle(1);
 habilitaEscritaMEM <= Sinais_Controle(0);
 
@@ -181,7 +182,7 @@ habilitaEscritaMEM <= Sinais_Controle(0);
 
 PC_OUT <= PC_ROM;
 RESULTADO_ULA <= Saida_ULA;
-SAIDA_FLAG_H <= Saida_ULA_igual;
+SAIDA_FLAG_H <= Saida_Flag;
 ACUMULADOR <= REG1_out;
 seletorDaULA <= Operacao_ULA;
 entradaA_ULA <= REG1_out;

@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "03/29/2022 00:30:43"
+-- Generated on "03/29/2022 15:04:34"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          dataFlow
 -- 
@@ -38,6 +38,7 @@ SIGNAL ACUMULADOR : STD_LOGIC_VECTOR(7 DOWNTO 0);
 SIGNAL CLOCK_50 : STD_LOGIC;
 SIGNAL entradaA_ULA : STD_LOGIC_VECTOR(7 DOWNTO 0);
 SIGNAL entradaB_ULA : STD_LOGIC_VECTOR(7 DOWNTO 0);
+SIGNAL habilita_flag : STD_LOGIC;
 SIGNAL KEY : STD_LOGIC_VECTOR(3 DOWNTO 0);
 SIGNAL PC_OUT : STD_LOGIC_VECTOR(8 DOWNTO 0);
 SIGNAL RESULTADO_ULA : STD_LOGIC_VECTOR(7 DOWNTO 0);
@@ -52,6 +53,7 @@ COMPONENT dataFlow
 	CLOCK_50 : IN STD_LOGIC;
 	entradaA_ULA : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
 	entradaB_ULA : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+	habilita_flag : OUT STD_LOGIC;
 	KEY : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
 	PC_OUT : OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
 	RESULTADO_ULA : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
@@ -70,6 +72,7 @@ BEGIN
 	CLOCK_50 => CLOCK_50,
 	entradaA_ULA => entradaA_ULA,
 	entradaB_ULA => entradaB_ULA,
+	habilita_flag => habilita_flag,
 	KEY => KEY,
 	PC_OUT => PC_OUT,
 	RESULTADO_ULA => RESULTADO_ULA,
@@ -90,6 +93,8 @@ END PROCESS t_prcs_CLOCK_50;
 -- KEY[0]
 t_prcs_KEY_0: PROCESS
 BEGIN
+	KEY(0) <= '1';
+	WAIT FOR 30000 ps;
 	FOR i IN 1 TO 16
 	LOOP
 		KEY(0) <= '0';
@@ -98,8 +103,6 @@ BEGIN
 		WAIT FOR 30000 ps;
 	END LOOP;
 	KEY(0) <= '0';
-	WAIT FOR 30000 ps;
-	KEY(0) <= '1';
 WAIT;
 END PROCESS t_prcs_KEY_0;
 END dataFlow_arch;

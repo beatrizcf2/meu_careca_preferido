@@ -1,48 +1,3 @@
-/*<simulation_settings>
-<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off atividade_5 -c atividade_5 --vector_source="/home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/Waveform3.vwf" --testbench_file="/home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/simulation/qsim/Waveform3.vwf.vht"</ftestbench_cmd>
-<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off atividade_5 -c atividade_5 --vector_source="/home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/Waveform3.vwf" --testbench_file="/home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/simulation/qsim/Waveform3.vwf.vht"</ttestbench_cmd>
-<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="/home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/simulation/qsim/" atividade_5 -c atividade_5</fnetlist_cmd>
-<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=vhdl --output_directory="/home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/simulation/qsim/" atividade_5 -c atividade_5</tnetlist_cmd>
-<modelsim_script>onerror {exit -code 1}
-vlib work
-vcom -work work atividade_5.vho
-vcom -work work Waveform3.vwf.vht
-vsim  -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.dataFlow_vhd_vec_tst
-vcd file -direction atividade_5.msim.vcd
-vcd add -internal dataFlow_vhd_vec_tst/*
-vcd add -internal dataFlow_vhd_vec_tst/i1/*
-proc simTimestamp {} {
-    echo "Simulation time: $::now ps"
-    if { [string equal running [runStatus]] } {
-        after 2500 simTimestamp
-    }
-}
-after 2500 simTimestamp
-run -all
-quit -f
-
-</modelsim_script>
-<modelsim_script_timing>onerror {exit -code 1}
-vlib work
-vcom -work work atividade_5.vho
-vcom -work work Waveform3.vwf.vht
-vsim -novopt -c -t 1ps -sdfmax dataFlow_vhd_vec_tst/i1=atividade_5_vhd.sdo -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.dataFlow_vhd_vec_tst
-vcd file -direction atividade_5.msim.vcd
-vcd add -internal dataFlow_vhd_vec_tst/*
-vcd add -internal dataFlow_vhd_vec_tst/i1/*
-proc simTimestamp {} {
-    echo "Simulation time: $::now ps"
-    if { [string equal running [runStatus]] } {
-        after 2500 simTimestamp
-    }
-}
-after 2500 simTimestamp
-run -all
-quit -f
-
-</modelsim_script_timing>
-<hdl_lang>vhdl</hdl_lang>
-</simulation_settings>*/
 /*
 WARNING: Do NOT edit the input and output ports in this file in a text
 editor if you plan to continue editing the block that represents it in
@@ -515,7 +470,7 @@ SIGNAL("entradaB_ULA[7]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "entradaB_ULA";
+	PARENT = "";
 }
 
 SIGNAL("entradaB_ULA[6]")
@@ -525,7 +480,7 @@ SIGNAL("entradaB_ULA[6]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "entradaB_ULA";
+	PARENT = "";
 }
 
 SIGNAL("entradaB_ULA[5]")
@@ -535,7 +490,7 @@ SIGNAL("entradaB_ULA[5]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "entradaB_ULA";
+	PARENT = "";
 }
 
 SIGNAL("entradaB_ULA[4]")
@@ -545,7 +500,7 @@ SIGNAL("entradaB_ULA[4]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "entradaB_ULA";
+	PARENT = "";
 }
 
 SIGNAL("entradaB_ULA[3]")
@@ -555,7 +510,7 @@ SIGNAL("entradaB_ULA[3]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "entradaB_ULA";
+	PARENT = "";
 }
 
 SIGNAL("entradaB_ULA[2]")
@@ -565,7 +520,7 @@ SIGNAL("entradaB_ULA[2]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "entradaB_ULA";
+	PARENT = "";
 }
 
 SIGNAL("entradaB_ULA[1]")
@@ -575,7 +530,7 @@ SIGNAL("entradaB_ULA[1]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "entradaB_ULA";
+	PARENT = "";
 }
 
 SIGNAL("entradaB_ULA[0]")
@@ -585,12 +540,7 @@ SIGNAL("entradaB_ULA[0]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "entradaB_ULA";
-}
-
-GROUP("entradaB_ULA")
-{
-	MEMBERS = "entradaB_ULA[7]", "entradaB_ULA[6]", "entradaB_ULA[5]", "entradaB_ULA[4]", "entradaB_ULA[3]", "entradaB_ULA[2]", "entradaB_ULA[1]", "entradaB_ULA[0]";
+	PARENT = "";
 }
 
 SIGNAL("vImediato")
@@ -693,14 +643,9 @@ SIGNAL("sel_MUX_t")
 	PARENT = "";
 }
 
-SIGNAL("habilita_flag")
+GROUP("entradaB_ULA")
 {
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "";
+	MEMBERS = "entradaB_ULA[7]", "entradaB_ULA[6]", "entradaB_ULA[5]", "entradaB_ULA[4]", "entradaB_ULA[3]", "entradaB_ULA[2]", "entradaB_ULA[1]", "entradaB_ULA[0]";
 }
 
 TRANSITION_LIST("CLOCK_50")
@@ -708,7 +653,11 @@ TRANSITION_LIST("CLOCK_50")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
 	}
 }
 
@@ -717,14 +666,44 @@ TRANSITION_LIST("KEY[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 30.0;
 		NODE
 		{
-			REPEAT = 16;
+			REPEAT = 1;
+			LEVEL 1 FOR 30.0;
 			LEVEL 0 FOR 30.0;
 			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 10.0;
 		}
-		LEVEL 0 FOR 10.0;
 	}
 }
 
@@ -733,7 +712,11 @@ TRANSITION_LIST("PC_OUT[8]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
 	}
 }
 
@@ -742,7 +725,11 @@ TRANSITION_LIST("PC_OUT[7]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
 	}
 }
 
@@ -751,7 +738,11 @@ TRANSITION_LIST("PC_OUT[6]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
 	}
 }
 
@@ -760,7 +751,11 @@ TRANSITION_LIST("PC_OUT[5]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
 	}
 }
 
@@ -769,7 +764,11 @@ TRANSITION_LIST("PC_OUT[4]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
 	}
 }
 
@@ -778,7 +777,17 @@ TRANSITION_LIST("PC_OUT[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 60.0;
+			LEVEL 1 FOR 120.0;
+			LEVEL 0 FOR 240.0;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 360.0;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 100.0;
+		}
 	}
 }
 
@@ -787,7 +796,17 @@ TRANSITION_LIST("PC_OUT[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 60.0;
+			LEVEL 1 FOR 120.0;
+			LEVEL 0 FOR 60.0;
+			LEVEL 1 FOR 180.0;
+			LEVEL 0 FOR 180.0;
+			LEVEL 1 FOR 240.0;
+			LEVEL 0 FOR 160.0;
+		}
 	}
 }
 
@@ -796,7 +815,20 @@ TRANSITION_LIST("PC_OUT[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 60.0;
+			LEVEL 1 FOR 120.0;
+			LEVEL 0 FOR 120.0;
+			LEVEL 1 FOR 120.0;
+			LEVEL 0 FOR 60.0;
+			LEVEL 1 FOR 120.0;
+			LEVEL 0 FOR 120.0;
+			LEVEL 1 FOR 120.0;
+			LEVEL 0 FOR 60.0;
+			LEVEL 1 FOR 100.0;
+		}
 	}
 }
 
@@ -805,7 +837,22 @@ TRANSITION_LIST("PC_OUT[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 120.0;
+			LEVEL 1 FOR 180.0;
+			LEVEL 0 FOR 60.0;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 120.0;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 60.0;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 60.0;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 120.0;
+			LEVEL 1 FOR 40.0;
+		}
 	}
 }
 
@@ -814,7 +861,11 @@ TRANSITION_LIST("RESULTADO_ULA[7]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
 	}
 }
 
@@ -823,7 +874,11 @@ TRANSITION_LIST("RESULTADO_ULA[6]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
 	}
 }
 
@@ -832,7 +887,11 @@ TRANSITION_LIST("RESULTADO_ULA[5]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
 	}
 }
 
@@ -841,7 +900,11 @@ TRANSITION_LIST("RESULTADO_ULA[4]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
 	}
 }
 
@@ -850,7 +913,11 @@ TRANSITION_LIST("RESULTADO_ULA[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
 	}
 }
 
@@ -859,7 +926,19 @@ TRANSITION_LIST("RESULTADO_ULA[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 240.0;
+			LEVEL 1 FOR 120.0;
+			LEVEL 0 FOR 60.0;
+			LEVEL 1 FOR 120.0;
+			LEVEL 0 FOR 120.0;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 120.0;
+			LEVEL 1 FOR 120.0;
+			LEVEL 0 FOR 40.0;
+		}
 	}
 }
 
@@ -868,7 +947,11 @@ TRANSITION_LIST("RESULTADO_ULA[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
 	}
 }
 
@@ -877,7 +960,19 @@ TRANSITION_LIST("RESULTADO_ULA[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 240.0;
+			LEVEL 1 FOR 120.0;
+			LEVEL 0 FOR 60.0;
+			LEVEL 1 FOR 120.0;
+			LEVEL 0 FOR 120.0;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 120.0;
+			LEVEL 1 FOR 120.0;
+			LEVEL 0 FOR 40.0;
+		}
 	}
 }
 
@@ -886,7 +981,11 @@ TRANSITION_LIST("ACUMULADOR[7]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
 	}
 }
 
@@ -895,7 +994,11 @@ TRANSITION_LIST("ACUMULADOR[6]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
 	}
 }
 
@@ -904,7 +1007,11 @@ TRANSITION_LIST("ACUMULADOR[5]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
 	}
 }
 
@@ -913,7 +1020,11 @@ TRANSITION_LIST("ACUMULADOR[4]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
 	}
 }
 
@@ -922,7 +1033,11 @@ TRANSITION_LIST("ACUMULADOR[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
 	}
 }
 
@@ -931,7 +1046,12 @@ TRANSITION_LIST("ACUMULADOR[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 300.0;
+			LEVEL 1 FOR 700.0;
+		}
 	}
 }
 
@@ -940,7 +1060,11 @@ TRANSITION_LIST("ACUMULADOR[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
 	}
 }
 
@@ -949,7 +1073,12 @@ TRANSITION_LIST("ACUMULADOR[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 300.0;
+			LEVEL 1 FOR 700.0;
+		}
 	}
 }
 
@@ -958,7 +1087,19 @@ TRANSITION_LIST("SAIDA_FLAG_H")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 1 FOR 240.0;
+			LEVEL 0 FOR 120.0;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 120.0;
+			LEVEL 1 FOR 120.0;
+			LEVEL 0 FOR 60.0;
+			LEVEL 1 FOR 120.0;
+			LEVEL 0 FOR 120.0;
+			LEVEL 1 FOR 40.0;
+		}
 	}
 }
 
@@ -967,7 +1108,15 @@ TRANSITION_LIST("seletorDaULA[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 240.0;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 360.0;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 280.0;
+		}
 	}
 }
 
@@ -976,7 +1125,11 @@ TRANSITION_LIST("seletorDaULA[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
 	}
 }
 
@@ -985,7 +1138,11 @@ TRANSITION_LIST("entradaA_ULA[7]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
 	}
 }
 
@@ -994,7 +1151,11 @@ TRANSITION_LIST("entradaA_ULA[6]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
 	}
 }
 
@@ -1003,7 +1164,11 @@ TRANSITION_LIST("entradaA_ULA[5]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
 	}
 }
 
@@ -1012,7 +1177,11 @@ TRANSITION_LIST("entradaA_ULA[4]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
 	}
 }
 
@@ -1021,7 +1190,11 @@ TRANSITION_LIST("entradaA_ULA[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
 	}
 }
 
@@ -1030,7 +1203,12 @@ TRANSITION_LIST("entradaA_ULA[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 300.0;
+			LEVEL 1 FOR 700.0;
+		}
 	}
 }
 
@@ -1039,7 +1217,11 @@ TRANSITION_LIST("entradaA_ULA[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
 	}
 }
 
@@ -1048,7 +1230,12 @@ TRANSITION_LIST("entradaA_ULA[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 300.0;
+			LEVEL 1 FOR 700.0;
+		}
 	}
 }
 
@@ -1057,7 +1244,11 @@ TRANSITION_LIST("entradaB_ULA[7]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
 	}
 }
 
@@ -1066,7 +1257,11 @@ TRANSITION_LIST("entradaB_ULA[6]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
 	}
 }
 
@@ -1075,7 +1270,11 @@ TRANSITION_LIST("entradaB_ULA[5]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
 	}
 }
 
@@ -1084,7 +1283,11 @@ TRANSITION_LIST("entradaB_ULA[4]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
 	}
 }
 
@@ -1093,7 +1296,11 @@ TRANSITION_LIST("entradaB_ULA[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
 	}
 }
 
@@ -1102,7 +1309,18 @@ TRANSITION_LIST("entradaB_ULA[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 240.0;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 60.0;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 120.0;
+			LEVEL 1 FOR 300.0;
+			LEVEL 0 FOR 120.0;
+			LEVEL 1 FOR 40.0;
+		}
 	}
 }
 
@@ -1111,7 +1329,11 @@ TRANSITION_LIST("entradaB_ULA[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
 	}
 }
 
@@ -1120,7 +1342,18 @@ TRANSITION_LIST("entradaB_ULA[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 240.0;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 60.0;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 120.0;
+			LEVEL 1 FOR 300.0;
+			LEVEL 0 FOR 120.0;
+			LEVEL 1 FOR 40.0;
+		}
 	}
 }
 
@@ -1129,7 +1362,11 @@ TRANSITION_LIST("vImediato[7]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
 	}
 }
 
@@ -1138,7 +1375,11 @@ TRANSITION_LIST("vImediato[6]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
 	}
 }
 
@@ -1147,7 +1388,11 @@ TRANSITION_LIST("vImediato[5]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
 	}
 }
 
@@ -1156,7 +1401,11 @@ TRANSITION_LIST("vImediato[4]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
 	}
 }
 
@@ -1165,7 +1414,16 @@ TRANSITION_LIST("vImediato[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 420.0;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 360.0;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 40.0;
+		}
 	}
 }
 
@@ -1174,7 +1432,16 @@ TRANSITION_LIST("vImediato[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 120.0;
+			LEVEL 1 FOR 120.0;
+			LEVEL 0 FOR 360.0;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 280.0;
+		}
 	}
 }
 
@@ -1183,7 +1450,16 @@ TRANSITION_LIST("vImediato[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 360.0;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 360.0;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 100.0;
+		}
 	}
 }
 
@@ -1192,7 +1468,19 @@ TRANSITION_LIST("vImediato[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 180.0;
+			LEVEL 1 FOR 120.0;
+			LEVEL 0 FOR 180.0;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 120.0;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 180.0;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 40.0;
+		}
 	}
 }
 
@@ -1201,16 +1489,15 @@ TRANSITION_LIST("sel_MUX_t")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("habilita_flag")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 240.0;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 360.0;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 280.0;
+		}
 	}
 }
 
@@ -1827,15 +2114,6 @@ DISPLAY_LINE
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 61;
-	TREE_LEVEL = 0;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "habilita_flag";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
-	TREE_INDEX = 62;
 	TREE_LEVEL = 0;
 }
 

@@ -39,4 +39,6 @@ architecture comportamento of decoder is
 				 "000000000000" when (entrada = NOP)  else
 				 "000000000000";
 				 
+--	saida(2) <= '1' when (entrada = CEQ);
+				 
 end architecture;

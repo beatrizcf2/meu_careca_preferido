@@ -35,7 +35,7 @@ RESULTADO_ULA[4] <= ulasomasub:ULA1.saida[4]
 RESULTADO_ULA[5] <= ulasomasub:ULA1.saida[5]
 RESULTADO_ULA[6] <= ulasomasub:ULA1.saida[6]
 RESULTADO_ULA[7] <= ulasomasub:ULA1.saida[7]
-SAIDA_FLAG_H <= ulasomasub:ULA1.flagEqual
+SAIDA_FLAG_H <= flipflop:FLAG.DOUT
 ACUMULADOR[0] <= registradorgenerico:REGA.DOUT[0]
 ACUMULADOR[1] <= registradorgenerico:REGA.DOUT[1]
 ACUMULADOR[2] <= registradorgenerico:REGA.DOUT[2]
@@ -71,6 +71,7 @@ vImediato[5] <= memoriarom:ROM1.Dado[5]
 vImediato[6] <= memoriarom:ROM1.Dado[6]
 vImediato[7] <= memoriarom:ROM1.Dado[7]
 sel_MUX_t <= decoder:DECODER.saida[6]
+habilita_flag <= decoder:DECODER.saida[2]
 
 
 |dataFlow|muxGenerico2x1:MUX1
