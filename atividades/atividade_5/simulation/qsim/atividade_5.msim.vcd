@@ -3,7 +3,7 @@ $comment
 		vcd file atividade_5.msim.vcd -direction
 $end
 $date
-	Mon Mar 28 18:34:39 2022
+	Mon Mar 28 22:43:15 2022
 $end
 $version
 	ModelSim Version 2020.1
@@ -102,51 +102,59 @@ $var wire 1 t \SW[6]~input_o\ $end
 $var wire 1 u \SW[7]~input_o\ $end
 $var wire 1 v \SW[8]~input_o\ $end
 $var wire 1 w \SW[9]~input_o\ $end
-$var wire 1 x \KEY[0]~input_o\ $end
-$var wire 1 y \incPC|Add0~1_sumout\ $end
-$var wire 1 z \incPC|Add0~2\ $end
-$var wire 1 { \incPC|Add0~5_sumout\ $end
-$var wire 1 | \incPC|Add0~6\ $end
-$var wire 1 } \incPC|Add0~9_sumout\ $end
-$var wire 1 ~ \incPC|Add0~10\ $end
-$var wire 1 !! \incPC|Add0~13_sumout\ $end
-$var wire 1 "! \~GND~combout\ $end
-$var wire 1 #! \incPC|Add0~14\ $end
-$var wire 1 $! \incPC|Add0~17_sumout\ $end
-$var wire 1 %! \incPC|Add0~18\ $end
-$var wire 1 &! \incPC|Add0~21_sumout\ $end
-$var wire 1 '! \incPC|Add0~22\ $end
-$var wire 1 (! \incPC|Add0~25_sumout\ $end
-$var wire 1 )! \incPC|Add0~26\ $end
-$var wire 1 *! \incPC|Add0~29_sumout\ $end
-$var wire 1 +! \incPC|Add0~30\ $end
-$var wire 1 ,! \incPC|Add0~33_sumout\ $end
-$var wire 1 -! \ROM1|memROM~5_combout\ $end
-$var wire 1 .! \ROM1|memROM~2_combout\ $end
-$var wire 1 /! \ROM1|memROM~0_combout\ $end
-$var wire 1 0! \ROM1|memROM~4_combout\ $end
-$var wire 1 1! \ROM1|memROM~3_combout\ $end
-$var wire 1 2! \ROM1|memROM~1_combout\ $end
-$var wire 1 3! \PC|DOUT\ [8] $end
-$var wire 1 4! \PC|DOUT\ [7] $end
-$var wire 1 5! \PC|DOUT\ [6] $end
-$var wire 1 6! \PC|DOUT\ [5] $end
-$var wire 1 7! \PC|DOUT\ [4] $end
-$var wire 1 8! \PC|DOUT\ [3] $end
-$var wire 1 9! \PC|DOUT\ [2] $end
-$var wire 1 :! \PC|DOUT\ [1] $end
-$var wire 1 ;! \PC|DOUT\ [0] $end
-$var wire 1 <! \ROM1|ALT_INV_memROM~5_combout\ $end
-$var wire 1 =! \ROM1|ALT_INV_memROM~0_combout\ $end
-$var wire 1 >! \PC|ALT_INV_DOUT\ [8] $end
-$var wire 1 ?! \PC|ALT_INV_DOUT\ [7] $end
-$var wire 1 @! \PC|ALT_INV_DOUT\ [6] $end
-$var wire 1 A! \PC|ALT_INV_DOUT\ [5] $end
-$var wire 1 B! \PC|ALT_INV_DOUT\ [4] $end
-$var wire 1 C! \PC|ALT_INV_DOUT\ [3] $end
-$var wire 1 D! \PC|ALT_INV_DOUT\ [2] $end
-$var wire 1 E! \PC|ALT_INV_DOUT\ [1] $end
-$var wire 1 F! \PC|ALT_INV_DOUT\ [0] $end
+$var wire 1 x \PC_OUT[0]~output_o\ $end
+$var wire 1 y \PC_OUT[1]~output_o\ $end
+$var wire 1 z \PC_OUT[2]~output_o\ $end
+$var wire 1 { \PC_OUT[3]~output_o\ $end
+$var wire 1 | \PC_OUT[4]~output_o\ $end
+$var wire 1 } \PC_OUT[5]~output_o\ $end
+$var wire 1 ~ \PC_OUT[6]~output_o\ $end
+$var wire 1 !! \PC_OUT[7]~output_o\ $end
+$var wire 1 "! \PC_OUT[8]~output_o\ $end
+$var wire 1 #! \RESULTADO_ULA[0]~output_o\ $end
+$var wire 1 $! \RESULTADO_ULA[1]~output_o\ $end
+$var wire 1 %! \RESULTADO_ULA[2]~output_o\ $end
+$var wire 1 &! \RESULTADO_ULA[3]~output_o\ $end
+$var wire 1 '! \RESULTADO_ULA[4]~output_o\ $end
+$var wire 1 (! \RESULTADO_ULA[5]~output_o\ $end
+$var wire 1 )! \RESULTADO_ULA[6]~output_o\ $end
+$var wire 1 *! \RESULTADO_ULA[7]~output_o\ $end
+$var wire 1 +! \KEY[0]~input_o\ $end
+$var wire 1 ,! \incPC|Add0~1_sumout\ $end
+$var wire 1 -! \incPC|Add0~2\ $end
+$var wire 1 .! \incPC|Add0~5_sumout\ $end
+$var wire 1 /! \incPC|Add0~6\ $end
+$var wire 1 0! \incPC|Add0~9_sumout\ $end
+$var wire 1 1! \incPC|Add0~10\ $end
+$var wire 1 2! \incPC|Add0~13_sumout\ $end
+$var wire 1 3! \incPC|Add0~14\ $end
+$var wire 1 4! \incPC|Add0~17_sumout\ $end
+$var wire 1 5! \incPC|Add0~18\ $end
+$var wire 1 6! \incPC|Add0~21_sumout\ $end
+$var wire 1 7! \incPC|Add0~22\ $end
+$var wire 1 8! \incPC|Add0~25_sumout\ $end
+$var wire 1 9! \incPC|Add0~26\ $end
+$var wire 1 :! \incPC|Add0~29_sumout\ $end
+$var wire 1 ;! \incPC|Add0~30\ $end
+$var wire 1 <! \incPC|Add0~33_sumout\ $end
+$var wire 1 =! \PC|DOUT\ [8] $end
+$var wire 1 >! \PC|DOUT\ [7] $end
+$var wire 1 ?! \PC|DOUT\ [6] $end
+$var wire 1 @! \PC|DOUT\ [5] $end
+$var wire 1 A! \PC|DOUT\ [4] $end
+$var wire 1 B! \PC|DOUT\ [3] $end
+$var wire 1 C! \PC|DOUT\ [2] $end
+$var wire 1 D! \PC|DOUT\ [1] $end
+$var wire 1 E! \PC|DOUT\ [0] $end
+$var wire 1 F! \PC|ALT_INV_DOUT\ [8] $end
+$var wire 1 G! \PC|ALT_INV_DOUT\ [7] $end
+$var wire 1 H! \PC|ALT_INV_DOUT\ [6] $end
+$var wire 1 I! \PC|ALT_INV_DOUT\ [5] $end
+$var wire 1 J! \PC|ALT_INV_DOUT\ [4] $end
+$var wire 1 K! \PC|ALT_INV_DOUT\ [3] $end
+$var wire 1 L! \PC|ALT_INV_DOUT\ [2] $end
+$var wire 1 M! \PC|ALT_INV_DOUT\ [1] $end
+$var wire 1 N! \PC|ALT_INV_DOUT\ [0] $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
@@ -178,7 +186,7 @@ xu
 xv
 xw
 0x
-1y
+0y
 0z
 0{
 0|
@@ -195,15 +203,23 @@ xw
 0)!
 0*!
 0+!
-0,!
-1-!
-1.!
-1/!
-10!
+1,!
+0-!
+0.!
+0/!
+00!
 01!
 02!
+03!
+04!
+05!
+06!
+07!
+08!
+09!
+0:!
+0;!
 0<!
-0=!
 x"
 x#
 x$
@@ -239,24 +255,24 @@ xX
 0g
 0h
 0i
-03!
-04!
-05!
-06!
-07!
-08!
-09!
-0:!
-0;!
-1>!
-1?!
-1@!
-1A!
-1B!
-1C!
-1D!
-1E!
+0=!
+0>!
+0?!
+0@!
+0A!
+0B!
+0C!
+0D!
+0E!
 1F!
+1G!
+1H!
+1I!
+1J!
+1K!
+1L!
+1M!
+1N!
 0&
 0'
 0(
@@ -288,252 +304,641 @@ $end
 #20000
 1%
 1N
+1+!
+1E!
+0N!
+0,!
+1-!
 1x
-19!
-0D!
-1}
-00!
-12!
-1_
-1,
+1.!
+1a
+1.
 #40000
 0%
 0N
-0x
+0+!
 #60000
 1%
 1N
-1x
-09!
-1;!
-0F!
+1+!
+0E!
 1D!
-0}
-0y
-1z
+0M!
+1N!
+1,!
+0-!
+0.!
+1/!
+1y
+0x
 10!
-1a
-0_
-1{
-1.
-0,
+1.!
+0/!
+1`
+0a
+00!
+0.
+1-
 #80000
 0%
 0N
-0x
+0+!
 #100000
 1%
 1N
+1+!
+1E!
+0N!
+0,!
+1-!
 1x
-19!
-0D!
-1}
-0-!
-00!
-02!
-1<!
-1_
 0.!
-1,
+1/!
+1a
+10!
+1.
 #120000
 0%
 0N
-0x
+0+!
 #140000
 1%
 1N
-1x
-1:!
-0;!
-1F!
+1+!
 0E!
-0{
-1|
-1y
-0z
-1-!
-10!
-11!
-0<!
-0a
-1`
-1{
-0|
-0}
-1~
+0D!
+1C!
+0L!
+1M!
+1N!
+1,!
+0-!
 1.!
+0/!
+00!
+11!
+1z
+0y
+0x
+12!
+10!
+01!
+0.!
+1_
+0`
+0a
+02!
 0.
-1-
-1!!
-1}
-0~
-0!!
+0-
+1,
 #160000
 0%
 0N
-0x
+0+!
 #180000
 1%
 1N
+1+!
+1E!
+0N!
+0,!
+1-!
 1x
+1.!
+1a
+1.
 #200000
 0%
 0N
-0x
+0+!
 #220000
 1%
 1N
-1x
+1+!
+0E!
+1D!
+0M!
+1N!
+1,!
+0-!
+0.!
+1/!
+1y
+0x
+00!
+11!
+1.!
+0/!
+1`
+0a
+10!
+01!
+12!
+0.
+1-
+02!
 #240000
 0%
 0N
-0x
+0+!
 #260000
 1%
 1N
+1+!
+1E!
+0N!
+0,!
+1-!
 1x
+0.!
+1/!
+1a
+00!
+11!
+1.
+12!
 #280000
 0%
 0N
-0x
+0+!
 #300000
 1%
 1N
-1x
+1+!
+0E!
+0D!
+0C!
+1B!
+0K!
+1L!
+1M!
+1N!
+1,!
+0-!
+1.!
+0/!
+10!
+01!
+02!
+13!
+1{
+0z
+0y
+0x
+14!
+12!
+03!
+00!
+0.!
+1^
+0_
+0`
+0a
+04!
+0.
+0-
+0,
+1+
 #320000
 0%
 0N
-0x
+0+!
 #340000
 1%
 1N
+1+!
+1E!
+0N!
+0,!
+1-!
 1x
+1.!
+1a
+1.
 #360000
 0%
 0N
-0x
+0+!
 #380000
 1%
 1N
-1x
+1+!
+0E!
+1D!
+0M!
+1N!
+1,!
+0-!
+0.!
+1/!
+1y
+0x
+10!
+1.!
+0/!
+1`
+0a
+00!
+0.
+1-
 #400000
 0%
 0N
-0x
+0+!
 #420000
 1%
 1N
+1+!
+1E!
+0N!
+0,!
+1-!
 1x
+0.!
+1/!
+1a
+10!
+1.
 #440000
 0%
 0N
-0x
+0+!
 #460000
 1%
 1N
-1x
+1+!
+0E!
+0D!
+1C!
+0L!
+1M!
+1N!
+1,!
+0-!
+1.!
+0/!
+00!
+11!
+1z
+0y
+0x
+02!
+13!
+10!
+01!
+0.!
+1_
+0`
+0a
+12!
+03!
+14!
+0.
+0-
+1,
+04!
 #480000
 0%
 0N
-0x
+0+!
 #500000
 1%
 1N
+1+!
+1E!
+0N!
+0,!
+1-!
 1x
+1.!
+1a
+1.
 #520000
 0%
 0N
-0x
+0+!
 #540000
 1%
 1N
-1x
+1+!
+0E!
+1D!
+0M!
+1N!
+1,!
+0-!
+0.!
+1/!
+1y
+0x
+00!
+11!
+1.!
+0/!
+1`
+0a
+10!
+01!
+02!
+13!
+0.
+1-
+14!
+12!
+03!
+04!
 #560000
 0%
 0N
-0x
+0+!
 #580000
 1%
 1N
+1+!
+1E!
+0N!
+0,!
+1-!
 1x
+0.!
+1/!
+1a
+00!
+11!
+1.
+02!
+13!
+14!
 #600000
 0%
 0N
-0x
+0+!
 #620000
 1%
 1N
-1x
+1+!
+0E!
+0D!
+0C!
+0B!
+1A!
+0J!
+1K!
+1L!
+1M!
+1N!
+1,!
+0-!
+1.!
+0/!
+10!
+01!
+12!
+03!
+04!
+15!
+1|
+0{
+0z
+0y
+0x
+16!
+14!
+05!
+02!
+00!
+0.!
+1]
+0^
+0_
+0`
+0a
+06!
+0.
+0-
+0,
+0+
+1*
 #640000
 0%
 0N
-0x
+0+!
 #660000
 1%
 1N
+1+!
+1E!
+0N!
+0,!
+1-!
 1x
+1.!
+1a
+1.
 #680000
 0%
 0N
-0x
+0+!
 #700000
 1%
 1N
-1x
+1+!
+0E!
+1D!
+0M!
+1N!
+1,!
+0-!
+0.!
+1/!
+1y
+0x
+10!
+1.!
+0/!
+1`
+0a
+00!
+0.
+1-
 #720000
 0%
 0N
-0x
+0+!
 #740000
 1%
 1N
+1+!
+1E!
+0N!
+0,!
+1-!
 1x
+0.!
+1/!
+1a
+10!
+1.
 #760000
 0%
 0N
-0x
+0+!
 #780000
 1%
 1N
-1x
+1+!
+0E!
+0D!
+1C!
+0L!
+1M!
+1N!
+1,!
+0-!
+1.!
+0/!
+00!
+11!
+1z
+0y
+0x
+12!
+10!
+01!
+0.!
+1_
+0`
+0a
+02!
+0.
+0-
+1,
 #800000
 0%
 0N
-0x
+0+!
 #820000
 1%
 1N
+1+!
+1E!
+0N!
+0,!
+1-!
 1x
+1.!
+1a
+1.
 #840000
 0%
 0N
-0x
+0+!
 #860000
 1%
 1N
-1x
+1+!
+0E!
+1D!
+0M!
+1N!
+1,!
+0-!
+0.!
+1/!
+1y
+0x
+00!
+11!
+1.!
+0/!
+1`
+0a
+10!
+01!
+12!
+0.
+1-
+02!
 #880000
 0%
 0N
-0x
+0+!
 #900000
 1%
 1N
+1+!
+1E!
+0N!
+0,!
+1-!
 1x
+0.!
+1/!
+1a
+00!
+11!
+1.
+12!
 #920000
 0%
 0N
-0x
+0+!
 #940000
 1%
 1N
-1x
+1+!
+0E!
+0D!
+0C!
+1B!
+0K!
+1L!
+1M!
+1N!
+1,!
+0-!
+1.!
+0/!
+10!
+01!
+02!
+13!
+1{
+0z
+0y
+0x
+04!
+15!
+12!
+03!
+00!
+0.!
+1^
+0_
+0`
+0a
+14!
+05!
+16!
+0.
+0-
+0,
+1+
+06!
 #960000
 0%
 0N
-0x
+0+!
 #980000
 1%
 1N
+1+!
+1E!
+0N!
+0,!
+1-!
 1x
+1.!
+1a
+1.
 #1000000

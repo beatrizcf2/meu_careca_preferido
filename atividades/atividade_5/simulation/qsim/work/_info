@@ -8,37 +8,38 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 d/home/leviosa/Documents/Insper/descomp/atividades/atividade_5/simulation/qsim
+d/home/leviosa/Documents/Insper/descomp/atividades/atividade_5/simulation/qsim
 Edataflow
-Z1 w1648503275
-Z2 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 ^K2eeK[IVbX]]MLcdOEI91
-Z3 DPx8 cyclonev 19 cyclonev_components 0 22 GFL[QAd@dAZF:`jjOGn9>2
-Z4 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 3dzZ?YU_4FC5UU0cTXRET1
-Z5 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
-Z6 DPx6 altera 11 dffeas_pack 0 22 H5F:RRfLz82T3`4>@b7mS3
-Z7 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
-Z8 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z9 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-Z10 DPx6 altera 28 altera_primitives_components 0 22 VSD=32;3391kSOd?PDZYj3
-!i122 10
-Z11 dC:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/simulation/qsim
-Z12 8atividade_5.vho
-Z13 Fatividade_5.vho
+Z0 w1648518193
+Z1 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 ^K2eeK[IVbX]]MLcdOEI91
+Z2 DPx8 cyclonev 19 cyclonev_components 0 22 GFL[QAd@dAZF:`jjOGn9>2
+Z3 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 3dzZ?YU_4FC5UU0cTXRET1
+Z4 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z5 DPx6 altera 11 dffeas_pack 0 22 H5F:RRfLz82T3`4>@b7mS3
+Z6 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z7 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z8 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+Z9 DPx6 altera 28 altera_primitives_components 0 22 VSD=32;3391kSOd?PDZYj3
+!i122 14
+Z10 dC:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/simulation/qsim
+Z11 8atividade_5.vho
+Z12 Fatividade_5.vho
 l0
 L39 1
 VMNODIc`YZbDVlJU1SPfhb3
 !s100 j8WW=8U[ml8kES>?YQH^80
-Z14 OV;C;2020.1;71
+Z13 OV;C;2020.1;71
 32
-Z15 !s110 1648503278
+Z14 !s110 1648518194
 !i10b 1
-Z16 !s108 1648503277.000000
-Z17 !s90 -work|work|atividade_5.vho|
-Z18 !s107 atividade_5.vho|
+Z15 !s108 1648518194.000000
+Z16 !s90 -work|work|atividade_5.vho|
+Z17 !s107 atividade_5.vho|
 !i113 1
-Z19 o-work work
-Z20 tExplicit 1 CvgOpt 0
+Z18 o-work work
+Z19 tExplicit 1 CvgOpt 0
 Astructure
+R1
 R2
 R3
 R4
@@ -47,61 +48,60 @@ R6
 R7
 R8
 R9
-R10
 DEx4 work 8 dataflow 0 22 MNODIc`YZbDVlJU1SPfhb3
-!i122 10
-l108
-L49 842
-VbOlYIWQoH<`CISd3D?]KY2
-!s100 oZ[<<jZgm2oM:ch4L[]b=2
-R14
+!i122 14
+l116
+L49 743
+V@>k@OGe:Xz?@MeE3@d7hB2
+!s100 ;50i8Ik]XzHA5bJ_aCLJi1
+R13
 32
-R15
+R14
 !i10b 1
+R15
 R16
 R17
-R18
 !i113 1
+R18
 R19
-R20
 Edataflow_vhd_vec_tst
-Z21 w1648503274
+Z20 w1648518191
+R7
 R8
-R9
-!i122 11
-R11
-Z22 8Waveform1.vwf.vht
-Z23 FWaveform1.vwf.vht
+!i122 15
+R10
+Z21 8Waveform2.vwf.vht
+Z22 FWaveform2.vwf.vht
 l0
 L32 1
 V>If`ZjV89DRjzhE6FYXgR1
 !s100 I[2gh9[I0=4R=<nJ9Mzmc1
-R14
+R13
 32
-R15
+R14
 !i10b 1
-Z24 !s108 1648503278.000000
-Z25 !s90 -work|work|Waveform1.vwf.vht|
-!s107 Waveform1.vwf.vht|
+R15
+Z23 !s90 -work|work|Waveform2.vwf.vht|
+Z24 !s107 Waveform2.vwf.vht|
 !i113 1
+R18
 R19
-R20
 Adataflow_arch
+R7
 R8
-R9
-Z26 DEx4 work 20 dataflow_vhd_vec_tst 0 22 >If`ZjV89DRjzhE6FYXgR1
-!i122 11
+Z25 DEx4 work 20 dataflow_vhd_vec_tst 0 22 >If`ZjV89DRjzhE6FYXgR1
+!i122 15
 l51
-L34 47
-VhQG9[FD>3l8BP>d0RUeU12
-!s100 2jScS1gZ`RKJ4CDO6W[zc3
-R14
+Z26 L34 47
+Z27 VhQG9[FD>3l8BP>d0RUeU12
+Z28 !s100 2jScS1gZ`RKJ4CDO6W[zc3
+R13
 32
-R15
+R14
 !i10b 1
+R15
+R23
 R24
-R25
-Z27 !s107 Waveform1.vwf.vht|
 !i113 1
+R18
 R19
-R20
