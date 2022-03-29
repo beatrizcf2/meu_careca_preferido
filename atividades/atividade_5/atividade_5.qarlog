@@ -1,0 +1,30 @@
+Quartus Prime Archive log --	/home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/atividade_5.qarlog
+
+Archive:	/home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/atividade_5.qar
+Date:		Mon Mar 28 23:59:38 2022
+Quartus Prime		20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+	=========== Files Selected: ===========
+/home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/ULASomaSub.vhd
+/home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/Waveform.vwf
+/home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/Waveform1.vwf
+/home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/Waveform2.vwf
+/home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/Waveform3.vwf
+/home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/atividade_5.qpf
+/home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/atividade_5.qsf
+/home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd
+/home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/decoder.vhd
+/home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/desvio.vhd
+/home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/edgeDetector.vhd
+/home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/flipFlop.vhd
+/home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/memoria.vhd
+/home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/memoriaRAM.vhd
+/home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/muxGenerico2x1.vhd
+/home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/muxGenerico4x1.vhd
+/home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/registradorGenerico.vhd
+/home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/somaUm.vhd
+/home/leviosa/intelFPGA_lite/20.1/quartus/linux64/assignment_defaults.qdf
+	======= Total: 19 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

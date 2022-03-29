@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Mon Mar 28 22:06:40 2022
+Analysis & Synthesis Status : Successful - Tue Mar 29 00:29:45 2022
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : atividade_5
 Top-level Entity Name : dataFlow
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 9
-Total pins : 32
+Total registers : 58
+Total pins : 68
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0

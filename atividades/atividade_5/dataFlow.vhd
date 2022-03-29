@@ -14,8 +14,14 @@ entity dataFlow is
     KEY: in std_logic_vector(3 downto 0);
     SW: in std_logic_vector(9 downto 0);
     PC_OUT: out std_logic_vector(larguraEndereco-1 downto 0);
-	 RESULTADO_ULA: out std_logic_vector(larguraDados-1 downto 0)
-	 
+	 RESULTADO_ULA: out std_logic_vector(larguraDados-1 downto 0);
+	 SAIDA_FLAG_H: out std_logic;
+	 ACUMULADOR: out std_logic_vector(larguraDados-1 downto 0);
+	 seletorDaULA : out std_logic_vector(1 downto 0);
+	 entradaA_ULA : out std_logic_vector(larguraDados-1 downto 0);
+	 entradaB_ULA : out std_logic_vector(larguraDados-1 downto 0);
+	 vImediato : out std_logic_vector(larguraDados-1 downto 0);
+	 sel_MUX_t : out std_logic
   );
 end entity;
 
@@ -27,7 +33,7 @@ architecture arquitetura of dataFlow is
   signal Saida_ULA          : std_logic_vector (larguraDados-1 downto 0);
   signal Saida_ULA_Igual    : std_logic; -- saida da ULA que alimenta a flag igual
   signal Saida_Flag         : std_logic;
-  signal Sinais_Controle    : std_logic_vector (8 downto 0);
+  signal Sinais_Controle    : std_logic_vector (11 downto 0);
   signal barramento_addr    : std_logic_vector (larguraInstrucao-larguraOpCode-1 downto 0);
   signal PC_ROM             : std_logic_vector (larguraInstrucao-larguraOpCode-1 downto 0);
   signal habilitaRAM        : std_logic;
@@ -36,7 +42,7 @@ architecture arquitetura of dataFlow is
   signal Chave_Operacao_ULA : std_logic;
   signal CLK                : std_logic;
   signal SelMUX             : std_logic;
-  signal SelDesvio			 : std_logic;
+  signal SelDesvio			 : std_logic_vector(1 downto 0);
   signal Habilita_A         : std_logic;
   signal Habilita_Flag_Igual: std_logic;
   signal Operacao_ULA       : std_logic_vector(1 downto 0);
@@ -48,6 +54,8 @@ architecture arquitetura of dataFlow is
   alias  imediato           : std_logic_vector(7 downto 0) is instrucao(7 downto 0);
   signal memRAM_out 			 : std_logic_vector(larguraDados-1 downto 0);
   signal HabFlagIgual       : std_logic;
+  signal HabEscritaRetorno  : std_logic;
+  signal saidaEndRetorno    : std_logic_vector(larguraEndereco-1 downto 0);
 
 begin
 
@@ -90,19 +98,28 @@ incPC   :  entity work.somaUm  generic map (larguraDados => larguraEndereco, con
             port map(entrada   => PC_ROM, 
 							saida     => saida_inc);
 
-MUX_JMP :  entity work.muxGenerico2x1  generic map (larguraDados => larguraInstrucao-larguraOpCode)
+END_RETORNO: entity work.registradorGenerico   generic map (larguraDados => larguraEndereco)
+            port map (DIN      => saida_inc, 
+						    DOUT     => saidaEndRetorno, 
+						    ENABLE   => HabEscritaRetorno, 
+						    CLK      => CLK, 
+						    RST      => '0');
+
+MUX_JMP :  entity work.muxGenerico4x1  generic map (larguraDados => larguraInstrucao-larguraOpCode)
              port map(entradaA_MUX => saida_inc,
                       entradaB_MUX => enderecoRAM,
+                      entradaC_MUX => saidaEndRetorno,
+                      entradaD_MUX => "000000000",
                       seletor_MUX  => SelDesvio,
                       saida_MUX    => proxPC);
 
 -- O port map completo da ULA:
 ULA1    : entity work.ULASomaSub  generic map(larguraDados => larguraDados)
-            port map (entradaA => REG1_out, 
-							 entradaB => MUX_ULA_B, 
-							 saida    => Saida_ULA,
+            port map (entradaA  => REG1_out, 
+							 entradaB  => MUX_ULA_B, 
+							 saida     => Saida_ULA,
 							 flagEqual => Saida_ULA_igual,
-							 seletor  => Operacao_ULA);
+							 seletor   => Operacao_ULA);
 
 -- Falta acertar o conteudo da ROM (no arquivo memoriaROM.vhd)
 ROM1    : entity work.memoriaROM   generic map (dataWidth => 13, addrWidth => 9)
@@ -114,8 +131,10 @@ DECODER : entity work.decoder
 							 saida    => Sinais_Controle);
 							 
 DESVIO : entity work.desvio
-				port map (JMP      => Sinais_Controle(7),
-						    JEQ      => Sinais_Controle(6),
+				port map (RET      => Sinais_Controle(9),
+						    JEQ      => Sinais_Controle(7),
+						    JSR      => Sinais_Controle(8),
+						    JMP      => Sinais_Controle(10),
 							 IGUAL    => Saida_ULA_igual,
 							 saida    => SelDesvio);
 
@@ -141,6 +160,8 @@ opCode <= instrucao(12 downto 9);
 barramento_addr <= enderecoRAM;
 
 
+HabEscritaRetorno <= Sinais_Controle(11);
+SelMUX <= Sinais_Controle(6);
 Habilita_A <= Sinais_Controle(5);
 --Reset_A <= CLK;
 Operacao_ULA <= Sinais_Controle(4 downto 3);
@@ -160,4 +181,11 @@ habilitaEscritaMEM <= Sinais_Controle(0);
 
 PC_OUT <= PC_ROM;
 RESULTADO_ULA <= Saida_ULA;
+SAIDA_FLAG_H <= Saida_ULA_igual;
+ACUMULADOR <= REG1_out;
+seletorDaULA <= Operacao_ULA;
+entradaA_ULA <= REG1_out;
+entradaB_ULA <= MUX_ULA_B;
+vImediato <= imediato;
+sel_mux_t <= SelMUX;
 end architecture;

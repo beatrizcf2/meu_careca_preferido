@@ -22,6 +22,10 @@ architecture assincrona of memoriaROM is
   constant LDI  : std_logic_vector(3 downto 0) := "0100";
   constant STA  : std_logic_vector(3 downto 0) := "0101";
   constant JMP  : std_logic_vector(3 downto 0) := "0110";
+  constant JEQ  : std_logic_vector(3 downto 0) := "0111";
+  constant CEQ  : std_logic_vector(3 downto 0) := "1000";
+  constant JSR  : std_logic_vector(3 downto 0) := "1001";
+  constant RET  : std_logic_vector(3 downto 0) := "1010"; 
   
   type blocoMemoria is array(0 TO 2**addrWidth - 1) of std_logic_vector(dataWidth-1 DOWNTO 0);
 
@@ -30,19 +34,22 @@ architecture assincrona of memoriaROM is
   begin
       -- Palavra de Controle = SelMUX, Habilita_A, Reset_A, Operacao_ULA
       -- Inicializa os endereços:
-        tmp(0)  := JMP & '0' & "000000100";   -- Desvia para posicao 4 
-		  tmp(1)  := JMP & '0' & "000001001";   -- Desvia para posicao 9
-		  tmp(2)  := NOP & '0' & "000000000";   -- carrega 3 
-		  tmp(3)  := NOP & '0' & "000000000";
-        tmp(4)  := LDI & '0' & "000000101";   -- Desvia para posicao 1
-        tmp(5)  := STA & '1' & "000000000";
-		  tmp(6)  := CEQ & '0' & "000000000";	-- Desvia para posicao 6 (FIM)
-		  tmp(7)  := JMP & '0' & "000000001";  -- Desvia para a posicao 1
-		  tmp(8)  := NOP & '0' & "000000000";
-		  tmp(9)  := LDI & '0' & "000000100";
-		  tmp(10) := CEQ & '0' & "000000000";
-		  tmp(11) := JEQ & '0' & "000000011";
-		  tmp(12) := JMP & '0' & "000001100";
+        tmp(0)  := JSR & '0' & "00001110";   -- Desvia para posicao 14 
+		  tmp(1)  := JMP & '0' & "00000101";   -- Desvia para posicao 9
+		  tmp(2)  := JEQ & '0' & "00001001";   -- carrega 3 
+		  tmp(3)  := NOP & '0' & "00000000";
+        tmp(4)  := NOP & '0' & "00000000";   -- Desvia para posicao 1
+        tmp(5)  := LDI & '0' & "00000101";
+		  tmp(6)  := STA & '1' & "00000000";	-- Desvia para posicao 6 (FIM)
+		  tmp(7)  := CEQ & '0' & "00000000";   -- Desvia para a posicao 1
+		  tmp(8)  := JMP & '0' & "00000010";
+		  tmp(9)  := NOP & '0' & "00000000";
+		  tmp(10) := LDI & '0' & "00000100";
+		  tmp(11) := CEQ & '0' & "00000000";
+		  tmp(12) := JEQ & '0' & "00000011";
+		  tmp(13) := JMP & '0' & "00001101";
+		  tmp(14) := NOP & '0' & "00000000";
+		  tmp(15) := RET & '0' & "00000000";
 		  
 		  
         return tmp;

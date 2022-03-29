@@ -20,15 +20,13 @@ architecture comportamento of ULASomaSub is
 	signal passa     : STD_LOGIC_VECTOR((larguraDados-1) downto 0);
 	
 	
-	
     begin
       soma      <= STD_LOGIC_VECTOR(unsigned(entradaA) + unsigned(entradaB));
       subtracao <= STD_LOGIC_VECTOR(unsigned(entradaA) - unsigned(entradaB));
 		passa     <= entradaB;
       saida     <= soma      when (seletor = "01") else
 						 subtracao when (seletor = "00") else
-						 passa;
-						 
+						 passa;		 
 		flagEqual <= '1' when unsigned(saida) = unsigned(zero) else '0';
 end architecture;
 
