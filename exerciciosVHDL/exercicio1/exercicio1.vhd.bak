@@ -1,0 +1,36 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity exercicio1 is
+
+  generic
+  (
+    -- O generic é opcional.
+  larguraDados    : natural  :=    32;
+  );
+  
+  port    -- O port é obrigatório e possui o objeto “signal” implícito.
+  (
+  -- Input ports
+    -- "in" indica que é uma porta no modo de entrada.
+    -- O valor de inicialização é opcional.
+  <name>    : in  <type>;
+  <name>    : in  <type> := <default_value>;
+
+  -- Inout ports
+    -- "inout" indica que é uma porta no modo bidirecional.
+    -- Não existe valor de inicialização.
+  <name>    : inout <type>;
+
+  -- Output ports
+    -- "out" indica que é uma porta no modo de saída.
+    -- O valor de inicialização é opcional.
+  <name>    : out <type>;
+  <name>    : out <type> := <default_value>
+
+  -- Buffer ports
+  -- Similar a Out, mas permite realimentação interna.
+  <name>  : buffer  <type>;
+  );
+end <entity_name>;   -- Também pode ser utilizado: "end entity";
