@@ -1,6 +1,6 @@
 |dataFlow
 CLOCK_50 => ~NO_FANOUT~
-KEY[0] => registradorgenerico:REGA.CLK
+KEY[0] => registradorgenerico:REG_A.CLK
 KEY[0] => registradorgenerico:PC.CLK
 KEY[0] => registradorgenerico:END_RETORNO.CLK
 KEY[0] => memoriaram:RAM.clk
@@ -27,54 +27,54 @@ PC_OUT[5] <= registradorgenerico:PC.DOUT[5]
 PC_OUT[6] <= registradorgenerico:PC.DOUT[6]
 PC_OUT[7] <= registradorgenerico:PC.DOUT[7]
 PC_OUT[8] <= registradorgenerico:PC.DOUT[8]
-RESULTADO_ULA[0] <= ulasomasub:ULA1.saida[0]
-RESULTADO_ULA[1] <= ulasomasub:ULA1.saida[1]
-RESULTADO_ULA[2] <= ulasomasub:ULA1.saida[2]
-RESULTADO_ULA[3] <= ulasomasub:ULA1.saida[3]
-RESULTADO_ULA[4] <= ulasomasub:ULA1.saida[4]
-RESULTADO_ULA[5] <= ulasomasub:ULA1.saida[5]
-RESULTADO_ULA[6] <= ulasomasub:ULA1.saida[6]
-RESULTADO_ULA[7] <= ulasomasub:ULA1.saida[7]
-SAIDA_FLAG_H <= flipflop:FLAG.DOUT
-ACUMULADOR[0] <= registradorgenerico:REGA.DOUT[0]
-ACUMULADOR[1] <= registradorgenerico:REGA.DOUT[1]
-ACUMULADOR[2] <= registradorgenerico:REGA.DOUT[2]
-ACUMULADOR[3] <= registradorgenerico:REGA.DOUT[3]
-ACUMULADOR[4] <= registradorgenerico:REGA.DOUT[4]
-ACUMULADOR[5] <= registradorgenerico:REGA.DOUT[5]
-ACUMULADOR[6] <= registradorgenerico:REGA.DOUT[6]
-ACUMULADOR[7] <= registradorgenerico:REGA.DOUT[7]
+RESULTADO_ULA[0] <= ulasomasub:ULA.saida[0]
+RESULTADO_ULA[1] <= ulasomasub:ULA.saida[1]
+RESULTADO_ULA[2] <= ulasomasub:ULA.saida[2]
+RESULTADO_ULA[3] <= ulasomasub:ULA.saida[3]
+RESULTADO_ULA[4] <= ulasomasub:ULA.saida[4]
+RESULTADO_ULA[5] <= ulasomasub:ULA.saida[5]
+RESULTADO_ULA[6] <= ulasomasub:ULA.saida[6]
+RESULTADO_ULA[7] <= ulasomasub:ULA.saida[7]
+saidaFlag_H <= flipflop:FLAG.DOUT
+ACUMULADOR[0] <= registradorgenerico:REG_A.DOUT[0]
+ACUMULADOR[1] <= registradorgenerico:REG_A.DOUT[1]
+ACUMULADOR[2] <= registradorgenerico:REG_A.DOUT[2]
+ACUMULADOR[3] <= registradorgenerico:REG_A.DOUT[3]
+ACUMULADOR[4] <= registradorgenerico:REG_A.DOUT[4]
+ACUMULADOR[5] <= registradorgenerico:REG_A.DOUT[5]
+ACUMULADOR[6] <= registradorgenerico:REG_A.DOUT[6]
+ACUMULADOR[7] <= registradorgenerico:REG_A.DOUT[7]
 seletorDaULA[0] <= decoder:DECODER.saida[3]
 seletorDaULA[1] <= decoder:DECODER.saida[4]
-entradaA_ULA[0] <= registradorgenerico:REGA.DOUT[0]
-entradaA_ULA[1] <= registradorgenerico:REGA.DOUT[1]
-entradaA_ULA[2] <= registradorgenerico:REGA.DOUT[2]
-entradaA_ULA[3] <= registradorgenerico:REGA.DOUT[3]
-entradaA_ULA[4] <= registradorgenerico:REGA.DOUT[4]
-entradaA_ULA[5] <= registradorgenerico:REGA.DOUT[5]
-entradaA_ULA[6] <= registradorgenerico:REGA.DOUT[6]
-entradaA_ULA[7] <= registradorgenerico:REGA.DOUT[7]
-entradaB_ULA[0] <= muxgenerico2x1:MUX1.saida_MUX[0]
-entradaB_ULA[1] <= muxgenerico2x1:MUX1.saida_MUX[1]
-entradaB_ULA[2] <= muxgenerico2x1:MUX1.saida_MUX[2]
-entradaB_ULA[3] <= muxgenerico2x1:MUX1.saida_MUX[3]
-entradaB_ULA[4] <= muxgenerico2x1:MUX1.saida_MUX[4]
-entradaB_ULA[5] <= muxgenerico2x1:MUX1.saida_MUX[5]
-entradaB_ULA[6] <= muxgenerico2x1:MUX1.saida_MUX[6]
-entradaB_ULA[7] <= muxgenerico2x1:MUX1.saida_MUX[7]
-vImediato[0] <= memoriarom:ROM1.Dado[0]
-vImediato[1] <= memoriarom:ROM1.Dado[1]
-vImediato[2] <= memoriarom:ROM1.Dado[2]
-vImediato[3] <= memoriarom:ROM1.Dado[3]
-vImediato[4] <= memoriarom:ROM1.Dado[4]
-vImediato[5] <= memoriarom:ROM1.Dado[5]
-vImediato[6] <= memoriarom:ROM1.Dado[6]
-vImediato[7] <= memoriarom:ROM1.Dado[7]
+entradaA_ULA[0] <= registradorgenerico:REG_A.DOUT[0]
+entradaA_ULA[1] <= registradorgenerico:REG_A.DOUT[1]
+entradaA_ULA[2] <= registradorgenerico:REG_A.DOUT[2]
+entradaA_ULA[3] <= registradorgenerico:REG_A.DOUT[3]
+entradaA_ULA[4] <= registradorgenerico:REG_A.DOUT[4]
+entradaA_ULA[5] <= registradorgenerico:REG_A.DOUT[5]
+entradaA_ULA[6] <= registradorgenerico:REG_A.DOUT[6]
+entradaA_ULA[7] <= registradorgenerico:REG_A.DOUT[7]
+entradaB_ULA[0] <= muxgenerico2x1:MUX_ULA.saida_MUX[0]
+entradaB_ULA[1] <= muxgenerico2x1:MUX_ULA.saida_MUX[1]
+entradaB_ULA[2] <= muxgenerico2x1:MUX_ULA.saida_MUX[2]
+entradaB_ULA[3] <= muxgenerico2x1:MUX_ULA.saida_MUX[3]
+entradaB_ULA[4] <= muxgenerico2x1:MUX_ULA.saida_MUX[4]
+entradaB_ULA[5] <= muxgenerico2x1:MUX_ULA.saida_MUX[5]
+entradaB_ULA[6] <= muxgenerico2x1:MUX_ULA.saida_MUX[6]
+entradaB_ULA[7] <= muxgenerico2x1:MUX_ULA.saida_MUX[7]
+vimediatoValor[0] <= memoriarom:ROM.Dado[0]
+vimediatoValor[1] <= memoriarom:ROM.Dado[1]
+vimediatoValor[2] <= memoriarom:ROM.Dado[2]
+vimediatoValor[3] <= memoriarom:ROM.Dado[3]
+vimediatoValor[4] <= memoriarom:ROM.Dado[4]
+vimediatoValor[5] <= memoriarom:ROM.Dado[5]
+vimediatoValor[6] <= memoriarom:ROM.Dado[6]
+vimediatoValor[7] <= memoriarom:ROM.Dado[7]
 sel_MUX_t <= decoder:DECODER.saida[6]
 habilita_flag <= decoder:DECODER.saida[2]
 
 
-|dataFlow|muxGenerico2x1:MUX1
+|dataFlow|muxGenerico2x1:MUX_ULA
 entradaA_MUX[0] => saida_MUX.DATAA
 entradaA_MUX[1] => saida_MUX.DATAA
 entradaA_MUX[2] => saida_MUX.DATAA
@@ -109,7 +109,7 @@ saida_MUX[6] <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
 saida_MUX[7] <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dataFlow|registradorGenerico:REGA
+|dataFlow|registradorGenerico:REG_A
 DIN[0] => DOUT[0]~reg0.DATAIN
 DIN[1] => DOUT[1]~reg0.DATAIN
 DIN[2] => DOUT[2]~reg0.DATAIN
@@ -200,7 +200,7 @@ RST => DOUT[7]~reg0.ACLR
 RST => DOUT[8]~reg0.ACLR
 
 
-|dataFlow|somaUm:incPC
+|dataFlow|somaUm:PC_INC
 entrada[0] => Add0.IN18
 entrada[1] => Add0.IN17
 entrada[2] => Add0.IN16
@@ -269,7 +269,7 @@ RST => DOUT[7]~reg0.ACLR
 RST => DOUT[8]~reg0.ACLR
 
 
-|dataFlow|muxGenerico4x1:MUX_JMP
+|dataFlow|muxGenerico4x1:MUX_DESVIO
 entradaA_MUX[0] => saida_MUX.DATAA
 entradaA_MUX[1] => saida_MUX.DATAA
 entradaA_MUX[2] => saida_MUX.DATAA
@@ -323,7 +323,7 @@ saida_MUX[7] <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
 saida_MUX[8] <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dataFlow|ULASomaSub:ULA1
+|dataFlow|ULASomaSub:ULA
 entradaA[0] => Add0.IN8
 entradaA[0] => Add1.IN16
 entradaA[1] => Add0.IN7
@@ -379,7 +379,7 @@ saida[7] <= saida.DB_MAX_OUTPUT_PORT_TYPE
 flagEqual <= Equal2.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dataFlow|memoriaROM:ROM1
+|dataFlow|memoriaROM:ROM
 Endereco[0] => memROM.RADDR
 Endereco[1] => memROM.RADDR1
 Endereco[2] => memROM.RADDR2

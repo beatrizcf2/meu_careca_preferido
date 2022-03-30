@@ -10,7 +10,7 @@ z2
 cModel Technology
 d/home/leviosa/Documents/Insper/descomp/atividades/atividade_5/simulation/qsim
 Edataflow
-Z0 w1648577075
+Z0 w1648669519
 Z1 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 ^K2eeK[IVbX]]MLcdOEI91
 Z2 DPx8 cyclonev 19 cyclonev_components 0 22 GFL[QAd@dAZF:`jjOGn9>2
 Z3 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 3dzZ?YU_4FC5UU0cTXRET1
@@ -20,19 +20,19 @@ Z6 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
 Z7 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z8 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
 Z9 DPx6 altera 28 altera_primitives_components 0 22 VSD=32;3391kSOd?PDZYj3
-!i122 48
-Z10 d/home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/simulation/qsim
+!i122 54
+Z10 dC:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/simulation/qsim
 Z11 8atividade_5.vho
 Z12 Fatividade_5.vho
 l0
 L39 1
-VUh@TljzPF0`1FCV3j@H7L3
-!s100 JRbmkeS9?X<h@3:bfm>0e1
+VfKIPiXc^IdZ:b^I??X0[C0
+!s100 hUUaGlDAzG2fRSHN0BC_e0
 Z13 OV;C;2020.1;71
 32
-Z14 !s110 1648577076
+Z14 !s110 1648669521
 !i10b 1
-Z15 !s108 1648577076.000000
+Z15 !s108 1648669521.000000
 Z16 !s90 -work|work|atividade_5.vho|
 Z17 !s107 atividade_5.vho|
 !i113 1
@@ -48,12 +48,12 @@ R6
 R7
 R8
 R9
-DEx4 work 8 dataflow 0 22 Uh@TljzPF0`1FCV3j@H7L3
-!i122 48
+DEx4 work 8 dataflow 0 22 fKIPiXc^IdZ:b^I??X0[C0
+!i122 54
 l422
 L57 4077
-VVAH^c6cbAENWeOP7b1R]W2
-!s100 `Yj::lLS4O<F2lfJnA_T42
+V4Dk9naz9G2z`hk6^;:ohl1
+!s100 <EM`ZS`m2G4ECR4I5afYf3
 R13
 32
 R14
@@ -65,13 +65,13 @@ R17
 R18
 R19
 Edataflow_vhd_vec_tst
-Z20 w1648577074
+Z20 w1648669518
 R7
 R8
-!i122 49
+!i122 55
 R10
-Z21 8Waveform3.vwf.vht
-Z22 FWaveform3.vwf.vht
+Z21 8Waveform5.vwf.vht
+Z22 FWaveform5.vwf.vht
 l0
 L32 1
 V>If`ZjV89DRjzhE6FYXgR1
@@ -81,27 +81,27 @@ R13
 R14
 !i10b 1
 R15
-Z23 !s90 -work|work|Waveform3.vwf.vht|
-Z24 !s107 Waveform3.vwf.vht|
+Z23 !s90 -work|work|Waveform5.vwf.vht|
+!s107 Waveform5.vwf.vht|
 !i113 1
 R18
 R19
 Adataflow_arch
 R7
 R8
-Z25 DEx4 work 20 dataflow_vhd_vec_tst 0 22 >If`ZjV89DRjzhE6FYXgR1
-!i122 49
+Z24 DEx4 work 20 dataflow_vhd_vec_tst 0 22 >If`ZjV89DRjzhE6FYXgR1
+!i122 55
 l67
-Z26 L34 75
-Z27 VKhTYAKa]RO5LRFEQ08_0c3
-Z28 !s100 DL;>:Zd6a?DeLlED30@?X1
+Z25 L34 75
+VF^`CDHefdCzFN=1ILKjRd0
+!s100 >KL<R6e5fA5m8^iD8AM^U0
 R13
 32
 R14
 !i10b 1
 R15
 R23
-R24
+Z26 !s107 Waveform5.vwf.vht|
 !i113 1
 R18
 R19

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for atividade_5
-Tue Mar 29 15:04:23 2022
+Wed Mar 30 16:42:49 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -17,20 +17,20 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   9. General Register Statistics
  10. Multiplexer Restructuring Statistics (Restructuring Performed)
  11. Parameter Settings for User Entity Instance: Top-level Entity: |dataFlow
- 12. Parameter Settings for User Entity Instance: muxGenerico2x1:MUX1
- 13. Parameter Settings for User Entity Instance: registradorGenerico:REGA
+ 12. Parameter Settings for User Entity Instance: muxGenerico2x1:MUX_ULA
+ 13. Parameter Settings for User Entity Instance: registradorGenerico:REG_A
  14. Parameter Settings for User Entity Instance: registradorGenerico:PC
- 15. Parameter Settings for User Entity Instance: somaUm:incPC
+ 15. Parameter Settings for User Entity Instance: somaUm:PC_INC
  16. Parameter Settings for User Entity Instance: registradorGenerico:END_RETORNO
- 17. Parameter Settings for User Entity Instance: muxGenerico4x1:MUX_JMP
- 18. Parameter Settings for User Entity Instance: ULASomaSub:ULA1
- 19. Parameter Settings for User Entity Instance: memoriaROM:ROM1
+ 17. Parameter Settings for User Entity Instance: muxGenerico4x1:MUX_DESVIO
+ 18. Parameter Settings for User Entity Instance: ULASomaSub:ULA
+ 19. Parameter Settings for User Entity Instance: memoriaROM:ROM
  20. Parameter Settings for User Entity Instance: memoriaRAM:RAM
  21. Port Connectivity Checks: "flipFlop:FLAG"
- 22. Port Connectivity Checks: "muxGenerico4x1:MUX_JMP"
+ 22. Port Connectivity Checks: "muxGenerico4x1:MUX_DESVIO"
  23. Port Connectivity Checks: "registradorGenerico:END_RETORNO"
  24. Port Connectivity Checks: "registradorGenerico:PC"
- 25. Port Connectivity Checks: "registradorGenerico:REGA"
+ 25. Port Connectivity Checks: "registradorGenerico:REG_A"
  26. Post-Synthesis Netlist Statistics for Top Partition
  27. Elapsed Time Per Partition
  28. Analysis & Synthesis Messages
@@ -60,7 +60,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Mar 29 15:04:23 2022       ;
+; Analysis & Synthesis Status     ; Successful - Wed Mar 30 16:42:49 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; atividade_5                                 ;
 ; Top-level Entity Name           ; dataFlow                                    ;
@@ -186,23 +186,23 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                      ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                               ; Library ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------------+---------+
-; registradorGenerico.vhd          ; yes             ; User VHDL File  ; /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/registradorGenerico.vhd ;         ;
-; ULASomaSub.vhd                   ; yes             ; User VHDL File  ; /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/ULASomaSub.vhd          ;         ;
-; somaUm.vhd                       ; yes             ; User VHDL File  ; /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/somaUm.vhd              ;         ;
-; muxGenerico2x1.vhd               ; yes             ; User VHDL File  ; /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/muxGenerico2x1.vhd      ;         ;
-; memoriaRAM.vhd                   ; yes             ; User VHDL File  ; /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/memoriaRAM.vhd          ;         ;
-; memoria.vhd                      ; yes             ; User VHDL File  ; /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/memoria.vhd             ;         ;
-; decoder.vhd                      ; yes             ; User VHDL File  ; /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/decoder.vhd             ;         ;
-; dataFlow.vhd                     ; yes             ; User VHDL File  ; /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd            ;         ;
-; desvio.vhd                       ; yes             ; User VHDL File  ; /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/desvio.vhd              ;         ;
-; flipFlop.vhd                     ; yes             ; User VHDL File  ; /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/flipFlop.vhd            ;         ;
-; muxGenerico4x1.vhd               ; yes             ; User VHDL File  ; /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/muxGenerico4x1.vhd      ;         ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                    ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                             ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------+---------+
+; registradorGenerico.vhd          ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/registradorGenerico.vhd ;         ;
+; ULASomaSub.vhd                   ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/ULASomaSub.vhd          ;         ;
+; somaUm.vhd                       ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/somaUm.vhd              ;         ;
+; muxGenerico2x1.vhd               ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/muxGenerico2x1.vhd      ;         ;
+; memoriaRAM.vhd                   ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/memoriaRAM.vhd          ;         ;
+; memoria.vhd                      ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/memoria.vhd             ;         ;
+; decoder.vhd                      ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/decoder.vhd             ;         ;
+; dataFlow.vhd                     ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd            ;         ;
+; desvio.vhd                       ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/desvio.vhd              ;         ;
+; flipFlop.vhd                     ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/flipFlop.vhd            ;         ;
+; muxGenerico4x1.vhd               ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/muxGenerico4x1.vhd      ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------+---------+
 
 
 +------------------------------------------------------------+
@@ -238,17 +238,17 @@ https://fpgasoftware.intel.com/eula.
 ; Compilation Hierarchy Node           ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                       ; Entity Name         ; Library Name ;
 +--------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------+---------------------+--------------+
 ; |dataFlow                            ; 104 (0)             ; 59 (0)                    ; 0                 ; 0          ; 69   ; 0            ; |dataFlow                                 ; dataFlow            ; work         ;
-;    |ULASomaSub:ULA1|                 ; 17 (17)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |dataFlow|ULASomaSub:ULA1                 ; ULASomaSub          ; work         ;
+;    |ULASomaSub:ULA|                  ; 17 (17)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |dataFlow|ULASomaSub:ULA                  ; ULASomaSub          ; work         ;
 ;    |decoder:DECODER|                 ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |dataFlow|decoder:DECODER                 ; decoder             ; work         ;
 ;    |flipFlop:FLAG|                   ; 5 (5)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |dataFlow|flipFlop:FLAG                   ; flipFlop            ; work         ;
 ;    |memoriaRAM:RAM|                  ; 33 (33)             ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |dataFlow|memoriaRAM:RAM                  ; memoriaRAM          ; work         ;
-;    |memoriaROM:ROM1|                 ; 13 (13)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |dataFlow|memoriaROM:ROM1                 ; memoriaROM          ; work         ;
-;    |muxGenerico2x1:MUX1|             ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |dataFlow|muxGenerico2x1:MUX1             ; muxGenerico2x1      ; work         ;
-;    |muxGenerico4x1:MUX_JMP|          ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |dataFlow|muxGenerico4x1:MUX_JMP          ; muxGenerico4x1      ; work         ;
+;    |memoriaROM:ROM|                  ; 13 (13)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |dataFlow|memoriaROM:ROM                  ; memoriaROM          ; work         ;
+;    |muxGenerico2x1:MUX_ULA|          ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |dataFlow|muxGenerico2x1:MUX_ULA          ; muxGenerico2x1      ; work         ;
+;    |muxGenerico4x1:MUX_DESVIO|       ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |dataFlow|muxGenerico4x1:MUX_DESVIO       ; muxGenerico4x1      ; work         ;
 ;    |registradorGenerico:END_RETORNO| ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |dataFlow|registradorGenerico:END_RETORNO ; registradorGenerico ; work         ;
 ;    |registradorGenerico:PC|          ; 2 (2)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |dataFlow|registradorGenerico:PC          ; registradorGenerico ; work         ;
-;    |registradorGenerico:REGA|        ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |dataFlow|registradorGenerico:REGA        ; registradorGenerico ; work         ;
-;    |somaUm:incPC|                    ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |dataFlow|somaUm:incPC                    ; somaUm              ; work         ;
+;    |registradorGenerico:REG_A|       ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |dataFlow|registradorGenerico:REG_A       ; registradorGenerico ; work         ;
+;    |somaUm:PC_INC|                   ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |dataFlow|somaUm:PC_INC                   ; somaUm              ; work         ;
 +--------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -378,8 +378,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output               ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |dataFlow|registradorGenerico:PC|DOUT[4] ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |dataFlow|registradorGenerico:PC|DOUT[0] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |dataFlow|registradorGenerico:PC|DOUT[7] ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |dataFlow|registradorGenerico:PC|DOUT[1] ;
 ; 7:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |dataFlow|decoder:DECODER|saida[4]       ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
 
@@ -398,23 +398,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: muxGenerico2x1:MUX1 ;
-+----------------+-------+-----------------------------------------+
-; Parameter Name ; Value ; Type                                    ;
-+----------------+-------+-----------------------------------------+
-; larguradados   ; 8     ; Signed Integer                          ;
-+----------------+-------+-----------------------------------------+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: muxGenerico2x1:MUX_ULA ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: registradorGenerico:REGA ;
-+----------------+-------+----------------------------------------------+
-; Parameter Name ; Value ; Type                                         ;
-+----------------+-------+----------------------------------------------+
-; larguradados   ; 8     ; Signed Integer                               ;
-+----------------+-------+----------------------------------------------+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: registradorGenerico:REG_A ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -428,14 +428,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------+
-; Parameter Settings for User Entity Instance: somaUm:incPC ;
-+----------------+-------+----------------------------------+
-; Parameter Name ; Value ; Type                             ;
-+----------------+-------+----------------------------------+
-; larguradados   ; 9     ; Signed Integer                   ;
-; constante      ; 1     ; Signed Integer                   ;
-+----------------+-------+----------------------------------+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: somaUm:PC_INC ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; larguradados   ; 9     ; Signed Integer                    ;
+; constante      ; 1     ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -449,34 +449,34 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: muxGenerico4x1:MUX_JMP ;
-+----------------+-------+--------------------------------------------+
-; Parameter Name ; Value ; Type                                       ;
-+----------------+-------+--------------------------------------------+
-; larguradados   ; 9     ; Signed Integer                             ;
-+----------------+-------+--------------------------------------------+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: muxGenerico4x1:MUX_DESVIO ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; larguradados   ; 9     ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+--------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: ULASomaSub:ULA1 ;
-+----------------+-------+-------------------------------------+
-; Parameter Name ; Value ; Type                                ;
-+----------------+-------+-------------------------------------+
-; larguradados   ; 8     ; Signed Integer                      ;
-+----------------+-------+-------------------------------------+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULASomaSub:ULA ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; larguradados   ; 8     ; Signed Integer                     ;
++----------------+-------+------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+--------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: memoriaROM:ROM1 ;
-+----------------+-------+-------------------------------------+
-; Parameter Name ; Value ; Type                                ;
-+----------------+-------+-------------------------------------+
-; datawidth      ; 13    ; Signed Integer                      ;
-; addrwidth      ; 9     ; Signed Integer                      ;
-+----------------+-------+-------------------------------------+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: memoriaROM:ROM ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; datawidth      ; 13    ; Signed Integer                     ;
+; addrwidth      ; 9     ; Signed Integer                     ;
++----------------+-------+------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -500,13 +500,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+-------+----------+-----------------+
 
 
-+----------------------------------------------------+
-; Port Connectivity Checks: "muxGenerico4x1:MUX_JMP" ;
-+--------------+-------+----------+------------------+
-; Port         ; Type  ; Severity ; Details          ;
-+--------------+-------+----------+------------------+
-; entradad_mux ; Input ; Info     ; Stuck at GND     ;
-+--------------+-------+----------+------------------+
++-------------------------------------------------------+
+; Port Connectivity Checks: "muxGenerico4x1:MUX_DESVIO" ;
++--------------+-------+----------+---------------------+
+; Port         ; Type  ; Severity ; Details             ;
++--------------+-------+----------+---------------------+
+; entradad_mux ; Input ; Info     ; Stuck at GND        ;
++--------------+-------+----------+---------------------+
 
 
 +-------------------------------------------------------------+
@@ -528,13 +528,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------+-------+----------+------------------------+
 
 
-+------------------------------------------------------+
-; Port Connectivity Checks: "registradorGenerico:REGA" ;
-+------+-------+----------+----------------------------+
-; Port ; Type  ; Severity ; Details                    ;
-+------+-------+----------+----------------------------+
-; rst  ; Input ; Info     ; Stuck at GND               ;
-+------+-------+----------+----------------------------+
++-------------------------------------------------------+
+; Port Connectivity Checks: "registradorGenerico:REG_A" ;
++------+-------+----------+-----------------------------+
+; Port ; Type  ; Severity ; Details                     ;
++------+-------+----------+-----------------------------+
+; rst  ; Input ; Info     ; Stuck at GND                ;
++------+-------+----------+-----------------------------+
 
 
 +-----------------------------------------------------+
@@ -581,100 +581,100 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Tue Mar 29 15:04:11 2022
+    Info: Processing started: Wed Mar 30 16:42:38 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off atividade_5 -c atividade_5
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file registradorGenerico.vhd
-    Info (12022): Found design unit 1: registradorGenerico-comportamento File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/registradorGenerico.vhd Line: 16
-    Info (12023): Found entity 1: registradorGenerico File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/registradorGenerico.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file ULASomaSub.vhd
-    Info (12022): Found design unit 1: ULASomaSub-comportamento File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/ULASomaSub.vhd Line: 15
-    Info (12023): Found entity 1: ULASomaSub File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/ULASomaSub.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file somaUm.vhd
-    Info (12022): Found design unit 1: somaUm-comportamento File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/somaUm.vhd Line: 19
-    Info (12023): Found entity 1: somaUm File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/somaUm.vhd Line: 6
-Info (12021): Found 2 design units, including 1 entities, in source file muxGenerico2x1.vhd
-    Info (12022): Found design unit 1: muxGenerico2x1-comportamento File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/muxGenerico2x1.vhd Line: 15
-    Info (12023): Found entity 1: muxGenerico2x1 File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/muxGenerico2x1.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file memoriaRAM.vhd
-    Info (12022): Found design unit 1: memoriaRAM-rtl File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/memoriaRAM.vhd Line: 22
-    Info (12023): Found entity 1: memoriaRAM File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/memoriaRAM.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file registradorgenerico.vhd
+    Info (12022): Found design unit 1: registradorGenerico-comportamento File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/registradorGenerico.vhd Line: 16
+    Info (12023): Found entity 1: registradorGenerico File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/registradorGenerico.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file ulasomasub.vhd
+    Info (12022): Found design unit 1: ULASomaSub-comportamento File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/ULASomaSub.vhd Line: 15
+    Info (12023): Found entity 1: ULASomaSub File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/ULASomaSub.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file somaum.vhd
+    Info (12022): Found design unit 1: somaUm-comportamento File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/somaUm.vhd Line: 19
+    Info (12023): Found entity 1: somaUm File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/somaUm.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file muxgenerico2x1.vhd
+    Info (12022): Found design unit 1: muxGenerico2x1-comportamento File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/muxGenerico2x1.vhd Line: 15
+    Info (12023): Found entity 1: muxGenerico2x1 File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/muxGenerico2x1.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file memoriaram.vhd
+    Info (12022): Found design unit 1: memoriaRAM-rtl File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/memoriaRAM.vhd Line: 22
+    Info (12023): Found entity 1: memoriaRAM File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/memoriaRAM.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file memoria.vhd
-    Info (12022): Found design unit 1: memoriaROM-assincrona File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/memoria.vhd Line: 16
-    Info (12023): Found entity 1: memoriaROM File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/memoria.vhd Line: 5
-Info (12021): Found 3 design units, including 1 entities, in source file edgeDetector.vhd
-    Info (12022): Found design unit 1: edgeDetector-bordaSubida File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/edgeDetector.vhd Line: 10
-    Info (12022): Found design unit 2: edgeDetector-bordaDescida File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/edgeDetector.vhd Line: 23
-    Info (12023): Found entity 1: edgeDetector File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/edgeDetector.vhd Line: 4
+    Info (12022): Found design unit 1: memoriaROM-assincrona File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/memoria.vhd Line: 16
+    Info (12023): Found entity 1: memoriaROM File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/memoria.vhd Line: 5
+Info (12021): Found 3 design units, including 1 entities, in source file edgedetector.vhd
+    Info (12022): Found design unit 1: edgeDetector-bordaSubida File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/edgeDetector.vhd Line: 10
+    Info (12022): Found design unit 2: edgeDetector-bordaDescida File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/edgeDetector.vhd Line: 23
+    Info (12023): Found entity 1: edgeDetector File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/edgeDetector.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file decoder.vhd
-    Info (12022): Found design unit 1: decoder-comportamento File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/decoder.vhd Line: 11
-    Info (12023): Found entity 1: decoder File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/decoder.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file dataFlow.vhd
-    Info (12022): Found design unit 1: dataFlow-arquitetura File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 30
-    Info (12023): Found entity 1: dataFlow File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 4
+    Info (12022): Found design unit 1: decoder-comportamento File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/decoder.vhd Line: 11
+    Info (12023): Found entity 1: decoder File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/decoder.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file dataflow.vhd
+    Info (12022): Found design unit 1: dataFlow-arquitetura File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 30
+    Info (12023): Found entity 1: dataFlow File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file desvio.vhd
-    Info (12022): Found design unit 1: desvio-comportamento File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/desvio.vhd Line: 13
-    Info (12023): Found entity 1: desvio File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/desvio.vhd Line: 7
-Info (12021): Found 2 design units, including 1 entities, in source file flipFlop.vhd
-    Info (12022): Found design unit 1: flipFlop-comportamento File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/flipFlop.vhd Line: 14
-    Info (12023): Found entity 1: flipFlop File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/flipFlop.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file muxGenerico4x1.vhd
-    Info (12022): Found design unit 1: muxGenerico4x1-comportamento File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/muxGenerico4x1.vhd Line: 15
-    Info (12023): Found entity 1: muxGenerico4x1 File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/muxGenerico4x1.vhd Line: 5
+    Info (12022): Found design unit 1: desvio-comportamento File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/desvio.vhd Line: 13
+    Info (12023): Found entity 1: desvio File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/desvio.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file flipflop.vhd
+    Info (12022): Found design unit 1: flipFlop-comportamento File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/flipFlop.vhd Line: 14
+    Info (12023): Found entity 1: flipFlop File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/flipFlop.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file muxgenerico4x1.vhd
+    Info (12022): Found design unit 1: muxGenerico4x1-comportamento File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/muxGenerico4x1.vhd Line: 15
+    Info (12023): Found entity 1: muxGenerico4x1 File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/muxGenerico4x1.vhd Line: 5
 Info (12127): Elaborating entity "dataFlow" for the top level hierarchy
-Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "muxGenerico2x1:MUX1" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 75
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:REGA" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 82
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:PC" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 90
-Info (12128): Elaborating entity "somaUm" for hierarchy "somaUm:incPC" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 97
-Info (12128): Elaborating entity "muxGenerico4x1" for hierarchy "muxGenerico4x1:MUX_JMP" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 108
-Info (12128): Elaborating entity "ULASomaSub" for hierarchy "ULASomaSub:ULA1" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 117
-Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM1" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 125
-Info (12128): Elaborating entity "decoder" for hierarchy "decoder:DECODER" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 129
-Info (12128): Elaborating entity "desvio" for hierarchy "desvio:DESVIO" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 133
-Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 141
-Info (12128): Elaborating entity "flipFlop" for hierarchy "flipFlop:FLAG" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 151
+Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "muxGenerico2x1:MUX_ULA" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 103
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:REG_A" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 110
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:PC" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 118
+Info (12128): Elaborating entity "somaUm" for hierarchy "somaUm:PC_INC" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 125
+Info (12128): Elaborating entity "muxGenerico4x1" for hierarchy "muxGenerico4x1:MUX_DESVIO" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 136
+Info (12128): Elaborating entity "ULASomaSub" for hierarchy "ULASomaSub:ULA" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 145
+Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 153
+Info (12128): Elaborating entity "decoder" for hierarchy "decoder:DECODER" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 157
+Info (12128): Elaborating entity "desvio" for hierarchy "desvio:DESVIO" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 161
+Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 169
+Info (12128): Elaborating entity "flipFlop" for hierarchy "flipFlop:FLAG" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 179
 Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276007): RAM logic "memoriaRAM:RAM|ram" is uninferred due to asynchronous read logic File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/memoriaRAM.vhd Line: 28
+    Info (276007): RAM logic "memoriaRAM:RAM|ram" is uninferred due to asynchronous read logic File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/memoriaRAM.vhd Line: 28
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
-    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM|dado_out[0]" feeding internal logic into a wire File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/memoriaRAM.vhd Line: 18
-    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM|dado_out[1]" feeding internal logic into a wire File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/memoriaRAM.vhd Line: 18
-    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM|dado_out[2]" feeding internal logic into a wire File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/memoriaRAM.vhd Line: 18
-    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM|dado_out[3]" feeding internal logic into a wire File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/memoriaRAM.vhd Line: 18
-    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM|dado_out[4]" feeding internal logic into a wire File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/memoriaRAM.vhd Line: 18
-    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM|dado_out[5]" feeding internal logic into a wire File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/memoriaRAM.vhd Line: 18
-    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM|dado_out[6]" feeding internal logic into a wire File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/memoriaRAM.vhd Line: 18
-    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM|dado_out[7]" feeding internal logic into a wire File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/memoriaRAM.vhd Line: 18
+    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM|dado_out[0]" feeding internal logic into a wire File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/memoriaRAM.vhd Line: 18
+    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM|dado_out[1]" feeding internal logic into a wire File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/memoriaRAM.vhd Line: 18
+    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM|dado_out[2]" feeding internal logic into a wire File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/memoriaRAM.vhd Line: 18
+    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM|dado_out[3]" feeding internal logic into a wire File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/memoriaRAM.vhd Line: 18
+    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM|dado_out[4]" feeding internal logic into a wire File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/memoriaRAM.vhd Line: 18
+    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM|dado_out[5]" feeding internal logic into a wire File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/memoriaRAM.vhd Line: 18
+    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM|dado_out[6]" feeding internal logic into a wire File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/memoriaRAM.vhd Line: 18
+    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM|dado_out[7]" feeding internal logic into a wire File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/memoriaRAM.vhd Line: 18
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "vImediato[4]" is stuck at GND File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 23
-    Warning (13410): Pin "vImediato[5]" is stuck at GND File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 23
-    Warning (13410): Pin "vImediato[6]" is stuck at GND File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 23
-    Warning (13410): Pin "vImediato[7]" is stuck at GND File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 23
+    Warning (13410): Pin "vimediatoValor[4]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 23
+    Warning (13410): Pin "vimediatoValor[5]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 23
+    Warning (13410): Pin "vimediatoValor[6]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 23
+    Warning (13410): Pin "vimediatoValor[7]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 23
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 14 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "CLOCK_50" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 13
-    Warning (15610): No output dependent on input pin "KEY[1]" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 14
-    Warning (15610): No output dependent on input pin "KEY[2]" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 14
-    Warning (15610): No output dependent on input pin "KEY[3]" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 14
-    Warning (15610): No output dependent on input pin "SW[0]" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
-    Warning (15610): No output dependent on input pin "SW[1]" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
-    Warning (15610): No output dependent on input pin "SW[2]" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
-    Warning (15610): No output dependent on input pin "SW[3]" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
-    Warning (15610): No output dependent on input pin "SW[4]" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
-    Warning (15610): No output dependent on input pin "SW[5]" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
-    Warning (15610): No output dependent on input pin "SW[6]" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
-    Warning (15610): No output dependent on input pin "SW[7]" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
-    Warning (15610): No output dependent on input pin "SW[8]" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
-    Warning (15610): No output dependent on input pin "SW[9]" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
+    Warning (15610): No output dependent on input pin "CLOCK_50" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 13
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 14
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 14
+    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 14
+    Warning (15610): No output dependent on input pin "SW[0]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[1]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
 Info (21057): Implemented 222 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 54 output pins
     Info (21061): Implemented 153 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 29 warnings
-    Info: Peak virtual memory: 474 megabytes
-    Info: Processing ended: Tue Mar 29 15:04:23 2022
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:26
+    Info: Peak virtual memory: 4838 megabytes
+    Info: Processing ended: Wed Mar 30 16:42:49 2022
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:22
 
 
