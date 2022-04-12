@@ -1,5 +1,5 @@
 Flow report for atividade_5
-Wed Mar 30 16:45:19 2022
+Tue Apr 12 13:55:55 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Wed Mar 30 16:45:19 2022       ;
+; Flow Status                     ; Successful - Tue Apr 12 13:55:55 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; atividade_5                                 ;
 ; Top-level Entity Name           ; dataFlow                                    ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/30/2022 16:42:39 ;
+; Start date & time ; 04/12/2022 13:51:04 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; atividade_5         ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 156704307716052.164866935911636        ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 156704307716052.164978226408380        ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
@@ -107,10 +107,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:11     ; 1.0                     ; 4838 MB             ; 00:00:22                           ;
+; Analysis & Synthesis ; 00:00:12     ; 1.0                     ; 4835 MB             ; 00:00:23                           ;
 ; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4712 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4716 MB             ; 00:00:01                           ;
-; Total                ; 00:00:11     ; --                      ; --                  ; 00:00:24                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4712 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4716 MB             ; 00:00:01                           ;
+; Total                ; 00:00:14     ; --                      ; --                  ; 00:00:26                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -122,6 +123,7 @@ https://fpgasoftware.intel.com/eula.
 ; Analysis & Synthesis ; DESKTOP-9OROEDA  ; Windows 10 ; 10.0       ; x86_64         ;
 ; EDA Netlist Writer   ; DESKTOP-9OROEDA  ; Windows 10 ; 10.0       ; x86_64         ;
 ; EDA Netlist Writer   ; DESKTOP-9OROEDA  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-9OROEDA  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -129,7 +131,8 @@ https://fpgasoftware.intel.com/eula.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off atividade_5 -c atividade_5
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off atividade_5 -c atividade_5 --vector_source=C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/Waveform5.vwf --testbench_file=C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/simulation/qsim/Waveform5.vwf.vht
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off atividade_5 -c atividade_5 --vector_source=C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/Waveform6.vwf --testbench_file=C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/simulation/qsim/Waveform6.vwf.vht
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off atividade_5 -c atividade_5 --vector_source=C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/Waveform6.vwf --testbench_file=C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/simulation/qsim/Waveform6.vwf.vht
 quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/simulation/qsim/ atividade_5 -c atividade_5
 
 

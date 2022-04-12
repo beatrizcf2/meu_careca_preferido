@@ -7,7 +7,7 @@ Note: if both ModelSim-Altera and ModelSim executables are available, ModelSim-A
 
 **** Generating the ModelSim Testbench ****
 
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off atividade_5 -c atividade_5 --vector_source="C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/Waveform5.vwf" --testbench_file="C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/simulation/qsim/Waveform5.vwf.vht"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off atividade_5 -c atividade_5 --vector_source="C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/Waveform6.vwf" --testbench_file="C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/simulation/qsim/Waveform6.vwf.vht"
 
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
@@ -26,15 +26,15 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Wed Mar 30 16:45:18 2022
-Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off atividade_5 -c atividade_5 --vector_source=C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/Waveform5.vwf --testbench_file=C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/simulation/qsim/Waveform5.vwf.vht
+    Info: Processing started: Tue Apr 12 13:55:53 2022
+Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off atividade_5 -c atividade_5 --vector_source=C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/Waveform6.vwf --testbench_file=C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/simulation/qsim/Waveform6.vwf.vht
 Info (119006): Selected device 5CEBA4F23C7 for design "atividade_5"
 
-meu_careca_preferido/atividades/atividade_5/simulation/qsim/Waveform5.vwf.vht for simulation
+meu_careca_preferido/atividades/atividade_5/simulation/qsim/Waveform6.vwf.vht for simulation
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 61 warnings
     Info: Peak virtual memory: 4712 megabytes
-    Info: Processing ended: Wed Mar 30 16:45:18 2022
-    Info: Elapsed time: 00:00:00
+    Info: Processing ended: Tue Apr 12 13:55:54 2022
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 Completed successfully. 
@@ -60,14 +60,14 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Wed Mar 30 16:45:19 2022
+    Info: Processing started: Tue Apr 12 13:55:54 2022
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/simulation/qsim/ atividade_5 -c atividade_5
 Info (119006): Selected device 5CEBA4F23C7 for design "atividade_5"
 Info (204019): Generated file atividade_5.vho in folder "C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 4716 megabytes
-    Info: Processing ended: Wed Mar 30 16:45:19 2022
-    Info: Elapsed time: 00:00:00
+    Info: Processing ended: Tue Apr 12 13:55:55 2022
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 Completed successfully. 
@@ -84,17 +84,19 @@ c:/intelfpga_lite/20.1/modelsim_ase/win32aloem//vsim -c -do atividade_5.do
 
 Reading pref.tcl
 
-
 # 2020.1
+
 
 # do atividade_5.do
 
 # ** Warning: (vlib-34) Library already exists at "work".
+
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:45:21 on Mar 30,2022
+# Start time: 13:55:57 on Apr 12,2022
 # vcom -work work atividade_5.vho 
 
 # -- Loading package STANDARD
+
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package VITAL_Timing
@@ -107,22 +109,22 @@ Reading pref.tcl
 # -- Compiling entity dataFlow
 # -- Compiling architecture structure of dataFlow
 
-# End time: 16:45:21 on Mar 30,2022, Elapsed time: 0:00:00
+# End time: 13:55:57 on Apr 12,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:45:21 on Mar 30,2022
-# vcom -work work Waveform5.vwf.vht 
+# Start time: 13:55:57 on Apr 12,2022
+# vcom -work work Waveform6.vwf.vht 
+
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity dataFlow_vhd_vec_tst
 # -- Compiling architecture dataFlow_arch of dataFlow_vhd_vec_tst
-# End time: 16:45:21 on Mar 30,2022, Elapsed time: 0:00:00
+# End time: 13:55:57 on Apr 12,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
 # vsim -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.dataFlow_vhd_vec_tst 
-# Start time: 16:45:21 on Mar 30,2022
+# Start time: 13:55:57 on Apr 12,2022
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -140,24 +142,24 @@ Reading pref.tcl
 # Loading cyclonev.cyclonev_io_ibuf(arch)
 # Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)
 # Loading altera.dffeas(vital_dffeas)
-# ** Warning: Design size of 37337 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# ** Warning: Design size of 37397 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
 # after#34
 
-# End time: 16:45:22 on Mar 30,2022, Elapsed time: 0:00:01
+# End time: 13:55:58 on Apr 12,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 1
 
 Completed successfully. 
 
 **** Converting ModelSim VCD to vector waveform ****
 
-Reading C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/Waveform5.vwf...
+Reading C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/Waveform6.vwf...
 
 Reading C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/simulation/qsim/atividade_5.msim.vcd...
 
 Processing channel transitions... 
 
-Writing the resulting VWF to C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/simulation/qsim/atividade_5_20220330164522.sim.vwf
+Writing the resulting VWF to C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/simulation/qsim/atividade_5_20220412135559.sim.vwf
 
 Finished VCD to VWF conversion.
 

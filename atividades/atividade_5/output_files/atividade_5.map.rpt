@@ -1,5 +1,5 @@
 Analysis & Synthesis report for atividade_5
-Wed Mar 30 16:42:49 2022
+Tue Apr 12 13:51:17 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -60,7 +60,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Mar 30 16:42:49 2022       ;
+; Analysis & Synthesis Status     ; Successful - Tue Apr 12 13:51:17 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; atividade_5                                 ;
 ; Top-level Entity Name           ; dataFlow                                    ;
@@ -571,7 +571,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -581,7 +581,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Wed Mar 30 16:42:38 2022
+    Info: Processing started: Tue Apr 12 13:51:04 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off atividade_5 -c atividade_5
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file registradorgenerico.vhd
@@ -610,7 +610,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file decoder
     Info (12022): Found design unit 1: decoder-comportamento File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/decoder.vhd Line: 11
     Info (12023): Found entity 1: decoder File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/decoder.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file dataflow.vhd
-    Info (12022): Found design unit 1: dataFlow-arquitetura File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 30
+    Info (12022): Found design unit 1: dataFlow-arquitetura File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 31
     Info (12023): Found entity 1: dataFlow File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file desvio.vhd
     Info (12022): Found design unit 1: desvio-comportamento File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/desvio.vhd Line: 13
@@ -622,17 +622,17 @@ Info (12021): Found 2 design units, including 1 entities, in source file muxgene
     Info (12022): Found design unit 1: muxGenerico4x1-comportamento File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/muxGenerico4x1.vhd Line: 15
     Info (12023): Found entity 1: muxGenerico4x1 File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/muxGenerico4x1.vhd Line: 5
 Info (12127): Elaborating entity "dataFlow" for the top level hierarchy
-Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "muxGenerico2x1:MUX_ULA" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 103
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:REG_A" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 110
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:PC" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 118
-Info (12128): Elaborating entity "somaUm" for hierarchy "somaUm:PC_INC" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 125
-Info (12128): Elaborating entity "muxGenerico4x1" for hierarchy "muxGenerico4x1:MUX_DESVIO" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 136
-Info (12128): Elaborating entity "ULASomaSub" for hierarchy "ULASomaSub:ULA" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 145
-Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 153
-Info (12128): Elaborating entity "decoder" for hierarchy "decoder:DECODER" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 157
-Info (12128): Elaborating entity "desvio" for hierarchy "desvio:DESVIO" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 161
-Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 169
-Info (12128): Elaborating entity "flipFlop" for hierarchy "flipFlop:FLAG" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 179
+Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "muxGenerico2x1:MUX_ULA" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 104
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:REG_A" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 111
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:PC" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 119
+Info (12128): Elaborating entity "somaUm" for hierarchy "somaUm:PC_INC" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 126
+Info (12128): Elaborating entity "muxGenerico4x1" for hierarchy "muxGenerico4x1:MUX_DESVIO" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 137
+Info (12128): Elaborating entity "ULASomaSub" for hierarchy "ULASomaSub:ULA" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 146
+Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 154
+Info (12128): Elaborating entity "decoder" for hierarchy "decoder:DECODER" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 158
+Info (12128): Elaborating entity "desvio" for hierarchy "desvio:DESVIO" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 162
+Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 170
+Info (12128): Elaborating entity "flipFlop" for hierarchy "flipFlop:FLAG" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 180
 Info (276014): Found 1 instances of uninferred RAM logic
     Info (276007): RAM logic "memoriaRAM:RAM|ram" is uninferred due to asynchronous read logic File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/memoriaRAM.vhd Line: 28
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
@@ -645,36 +645,36 @@ Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
     Warning (13049): Converted tri-state buffer "memoriaRAM:RAM|dado_out[6]" feeding internal logic into a wire File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/memoriaRAM.vhd Line: 18
     Warning (13049): Converted tri-state buffer "memoriaRAM:RAM|dado_out[7]" feeding internal logic into a wire File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/memoriaRAM.vhd Line: 18
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "vimediatoValor[4]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 23
-    Warning (13410): Pin "vimediatoValor[5]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 23
-    Warning (13410): Pin "vimediatoValor[6]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 23
-    Warning (13410): Pin "vimediatoValor[7]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 23
+    Warning (13410): Pin "vimediatoValor[4]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 24
+    Warning (13410): Pin "vimediatoValor[5]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 24
+    Warning (13410): Pin "vimediatoValor[6]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 24
+    Warning (13410): Pin "vimediatoValor[7]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 24
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 14 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "CLOCK_50" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 13
-    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 14
-    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 14
-    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 14
-    Warning (15610): No output dependent on input pin "SW[0]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
-    Warning (15610): No output dependent on input pin "SW[1]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
-    Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
-    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
-    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
-    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
-    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
-    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
-    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
-    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
+    Warning (15610): No output dependent on input pin "CLOCK_50" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 14
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
+    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[0]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 16
+    Warning (15610): No output dependent on input pin "SW[1]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 16
+    Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 16
+    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 16
+    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 16
+    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 16
+    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 16
+    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 16
+    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 16
+    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_5/dataFlow.vhd Line: 16
 Info (21057): Implemented 222 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 54 output pins
     Info (21061): Implemented 153 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 29 warnings
-    Info: Peak virtual memory: 4838 megabytes
-    Info: Processing ended: Wed Mar 30 16:42:49 2022
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:22
+    Info: Peak virtual memory: 4835 megabytes
+    Info: Processing ended: Tue Apr 12 13:51:17 2022
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:23
 
 
