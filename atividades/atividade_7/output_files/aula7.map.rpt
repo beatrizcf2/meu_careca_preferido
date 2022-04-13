@@ -1,5 +1,5 @@
 Analysis & Synthesis report for aula7
-Wed Apr 13 19:27:59 2022
+Wed Apr 13 20:05:22 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -25,16 +25,21 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
  17. Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:END_RETORNO
  18. Parameter Settings for User Entity Instance: CPU:CPU|muxGenerico4x1:MUX_DESVIO
  19. Parameter Settings for User Entity Instance: CPU:CPU|ULASomaSub:ULA
- 20. Port Connectivity Checks: "decoder3x8:decoderHab"
- 21. Port Connectivity Checks: "CPU:CPU|flipFlop:FLAG"
- 22. Port Connectivity Checks: "CPU:CPU|muxGenerico4x1:MUX_DESVIO"
- 23. Port Connectivity Checks: "CPU:CPU|registradorGenerico:END_RETORNO"
- 24. Port Connectivity Checks: "CPU:CPU|registradorGenerico:PC"
- 25. Port Connectivity Checks: "CPU:CPU|registradorGenerico:REG_A"
- 26. Port Connectivity Checks: "CPU:CPU"
- 27. Post-Synthesis Netlist Statistics for Top Partition
- 28. Elapsed Time Per Partition
- 29. Analysis & Synthesis Messages
+ 20. Parameter Settings for User Entity Instance: registradorGenerico:FFLEDconj
+ 21. Port Connectivity Checks: "decoder3x8:decoderLED"
+ 22. Port Connectivity Checks: "decoder3x8:decoderHab"
+ 23. Port Connectivity Checks: "registradorGenerico:FFLEDconj"
+ 24. Port Connectivity Checks: "flipFlop:FFLED9"
+ 25. Port Connectivity Checks: "flipFlop:FFLED8"
+ 26. Port Connectivity Checks: "CPU:CPU|flipFlop:FLAG"
+ 27. Port Connectivity Checks: "CPU:CPU|muxGenerico4x1:MUX_DESVIO"
+ 28. Port Connectivity Checks: "CPU:CPU|registradorGenerico:END_RETORNO"
+ 29. Port Connectivity Checks: "CPU:CPU|registradorGenerico:PC"
+ 30. Port Connectivity Checks: "CPU:CPU|registradorGenerico:REG_A"
+ 31. Port Connectivity Checks: "CPU:CPU"
+ 32. Post-Synthesis Netlist Statistics for Top Partition
+ 33. Elapsed Time Per Partition
+ 34. Analysis & Synthesis Messages
 
 
 
@@ -61,7 +66,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Apr 13 19:27:59 2022       ;
+; Analysis & Synthesis Status     ; Successful - Wed Apr 13 20:05:22 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; aula7                                       ;
 ; Top-level Entity Name           ; contador                                    ;
@@ -381,13 +386,63 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: registradorGenerico:FFLEDconj ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "decoder3x8:decoderLED"                                                                     ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; saida[7..3] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +-----------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "decoder3x8:decoderHab"                                                                     ;
 +-------------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port        ; Type   ; Severity ; Details                                                                             ;
 +-------------+--------+----------+-------------------------------------------------------------------------------------+
-; saida[7..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; saida[7..5] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; saida[3..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "registradorGenerico:FFLEDconj"                                                      ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; dout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; rst  ; Input  ; Info     ; Stuck at GND                                                                        ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "flipFlop:FFLED9"                                                                    ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; dout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; rst  ; Input  ; Info     ; Stuck at GND                                                                        ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "flipFlop:FFLED8"                                                                    ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; dout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; rst  ; Input  ; Info     ; Stuck at GND                                                                        ;
++------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------+
@@ -472,7 +527,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Wed Apr 13 19:27:49 2022
+    Info: Processing started: Wed Apr 13 20:05:11 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off aula7 -c aula7
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -520,9 +575,12 @@ Info (12021): Found 2 design units, including 1 entities, in source file decoder
     Info (12022): Found design unit 1: decoder3x8-comportamento File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/decoder3x8.vhd Line: 10
     Info (12023): Found entity 1: decoder3x8 File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/decoder3x8.vhd Line: 4
 Info (12127): Elaborating entity "contador" for the top level hierarchy
-Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/contador.vhd Line: 72
-Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/contador.vhd Line: 76
-Info (12128): Elaborating entity "CPU" for hierarchy "CPU:CPU" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/contador.vhd Line: 85
+Warning (10036): Verilog HDL or VHDL warning at contador.vhd(56): object "saidaLEDconj" assigned a value but never read File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/contador.vhd Line: 56
+Warning (10036): Verilog HDL or VHDL warning at contador.vhd(58): object "saidaLED9" assigned a value but never read File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/contador.vhd Line: 58
+Warning (10036): Verilog HDL or VHDL warning at contador.vhd(60): object "saidaLED8" assigned a value but never read File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/contador.vhd Line: 60
+Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/contador.vhd Line: 80
+Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/contador.vhd Line: 84
+Info (12128): Elaborating entity "CPU" for hierarchy "CPU:CPU" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/contador.vhd Line: 93
 Warning (10541): VHDL Signal Declaration warning at CPU.vhd(65): used implicit default value for signal "saidaDados" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/CPU.vhd Line: 65
 Warning (10873): Using initial value X (don't care) for net "control[3..2]" at CPU.vhd(16) File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/CPU.vhd Line: 16
 Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "CPU:CPU|muxGenerico2x1:MUX_ULA" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/CPU.vhd Line: 91
@@ -534,7 +592,7 @@ Info (12128): Elaborating entity "ULASomaSub" for hierarchy "CPU:CPU|ULASomaSub:
 Info (12128): Elaborating entity "decoder" for hierarchy "CPU:CPU|decoder:DECODER" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/CPU.vhd Line: 141
 Info (12128): Elaborating entity "desvio" for hierarchy "CPU:CPU|desvio:DESVIO" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/CPU.vhd Line: 145
 Info (12128): Elaborating entity "flipFlop" for hierarchy "CPU:CPU|flipFlop:FLAG" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/CPU.vhd Line: 154
-Info (12128): Elaborating entity "decoder3x8" for hierarchy "decoder3x8:decoderHab" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/contador.vhd Line: 94
+Info (12128): Elaborating entity "decoder3x8" for hierarchy "decoder3x8:decoderHab" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/contador.vhd Line: 124
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
@@ -543,10 +601,10 @@ Warning (21074): Design contains 2 input pin(s) that do not drive logic
 Info (21057): Implemented 2 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 0 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 4838 megabytes
-    Info: Processing ended: Wed Apr 13 19:27:59 2022
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:22
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
+    Info: Peak virtual memory: 4845 megabytes
+    Info: Processing ended: Wed Apr 13 20:05:22 2022
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:23
 
 

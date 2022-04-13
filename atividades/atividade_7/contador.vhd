@@ -50,7 +50,15 @@ architecture arquitetura of contador is
   
   -- Clock
   signal CLK                : std_logic;
- 
+  
+  --LEDS
+  signal saidaDecoderLED    : std_logic_vector(7 downto 0);
+  signal saidaLEDconj            : std_logic_vector(7 downto 0);
+  signal habLEDconj         : std_logic;
+  signal saidaLED9               : std_logic;
+  signal habLED9            : std_logic;
+  signal saidaLED8               : std_logic;
+  signal habLED8            : std_logic;
 
  
 begin
@@ -90,10 +98,40 @@ CPU     : entity work.CPU
 							 dataAddress   => dataAddress,
 							 dataOut       => dadoEscrito,
 							 CLK           => CLK);
+							 
 
-decoderHab :  entity work.decoder3x8
+FFLED8    : entity work.flipFlop
+             port map (DIN     => dadoEscrito(0), 
+						     DOUT    => saidaLED8, 
+				   		  ENABLE  => habLED8, 
+				   		  CLK     => CLK, 
+				   		  RST     => '0');
+
+FFLED9    : entity work.flipFlop
+             port map (DIN     => dadoEscrito(0), 
+						     DOUT    => saidaLED9, 
+				   		  ENABLE  => habLED9, 
+				   		  CLK     => CLK, 
+				   		  RST     => '0');
+							  
+FFLEDconj  : entity work.registradorGenerico generic map (larguraDados => 8)
+             port map (DIN     => dadoEscrito(7 downto 0), 
+						     DOUT    => saidaLEDconj, 
+				   		  ENABLE  => habLEDconj, 
+				   		  CLK     => CLK, 
+				   		  RST     => '0');
+
+decoderHab : entity work.decoder3x8
             port map( entrada => entradaDecoderHab,
-                      saida => saidaDecoderHab);							 
+                      saida => saidaDecoderHab);	
+	
+decoderLED : entity work.decoder3x8
+            port map( entrada => dataAddress(2 downto 0),
+                      saida => saidaDecoderLED);	
+							 
+habLED8    <= WR AND saidaDecoderHab(4) AND saidaDecoderLED(2);
+habLED9    <= WR AND saidaDecoderHab(4) AND saidaDecoderLED(1);
+habLEDconj <= WR AND saidaDecoderHab(4) AND saidaDecoderLED(0);
 
 
 
