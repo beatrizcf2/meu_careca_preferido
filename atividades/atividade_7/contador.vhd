@@ -25,12 +25,17 @@ architecture arquitetura of contador is
   -- ideia colocar os nomes dos sinais como a saida dos modulos
   signal instrucao          : std_logic_vector(larguraInstrucao-1 downto 0); -- saida da ROM
   
+  -- Control
+  signal control            : std_logic_vector(3 downto 0);
+  alias RD                  : std_logic is control(1);
+  alias WR                  : std_logic is control(0);
+  
   -- saida RAM
   signal dadoLido           : std_logic_vector(larguraDados-1 downto 0);    -- saida da leitura da RAM
   
   -- CPU Data adress
   signal dataAddress        : std_logic_vector(larguraEndereco-1 downto 0);  
-  alias  entradaDecoderWR   : std_logic_vector(2 downto 0) is dataAddress(larguraEndereco-1 downto larguraEndereco-3);   
+  alias  entradaDecoderHab  : std_logic_vector(2 downto 0) is dataAddress(larguraEndereco-1 downto larguraEndereco-3);   
   alias  enderecoRAM        : std_logic_vector(addrWidth-1 downto 0) is dataAddress(larguraEndereco-4 downto 0);   
 
   -- CPU Escrita de dados
@@ -38,7 +43,16 @@ architecture arquitetura of contador is
   
   -- ROM Adress
   signal ROMAddress         : std_logic_vector(larguraEndereco-1 downto 0); -- entrada da ROM
+  
+  -- decoder habilitador 1
+  signal saidaDecoderHab    : std_logic_vector(7 downto 0);
+  alias  habilitaRam         : std_logic is saidaDecoderHab(0);
+  
+  -- Clock
+  signal CLK                : std_logic;
+ 
 
+ 
 begin
 
 -- Instanciando os componentes:
@@ -56,36 +70,32 @@ end generate;
 -- port maps
 
 ROM    : entity work.memoriaROM   generic map (dataWidth => 13, addrWidth => 9)
-            port map (Endereco => , 
-							 Dado     => );
+            port map (Endereco => ROMAddress, 
+							 Dado     => instrucao);
 
-RAM     : entity work.memoriaRAM  generic map (dataWidth => larguraDados, addrWidth => larguraDados)
-				port map (addr     => ,
-							 we       => ,
-							 re       => ,
-							 habilita => ,
+RAM     : entity work.memoriaRAM  generic map (dataWidth => larguraDados, addrWidth => addrWidth)
+				port map (addr     => enderecoRAM,
+							 we       => WR,
+							 re       => RD,
+							 habilita => habilitaRam,
 							 clk      => CLK,
-							 dado_in  => ,
-							 dado_out => );
+							 dado_in  => dadoEscrito,
+							 dado_out => dadoLido);
 
 CPU     : entity work.CPU
-	         port map (instructionIn => ,
-							 dataIn        =>,
-							 control       =>,
-							 ROMAddress    =>,
-							 dataAddress   =>,
-							 dataOut       =>,
-							 CLK           =>);        
+	         port map (instructionIn => instrucao ,
+							 dataIn        => dadoLido,
+							 control       => control,
+							 ROMAddress    => ROMAddress,
+							 dataAddress   => dataAddress,
+							 dataOut       => dadoEscrito,
+							 CLK           => CLK);
 
---Entradas							 
-instrucao  <= instructionIn;
+decoderHab :  entity work.decoder3x8
+            port map( entrada => entradaDecoderHab,
+                      saida => saidaDecoderHab);							 
 
---Saidas
-ROMAddress <= saidaPC;
-dataAddress <= imediatoEndereco( addrWidth-1 downto 0);
-dataOut    <= saidaRegA;
-control(0) <= habilitaEscritaMEM;
-control(1) <= habilitaLeituraMEM;
+
 
 
 end architecture;

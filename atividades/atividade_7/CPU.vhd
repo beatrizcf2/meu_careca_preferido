@@ -74,7 +74,7 @@ architecture arquitetura of CPU is
   signal saidaRetorno       : std_logic_vector(larguraEndereco-1 downto 0);                       
   
   -- Clock
-  signal CLK                : std_logic;
+  --signal CLK                : std_logic;
   
   -- Instrucao
   signal instrucao          : std_logic_vector(12 downto 0);  
@@ -162,7 +162,7 @@ instrucao  <= instructionIn;
 
 --Saidas
 ROMAddress <= saidaPC;
-dataAddress <= imediatoEndereco( addrWidth-1 downto 0);
+dataAddress <= imediatoEndereco( larguraEndereco-1 downto 0);
 dataOut    <= saidaRegA;
 control(0) <= habilitaEscritaMEM;
 control(1) <= habilitaLeituraMEM;
