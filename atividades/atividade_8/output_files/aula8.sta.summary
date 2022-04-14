@@ -1,0 +1,53 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'clovis'
+Slack : -3.628
+TNS   : -380.076
+
+Type  : Slow 1100mV 85C Model Hold 'clovis'
+Slack : 0.592
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clovis'
+Slack : -0.538
+TNS   : -93.822
+
+Type  : Slow 1100mV 0C Model Setup 'clovis'
+Slack : -3.711
+TNS   : -380.658
+
+Type  : Slow 1100mV 0C Model Hold 'clovis'
+Slack : 0.572
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clovis'
+Slack : -0.538
+TNS   : -94.517
+
+Type  : Fast 1100mV 85C Model Setup 'clovis'
+Slack : -1.238
+TNS   : -114.070
+
+Type  : Fast 1100mV 85C Model Hold 'clovis'
+Slack : 0.278
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clovis'
+Slack : -0.095
+TNS   : -10.984
+
+Type  : Fast 1100mV 0C Model Setup 'clovis'
+Slack : -1.031
+TNS   : -95.323
+
+Type  : Fast 1100mV 0C Model Hold 'clovis'
+Slack : 0.267
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clovis'
+Slack : -0.095
+TNS   : -11.065
+
+------------------------------------------------------------
