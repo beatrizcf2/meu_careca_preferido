@@ -1,0 +1,145 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "endROM[0]",
+					"strict" : false
+				},
+				{
+					"name" : "endROM[1]",
+					"strict" : false
+				},
+				{
+					"name" : "endROM[2]",
+					"strict" : false
+				},
+				{
+					"name" : "endROM[3]",
+					"strict" : false
+				},
+				{
+					"name" : "endROM[4]",
+					"strict" : false
+				},
+				{
+					"name" : "endROM[5]",
+					"strict" : false
+				},
+				{
+					"name" : "endROM[6]",
+					"strict" : false
+				},
+				{
+					"name" : "endROM[7]",
+					"strict" : false
+				},
+				{
+					"name" : "endROM[8]",
+					"strict" : false
+				},
+				{
+					"name" : "endRAM[0]",
+					"strict" : false
+				},
+				{
+					"name" : "endRAM[1]",
+					"strict" : false
+				},
+				{
+					"name" : "endRAM[2]",
+					"strict" : false
+				},
+				{
+					"name" : "endRAM[3]",
+					"strict" : false
+				},
+				{
+					"name" : "endRAM[4]",
+					"strict" : false
+				},
+				{
+					"name" : "endRAM[5]",
+					"strict" : false
+				},
+				{
+					"name" : "valorDado[0]",
+					"strict" : false
+				},
+				{
+					"name" : "valorDado[1]",
+					"strict" : false
+				},
+				{
+					"name" : "valorDado[2]",
+					"strict" : false
+				},
+				{
+					"name" : "valorDado[3]",
+					"strict" : false
+				},
+				{
+					"name" : "valorDado[4]",
+					"strict" : false
+				},
+				{
+					"name" : "valorDado[5]",
+					"strict" : false
+				},
+				{
+					"name" : "valorDado[6]",
+					"strict" : false
+				},
+				{
+					"name" : "valorDado[7]",
+					"strict" : false
+				},
+				{
+					"name" : "LED8",
+					"strict" : false
+				},
+				{
+					"name" : "LED9",
+					"strict" : false
+				},
+				{
+					"name" : "LEDconj[0]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDconj[1]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDconj[2]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDconj[3]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDconj[4]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDconj[5]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDconj[6]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDconj[7]",
+					"strict" : false
+				},
+				{
+					"name" : "clovis",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
