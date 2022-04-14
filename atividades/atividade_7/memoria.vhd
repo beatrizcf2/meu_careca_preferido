@@ -8,6 +8,7 @@ entity memoriaROM is
           addrWidth: natural := 10
     );
    port (
+			 
           Endereco : in std_logic_vector (addrWidth-1 DOWNTO 0);
           Dado : out std_logic_vector (dataWidth-1 DOWNTO 0)
     );
@@ -34,23 +35,18 @@ architecture assincrona of memoriaROM is
   begin
       -- Palavra de Controle = SelMUX, Habilita_A, Reset_A, Operacao_ULA
       -- Inicializa os endereços:
-        tmp(0)  := JSR & '0' & "00001110";   -- Desvia para posicao 14 
-		  tmp(1)  := JMP & '0' & "00000101";   -- Desvia para posicao 9
-		  tmp(2)  := JEQ & '0' & "00001001";   -- carrega 3 
-		  tmp(3)  := NOP & '0' & "00000000";
-        tmp(4)  := NOP & '0' & "00000000";   -- Desvia para posicao 1
-        tmp(5)  := LDI & '0' & "00000101";
-		  tmp(6)  := STA & '1' & "00000000";	-- Desvia para posicao 6 (FIM)
-		  tmp(7)  := CEQ & '0' & "00000000";   -- Desvia para a posicao 1
-		  tmp(8)  := JMP & '0' & "00000010";
-		  tmp(9)  := NOP & '0' & "00000000";
-		  tmp(10) := LDI & '0' & "00000100";
-		  tmp(11) := CEQ & '0' & "00000000";
-		  tmp(12) := JEQ & '0' & "00000011";
-		  tmp(13) := JMP & '0' & "00001101";
-		  tmp(14) := NOP & '0' & "00000000";
-		  tmp(15) := RET & '0' & "00000000";
-		  
+        tmp(0)  := LDI & '0' & "00000001";   -- Carrega o acumulador com o valor 1 
+        tmp(1)  := STA & '0' & "00000000";   -- Armazena o valor do acumulador na posição zero da memória (MEM[0])
+        tmp(2)  := SUM & '0' & "00000000";   -- Soma o valor atual do acumulador com o conteúdo de MEM[0]
+        tmp(3)  := STA & '0' & "00000001";   -- Armazena o valor do acumulador em MEM[1]
+        tmp(4)  := LDA & '0' & "00000000";   -- Carrega o acumulador com o valor de MEM[0]
+        tmp(5)  := STA & '1' & "00000001";   -- Armazena 1 no LEDR8
+        tmp(6)  := STA & '1' & "00000010";   -- Armazena 1 no LEDR9
+        tmp(7)  := LDI & '0' & "01010101";   -- Carrega o acumulador
+        tmp(8)  := STA & '1' & "00000000";   -- Armazena 85 em LEDR0 até LEDR7
+        tmp(9)  := LDI & '0' & "10101010";   -- Carrega o acumulador
+        tmp(10) := STA & '1' & "00000000";   -- Armazena 170 em LEDR0 até LEDR7
+        tmp(11) := JMP & '0' & "00001011";   -- Fim. Deve ficar neste laço
 		  
         return tmp;
     end initMemory;

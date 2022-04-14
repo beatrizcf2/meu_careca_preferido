@@ -62,6 +62,24 @@ ULA    : entity work.ULASomaSub  generic map(larguraDados => larguraDados)
 							 seletor   => opULA,
 							 saida     => saidaULA);
 
+-- exemplos de portmaps nao utilizados no exemplo ---------------------------------
+ROM    : entity work.memoriaROM   generic map (dataWidth => 13, addrWidth => 9)
+            port map (Endereco => saidaPC, 
+							 Dado   => instrucao);
+
+DECODER : entity work.decoder
+				port map (entrada  => opCode,
+							 saida    => pontosControle);
+
+RAM     : entity work.memoriaRAM  generic map (dataWidth => larguraDados, addrWidth => larguraDados)
+				port map (addr     => imediatoEndereco(7 downto 0),
+							 we       => habilitaEscritaMEM,
+							 re       => habilitaLeituraMEM,
+							 habilita => imediatoEndereco(8),
+							 clk      => CLK,
+							 dado_in  => saidaRegA,
+							 dado_out => saidaDados);
+-----------------------------------------------------------------------------------
 saida <= saidaReg2;
 
 end architecture;

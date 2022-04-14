@@ -10,13 +10,17 @@ entity contador is
 				addrWidth        : natural := 6;
 				simulacao        : boolean := TRUE -- para gravar na placa, altere de TRUE para FALSE
   );
-  port   (
-    
-   
+  port   (   endROM   : out std_logic_vector(larguraEndereco-1 downto 0);
+				 endRAM   : out std_logic_vector(addrWidth-1 downto 0);
+             valorDado     : out  std_logic_vector(larguraDados-1 downto 0);
+				 LED8          : out std_logic;
+				 LED9          : out std_logic;
+				 LEDconj       : out std_logic_vector(7 downto 0);
+				 
 	 
-	 -- simulacao
-	 CLOCK_50      : in std_logic;
-	 clovis        : in std_logic
+				 -- simulacao
+				 CLOCK_50      : in std_logic;
+				 clovis        : in std_logic
   );
 end entity;
 
@@ -132,6 +136,15 @@ decoderLED : entity work.decoder3x8
 habLED8    <= WR AND saidaDecoderHab(4) AND saidaDecoderLED(2);
 habLED9    <= WR AND saidaDecoderHab(4) AND saidaDecoderLED(1);
 habLEDconj <= WR AND saidaDecoderHab(4) AND saidaDecoderLED(0);
+
+endROM     <= ROMAddress;
+endRAM     <= enderecoRAM;
+valorDado  <= dadoLido;
+LED8       <= saidaLED8;
+LED9       <= saidaLED9;
+LEDconj    <= saidaLEDconj;
+
+
 
 
 

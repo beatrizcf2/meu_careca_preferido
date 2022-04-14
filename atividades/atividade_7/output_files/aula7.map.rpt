@@ -1,5 +1,5 @@
 Analysis & Synthesis report for aula7
-Wed Apr 13 20:05:22 2022
+Thu Apr 14 08:19:55 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -13,33 +13,35 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Parameter Settings for User Entity Instance: Top-level Entity: |contador
- 10. Parameter Settings for User Entity Instance: memoriaROM:ROM
- 11. Parameter Settings for User Entity Instance: memoriaRAM:RAM
- 12. Parameter Settings for User Entity Instance: CPU:CPU
- 13. Parameter Settings for User Entity Instance: CPU:CPU|muxGenerico2x1:MUX_ULA
- 14. Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:REG_A
- 15. Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:PC
- 16. Parameter Settings for User Entity Instance: CPU:CPU|somaUm:PC_INC
- 17. Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:END_RETORNO
- 18. Parameter Settings for User Entity Instance: CPU:CPU|muxGenerico4x1:MUX_DESVIO
- 19. Parameter Settings for User Entity Instance: CPU:CPU|ULASomaSub:ULA
- 20. Parameter Settings for User Entity Instance: registradorGenerico:FFLEDconj
- 21. Port Connectivity Checks: "decoder3x8:decoderLED"
- 22. Port Connectivity Checks: "decoder3x8:decoderHab"
- 23. Port Connectivity Checks: "registradorGenerico:FFLEDconj"
- 24. Port Connectivity Checks: "flipFlop:FFLED9"
- 25. Port Connectivity Checks: "flipFlop:FFLED8"
- 26. Port Connectivity Checks: "CPU:CPU|flipFlop:FLAG"
- 27. Port Connectivity Checks: "CPU:CPU|muxGenerico4x1:MUX_DESVIO"
- 28. Port Connectivity Checks: "CPU:CPU|registradorGenerico:END_RETORNO"
- 29. Port Connectivity Checks: "CPU:CPU|registradorGenerico:PC"
- 30. Port Connectivity Checks: "CPU:CPU|registradorGenerico:REG_A"
- 31. Port Connectivity Checks: "CPU:CPU"
- 32. Post-Synthesis Netlist Statistics for Top Partition
- 33. Elapsed Time Per Partition
- 34. Analysis & Synthesis Messages
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: Top-level Entity: |contador
+ 12. Parameter Settings for User Entity Instance: memoriaROM:ROM
+ 13. Parameter Settings for User Entity Instance: memoriaRAM:RAM
+ 14. Parameter Settings for User Entity Instance: CPU:CPU
+ 15. Parameter Settings for User Entity Instance: CPU:CPU|muxGenerico2x1:MUX_ULA
+ 16. Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:REG_A
+ 17. Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:PC
+ 18. Parameter Settings for User Entity Instance: CPU:CPU|somaUm:PC_INC
+ 19. Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:END_RETORNO
+ 20. Parameter Settings for User Entity Instance: CPU:CPU|muxGenerico4x1:MUX_DESVIO
+ 21. Parameter Settings for User Entity Instance: CPU:CPU|ULASomaSub:ULA
+ 22. Parameter Settings for User Entity Instance: registradorGenerico:FFLEDconj
+ 23. Port Connectivity Checks: "decoder3x8:decoderLED"
+ 24. Port Connectivity Checks: "decoder3x8:decoderHab"
+ 25. Port Connectivity Checks: "registradorGenerico:FFLEDconj"
+ 26. Port Connectivity Checks: "flipFlop:FFLED9"
+ 27. Port Connectivity Checks: "flipFlop:FFLED8"
+ 28. Port Connectivity Checks: "CPU:CPU|flipFlop:FLAG"
+ 29. Port Connectivity Checks: "CPU:CPU|muxGenerico4x1:MUX_DESVIO"
+ 30. Port Connectivity Checks: "CPU:CPU|registradorGenerico:END_RETORNO"
+ 31. Port Connectivity Checks: "CPU:CPU|registradorGenerico:PC"
+ 32. Port Connectivity Checks: "CPU:CPU|registradorGenerico:REG_A"
+ 33. Port Connectivity Checks: "CPU:CPU"
+ 34. Post-Synthesis Netlist Statistics for Top Partition
+ 35. Elapsed Time Per Partition
+ 36. Analysis & Synthesis Messages
 
 
 
@@ -66,14 +68,14 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Apr 13 20:05:22 2022       ;
+; Analysis & Synthesis Status     ; Successful - Thu Apr 14 08:19:55 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; aula7                                       ;
 ; Top-level Entity Name           ; contador                                    ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 0                                           ;
-; Total pins                      ; 2                                           ;
+; Total registers                 ; 155                                         ;
+; Total pins                      ; 35                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -183,10 +185,11 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -211,41 +214,447 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary            ;
-+---------------------------------------------+----------+
-; Resource                                    ; Usage    ;
-+---------------------------------------------+----------+
-; Estimate of Logic utilization (ALMs needed) ; 0        ;
-;                                             ;          ;
-; Combinational ALUT usage for logic          ; 0        ;
-;     -- 7 input functions                    ; 0        ;
-;     -- 6 input functions                    ; 0        ;
-;     -- 5 input functions                    ; 0        ;
-;     -- 4 input functions                    ; 0        ;
-;     -- <=3 input functions                  ; 0        ;
-;                                             ;          ;
-; Dedicated logic registers                   ; 0        ;
-;                                             ;          ;
-; I/O pins                                    ; 2        ;
-;                                             ;          ;
-; Total DSP Blocks                            ; 0        ;
-;                                             ;          ;
-; Maximum fan-out node                        ; CLOCK_50 ;
-; Maximum fan-out                             ; 1        ;
-; Total fan-out                               ; 2        ;
-; Average fan-out                             ; 0.50     ;
-+---------------------------------------------+----------+
++------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimate of Logic utilization (ALMs needed) ; 115          ;
+;                                             ;              ;
+; Combinational ALUT usage for logic          ; 127          ;
+;     -- 7 input functions                    ; 0            ;
+;     -- 6 input functions                    ; 43           ;
+;     -- 5 input functions                    ; 16           ;
+;     -- 4 input functions                    ; 48           ;
+;     -- <=3 input functions                  ; 20           ;
+;                                             ;              ;
+; Dedicated logic registers                   ; 155          ;
+;                                             ;              ;
+; I/O pins                                    ; 35           ;
+;                                             ;              ;
+; Total DSP Blocks                            ; 0            ;
+;                                             ;              ;
+; Maximum fan-out node                        ; clovis~input ;
+; Maximum fan-out                             ; 155          ;
+; Total fan-out                               ; 1148         ;
+; Average fan-out                             ; 3.26         ;
++---------------------------------------------+--------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; |contador                  ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 2    ; 0            ; |contador           ; contador    ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                            ;
++------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node         ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                         ; Entity Name         ; Library Name ;
++------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------+---------------------+--------------+
+; |contador                          ; 127 (5)             ; 155 (0)                   ; 0                 ; 0          ; 35   ; 0            ; |contador                                   ; contador            ; work         ;
+;    |CPU:CPU|                       ; 22 (0)              ; 17 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU                           ; CPU                 ; work         ;
+;       |ULASomaSub:ULA|             ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|ULASomaSub:ULA            ; ULASomaSub          ; work         ;
+;       |decoder:DECODER|            ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|decoder:DECODER           ; decoder             ; work         ;
+;       |registradorGenerico:PC|     ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|registradorGenerico:PC    ; registradorGenerico ; work         ;
+;       |registradorGenerico:REG_A|  ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|registradorGenerico:REG_A ; registradorGenerico ; work         ;
+;       |somaUm:PC_INC|              ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|somaUm:PC_INC             ; somaUm              ; work         ;
+;    |flipFlop:FFLED8|               ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|flipFlop:FFLED8                   ; flipFlop            ; work         ;
+;    |flipFlop:FFLED9|               ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|flipFlop:FFLED9                   ; flipFlop            ; work         ;
+;    |memoriaRAM:RAM|                ; 82 (82)             ; 128 (128)                 ; 0                 ; 0          ; 0    ; 0            ; |contador|memoriaRAM:RAM                    ; memoriaRAM          ; work         ;
+;    |memoriaROM:ROM|                ; 16 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|memoriaROM:ROM                    ; memoriaROM          ; work         ;
+;    |registradorGenerico:FFLEDconj| ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|registradorGenerico:FFLEDconj     ; registradorGenerico ; work         ;
++------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                               ;
++----------------------------------------------------+---------------------------------------------+
+; Register name                                      ; Reason for Removal                          ;
++----------------------------------------------------+---------------------------------------------+
+; CPU:CPU|flipFlop:FLAG|DOUT                         ; Stuck at GND due to stuck port clock_enable ;
+; CPU:CPU|registradorGenerico:END_RETORNO|DOUT[0..8] ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~47                              ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~55                              ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~63                              ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~71                              ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~111                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~119                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~127                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~135                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~143                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~151                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~159                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~167                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~207                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~215                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~223                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~231                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~303                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~311                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~319                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~327                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~367                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~375                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~383                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~391                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~399                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~407                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~415                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~423                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~463                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~471                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~479                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~487                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~48                              ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~56                              ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~64                              ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~72                              ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~112                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~120                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~128                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~136                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~144                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~152                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~160                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~168                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~208                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~216                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~224                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~232                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~304                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~312                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~320                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~328                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~368                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~376                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~384                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~392                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~400                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~408                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~416                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~424                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~464                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~472                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~480                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~488                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~49                              ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~57                              ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~65                              ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~73                              ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~113                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~121                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~129                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~137                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~145                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~153                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~161                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~169                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~209                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~217                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~225                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~233                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~305                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~313                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~321                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~329                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~369                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~377                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~385                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~393                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~401                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~409                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~417                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~425                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~465                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~473                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~481                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~489                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~50                              ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~58                              ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~66                              ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~74                              ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~114                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~122                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~130                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~138                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~146                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~154                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~162                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~170                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~210                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~218                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~226                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~234                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~306                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~314                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~322                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~330                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~370                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~378                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~386                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~394                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~402                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~410                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~418                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~426                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~466                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~474                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~482                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~490                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~51                              ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~59                              ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~67                              ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~75                              ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~115                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~123                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~131                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~139                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~147                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~155                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~163                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~171                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~211                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~219                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~227                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~235                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~307                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~315                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~323                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~331                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~371                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~379                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~387                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~395                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~403                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~411                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~419                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~427                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~467                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~475                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~483                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~491                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~52                              ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~60                              ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~68                              ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~76                              ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~116                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~124                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~132                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~140                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~148                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~156                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~164                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~172                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~212                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~220                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~228                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~236                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~308                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~316                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~324                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~332                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~372                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~380                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~388                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~396                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~404                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~412                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~420                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~428                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~468                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~476                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~484                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~492                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~53                              ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~61                              ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~69                              ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~77                              ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~117                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~125                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~133                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~141                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~149                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~157                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~165                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~173                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~213                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~221                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~229                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~237                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~309                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~317                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~325                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~333                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~373                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~381                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~389                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~397                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~405                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~413                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~421                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~429                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~469                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~477                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~485                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~493                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~54                              ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~62                              ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~70                              ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~78                              ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~118                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~126                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~134                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~142                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~150                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~158                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~166                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~174                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~214                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~222                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~230                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~238                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~310                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~318                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~326                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~334                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~374                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~382                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~390                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~398                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~406                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~414                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~422                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~430                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~470                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~478                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~486                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~494                             ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~279                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~295                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~271                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~287                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~439                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~431                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~455                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~447                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~280                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~296                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~272                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~288                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~440                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~432                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~456                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~448                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~281                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~297                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~273                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~289                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~441                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~433                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~457                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~449                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~282                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~298                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~274                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~290                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~442                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~434                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~458                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~450                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~283                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~299                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~275                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~291                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~443                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~435                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~459                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~451                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~284                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~300                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~276                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~292                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~444                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~436                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~460                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~452                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~285                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~301                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~277                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~293                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~445                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~437                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~461                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~453                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~286                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~302                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~278                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~294                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~446                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~438                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~462                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~454                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~247                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~239                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~503                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~495                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~263                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~255                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~519                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~511                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~248                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~240                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~504                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~496                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~264                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~256                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~520                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~512                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~249                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~241                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~505                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~497                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~265                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~257                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~521                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~513                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~250                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~242                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~506                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~498                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~266                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~258                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~522                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~514                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~251                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~243                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~507                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~499                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~267                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~259                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~523                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~515                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~252                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~244                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~508                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~500                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~268                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~260                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~524                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~516                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~253                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~245                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~509                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~501                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~269                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~261                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~525                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~517                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~254                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~246                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~510                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~502                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~270                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~262                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~526                             ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~518                             ; Stuck at GND due to stuck port clock_enable ;
+; Total Number of Removed Registers = 394            ;                                             ;
++----------------------------------------------------+---------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -253,14 +662,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 155   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Synchronous Load   ; 17    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 144   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
+; 1:1                ; 8 bits    ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; No         ; |contador|CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[0] ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |contador|CPU:CPU|decoder:DECODER|saida               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------+
@@ -415,34 +834,31 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "registradorGenerico:FFLEDconj"                                                      ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; dout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; rst  ; Input  ; Info     ; Stuck at GND                                                                        ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "registradorGenerico:FFLEDconj" ;
++------+-------+----------+---------------------------------+
+; Port ; Type  ; Severity ; Details                         ;
++------+-------+----------+---------------------------------+
+; rst  ; Input ; Info     ; Stuck at GND                    ;
++------+-------+----------+---------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "flipFlop:FFLED9"                                                                    ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; dout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; rst  ; Input  ; Info     ; Stuck at GND                                                                        ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
++---------------------------------------------+
+; Port Connectivity Checks: "flipFlop:FFLED9" ;
++------+-------+----------+-------------------+
+; Port ; Type  ; Severity ; Details           ;
++------+-------+----------+-------------------+
+; rst  ; Input ; Info     ; Stuck at GND      ;
++------+-------+----------+-------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "flipFlop:FFLED8"                                                                    ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; dout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; rst  ; Input  ; Info     ; Stuck at GND                                                                        ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
++---------------------------------------------+
+; Port Connectivity Checks: "flipFlop:FFLED8" ;
++------+-------+----------+-------------------+
+; Port ; Type  ; Severity ; Details           ;
++------+-------+----------+-------------------+
+; rst  ; Input ; Info     ; Stuck at GND      ;
++------+-------+----------+-------------------+
 
 
 +---------------------------------------------------+
@@ -502,14 +918,31 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
-+-------------------+---------------------------------+
-; Type              ; Count                           ;
-+-------------------+---------------------------------+
-; boundary_port     ; 2                               ;
-;                   ;                                 ;
-; Max LUT depth     ; 0.00                            ;
-; Average LUT depth ; 0.00                            ;
-+-------------------+---------------------------------+
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 155                         ;
+;     ENA               ; 136                         ;
+;     ENA SLD           ; 8                           ;
+;     SLD               ; 9                           ;
+;     plain             ; 2                           ;
+; arriav_io_obuf        ; 8                           ;
+; arriav_lcell_comb     ; 127                         ;
+;     arith             ; 18                          ;
+;         1 data inputs ; 10                          ;
+;         3 data inputs ; 6                           ;
+;         5 data inputs ; 2                           ;
+;     normal            ; 109                         ;
+;         2 data inputs ; 2                           ;
+;         3 data inputs ; 2                           ;
+;         4 data inputs ; 48                          ;
+;         5 data inputs ; 14                          ;
+;         6 data inputs ; 43                          ;
+; boundary_port         ; 35                          ;
+;                       ;                             ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 3.18                        ;
++-----------------------+-----------------------------+
 
 
 +-------------------------------+
@@ -527,7 +960,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Wed Apr 13 20:05:11 2022
+    Info: Processing started: Thu Apr 14 08:19:44 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off aula7 -c aula7
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -553,7 +986,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file memoria
     Info (12022): Found design unit 1: memoriaRAM-rtl File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/memoriaRAM.vhd Line: 22
     Info (12023): Found entity 1: memoriaRAM File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/memoriaRAM.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file memoria.vhd
-    Info (12022): Found design unit 1: memoriaROM-assincrona File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/memoria.vhd Line: 16
+    Info (12022): Found design unit 1: memoriaROM-assincrona File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/memoria.vhd Line: 17
     Info (12023): Found entity 1: memoriaROM File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/memoria.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file flipflop.vhd
     Info (12022): Found design unit 1: flipFlop-comportamento File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/flipFlop.vhd Line: 14
@@ -569,18 +1002,15 @@ Info (12021): Found 2 design units, including 1 entities, in source file decoder
     Info (12022): Found design unit 1: decoder-comportamento File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/decoder.vhd Line: 11
     Info (12023): Found entity 1: decoder File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/decoder.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file contador.vhd
-    Info (12022): Found design unit 1: contador-arquitetura File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/contador.vhd Line: 24
+    Info (12022): Found design unit 1: contador-arquitetura File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/contador.vhd Line: 28
     Info (12023): Found entity 1: contador File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/contador.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file decoder3x8.vhd
     Info (12022): Found design unit 1: decoder3x8-comportamento File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/decoder3x8.vhd Line: 10
     Info (12023): Found entity 1: decoder3x8 File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/decoder3x8.vhd Line: 4
 Info (12127): Elaborating entity "contador" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at contador.vhd(56): object "saidaLEDconj" assigned a value but never read File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/contador.vhd Line: 56
-Warning (10036): Verilog HDL or VHDL warning at contador.vhd(58): object "saidaLED9" assigned a value but never read File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/contador.vhd Line: 58
-Warning (10036): Verilog HDL or VHDL warning at contador.vhd(60): object "saidaLED8" assigned a value but never read File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/contador.vhd Line: 60
-Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/contador.vhd Line: 80
-Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/contador.vhd Line: 84
-Info (12128): Elaborating entity "CPU" for hierarchy "CPU:CPU" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/contador.vhd Line: 93
+Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/contador.vhd Line: 84
+Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/contador.vhd Line: 88
+Info (12128): Elaborating entity "CPU" for hierarchy "CPU:CPU" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/contador.vhd Line: 97
 Warning (10541): VHDL Signal Declaration warning at CPU.vhd(65): used implicit default value for signal "saidaDados" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/CPU.vhd Line: 65
 Warning (10873): Using initial value X (don't care) for net "control[3..2]" at CPU.vhd(16) File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/CPU.vhd Line: 16
 Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "CPU:CPU|muxGenerico2x1:MUX_ULA" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/CPU.vhd Line: 91
@@ -592,18 +1022,22 @@ Info (12128): Elaborating entity "ULASomaSub" for hierarchy "CPU:CPU|ULASomaSub:
 Info (12128): Elaborating entity "decoder" for hierarchy "CPU:CPU|decoder:DECODER" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/CPU.vhd Line: 141
 Info (12128): Elaborating entity "desvio" for hierarchy "CPU:CPU|desvio:DESVIO" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/CPU.vhd Line: 145
 Info (12128): Elaborating entity "flipFlop" for hierarchy "CPU:CPU|flipFlop:FLAG" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/CPU.vhd Line: 154
-Info (12128): Elaborating entity "decoder3x8" for hierarchy "decoder3x8:decoderHab" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/contador.vhd Line: 124
+Info (12128): Elaborating entity "decoder3x8" for hierarchy "decoder3x8:decoderHab" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/contador.vhd Line: 128
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276007): RAM logic "memoriaRAM:RAM|ram" is uninferred due to asynchronous read logic File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/memoriaRAM.vhd Line: 28
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 265 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 2 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "CLOCK_50" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/contador.vhd Line: 18
-    Warning (15610): No output dependent on input pin "clovis" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/contador.vhd Line: 19
-Info (21057): Implemented 2 device resources after synthesis - the final resource count might be different
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "CLOCK_50" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/contador.vhd Line: 22
+Info (21057): Implemented 298 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
-    Info (21059): Implemented 0 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 4845 megabytes
-    Info: Processing ended: Wed Apr 13 20:05:22 2022
+    Info (21059): Implemented 33 output pins
+    Info (21061): Implemented 263 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4846 megabytes
+    Info: Processing ended: Thu Apr 14 08:19:55 2022
     Info: Elapsed time: 00:00:11
     Info: Total CPU time (on all processors): 00:00:23
 
