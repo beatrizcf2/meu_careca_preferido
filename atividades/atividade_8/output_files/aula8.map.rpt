@@ -1,5 +1,5 @@
 Analysis & Synthesis report for aula8
-Thu Apr 14 11:42:20 2022
+Thu Apr 14 15:06:00 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -86,14 +86,14 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Apr 14 11:42:20 2022       ;
+; Analysis & Synthesis Status     ; Successful - Thu Apr 14 15:06:00 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; aula8                                       ;
 ; Top-level Entity Name           ; contador                                    ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
 ; Total registers                 ; 105                                         ;
-; Total pins                      ; 77                                          ;
+; Total pins                      ; 92                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -211,26 +211,28 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                    ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                             ; Library ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------+---------+
-; ULASomaSub.vhd                   ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/ULASomaSub.vhd          ;         ;
-; somaUm.vhd                       ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/somaUm.vhd              ;         ;
-; registradorGenerico.vhd          ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/registradorGenerico.vhd ;         ;
-; muxGenerico4x1.vhd               ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/muxGenerico4x1.vhd      ;         ;
-; muxGenerico2x1.vhd               ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/muxGenerico2x1.vhd      ;         ;
-; memoriaRAM.vhd                   ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/memoriaRAM.vhd          ;         ;
-; memoria.vhd                      ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/memoria.vhd             ;         ;
-; flipFlop.vhd                     ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/flipFlop.vhd            ;         ;
-; desvio.vhd                       ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/desvio.vhd              ;         ;
-; decoder3x8.vhd                   ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/decoder3x8.vhd          ;         ;
-; decoder.vhd                      ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/decoder.vhd             ;         ;
-; CPU.vhd                          ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd                 ;         ;
-; contador.vhd                     ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd            ;         ;
-; conversorHex7Seg.vhd             ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/conversorHex7Seg.vhd    ;         ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                       ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                ; Library ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------+---------+
+; buffer_3_state_8portas.vhd       ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state_8portas.vhd ;         ;
+; buffer_3_state_1porta.vhd        ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state_1porta.vhd  ;         ;
+; ULASomaSub.vhd                   ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/ULASomaSub.vhd             ;         ;
+; somaUm.vhd                       ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/somaUm.vhd                 ;         ;
+; registradorGenerico.vhd          ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/registradorGenerico.vhd    ;         ;
+; muxGenerico4x1.vhd               ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/muxGenerico4x1.vhd         ;         ;
+; muxGenerico2x1.vhd               ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/muxGenerico2x1.vhd         ;         ;
+; memoriaRAM.vhd                   ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/memoriaRAM.vhd             ;         ;
+; memoria.vhd                      ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/memoria.vhd                ;         ;
+; flipFlop.vhd                     ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/flipFlop.vhd               ;         ;
+; desvio.vhd                       ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/desvio.vhd                 ;         ;
+; decoder3x8.vhd                   ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/decoder3x8.vhd             ;         ;
+; decoder.vhd                      ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/decoder.vhd                ;         ;
+; CPU.vhd                          ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd                    ;         ;
+; contador.vhd                     ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd               ;         ;
+; conversorHex7Seg.vhd             ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/conversorHex7Seg.vhd       ;         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------+---------+
 
 
 +------------------------------------------------------------+
@@ -249,14 +251,14 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;              ;
 ; Dedicated logic registers                   ; 105          ;
 ;                                             ;              ;
-; I/O pins                                    ; 77           ;
+; I/O pins                                    ; 92           ;
 ;                                             ;              ;
 ; Total DSP Blocks                            ; 0            ;
 ;                                             ;              ;
 ; Maximum fan-out node                        ; clovis~input ;
 ; Maximum fan-out                             ; 105          ;
-; Total fan-out                               ; 1009         ;
-; Average fan-out                             ; 2.58         ;
+; Total fan-out                               ; 1024         ;
+; Average fan-out                             ; 2.43         ;
 +---------------------------------------------+--------------+
 
 
@@ -265,7 +267,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node          ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                         ; Entity Name         ; Library Name ;
 +-------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------+---------------------+--------------+
-; |contador                           ; 132 (1)             ; 105 (0)                   ; 0                 ; 0          ; 77   ; 0            ; |contador                                   ; contador            ; work         ;
+; |contador                           ; 132 (1)             ; 105 (0)                   ; 0                 ; 0          ; 92   ; 0            ; |contador                                   ; contador            ; work         ;
 ;    |CPU:CPU|                        ; 22 (0)              ; 17 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU                           ; CPU                 ; work         ;
 ;       |ULASomaSub:ULA|              ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|ULASomaSub:ULA            ; ULASomaSub          ; work         ;
 ;       |decoder:DECODER|             ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|decoder:DECODER           ; decoder             ; work         ;
@@ -1104,7 +1106,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port        ; Type   ; Severity ; Details                                                                             ;
 +-------------+--------+----------+-------------------------------------------------------------------------------------+
-; saida[7..5] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; saida[7..6] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; saida[3..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +-------------+--------+----------+-------------------------------------------------------------------------------------+
 
@@ -1213,7 +1215,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         4 data inputs ; 87                          ;
 ;         5 data inputs ; 2                           ;
 ;         6 data inputs ; 14                          ;
-; boundary_port         ; 77                          ;
+; boundary_port         ; 92                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.00                        ;
 ; Average LUT depth     ; 2.23                        ;
@@ -1235,10 +1237,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Thu Apr 14 11:42:09 2022
+    Info: Processing started: Thu Apr 14 15:05:49 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off aula8 -c aula8
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file buffer_3_state_8portas.vhd
+    Info (12022): Found design unit 1: buffer_3_state_8portas-comportamento File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state_8portas.vhd Line: 11
+    Info (12023): Found entity 1: buffer_3_state_8portas File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state_8portas.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file buffer_3_state_1porta.vhd
+    Info (12022): Found design unit 1: buffer_3_state_1porta-comportamento File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state_1porta.vhd Line: 11
+    Info (12023): Found entity 1: buffer_3_state_1porta File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state_1porta.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file ulasomasub.vhd
     Info (12022): Found design unit 1: ULASomaSub-comportamento File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/ULASomaSub.vhd Line: 15
     Info (12023): Found entity 1: ULASomaSub File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/ULASomaSub.vhd Line: 5
@@ -1280,7 +1288,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file cpu.vhd
     Info (12022): Found design unit 1: CPU-arquitetura File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 28
     Info (12023): Found entity 1: CPU File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file contador.vhd
-    Info (12022): Found design unit 1: contador-arquitetura File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 29
+    Info (12022): Found design unit 1: contador-arquitetura File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 31
     Info (12023): Found entity 1: contador File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file decodergeneric.vhd
     Info (12022): Found design unit 1: decoderGeneric-comportamento File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/decoderGeneric.vhd Line: 10
@@ -1289,9 +1297,9 @@ Info (12021): Found 2 design units, including 1 entities, in source file convers
     Info (12022): Found design unit 1: conversorHex7Seg-comportamento File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/conversorHex7Seg.vhd Line: 17
     Info (12023): Found entity 1: conversorHex7Seg File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/conversorHex7Seg.vhd Line: 4
 Info (12127): Elaborating entity "contador" for the top level hierarchy
-Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 108
-Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 112
-Info (12128): Elaborating entity "CPU" for hierarchy "CPU:CPU" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 121
+Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 134
+Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 138
+Info (12128): Elaborating entity "CPU" for hierarchy "CPU:CPU" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 147
 Warning (10541): VHDL Signal Declaration warning at CPU.vhd(65): used implicit default value for signal "saidaDados" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 65
 Warning (10873): Using initial value X (don't care) for net "control[3..2]" at CPU.vhd(16) File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 16
 Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "CPU:CPU|muxGenerico2x1:MUX_ULA" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 91
@@ -1303,11 +1311,29 @@ Info (12128): Elaborating entity "ULASomaSub" for hierarchy "CPU:CPU|ULASomaSub:
 Info (12128): Elaborating entity "decoder" for hierarchy "CPU:CPU|decoder:DECODER" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 141
 Info (12128): Elaborating entity "desvio" for hierarchy "CPU:CPU|desvio:DESVIO" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 145
 Info (12128): Elaborating entity "flipFlop" for hierarchy "CPU:CPU|flipFlop:FLAG" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 154
-Info (12128): Elaborating entity "decoder3x8" for hierarchy "decoder3x8:decoderHab" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 152
-Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "conversorHex7Seg:conversorHEX0" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 160
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:RegHEX0" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 203
+Info (12128): Elaborating entity "decoder3x8" for hierarchy "decoder3x8:decoderHab" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 178
+Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "conversorHex7Seg:conversorHEX0" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 186
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:RegHEX0" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 229
+Info (12128): Elaborating entity "buffer_3_state_8portas" for hierarchy "buffer_3_state_8portas:bufferSWConj" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 272
+Info (12128): Elaborating entity "buffer_3_state_1porta" for hierarchy "buffer_3_state_1porta:bufferSW8" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 277
 Info (276014): Found 1 instances of uninferred RAM logic
     Info (276007): RAM logic "memoriaRAM:RAM|ram" is uninferred due to asynchronous read logic File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/memoriaRAM.vhd Line: 28
+Warning (13027): Removed fan-outs from the following always-disabled I/O buffers
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8portas:bufferSWConj|saida[0]" to the node "valorDado[0]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state_8portas.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_1porta:bufferSW8|saida" to the node "valorDado[0]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state_1porta.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_1porta:bufferSW9|saida" to the node "valorDado[0]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state_1porta.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_1porta:bufferKEY0|saida" to the node "valorDado[0]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state_1porta.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_1porta:bufferKEY1|saida" to the node "valorDado[0]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state_1porta.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_1porta:bufferKEY2|saida" to the node "valorDado[0]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state_1porta.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_1porta:bufferKEY3|saida" to the node "valorDado[0]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state_1porta.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_1porta:bufferRESET|saida" to the node "valorDado[0]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state_1porta.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8portas:bufferSWConj|saida[1]" to the node "valorDado[1]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state_8portas.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8portas:bufferSWConj|saida[2]" to the node "valorDado[2]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state_8portas.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8portas:bufferSWConj|saida[3]" to the node "valorDado[3]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state_8portas.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8portas:bufferSWConj|saida[4]" to the node "valorDado[4]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state_8portas.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8portas:bufferSWConj|saida[5]" to the node "valorDado[5]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state_8portas.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8portas:bufferSWConj|saida[6]" to the node "valorDado[6]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state_8portas.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8portas:bufferSWConj|saida[7]" to the node "valorDado[7]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state_8portas.vhd Line: 8
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "endRAM[3]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 14
     Warning (13410): Pin "endRAM[4]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 14
@@ -1325,16 +1351,31 @@ Info (286030): Timing-Driven Synthesis is running
 Info (17049): 393 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "CLOCK_50" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 22
-Info (21057): Implemented 297 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 2 input pins
+Warning (21074): Design contains 16 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "CLOCK_50" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 24
+    Warning (15610): No output dependent on input pin "SW0" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 20
+    Warning (15610): No output dependent on input pin "SW8" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 20
+    Warning (15610): No output dependent on input pin "SW9" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 20
+    Warning (15610): No output dependent on input pin "KEY0" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 21
+    Warning (15610): No output dependent on input pin "KEY1" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 21
+    Warning (15610): No output dependent on input pin "KEY2" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 21
+    Warning (15610): No output dependent on input pin "KEY3" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 21
+    Warning (15610): No output dependent on input pin "FPGA_RESST" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 21
+    Warning (15610): No output dependent on input pin "SW1" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 20
+    Warning (15610): No output dependent on input pin "SW2" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 20
+    Warning (15610): No output dependent on input pin "SW3" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 20
+    Warning (15610): No output dependent on input pin "SW4" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 20
+    Warning (15610): No output dependent on input pin "SW5" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 20
+    Warning (15610): No output dependent on input pin "SW6" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 20
+    Warning (15610): No output dependent on input pin "SW7" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 20
+Info (21057): Implemented 312 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 17 input pins
     Info (21059): Implemented 75 output pins
     Info (21061): Implemented 220 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 18 warnings
-    Info: Peak virtual memory: 4839 megabytes
-    Info: Processing ended: Thu Apr 14 11:42:20 2022
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 49 warnings
+    Info: Peak virtual memory: 4846 megabytes
+    Info: Processing ended: Thu Apr 14 15:06:00 2022
     Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:22
+    Info: Total CPU time (on all processors): 00:00:23
 
 

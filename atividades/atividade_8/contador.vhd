@@ -17,7 +17,9 @@ entity contador is
             LED9          : out std_logic;
             LEDconj       : out std_logic_vector(7 downto 0);
 				HEX0, HEX1, HEX2, HEX3, HEX4, HEX5 : out std_logic_vector(6 downto 0);
-	 
+            SW0, SW1, SW2, SW3, SW4, SW5, SW6, SW7, SW8, SW9 : in std_logic;
+            KEY0, KEY1, KEY2, KEY3, FPGA_RESST : in std_logic;
+
             -- simulacao
             CLOCK_50      : in std_logic;
             clovis        : in std_logic
@@ -87,6 +89,30 @@ architecture arquitetura of contador is
   signal saidaRegHEX3       :  std_logic_vector(3 downto 0);
   signal saidaRegHEX4       :  std_logic_vector(3 downto 0);
   signal saidaRegHEX5       :  std_logic_vector(3 downto 0);
+
+
+  -- chaves e botoes
+  signal SWconj             : std_logic_vector(7 downto 0);
+
+  signal habKEY0            :  std_logic;
+  signal habKEY1            :  std_logic;
+  signal habKEY2            :  std_logic;
+  signal habKEY3            :  std_logic;
+  signal habRESET           :  std_logic;
+  signal habSW8             :  std_logic;
+  signal habSW9             :  std_logic;
+  signal habSWconj          :  std_logic;
+
+  signal saidaBufferKEY0            :  std_logic;
+  signal saidaBufferKEY1            :  std_logic;
+  signal saidaBufferKEY2            :  std_logic;
+  signal saidaBufferKEY3            :  std_logic;
+  signal saidaBufferRESET           :  std_logic;
+  signal saidaBufferSW8             :  std_logic;
+  signal saidaBufferSW9             :  std_logic;
+  signal saidaBufferSWconj          :  std_logic;
+
+  --signal leituraChaves              : std_logic_vector(7 downto 0); -- n tenho ctz se precisa msm
   
  
 begin
@@ -242,8 +268,46 @@ RegHEX5  : entity work.registradorGenerico generic map (larguraDados => 4)
                         ENABLE  => habHEX5, 
                         CLK     => CLK, 
                         RST     => '0');
+
+bufferSWConj :  entity work.buffer_3_state_8portas
+              port map(entrada  => SWconj, 
+                       habilita => habSWconj, 
+                       saida    => dadoLido); -- o q vai no dataIn
   
-                      
+bufferSW8 :  entity work.buffer_3_state_1porta
+              port map(entrada  => SW8, 
+                       habilita => habSW8, 
+                       saida    => dadoLido(0)); -- o q vai no dataIn
+
+bufferSW9 :  entity work.buffer_3_state_1porta
+              port map(entrada  => SW9, 
+                       habilita => habSW9, 
+                       saida    => dadoLido(0));
+
+bufferKEY0 :  entity work.buffer_3_state_1porta
+              port map(entrada  => KEY0, 
+                       habilita => habKEY0, 
+                       saida    => dadoLido(0));
+
+bufferKEY1 :  entity work.buffer_3_state_1porta
+              port map(entrada  => KEY1, 
+                       habilita => habKEY1, 
+                       saida    => dadoLido(0));
+
+bufferKEY2 :  entity work.buffer_3_state_1porta
+              port map(entrada  => KEY2, 
+                       habilita => habKEY2, 
+                       saida    => dadoLido(0));
+
+bufferKEY3 :  entity work.buffer_3_state_1porta
+              port map(entrada  => KEY3, 
+                       habilita => habKEY3, 
+                       saida    => dadoLido(0));
+
+bufferRESET :  entity work.buffer_3_state_1porta
+              port map(entrada  => FPGA_RESST, 
+                       habilita => habRESET, 
+                       saida    => dadoLido(0));
 							 
 habLED8    <= WR AND saidaDecoderHab(4) AND saidaDecoderLED(1) AND (NOT dataAddress(5));
 habLED9    <= WR AND saidaDecoderHab(4) AND saidaDecoderLED(2) AND (NOT dataAddress(5));
@@ -255,6 +319,16 @@ habHEX2    <= WR AND saidaDecoderHab(4) AND saidaDecoderLED(2) AND (dataAddress(
 habHEX3    <= WR AND saidaDecoderHab(4) AND saidaDecoderLED(3) AND (dataAddress(5));
 habHEX4    <= WR AND saidaDecoderHab(4) AND saidaDecoderLED(4) AND (dataAddress(5));
 habHEX5    <= WR AND saidaDecoderHab(4) AND saidaDecoderLED(5) AND (dataAddress(5));
+
+habKEY0    <= RD AND saidaDecoderHab(5) AND saidaDecoderLED(0) AND (NOT dataAddress(5));
+habKEY1    <= RD AND saidaDecoderHab(5) AND saidaDecoderLED(1) AND (NOT dataAddress(5));
+habKEY2    <= RD AND saidaDecoderHab(5) AND saidaDecoderLED(2) AND (NOT dataAddress(5));
+habKEY3    <= RD AND saidaDecoderHab(5) AND saidaDecoderLED(3) AND (NOT dataAddress(5));
+habRESET   <= RD AND saidaDecoderHab(5) AND saidaDecoderLED(4) AND (NOT dataAddress(5));
+
+habSWconj  <= RD AND saidaDecoderHab(5) AND saidaDecoderLED(0) AND (NOT dataAddress(5));
+habSW8     <= RD AND saidaDecoderHab(5) AND saidaDecoderLED(1) AND (NOT dataAddress(5));
+habSW9     <= RD AND saidaDecoderHab(5) AND saidaDecoderLED(2) AND (NOT dataAddress(5));
 
 
 endROM     <= ROMAddress;
@@ -270,6 +344,9 @@ HEX2       <= saidaDecHEX2;
 HEX3       <= saidaDecHEX3;
 HEX4       <= saidaDecHEX4;
 HEX5       <= saidaDecHEX5;
+
+SWconj <= SW7 & SW6 & SW5 & SW4 & SW3 & SW2 & SW1 & SW0;
+
  
 
 
