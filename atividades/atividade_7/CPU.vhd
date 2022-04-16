@@ -17,8 +17,17 @@ entity CPU is
 	 ROMAddress    : out std_logic_vector(larguraEndereco-1 downto 0);
 	 dataAddress   : out std_logic_vector(larguraEndereco-1 downto 0);
 	 dataOut       : out std_logic_vector(larguraDados-1 downto 0);
+	 habAcumulador : out std_logic;
+	 ULA_A         : out std_logic_vector(larguraDados-1 downto 0);
+	 ULA_B         : out std_logic_vector(larguraDados-1 downto 0);
+	 regis_A_saida : out std_logic_vector(larguraDados-1 downto 0);
+	 ULA_saida     : out std_logic_vector(larguraDados-1 downto 0);
+	 ULA_op        : out std_logic_vector(1 downto 0);
+	 entradaA_MUXa : out std_logic_vector(larguraDados-1 downto 0);
+	 entradaB_MUXa : out std_logic_vector(larguraDados-1 downto 0);
+	 seletor_MUXa  : out std_logic;
+	 saida_MUXa    : out std_logic_vector(larguraDados-1 downto 0);
 	
-	 
 	 -- simulacao
 	 CLK           : in std_logic
   );
@@ -79,7 +88,7 @@ architecture arquitetura of CPU is
   -- Instrucao
   signal instrucao          : std_logic_vector(12 downto 0);  
   alias  opCode             : std_logic_vector(3 downto 0) is instrucao(12 downto 9);   
-  alias  imediatoEndereco   : std_logic_vector(8 downto 0) is instrucao(8 downto 0);                -- imediatoValorRAM
+  alias  imediatoEndereco   : std_logic_vector(8 downto 0) is instrucao(8 downto 0);                -- RAM
   alias  imediatoValor      : std_logic_vector(7 downto 0) is instrucao(7 downto 0);                -- imediatoValorValor
   alias  imediatoJump       : std_logic_vector(8 downto 0) is instrucao(8 downto 0);                -- imediatoJump
 
@@ -89,7 +98,7 @@ begin
 
 -- O port map completo do MUX.
 MUX_ULA    :  entity work.muxGenerico2x1  generic map (larguraDados => larguraDados)
-             port map(entradaA_MUX => saidaDados,
+             port map(entradaA_MUX => dataIn,
                       entradaB_MUX => imediatoValor,
                       seletor_MUX  => selMux,
                       saida_MUX    => saidaMuxULA);
@@ -98,7 +107,7 @@ MUX_ULA    :  entity work.muxGenerico2x1  generic map (larguraDados => larguraDa
 REG_A    : entity work.registradorGenerico  generic map (larguraDados => larguraDados)
              port map (DIN     => saidaOperacaoULA, 
 						     DOUT    => saidaRegA, 
-				   		  ENABLE  => habilitaA , 
+				   		  ENABLE  => habilitaA, 
 				   		  CLK     => CLK, 
 				   		  RST     => '0');
 
@@ -161,11 +170,21 @@ FLAG    : entity work.flipFlop
 instrucao  <= instructionIn;
 
 --Saidas
-ROMAddress <= saidaPC;
+ROMAddress  <= saidaPC;
 dataAddress <= imediatoEndereco( larguraEndereco-1 downto 0);
-dataOut    <= saidaRegA;
-control(0) <= habilitaEscritaMEM;
-control(1) <= habilitaLeituraMEM;
+dataOut     <= saidaRegA;
+control(0)  <= habilitaEscritaMEM;
+control(1)  <= habilitaLeituraMEM;
 
+habAcumulador <= habilitaA;
+ULA_A         <= saidaRegA;
+ULA_B         <= saidaMuxULA;
+regis_A_saida <= saidaRegA;
+ULA_saida     <= saidaOperacaoULA;
+ULA_op        <= operacaoULA;
 
+entradaA_MUXa <= saidaDados;
+entradaB_MUXa <= imediatoValor;
+seletor_MUXa  <= selMux;
+saida_MUXa    <= saidaMuxULA;
 end architecture;

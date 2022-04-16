@@ -48,6 +48,28 @@ architecture assincrona of memoriaROM is
         tmp(10) := STA & '1' & "00000000";   -- Armazena 170 em LEDR0 até LEDR7
         tmp(11) := JMP & '0' & "00001011";   -- Fim. Deve ficar neste laço
 		  
+--		  tmp(0)  := LDI & '0' & x"AA";
+--		  tmp(1)  := STA & '1' & x"00";
+--		  tmp(2)  := LDI & '0'  & x"01";
+--		  tmp(3)  := STA & '1' & x"01";
+--		  tmp(4)  := LDI & '0'  & x"00";
+--		  tmp(5)  := STA & '1' & x"02";
+--		  tmp(6)  := JMP & '0'  & x"00";
+		  
+--		  tmp(0)  := LDI & '0' & x"01";
+--		  tmp(1)  := STA & '1' & x"00";
+--		  tmp(2)  := LDI & '0'  & x"01";
+--		  tmp(3)  := STA & '1' & x"01";
+--		  tmp(4)  := LDI & '0'  & x"00";
+--		  tmp(5)  := STA & '1' & x"02";
+--		  tmp(6)  := JMP & '0'  & x"00";
+		  
+--		  tmp(0)  := LDI & '0' & x"01";
+--		  tmp(1)  := STA & '0' & x"00";
+--		  tmp(2)  := SUM & '0' & x"00";
+--		  tmp(3)  := SUM & '0' & x"00";
+--		  tmp(4)  := SUM & '0' & x"00";
+		  
         return tmp;
     end initMemory;
 

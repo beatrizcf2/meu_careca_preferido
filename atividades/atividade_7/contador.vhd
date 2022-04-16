@@ -20,7 +20,30 @@ entity contador is
 	 
 				 -- simulacao
 				 CLOCK_50      : in std_logic;
-				 clovis        : in std_logic
+				 clovis        : in std_logic;
+				 writtenData   : out std_logic;
+				 habFF9        : out std_logic;
+				 habFF8        : out std_logic;
+				 dadoIN        : out std_logic_vector(larguraDados-1 downto 0);
+				 dadoOUT       : out std_logic_vector(larguraDados-1 downto 0);
+				 endData       : out std_logic_vector(larguraEndereco-1 downto 0);
+				 readRAM       : out std_logic;
+				 writeRAM      : out std_logic;
+				 habRAM        : out std_logic;
+				 
+				 --teste
+				 ULA_inA       : out std_logic_vector(larguraDados-1 downto 0);
+				 ULA_inB       : out std_logic_vector(larguraDados-1 downto 0);
+				 acum_out      : out std_logic_vector(larguraDados-1 downto 0);
+				 habAcum       : out std_logic;
+				 ULA_out       : out std_logic_vector(larguraDados-1 downto 0);
+				 ULA_sel       : out std_logic_vector(1 downto 0);
+				 MUX_inAx : out std_logic_vector(larguraDados-1 downto 0);
+				 MUX_inBx  : out std_logic_vector(larguraDados-1 downto 0);
+				 MUX_selx  : out std_logic;
+				 MUX_outx : out std_logic_vector(larguraDados-1 downto 0)
+				 
+				 
   );
 end entity;
 
@@ -64,8 +87,20 @@ architecture arquitetura of contador is
   signal saidaLED8               : std_logic;
   signal habLED8            : std_logic;
 
- 
+ -- testes
+  signal entradaULA_A       : std_logic_vector(larguraDados-1 downto 0);
+  signal entradaULA_B       : std_logic_vector(larguraDados-1 downto 0);
+  signal saida_acumulador   : std_logic_vector(larguraDados-1 downto 0);
+  signal habilita_acum      : std_logic;
+  signal opULA              : std_logic_vector(1 downto 0);
+  signal saida_ULA          : std_logic_vector(larguraDados-1 downto 0);
+  signal MUX_inA    : std_logic_vector(larguraDados-1 downto 0);
+  signal MUX_inB : std_logic_vector(larguraDados-1 downto 0);
+  signal MUX_sel : std_logic;
+  signal MUX_out : std_logic_vector(larguraDados-1 downto 0);
+  
 begin
+
 
 -- Instanciando os componentes:
 
@@ -101,6 +136,16 @@ CPU     : entity work.CPU
 							 ROMAddress    => ROMAddress,
 							 dataAddress   => dataAddress,
 							 dataOut       => dadoEscrito,
+							 ULA_A         => entradaULA_A,
+							 ULA_B         => entradaULA_B,
+							 habAcumulador => habilita_acum,
+							 regis_A_saida => saida_acumulador,
+							 ULA_op        => opULA,
+							 ULA_saida     => saida_ULA,
+							 entradaA_MUXa => MUX_inA,
+							 entradaB_MUXa => MUX_inB,
+							 seletor_MUXa  => MUX_sel,
+							 saida_MUXa    => MUX_out,
 							 CLK           => CLK);
 							 
 
@@ -125,16 +170,16 @@ FFLEDconj  : entity work.registradorGenerico generic map (larguraDados => 8)
 				   		  CLK     => CLK, 
 				   		  RST     => '0');
 
-decoderHab : entity work.decoder3x8
+decoderBloco : entity work.decoder3x8
             port map( entrada => entradaDecoderHab,
                       saida => saidaDecoderHab);	
 	
-decoderLED : entity work.decoder3x8
+decoderPosicao : entity work.decoder3x8
             port map( entrada => dataAddress(2 downto 0),
                       saida => saidaDecoderLED);	
 							 
-habLED8    <= WR AND saidaDecoderHab(4) AND saidaDecoderLED(2);
-habLED9    <= WR AND saidaDecoderHab(4) AND saidaDecoderLED(1);
+habLED8    <= WR AND saidaDecoderHab(4) AND saidaDecoderLED(1);
+habLED9    <= WR AND saidaDecoderHab(4) AND saidaDecoderLED(2);
 habLEDconj <= WR AND saidaDecoderHab(4) AND saidaDecoderLED(0);
 
 endROM     <= ROMAddress;
@@ -144,9 +189,24 @@ LED8       <= saidaLED8;
 LED9       <= saidaLED9;
 LEDconj    <= saidaLEDconj;
 
+habFF9 <= habLED9;
+habFF8 <= habLED8;
+writtenData <= dadoEscrito(0);
+endData <= dataAddress;
+dadoIN <= dadoLido;
+dadoOUT <= dadoEscrito;
+readRAM <= RD;
+writeRAM <= WR;
+habRAM <= habilitaRam;
 
-
-
-
-
+ULA_inA  <=    entradaULA_A; 
+ULA_inB  <= entradaULA_B;
+acum_out <= saida_acumulador;
+habAcum  <= habilita_acum;
+ULA_out  <= saida_ULA;
+ULA_sel  <= opULA;
+MUX_inAx <= MUX_inA;
+MUX_inBx <= MUX_inB;
+MUX_selx <= MUX_sel;
+MUX_outx <= MUX_out;
 end architecture;

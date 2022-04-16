@@ -1,5 +1,5 @@
 Flow report for aula7
-Thu Apr 14 09:31:04 2022
+Sat Apr 16 15:57:16 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Thu Apr 14 09:31:04 2022       ;
+; Flow Status                     ; Successful - Sat Apr 16 15:57:16 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; aula7                                       ;
 ; Top-level Entity Name           ; contador                                    ;
@@ -49,8 +49,8 @@ https://fpgasoftware.intel.com/eula.
 ; Device                          ; 5CEBA4F23C7                                 ;
 ; Timing Models                   ; Final                                       ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 155                                         ;
-; Total pins                      ; 35                                          ;
+; Total registers                 ; 43                                          ;
+; Total pins                      ; 126                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/14/2022 08:19:45 ;
+; Start date & time ; 04/16/2022 15:56:50 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; aula7               ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 156704307716052.164993518500216        ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 216273108262039.165013541023514        ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
@@ -106,36 +106,30 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:11     ; 1.0                     ; 4846 MB             ; 00:00:23                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4712 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4716 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4712 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4716 MB             ; 00:00:01                           ;
-; Total                ; 00:00:14     ; --                      ; --                  ; 00:00:27                           ;
+; Analysis & Synthesis ; 00:00:13     ; 1.0                     ; 476 MB              ; 00:00:28                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 660 MB              ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 666 MB              ; 00:00:01                           ;
+; Total                ; 00:00:14     ; --                      ; --                  ; 00:00:29                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                    ;
-+----------------------+------------------+------------+------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
-+----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; DESKTOP-9OROEDA  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-9OROEDA  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-9OROEDA  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-9OROEDA  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-9OROEDA  ; Windows 10 ; 10.0       ; x86_64         ;
-+----------------------+------------------+------------+------------+----------------+
++----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                        ;
++----------------------+------------------+----------------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name        ; OS Version ; Processor type ;
++----------------------+------------------+----------------+------------+----------------+
+; Analysis & Synthesis ; leviosa-Ubuntu   ; Ubuntu 20.04.3 ; 20         ; x86_64         ;
+; EDA Netlist Writer   ; leviosa-Ubuntu   ; Ubuntu 20.04.3 ; 20         ; x86_64         ;
+; EDA Netlist Writer   ; leviosa-Ubuntu   ; Ubuntu 20.04.3 ; 20         ; x86_64         ;
++----------------------+------------------+----------------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off aula7 -c aula7
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off aula7 -c aula7 --vector_source=C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/Waveform.vwf --testbench_file=C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/simulation/qsim/Waveform.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/simulation/qsim/ aula7 -c aula7
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off aula7 -c aula7 --vector_source=C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/Waveform.vwf --testbench_file=C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/simulation/qsim/Waveform.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_7/simulation/qsim/ aula7 -c aula7
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off aula7 -c aula7 --vector_source=/home/leviosa/Documents/Insper/descomp/paulao/atividades/atividade_7/Waveform2.vwf --testbench_file=/home/leviosa/Documents/Insper/descomp/paulao/atividades/atividade_7/simulation/qsim/Waveform2.vwf.vht
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=/home/leviosa/Documents/Insper/descomp/paulao/atividades/atividade_7/simulation/qsim/ aula7 -c aula7
 
 
 

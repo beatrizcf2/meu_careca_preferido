@@ -136,6 +136,338 @@
 					"strict" : false
 				},
 				{
+					"name" : "writtenData",
+					"strict" : false
+				},
+				{
+					"name" : "habFF9",
+					"strict" : false
+				},
+				{
+					"name" : "habFF8",
+					"strict" : false
+				},
+				{
+					"name" : "dadoIN[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dadoIN[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dadoIN[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dadoIN[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dadoIN[4]",
+					"strict" : false
+				},
+				{
+					"name" : "dadoIN[5]",
+					"strict" : false
+				},
+				{
+					"name" : "dadoIN[6]",
+					"strict" : false
+				},
+				{
+					"name" : "dadoIN[7]",
+					"strict" : false
+				},
+				{
+					"name" : "dadoOUT[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dadoOUT[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dadoOUT[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dadoOUT[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dadoOUT[4]",
+					"strict" : false
+				},
+				{
+					"name" : "dadoOUT[5]",
+					"strict" : false
+				},
+				{
+					"name" : "dadoOUT[6]",
+					"strict" : false
+				},
+				{
+					"name" : "dadoOUT[7]",
+					"strict" : false
+				},
+				{
+					"name" : "endData[0]",
+					"strict" : false
+				},
+				{
+					"name" : "endData[1]",
+					"strict" : false
+				},
+				{
+					"name" : "endData[2]",
+					"strict" : false
+				},
+				{
+					"name" : "endData[3]",
+					"strict" : false
+				},
+				{
+					"name" : "endData[4]",
+					"strict" : false
+				},
+				{
+					"name" : "endData[5]",
+					"strict" : false
+				},
+				{
+					"name" : "endData[6]",
+					"strict" : false
+				},
+				{
+					"name" : "endData[7]",
+					"strict" : false
+				},
+				{
+					"name" : "endData[8]",
+					"strict" : false
+				},
+				{
+					"name" : "readRAM",
+					"strict" : false
+				},
+				{
+					"name" : "writeRAM",
+					"strict" : false
+				},
+				{
+					"name" : "habRAM",
+					"strict" : false
+				},
+				{
+					"name" : "ULA_inA[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ULA_inA[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ULA_inA[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ULA_inA[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ULA_inA[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ULA_inA[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ULA_inA[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ULA_inA[7]",
+					"strict" : false
+				},
+				{
+					"name" : "ULA_inB[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ULA_inB[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ULA_inB[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ULA_inB[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ULA_inB[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ULA_inB[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ULA_inB[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ULA_inB[7]",
+					"strict" : false
+				},
+				{
+					"name" : "acum_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "acum_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "acum_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "acum_out[3]",
+					"strict" : false
+				},
+				{
+					"name" : "acum_out[4]",
+					"strict" : false
+				},
+				{
+					"name" : "acum_out[5]",
+					"strict" : false
+				},
+				{
+					"name" : "acum_out[6]",
+					"strict" : false
+				},
+				{
+					"name" : "acum_out[7]",
+					"strict" : false
+				},
+				{
+					"name" : "habAcum",
+					"strict" : false
+				},
+				{
+					"name" : "ULA_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ULA_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ULA_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ULA_out[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ULA_out[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ULA_out[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ULA_out[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ULA_out[7]",
+					"strict" : false
+				},
+				{
+					"name" : "ULA_sel[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ULA_sel[1]",
+					"strict" : false
+				},
+				{
+					"name" : "MUX_inBx[0]",
+					"strict" : false
+				},
+				{
+					"name" : "MUX_inBx[1]",
+					"strict" : false
+				},
+				{
+					"name" : "MUX_inBx[2]",
+					"strict" : false
+				},
+				{
+					"name" : "MUX_inBx[3]",
+					"strict" : false
+				},
+				{
+					"name" : "MUX_inBx[4]",
+					"strict" : false
+				},
+				{
+					"name" : "MUX_inBx[5]",
+					"strict" : false
+				},
+				{
+					"name" : "MUX_inBx[6]",
+					"strict" : false
+				},
+				{
+					"name" : "MUX_inBx[7]",
+					"strict" : false
+				},
+				{
+					"name" : "MUX_selx",
+					"strict" : false
+				},
+				{
+					"name" : "MUX_outx[0]",
+					"strict" : false
+				},
+				{
+					"name" : "MUX_outx[1]",
+					"strict" : false
+				},
+				{
+					"name" : "MUX_outx[2]",
+					"strict" : false
+				},
+				{
+					"name" : "MUX_outx[3]",
+					"strict" : false
+				},
+				{
+					"name" : "MUX_outx[4]",
+					"strict" : false
+				},
+				{
+					"name" : "MUX_outx[5]",
+					"strict" : false
+				},
+				{
+					"name" : "MUX_outx[6]",
+					"strict" : false
+				},
+				{
+					"name" : "MUX_outx[7]",
+					"strict" : false
+				},
+				{
 					"name" : "clovis",
 					"strict" : false
 				}
