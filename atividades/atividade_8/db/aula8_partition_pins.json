@@ -88,6 +88,46 @@
 					"strict" : false
 				},
 				{
+					"name" : "LED8",
+					"strict" : false
+				},
+				{
+					"name" : "LED9",
+					"strict" : false
+				},
+				{
+					"name" : "LEDconj[0]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDconj[1]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDconj[2]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDconj[3]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDconj[4]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDconj[5]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDconj[6]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDconj[7]",
+					"strict" : false
+				},
+				{
 					"name" : "HEX0[0]",
 					"strict" : false
 				},
@@ -257,6 +297,66 @@
 				},
 				{
 					"name" : "clovis",
+					"strict" : false
+				},
+				{
+					"name" : "FPGA_RESST",
+					"strict" : false
+				},
+				{
+					"name" : "KEY1",
+					"strict" : false
+				},
+				{
+					"name" : "KEY3",
+					"strict" : false
+				},
+				{
+					"name" : "SW[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[8]",
+					"strict" : false
+				},
+				{
+					"name" : "KEY0",
+					"strict" : false
+				},
+				{
+					"name" : "SW[9]",
+					"strict" : false
+				},
+				{
+					"name" : "KEY2",
+					"strict" : false
+				},
+				{
+					"name" : "SW[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[4]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[5]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[6]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[7]",
 					"strict" : false
 				}
 			]

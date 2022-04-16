@@ -89,7 +89,7 @@ begin
 
 -- O port map completo do MUX.
 MUX_ULA    :  entity work.muxGenerico2x1  generic map (larguraDados => larguraDados)
-             port map(entradaA_MUX => saidaDados,
+             port map(entradaA_MUX => dataIn,
                       entradaB_MUX => imediatoValor,
                       seletor_MUX  => selMux,
                       saida_MUX    => saidaMuxULA);

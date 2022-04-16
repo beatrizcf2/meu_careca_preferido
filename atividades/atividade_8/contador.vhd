@@ -10,16 +10,18 @@ entity contador is
             addrWidth        : natural := 6;
             simulacao        : boolean := TRUE -- para gravar na placa, altere de TRUE para FALSE
   );
-  port   (  endROM   : out std_logic_vector(larguraEndereco-1 downto 0);
-            endRAM   : out std_logic_vector(addrWidth-1 downto 0);
+  port   (  endROM        : out std_logic_vector(larguraEndereco-1 downto 0);
+            endRAM        : out std_logic_vector(addrWidth-1 downto 0);
             valorDado     : out  std_logic_vector(larguraDados-1 downto 0);
+				LEDR          : out std_logic_vector(9 downto 0);
             LED8          : out std_logic;
             LED9          : out std_logic;
             LEDconj       : out std_logic_vector(7 downto 0);
-				HEX0, HEX1, HEX2, HEX3, HEX4, HEX5 : out std_logic_vector(6 downto 0);
-            SW0, SW1, SW2, SW3, SW4, SW5, SW6, SW7, SW8, SW9 : in std_logic;
+            SW            : in std_logic_vector(9 downto 0);
+				
             KEY0, KEY1, KEY2, KEY3, FPGA_RESST : in std_logic;
-
+				HEX0, HEX1, HEX2, HEX3, HEX4, HEX5 : out std_logic_vector(6 downto 0);
+				
             -- simulacao
             CLOCK_50      : in std_logic;
             clovis        : in std_logic
@@ -42,7 +44,7 @@ architecture arquitetura of contador is
   
   -- CPU Data adress
   signal dataAddress        : std_logic_vector(larguraEndereco-1 downto 0);  
-  alias  entradaDecoderHab  : std_logic_vector(2 downto 0) is dataAddress(larguraEndereco-1 downto larguraEndereco-3);   
+  alias  entradaDecoderBlock  : std_logic_vector(2 downto 0) is dataAddress(larguraEndereco-1 downto larguraEndereco-3);   
   alias  enderecoRAM        : std_logic_vector(addrWidth-1 downto 0) is dataAddress(larguraEndereco-4 downto 0);   
 
   -- CPU Escrita de dados
@@ -52,14 +54,14 @@ architecture arquitetura of contador is
   signal ROMAddress         : std_logic_vector(larguraEndereco-1 downto 0); -- entrada da ROM
   
   -- decoder habilitador 1
-  signal saidaDecoderHab    : std_logic_vector(7 downto 0);
-  alias  habilitaRam         : std_logic is saidaDecoderHab(0);
+  signal saidaDecoderBlock    : std_logic_vector(7 downto 0);
+  alias  habilitaRam         : std_logic is saidaDecoderBlock(0);
   
   -- Clock
   signal CLK                : std_logic;
   
   --LEDS
-  signal saidaDecoderLED    : std_logic_vector(7 downto 0);
+  signal saidaDecoderAddr    : std_logic_vector(7 downto 0);
   signal saidaLEDconj            : std_logic_vector(7 downto 0);
   signal habLEDconj         : std_logic;
   signal saidaLED9               : std_logic;
@@ -83,16 +85,8 @@ architecture arquitetura of contador is
   signal saidaDecHEX4       :  std_logic_vector(6 downto 0);
   signal saidaDecHEX5       :  std_logic_vector(6 downto 0);
 
-  signal saidaRegHEX0       :  std_logic_vector(3 downto 0);
-  signal saidaRegHEX1       :  std_logic_vector(3 downto 0);
-  signal saidaRegHEX2       :  std_logic_vector(3 downto 0);
-  signal saidaRegHEX3       :  std_logic_vector(3 downto 0);
-  signal saidaRegHEX4       :  std_logic_vector(3 downto 0);
-  signal saidaRegHEX5       :  std_logic_vector(3 downto 0);
-
 
   -- chaves e botoes
-  signal SWconj             : std_logic_vector(7 downto 0);
 
   signal habKEY0            :  std_logic;
   signal habKEY1            :  std_logic;
@@ -111,7 +105,9 @@ architecture arquitetura of contador is
   signal saidaBufferSW8             :  std_logic;
   signal saidaBufferSW9             :  std_logic;
   signal saidaBufferSWconj          :  std_logic;
-
+	
+  
+  signal saidaDebouncer, ADDR_511   :  std_logic;
   --signal leituraChaves              : std_logic_vector(7 downto 0); -- n tenho ctz se precisa msm
   
  
@@ -175,160 +171,136 @@ RegLEDconj  : entity work.registradorGenerico generic map (larguraDados => 8)
 				   		  CLK     => CLK, 
 				   		  RST     => '0');
 
-decoderHab : entity work.decoder3x8
-            port map( entrada => entradaDecoderHab,
-                      saida => saidaDecoderHab);	
+decoderBlock : entity work.decoder3x8
+            port map( entrada => entradaDecoderBlock,
+                      saida => saidaDecoderBlock);	
 	
-decoderLED : entity work.decoder3x8
+decoderAddr : entity work.decoder3x8
             port map( entrada => dataAddress(2 downto 0),
-                      saida => saidaDecoderLED);
+                      saida => saidaDecoderAddr);
                       
-conversorHEX0 :  entity work.conversorHex7Seg
-            port map( dadoHex => saidaRegHEX0,
-                      apaga =>  '0',
-                      negativo => '0',
-                      overFlow =>  '0',
-                      saida7seg => saidaDecHEX0);
+							 
 
-conversorHEX1 :  entity work.conversorHex7Seg
-            port map( dadoHex => saidaRegHEX1,
-                      apaga =>  '0',
-                      negativo => '0',
-                      overFlow =>  '0',
-                      saida7seg => saidaDecHEX1);
+HEX0_decoder : entity work.decHex7Seg
+				port map(
+						DATA_IN  => dadoEscrito(3 downto 0),
+						ENABLE   => habHEX0,
+						CLK      => CLK,
+						DATA_OUT => saidaDecHEX0
+				);
+				
+HEX1_decoder : entity work.decHex7Seg
+				port map(
+						DATA_IN  => dadoEscrito(3 downto 0),
+						ENABLE   => habHEX1,
+						CLK      => CLK,
+						DATA_OUT => saidaDecHEX1
+				);
 
-conversorHEX2 :  entity work.conversorHex7Seg
-            port map( dadoHex => saidaRegHEX2,
-                      apaga =>  '0',
-                      negativo => '0',
-                      overFlow =>  '0',
-                      saida7seg => saidaDecHEX2);
+HEX2_decoder : entity work.decHex7Seg
+				port map(
+						DATA_IN  => dadoEscrito(3 downto 0),
+						ENABLE   => habHEX2,
+						CLK      => CLK,
+						DATA_OUT => saidaDecHEX2
+				);
 
-conversorHEX3 :  entity work.conversorHex7Seg
-            port map( dadoHex => saidaRegHEX3,
-                      apaga =>  '0',
-                      negativo => '0',
-                      overFlow =>  '0',
-                      saida7seg => saidaDecHEX3);
+HEX3_decoder : entity work.decHex7Seg
+				port map(
+						DATA_IN  => dadoEscrito(3 downto 0),
+						ENABLE   => habHEX3,
+						CLK      => CLK,
+						DATA_OUT => saidaDecHEX3
+				);
+				
+HEX4_decoder : entity work.decHex7Seg
+				port map(
+						DATA_IN  => dadoEscrito(3 downto 0),
+						ENABLE   => habHEX4,
+						CLK      => CLK,
+						DATA_OUT => saidaDecHEX4
+				);
+				
+HEX5_decoder : entity work.decHex7Seg
+				port map(
+						DATA_IN  => dadoEscrito(3 downto 0),
+						ENABLE   => habHEX5,
+						CLK      => CLK,
+						DATA_OUT => saidaDecHEX5
+				);
 
-conversorHEX4 :  entity work.conversorHex7Seg
-            port map( dadoHex => saidaRegHEX4,
-                      apaga =>  '0',
-                      negativo => '0',
-                      overFlow =>  '0',
-                      saida7seg => saidaDecHEX4);
-
-conversorHEX5 :  entity work.conversorHex7Seg
-            port map( dadoHex => saidaRegHEX5,
-                      apaga =>  '0',
-                      negativo => '0',
-                      overFlow =>  '0',
-                      saida7seg => saidaDecHEX5);
-
-							  
-RegHEX0  : entity work.registradorGenerico generic map (larguraDados => 4)
-             port map ( DIN     => dadoEscrito(3 downto 0), 
-                        DOUT    => saidaRegHEX0, 
-                        ENABLE  => habHEX0, 
-                        CLK     => CLK, 
-                        RST     => '0');
-
-RegHEX1  : entity work.registradorGenerico generic map (larguraDados => 4)
-             port map ( DIN     => dadoEscrito(3 downto 0), 
-                        DOUT    => saidaRegHEX1, 
-                        ENABLE  => habHEX1, 
-                        CLK     => CLK, 
-                        RST     => '0');
-                        
-RegHEX2  : entity work.registradorGenerico generic map (larguraDados => 4)
-             port map ( DIN     => dadoEscrito(3 downto 0), 
-                        DOUT    => saidaRegHEX2, 
-                        ENABLE  => habHEX2, 
-                        CLK     => CLK, 
-                        RST     => '0');
-
-RegHEX3  : entity work.registradorGenerico generic map (larguraDados => 4)
-             port map ( DIN     => dadoEscrito(3 downto 0), 
-                        DOUT    => saidaRegHEX3, 
-                        ENABLE  => habHEX3, 
-                        CLK     => CLK, 
-                        RST     => '0');
-
-RegHEX4  : entity work.registradorGenerico generic map (larguraDados => 4)
-             port map ( DIN     => dadoEscrito(3 downto 0), 
-                        DOUT    => saidaRegHEX4, 
-                        ENABLE  => habHEX4, 
-                        CLK     => CLK, 
-                        RST     => '0');
-
-
-RegHEX5  : entity work.registradorGenerico generic map (larguraDados => 4)
-             port map ( DIN     => dadoEscrito(3 downto 0), 
-                        DOUT    => saidaRegHEX5, 
-                        ENABLE  => habHEX5, 
-                        CLK     => CLK, 
-                        RST     => '0');
-
-bufferSWConj :  entity work.buffer_3_state_8portas
-              port map(entrada  => SWconj, 
+bufferSWConj :  entity work.buffer_3_state generic map (dataWidth => 8)
+              port map(entrada  => SW(7 downto 0), 
                        habilita => habSWconj, 
                        saida    => dadoLido); -- o q vai no dataIn
   
-bufferSW8 :  entity work.buffer_3_state_1porta
-              port map(entrada  => SW8, 
+bufferSW8 :  entity work.buffer_3_state  generic map (dataWidth => 1)
+              port map(entrada(0)  => SW(8), 
                        habilita => habSW8, 
-                       saida    => dadoLido(0)); -- o q vai no dataIn
+                       saida(0)    => dadoLido(0)); -- o q vai no dataIn
 
-bufferSW9 :  entity work.buffer_3_state_1porta
-              port map(entrada  => SW9, 
+bufferSW9 :  entity work.buffer_3_state  generic map (dataWidth => 1)
+              port map(entrada(0)  => SW(9), 
                        habilita => habSW9, 
-                       saida    => dadoLido(0));
+                       saida(0)    => dadoLido(0));
 
-bufferKEY0 :  entity work.buffer_3_state_1porta
-              port map(entrada  => KEY0, 
+ADDR_511 <= dataAddress(8) and dataAddress(7) and dataAddress(6) and 
+				dataAddress(5) and dataAddress(4) and dataAddress(3) and 
+				dataAddress(2) and dataAddress(1) and dataAddress(0);
+				
+				
+FF_Debouncer : entity work.flipFlop
+             port map (DIN     => '1', 
+						     DOUT    => saidaDebouncer, 
+				   		  ENABLE  => '1', 
+				   		  CLK     => CLK, 
+				   		  RST     => ADDR_511);
+							  
+bufferKEY0 :  entity work.buffer_3_state  generic map (dataWidth => 1)
+              port map(entrada(0)  => KEY0, 
                        habilita => habKEY0, 
-                       saida    => dadoLido(0));
+                       saida(0)    => dadoLido(0));
 
-bufferKEY1 :  entity work.buffer_3_state_1porta
-              port map(entrada  => KEY1, 
+bufferKEY1 :  entity work.buffer_3_state  generic map (dataWidth => 1)
+              port map(entrada(0)  => KEY1, 
                        habilita => habKEY1, 
-                       saida    => dadoLido(0));
+                       saida(0)    => dadoLido(0));
 
-bufferKEY2 :  entity work.buffer_3_state_1porta
-              port map(entrada  => KEY2, 
+bufferKEY2 :  entity work.buffer_3_state  generic map (dataWidth => 1)
+              port map(entrada(0)  => KEY2, 
                        habilita => habKEY2, 
-                       saida    => dadoLido(0));
+                       saida(0)    => dadoLido(0));
 
-bufferKEY3 :  entity work.buffer_3_state_1porta
-              port map(entrada  => KEY3, 
+bufferKEY3 :  entity work.buffer_3_state  generic map (dataWidth => 1)
+              port map(entrada(0)  => KEY3, 
                        habilita => habKEY3, 
-                       saida    => dadoLido(0));
+                       saida(0)    => dadoLido(0));
 
-bufferRESET :  entity work.buffer_3_state_1porta
-              port map(entrada  => FPGA_RESST, 
+bufferRESET :  entity work.buffer_3_state  generic map (dataWidth => 1)
+              port map(entrada(0)  => FPGA_RESST, 
                        habilita => habRESET, 
-                       saida    => dadoLido(0));
+                       saida(0)    => dadoLido(0));
 							 
-habLED8    <= WR AND saidaDecoderHab(4) AND saidaDecoderLED(1) AND (NOT dataAddress(5));
-habLED9    <= WR AND saidaDecoderHab(4) AND saidaDecoderLED(2) AND (NOT dataAddress(5));
-habLEDconj <= WR AND saidaDecoderHab(4) AND saidaDecoderLED(0) AND (NOT dataAddress(5));
+habLED8    <= WR AND saidaDecoderBlock(4) AND saidaDecoderAddr(1) AND (NOT dataAddress(5));
+habLED9    <= WR AND saidaDecoderBlock(4) AND saidaDecoderAddr(2) AND (NOT dataAddress(5));
+habLEDconj <= WR AND saidaDecoderBlock(4) AND saidaDecoderAddr(0) AND (NOT dataAddress(5));
 
-habHEX0    <= WR AND saidaDecoderHab(4) AND saidaDecoderLED(0) AND (dataAddress(5));
-habHEX1    <= WR AND saidaDecoderHab(4) AND saidaDecoderLED(1) AND (dataAddress(5));
-habHEX2    <= WR AND saidaDecoderHab(4) AND saidaDecoderLED(2) AND (dataAddress(5));
-habHEX3    <= WR AND saidaDecoderHab(4) AND saidaDecoderLED(3) AND (dataAddress(5));
-habHEX4    <= WR AND saidaDecoderHab(4) AND saidaDecoderLED(4) AND (dataAddress(5));
-habHEX5    <= WR AND saidaDecoderHab(4) AND saidaDecoderLED(5) AND (dataAddress(5));
+habHEX0    <= WR AND saidaDecoderBlock(4) AND saidaDecoderAddr(0) AND (dataAddress(5));
+habHEX1    <= WR AND saidaDecoderBlock(4) AND saidaDecoderAddr(1) AND (dataAddress(5));
+habHEX2    <= WR AND saidaDecoderBlock(4) AND saidaDecoderAddr(2) AND (dataAddress(5));
+habHEX3    <= WR AND saidaDecoderBlock(4) AND saidaDecoderAddr(3) AND (dataAddress(5));
+habHEX4    <= WR AND saidaDecoderBlock(4) AND saidaDecoderAddr(4) AND (dataAddress(5));
+habHEX5    <= WR AND saidaDecoderBlock(4) AND saidaDecoderAddr(5) AND (dataAddress(5));
 
-habKEY0    <= RD AND saidaDecoderHab(5) AND saidaDecoderLED(0) AND (NOT dataAddress(5));
-habKEY1    <= RD AND saidaDecoderHab(5) AND saidaDecoderLED(1) AND (NOT dataAddress(5));
-habKEY2    <= RD AND saidaDecoderHab(5) AND saidaDecoderLED(2) AND (NOT dataAddress(5));
-habKEY3    <= RD AND saidaDecoderHab(5) AND saidaDecoderLED(3) AND (NOT dataAddress(5));
-habRESET   <= RD AND saidaDecoderHab(5) AND saidaDecoderLED(4) AND (NOT dataAddress(5));
+habKEY0    <= RD AND saidaDecoderBlock(5) AND saidaDecoderAddr(0) AND (dataAddress(5));
+habKEY1    <= RD AND saidaDecoderBlock(5) AND saidaDecoderAddr(1) AND (dataAddress(5));
+habKEY2    <= RD AND saidaDecoderBlock(5) AND saidaDecoderAddr(2) AND (dataAddress(5));
+habKEY3    <= RD AND saidaDecoderBlock(5) AND saidaDecoderAddr(3) AND (dataAddress(5));
+habRESET   <= RD AND saidaDecoderBlock(5) AND saidaDecoderAddr(4) AND (dataAddress(5));
 
-habSWconj  <= RD AND saidaDecoderHab(5) AND saidaDecoderLED(0) AND (NOT dataAddress(5));
-habSW8     <= RD AND saidaDecoderHab(5) AND saidaDecoderLED(1) AND (NOT dataAddress(5));
-habSW9     <= RD AND saidaDecoderHab(5) AND saidaDecoderLED(2) AND (NOT dataAddress(5));
+habSWconj  <= RD AND saidaDecoderBlock(5) AND saidaDecoderAddr(0) AND (NOT dataAddress(5));
+habSW8     <= RD AND saidaDecoderBlock(5) AND saidaDecoderAddr(1) AND (NOT dataAddress(5));
+habSW9     <= RD AND saidaDecoderBlock(5) AND saidaDecoderAddr(2) AND (NOT dataAddress(5));
 
 
 endROM     <= ROMAddress;
@@ -345,7 +317,6 @@ HEX3       <= saidaDecHEX3;
 HEX4       <= saidaDecHEX4;
 HEX5       <= saidaDecHEX5;
 
-SWconj <= SW7 & SW6 & SW5 & SW4 & SW3 & SW2 & SW1 & SW0;
 
  
 
