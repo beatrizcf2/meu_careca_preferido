@@ -8,18 +8,18 @@ entity contador is
             larguraInstrucao : natural := 13;
             larguraOpCode    : natural := 4;
             addrWidth        : natural := 6;
-            simulacao        : boolean := TRUE -- para gravar na placa, altere de TRUE para FALSE
+            simulacao        : boolean := FALSE	 -- para gravar na placa, altere de TRUE para FALSE
   );
   port   (  endROM        : out std_logic_vector(larguraEndereco-1 downto 0);
             endRAM        : out std_logic_vector(addrWidth-1 downto 0);
             valorDado     : out  std_logic_vector(larguraDados-1 downto 0);
 				LEDR          : out std_logic_vector(9 downto 0);
-            LED8          : out std_logic;
-            LED9          : out std_logic;
-            LEDconj       : out std_logic_vector(7 downto 0);
             SW            : in std_logic_vector(9 downto 0);
-				
-            KEY0, KEY1, KEY2, KEY3, FPGA_RESST : in std_logic;
+				teste_datain  : out std_logic_vector(7 downto 0);
+				teste_hab     : out std_logic;
+				KEY           : in std_logic_vector(3 downto 0);
+
+            FPGA_RESET_N : in std_logic;
 				HEX0, HEX1, HEX2, HEX3, HEX4, HEX5 : out std_logic_vector(6 downto 0);
 				
             -- simulacao
@@ -117,12 +117,13 @@ begin
 
 -- Para simular, fica mais simples tirar o edgeDetector
 gravar:  if simulacao generate
-CLK <= clovis;
+CLK <= KEY(0);
 else generate
-detectorSub0: work.edgeDetector(bordaSubida)
-        port map (clk     => CLOCK_50, 
-						entrada => (not clovis), 
-						saida   => CLK);
+CLK <= CLOCK_50;
+--detectorSub0: work.edgeDetector(bordaSubida)
+--        port map (clk     => CLOCK_50, 
+--						entrada => (not KEY(0)), 
+--						saida   => CLK);
 end generate;
 
 -- port maps
@@ -257,27 +258,27 @@ FF_Debouncer : entity work.flipFlop
 				   		  RST     => ADDR_511);
 							  
 bufferKEY0 :  entity work.buffer_3_state  generic map (dataWidth => 1)
-              port map(entrada(0)  => KEY0, 
+              port map(entrada(0)  => KEY(0), 
                        habilita => habKEY0, 
                        saida(0)    => dadoLido(0));
 
 bufferKEY1 :  entity work.buffer_3_state  generic map (dataWidth => 1)
-              port map(entrada(0)  => KEY1, 
+              port map(entrada(0)  => KEY(1), 
                        habilita => habKEY1, 
                        saida(0)    => dadoLido(0));
 
 bufferKEY2 :  entity work.buffer_3_state  generic map (dataWidth => 1)
-              port map(entrada(0)  => KEY2, 
+              port map(entrada(0)  => KEY(2), 
                        habilita => habKEY2, 
                        saida(0)    => dadoLido(0));
 
 bufferKEY3 :  entity work.buffer_3_state  generic map (dataWidth => 1)
-              port map(entrada(0)  => KEY3, 
+              port map(entrada(0)  => KEY(3), 
                        habilita => habKEY3, 
                        saida(0)    => dadoLido(0));
 
 bufferRESET :  entity work.buffer_3_state  generic map (dataWidth => 1)
-              port map(entrada(0)  => FPGA_RESST, 
+              port map(entrada(0)  => FPGA_RESET_N, 
                        habilita => habRESET, 
                        saida(0)    => dadoLido(0));
 							 
@@ -306,9 +307,9 @@ habSW9     <= RD AND saidaDecoderBlock(5) AND saidaDecoderAddr(2) AND (NOT dataA
 endROM     <= ROMAddress;
 endRAM     <= enderecoRAM;
 valorDado  <= dadoLido;
-LED8       <= saidaLED8;
-LED9       <= saidaLED9;
-LEDconj    <= saidaLEDconj;
+LEDR(8)       <= saidaLED8;
+LEDR(9)       <= saidaLED9;
+LEDR(7 downto 0)    <= saidaLEDconj;
 
 HEX0       <= saidaDecHEX0;
 HEX1       <= saidaDecHEX1;
@@ -319,8 +320,8 @@ HEX5       <= saidaDecHEX5;
 
 
  
-
-
+teste_datain <= dadoEscrito;
+teste_hab <= habSWconj;
 
 
 

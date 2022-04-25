@@ -35,21 +35,18 @@ architecture assincrona of memoriaROM is
   begin
       -- Palavra de Controle = SelMUX, Habilita_A, Reset_A, Operacao_ULA
       -- Inicializa os endereços:
---        tmp(0)  := LDI & '0' & "00000001";  
---        tmp(1)  := STA & '0' & "00000000";  
---        tmp(2)  := SUM & '0' & "00000000";   
---        tmp(3)  := STA & '1' & "00100000";  
---        tmp(4)  := SUM & '0' & "00000000"; 
---        tmp(5)  := STA & '1' & "00100001";   
---        tmp(6)  := SUM & '0' & "00000000";   
---        tmp(7)  := STA & '1' & "00100010";   
---        tmp(8)  := SUM & '0' & "00000000";  
---        tmp(9)  := STA & '1' & "00100011";   
---        tmp(10) := SUM & '0' & "00000000";  
---        tmp(11) := STA & '1' & "00100100";   
---        tmp(12) := SUM & '0' & "00000000";  
---        tmp(13) := STA & '1' & "00100101";  
---        tmp(14) := JMP & '0' & "00000010";  
+--        tmp(0)  := LDI & '0' & "00000001";   -- Carrega o acumulador com o valor 1 
+--        tmp(1)  := STA & '0' & "00000000";   -- Armazena o valor do acumulador na posição zero da memória (MEM[0])
+--        tmp(2)  := SUM & '0' & "00000000";   -- Soma o valor atual do acumulador com o conteúdo de MEM[0]
+--        tmp(3)  := STA & '0' & "00000001";   -- Armazena o valor do acumulador em MEM[1]
+--        tmp(4)  := LDA & '0' & "00000000";   -- Carrega o acumulador com o valor de MEM[0]
+--        tmp(5)  := STA & '1' & "00000001";   -- Armazena 1 no LEDR8
+--        tmp(6)  := STA & '1' & "00000010";   -- Armazena 1 no LEDR9
+--        tmp(7)  := LDI & '0' & "01010101";   -- Carrega o acumulador
+--        tmp(8)  := STA & '1' & "00000000";   -- Armazena 85 em LEDR0 até LEDR7
+--        tmp(9)  := LDI & '0' & "10101010";   -- Carrega o acumulador
+--        tmp(10) := STA & '1' & "00000000";   -- Armazena 170 em LEDR0 até LEDR7
+--        tmp(11) := JMP & '0' & "00001011";   -- Fim. Deve ficar neste laço
 		  
 		  tmp(0)  := LDA & '1' & "01000000";  
 		  tmp(1)  := STA & '1' & "00100000";  

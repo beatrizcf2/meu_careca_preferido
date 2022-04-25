@@ -88,43 +88,79 @@
 					"strict" : false
 				},
 				{
-					"name" : "LED8",
+					"name" : "LEDR[0]",
 					"strict" : false
 				},
 				{
-					"name" : "LED9",
+					"name" : "LEDR[1]",
 					"strict" : false
 				},
 				{
-					"name" : "LEDconj[0]",
+					"name" : "LEDR[2]",
 					"strict" : false
 				},
 				{
-					"name" : "LEDconj[1]",
+					"name" : "LEDR[3]",
 					"strict" : false
 				},
 				{
-					"name" : "LEDconj[2]",
+					"name" : "LEDR[4]",
 					"strict" : false
 				},
 				{
-					"name" : "LEDconj[3]",
+					"name" : "LEDR[5]",
 					"strict" : false
 				},
 				{
-					"name" : "LEDconj[4]",
+					"name" : "LEDR[6]",
 					"strict" : false
 				},
 				{
-					"name" : "LEDconj[5]",
+					"name" : "LEDR[7]",
 					"strict" : false
 				},
 				{
-					"name" : "LEDconj[6]",
+					"name" : "LEDR[8]",
 					"strict" : false
 				},
 				{
-					"name" : "LEDconj[7]",
+					"name" : "LEDR[9]",
+					"strict" : false
+				},
+				{
+					"name" : "teste_datain[0]",
+					"strict" : false
+				},
+				{
+					"name" : "teste_datain[1]",
+					"strict" : false
+				},
+				{
+					"name" : "teste_datain[2]",
+					"strict" : false
+				},
+				{
+					"name" : "teste_datain[3]",
+					"strict" : false
+				},
+				{
+					"name" : "teste_datain[4]",
+					"strict" : false
+				},
+				{
+					"name" : "teste_datain[5]",
+					"strict" : false
+				},
+				{
+					"name" : "teste_datain[6]",
+					"strict" : false
+				},
+				{
+					"name" : "teste_datain[7]",
+					"strict" : false
+				},
+				{
+					"name" : "teste_hab",
 					"strict" : false
 				},
 				{
@@ -296,19 +332,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "clovis",
-					"strict" : false
-				},
-				{
-					"name" : "FPGA_RESST",
-					"strict" : false
-				},
-				{
-					"name" : "KEY1",
-					"strict" : false
-				},
-				{
-					"name" : "KEY3",
+					"name" : "CLOCK_50",
 					"strict" : false
 				},
 				{
@@ -316,11 +340,23 @@
 					"strict" : false
 				},
 				{
+					"name" : "FPGA_RESET_N",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[0]",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[1]",
+					"strict" : false
+				},
+				{
 					"name" : "SW[8]",
 					"strict" : false
 				},
 				{
-					"name" : "KEY0",
+					"name" : "KEY[3]",
 					"strict" : false
 				},
 				{
@@ -328,7 +364,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "KEY2",
+					"name" : "KEY[2]",
 					"strict" : false
 				},
 				{

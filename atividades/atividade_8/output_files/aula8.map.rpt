@@ -1,5 +1,5 @@
 Analysis & Synthesis report for aula8
-Sat Apr 16 16:53:22 2022
+Tue Apr 19 18:14:05 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -84,14 +84,14 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat Apr 16 16:53:22 2022       ;
+; Analysis & Synthesis Status     ; Successful - Tue Apr 19 18:14:05 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; aula8                                       ;
 ; Top-level Entity Name           ; contador                                    ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
 ; Total registers                 ; 51                                          ;
-; Total pins                      ; 102                                         ;
+; Total pins                      ; 101                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -112,6 +112,7 @@ https://fpgasoftware.intel.com/eula.
 ; Device                                                                          ; 5CEBA4F23C7        ;                    ;
 ; Top-level entity name                                                           ; contador           ; aula8              ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Maximum processors allowed for parallel compilation                             ; All                ;                    ;
 ; VHDL Show LMF Mapping Messages                                                  ; Off                ;                    ;
 ; VHDL Version                                                                    ; VHDL_2008          ; VHDL_1993          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
@@ -209,55 +210,55 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                      ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                               ; Library ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------------+---------+
-; buffer_3_state.vhd               ; yes             ; User VHDL File  ; /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state.vhd      ;         ;
-; ULASomaSub.vhd                   ; yes             ; User VHDL File  ; /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/ULASomaSub.vhd          ;         ;
-; somaUm.vhd                       ; yes             ; User VHDL File  ; /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/somaUm.vhd              ;         ;
-; registradorGenerico.vhd          ; yes             ; User VHDL File  ; /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/registradorGenerico.vhd ;         ;
-; muxGenerico4x1.vhd               ; yes             ; User VHDL File  ; /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/muxGenerico4x1.vhd      ;         ;
-; muxGenerico2x1.vhd               ; yes             ; User VHDL File  ; /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/muxGenerico2x1.vhd      ;         ;
-; memoriaRAM.vhd                   ; yes             ; User VHDL File  ; /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/memoriaRAM.vhd          ;         ;
-; memoria.vhd                      ; yes             ; User VHDL File  ; /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/memoria.vhd             ;         ;
-; flipFlop.vhd                     ; yes             ; User VHDL File  ; /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/flipFlop.vhd            ;         ;
-; desvio.vhd                       ; yes             ; User VHDL File  ; /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/desvio.vhd              ;         ;
-; decoder3x8.vhd                   ; yes             ; User VHDL File  ; /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/decoder3x8.vhd          ;         ;
-; decoder.vhd                      ; yes             ; User VHDL File  ; /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/decoder.vhd             ;         ;
-; CPU.vhd                          ; yes             ; User VHDL File  ; /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd                 ;         ;
-; contador.vhd                     ; yes             ; User VHDL File  ; /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd            ;         ;
-; conversorHex7Seg.vhd             ; yes             ; User VHDL File  ; /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/conversorHex7Seg.vhd    ;         ;
-; decHex7Seg.vhd                   ; yes             ; User VHDL File  ; /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/decHex7Seg.vhd          ;         ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                   ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                            ; Library ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------+---------+
+; buffer_3_state.vhd               ; yes             ; User VHDL File  ; C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/buffer_3_state.vhd      ;         ;
+; ULASomaSub.vhd                   ; yes             ; User VHDL File  ; C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/ULASomaSub.vhd          ;         ;
+; somaUm.vhd                       ; yes             ; User VHDL File  ; C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/somaUm.vhd              ;         ;
+; registradorGenerico.vhd          ; yes             ; User VHDL File  ; C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/registradorGenerico.vhd ;         ;
+; muxGenerico4x1.vhd               ; yes             ; User VHDL File  ; C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/muxGenerico4x1.vhd      ;         ;
+; muxGenerico2x1.vhd               ; yes             ; User VHDL File  ; C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/muxGenerico2x1.vhd      ;         ;
+; memoriaRAM.vhd                   ; yes             ; User VHDL File  ; C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/memoriaRAM.vhd          ;         ;
+; memoria.vhd                      ; yes             ; User VHDL File  ; C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/memoria.vhd             ;         ;
+; flipFlop.vhd                     ; yes             ; User VHDL File  ; C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/flipFlop.vhd            ;         ;
+; desvio.vhd                       ; yes             ; User VHDL File  ; C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/desvio.vhd              ;         ;
+; decoder3x8.vhd                   ; yes             ; User VHDL File  ; C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/decoder3x8.vhd          ;         ;
+; decoder.vhd                      ; yes             ; User VHDL File  ; C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/decoder.vhd             ;         ;
+; CPU.vhd                          ; yes             ; User VHDL File  ; C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/CPU.vhd                 ;         ;
+; contador.vhd                     ; yes             ; User VHDL File  ; C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/contador.vhd            ;         ;
+; conversorHex7Seg.vhd             ; yes             ; User VHDL File  ; C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/conversorHex7Seg.vhd    ;         ;
+; decHex7Seg.vhd                   ; yes             ; User VHDL File  ; C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/decHex7Seg.vhd          ;         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                ;
-+---------------------------------------------+--------------+
-; Resource                                    ; Usage        ;
-+---------------------------------------------+--------------+
-; Estimate of Logic utilization (ALMs needed) ; 75           ;
-;                                             ;              ;
-; Combinational ALUT usage for logic          ; 125          ;
-;     -- 7 input functions                    ; 0            ;
-;     -- 6 input functions                    ; 21           ;
-;     -- 5 input functions                    ; 13           ;
-;     -- 4 input functions                    ; 68           ;
-;     -- <=3 input functions                  ; 23           ;
-;                                             ;              ;
-; Dedicated logic registers                   ; 51           ;
-;                                             ;              ;
-; I/O pins                                    ; 102          ;
-;                                             ;              ;
-; Total DSP Blocks                            ; 0            ;
-;                                             ;              ;
-; Maximum fan-out node                        ; clovis~input ;
-; Maximum fan-out                             ; 51           ;
-; Total fan-out                               ; 873          ;
-; Average fan-out                             ; 2.30         ;
-+---------------------------------------------+--------------+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimate of Logic utilization (ALMs needed) ; 84             ;
+;                                             ;                ;
+; Combinational ALUT usage for logic          ; 140            ;
+;     -- 7 input functions                    ; 0              ;
+;     -- 6 input functions                    ; 23             ;
+;     -- 5 input functions                    ; 25             ;
+;     -- 4 input functions                    ; 68             ;
+;     -- <=3 input functions                  ; 24             ;
+;                                             ;                ;
+; Dedicated logic registers                   ; 51             ;
+;                                             ;                ;
+; I/O pins                                    ; 101            ;
+;                                             ;                ;
+; Total DSP Blocks                            ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 51             ;
+; Total fan-out                               ; 960            ;
+; Average fan-out                             ; 2.44           ;
++---------------------------------------------+----------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -265,20 +266,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node            ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                             ; Entity Name         ; Library Name ;
 +---------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------+---------------------+--------------+
-; |contador                             ; 125 (15)            ; 51 (0)                    ; 0                 ; 0          ; 102  ; 0            ; |contador                                                       ; contador            ; work         ;
-;    |CPU:CPU|                          ; 24 (0)              ; 17 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU                                               ; CPU                 ; work         ;
+; |contador                             ; 140 (15)            ; 51 (0)                    ; 0                 ; 0          ; 101  ; 0            ; |contador                                                       ; contador            ; work         ;
+;    |CPU:CPU|                          ; 34 (0)              ; 17 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU                                               ; CPU                 ; work         ;
 ;       |ULASomaSub:ULA|                ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|ULASomaSub:ULA                                ; ULASomaSub          ; work         ;
-;       |decoder:DECODER|               ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|decoder:DECODER                               ; decoder             ; work         ;
-;       |muxGenerico2x1:MUX_ULA|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|muxGenerico2x1:MUX_ULA                        ; muxGenerico2x1      ; work         ;
+;       |decoder:DECODER|               ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|decoder:DECODER                               ; decoder             ; work         ;
+;       |muxGenerico2x1:MUX_ULA|        ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|muxGenerico2x1:MUX_ULA                        ; muxGenerico2x1      ; work         ;
 ;       |registradorGenerico:PC|        ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|registradorGenerico:PC                        ; registradorGenerico ; work         ;
 ;       |registradorGenerico:REG_A|     ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|registradorGenerico:REG_A                     ; registradorGenerico ; work         ;
 ;       |somaUm:PC_INC|                 ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|somaUm:PC_INC                                 ; somaUm              ; work         ;
 ;    |buffer_3_state:bufferKEY0|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|buffer_3_state:bufferKEY0                             ; buffer_3_state      ; work         ;
 ;    |buffer_3_state:bufferKEY1|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|buffer_3_state:bufferKEY1                             ; buffer_3_state      ; work         ;
 ;    |buffer_3_state:bufferKEY2|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|buffer_3_state:bufferKEY2                             ; buffer_3_state      ; work         ;
-;    |buffer_3_state:bufferKEY3|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|buffer_3_state:bufferKEY3                             ; buffer_3_state      ; work         ;
+;    |buffer_3_state:bufferKEY3|        ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|buffer_3_state:bufferKEY3                             ; buffer_3_state      ; work         ;
 ;    |buffer_3_state:bufferRESET|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|buffer_3_state:bufferRESET                            ; buffer_3_state      ; work         ;
-;    |buffer_3_state:bufferSW8|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|buffer_3_state:bufferSW8                              ; buffer_3_state      ; work         ;
+;    |buffer_3_state:bufferSW8|         ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|buffer_3_state:bufferSW8                              ; buffer_3_state      ; work         ;
 ;    |buffer_3_state:bufferSW9|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|buffer_3_state:bufferSW9                              ; buffer_3_state      ; work         ;
 ;    |buffer_3_state:bufferSWConj|      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|buffer_3_state:bufferSWConj                           ; buffer_3_state      ; work         ;
 ;    |decHex7seg:HEX0_decoder|          ; 7 (0)               ; 4 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|decHex7seg:HEX0_decoder                               ; decHex7seg          ; work         ;
@@ -301,8 +302,8 @@ https://fpgasoftware.intel.com/eula.
 ;       |registradorGenerico:REG_4bits| ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|decHex7seg:HEX5_decoder|registradorGenerico:REG_4bits ; registradorGenerico ; work         ;
 ;    |flipFlop:FFLED8|                  ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|flipFlop:FFLED8                                       ; flipFlop            ; work         ;
 ;    |flipFlop:FFLED9|                  ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|flipFlop:FFLED9                                       ; flipFlop            ; work         ;
-;    |memoriaRAM:RAM|                   ; 18 (18)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|memoriaRAM:RAM                                        ; memoriaRAM          ; work         ;
-;    |memoriaROM:ROM|                   ; 16 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|memoriaROM:ROM                                        ; memoriaROM          ; work         ;
+;    |memoriaRAM:RAM|                   ; 19 (19)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|memoriaRAM:RAM                                        ; memoriaRAM          ; work         ;
+;    |memoriaROM:ROM|                   ; 18 (18)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|memoriaROM:ROM                                        ; memoriaROM          ; work         ;
 ;    |registradorGenerico:RegLEDconj|   ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|registradorGenerico:RegLEDconj                        ; registradorGenerico ; work         ;
 +---------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -856,7 +857,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; larguraInstrucao ; 13    ; Signed Integer                                ;
 ; larguraOpCode    ; 4     ; Signed Integer                                ;
 ; addrWidth        ; 6     ; Signed Integer                                ;
-; simulacao        ; true  ; Enumerated                                    ;
+; simulacao        ; false ; Enumerated                                    ;
 +------------------+-------+-----------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -1262,21 +1263,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     SLD               ; 8                           ;
 ;     plain             ; 3                           ;
 ; arriav_io_obuf        ; 8                           ;
-; arriav_lcell_comb     ; 125                         ;
+; arriav_lcell_comb     ; 140                         ;
 ;     arith             ; 18                          ;
+;         1 data inputs ; 10                          ;
+;         4 data inputs ; 3                           ;
+;         5 data inputs ; 5                           ;
+;     normal            ; 122                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 9                           ;
-;         2 data inputs ; 8                           ;
-;     normal            ; 107                         ;
-;         0 data inputs ; 1                           ;
-;         3 data inputs ; 4                           ;
-;         4 data inputs ; 68                          ;
-;         5 data inputs ; 13                          ;
-;         6 data inputs ; 21                          ;
-; boundary_port         ; 102                         ;
+;         2 data inputs ; 5                           ;
+;         3 data inputs ; 8                           ;
+;         4 data inputs ; 65                          ;
+;         5 data inputs ; 20                          ;
+;         6 data inputs ; 23                          ;
+; boundary_port         ; 101                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 5.70                        ;
-; Average LUT depth     ; 2.68                        ;
+; Average LUT depth     ; 2.90                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1295,125 +1297,113 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sat Apr 16 16:53:11 2022
+    Info: Processing started: Tue Apr 19 18:13:54 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off aula8 -c aula8
-Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file buffer_3_state.vhd
-    Info (12022): Found design unit 1: buffer_3_state-comportamento File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state.vhd Line: 14
-    Info (12023): Found entity 1: buffer_3_state File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file ULASomaSub.vhd
-    Info (12022): Found design unit 1: ULASomaSub-comportamento File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/ULASomaSub.vhd Line: 15
-    Info (12023): Found entity 1: ULASomaSub File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/ULASomaSub.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file somaUm.vhd
-    Info (12022): Found design unit 1: somaUm-comportamento File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/somaUm.vhd Line: 19
-    Info (12023): Found entity 1: somaUm File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/somaUm.vhd Line: 6
-Info (12021): Found 2 design units, including 1 entities, in source file registradorGenerico.vhd
-    Info (12022): Found design unit 1: registradorGenerico-comportamento File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/registradorGenerico.vhd Line: 16
-    Info (12023): Found entity 1: registradorGenerico File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/registradorGenerico.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file muxGenerico4x1.vhd
-    Info (12022): Found design unit 1: muxGenerico4x1-comportamento File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/muxGenerico4x1.vhd Line: 15
-    Info (12023): Found entity 1: muxGenerico4x1 File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/muxGenerico4x1.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file muxGenerico2x1.vhd
-    Info (12022): Found design unit 1: muxGenerico2x1-comportamento File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/muxGenerico2x1.vhd Line: 15
-    Info (12023): Found entity 1: muxGenerico2x1 File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/muxGenerico2x1.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file memoriaRAM.vhd
-    Info (12022): Found design unit 1: memoriaRAM-rtl File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/memoriaRAM.vhd Line: 22
-    Info (12023): Found entity 1: memoriaRAM File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/memoriaRAM.vhd Line: 6
+    Info (12022): Found design unit 1: buffer_3_state-comportamento File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/buffer_3_state.vhd Line: 14
+    Info (12023): Found entity 1: buffer_3_state File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/buffer_3_state.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file ulasomasub.vhd
+    Info (12022): Found design unit 1: ULASomaSub-comportamento File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/ULASomaSub.vhd Line: 15
+    Info (12023): Found entity 1: ULASomaSub File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/ULASomaSub.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file somaum.vhd
+    Info (12022): Found design unit 1: somaUm-comportamento File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/somaUm.vhd Line: 19
+    Info (12023): Found entity 1: somaUm File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/somaUm.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file registradorgenerico.vhd
+    Info (12022): Found design unit 1: registradorGenerico-comportamento File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/registradorGenerico.vhd Line: 16
+    Info (12023): Found entity 1: registradorGenerico File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/registradorGenerico.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file muxgenerico4x1.vhd
+    Info (12022): Found design unit 1: muxGenerico4x1-comportamento File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/muxGenerico4x1.vhd Line: 15
+    Info (12023): Found entity 1: muxGenerico4x1 File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/muxGenerico4x1.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file muxgenerico2x1.vhd
+    Info (12022): Found design unit 1: muxGenerico2x1-comportamento File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/muxGenerico2x1.vhd Line: 15
+    Info (12023): Found entity 1: muxGenerico2x1 File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/muxGenerico2x1.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file memoriaram.vhd
+    Info (12022): Found design unit 1: memoriaRAM-rtl File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/memoriaRAM.vhd Line: 22
+    Info (12023): Found entity 1: memoriaRAM File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/memoriaRAM.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file memoria.vhd
-    Info (12022): Found design unit 1: memoriaROM-assincrona File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/memoria.vhd Line: 17
-    Info (12023): Found entity 1: memoriaROM File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/memoria.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file flipFlop.vhd
-    Info (12022): Found design unit 1: flipFlop-comportamento File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/flipFlop.vhd Line: 14
-    Info (12023): Found entity 1: flipFlop File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/flipFlop.vhd Line: 5
-Info (12021): Found 3 design units, including 1 entities, in source file edgeDetector.vhd
-    Info (12022): Found design unit 1: edgeDetector-bordaSubida File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/edgeDetector.vhd Line: 10
-    Info (12022): Found design unit 2: edgeDetector-bordaDescida File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/edgeDetector.vhd Line: 23
-    Info (12023): Found entity 1: edgeDetector File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/edgeDetector.vhd Line: 4
+    Info (12022): Found design unit 1: memoriaROM-assincrona File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/memoria.vhd Line: 17
+    Info (12023): Found entity 1: memoriaROM File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/memoria.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file flipflop.vhd
+    Info (12022): Found design unit 1: flipFlop-comportamento File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/flipFlop.vhd Line: 14
+    Info (12023): Found entity 1: flipFlop File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/flipFlop.vhd Line: 5
+Info (12021): Found 3 design units, including 1 entities, in source file edgedetector.vhd
+    Info (12022): Found design unit 1: edgeDetector-bordaSubida File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/edgeDetector.vhd Line: 10
+    Info (12022): Found design unit 2: edgeDetector-bordaDescida File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/edgeDetector.vhd Line: 23
+    Info (12023): Found entity 1: edgeDetector File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/edgeDetector.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file desvio.vhd
-    Info (12022): Found design unit 1: desvio-comportamento File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/desvio.vhd Line: 13
-    Info (12023): Found entity 1: desvio File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/desvio.vhd Line: 7
+    Info (12022): Found design unit 1: desvio-comportamento File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/desvio.vhd Line: 13
+    Info (12023): Found entity 1: desvio File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/desvio.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file decoder3x8.vhd
-    Info (12022): Found design unit 1: decoder3x8-comportamento File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/decoder3x8.vhd Line: 10
-    Info (12023): Found entity 1: decoder3x8 File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/decoder3x8.vhd Line: 4
+    Info (12022): Found design unit 1: decoder3x8-comportamento File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/decoder3x8.vhd Line: 10
+    Info (12023): Found entity 1: decoder3x8 File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/decoder3x8.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file decoder.vhd
-    Info (12022): Found design unit 1: decoder-comportamento File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/decoder.vhd Line: 11
-    Info (12023): Found entity 1: decoder File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/decoder.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file CPU.vhd
-    Info (12022): Found design unit 1: CPU-arquitetura File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 28
-    Info (12023): Found entity 1: CPU File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 4
+    Info (12022): Found design unit 1: decoder-comportamento File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/decoder.vhd Line: 11
+    Info (12023): Found entity 1: decoder File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/decoder.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file cpu.vhd
+    Info (12022): Found design unit 1: CPU-arquitetura File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 28
+    Info (12023): Found entity 1: CPU File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file contador.vhd
-    Info (12022): Found design unit 1: contador-arquitetura File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 33
-    Info (12023): Found entity 1: contador File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file decoderGeneric.vhd
-    Info (12022): Found design unit 1: decoderGeneric-comportamento File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/decoderGeneric.vhd Line: 10
-    Info (12023): Found entity 1: decoderGeneric File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/decoderGeneric.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file conversorHex7Seg.vhd
-    Info (12022): Found design unit 1: conversorHex7Seg-comportamento File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/conversorHex7Seg.vhd Line: 17
-    Info (12023): Found entity 1: conversorHex7Seg File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/conversorHex7Seg.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file decHex7Seg.vhd
-    Info (12022): Found design unit 1: decHex7Seg-arch_name File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/decHex7Seg.vhd Line: 26
-    Info (12023): Found entity 1: decHex7seg File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/decHex7Seg.vhd Line: 14
+    Info (12022): Found design unit 1: contador-arquitetura File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 33
+    Info (12023): Found entity 1: contador File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file decodergeneric.vhd
+    Info (12022): Found design unit 1: decoderGeneric-comportamento File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/decoderGeneric.vhd Line: 10
+    Info (12023): Found entity 1: decoderGeneric File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/decoderGeneric.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file conversorhex7seg.vhd
+    Info (12022): Found design unit 1: conversorHex7Seg-comportamento File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/conversorHex7Seg.vhd Line: 17
+    Info (12023): Found entity 1: conversorHex7Seg File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/conversorHex7Seg.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file dechex7seg.vhd
+    Info (12022): Found design unit 1: decHex7Seg-arch_name File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/decHex7Seg.vhd Line: 26
+    Info (12023): Found entity 1: decHex7seg File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/decHex7Seg.vhd Line: 14
 Info (12127): Elaborating entity "contador" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at contador.vhd(16): used implicit default value for signal "LEDR" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 16
-Warning (10036): Verilog HDL or VHDL warning at contador.vhd(110): object "saidaDebouncer" assigned a value but never read File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 110
-Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 130
-Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 134
-Info (12128): Elaborating entity "CPU" for hierarchy "CPU:CPU" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 143
-Warning (10873): Using initial value X (don't care) for net "control[3..2]" at CPU.vhd(16) File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 16
-Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "CPU:CPU|muxGenerico2x1:MUX_ULA" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 91
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "CPU:CPU|registradorGenerico:REG_A" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 98
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "CPU:CPU|registradorGenerico:PC" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 106
-Info (12128): Elaborating entity "somaUm" for hierarchy "CPU:CPU|somaUm:PC_INC" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 113
-Info (12128): Elaborating entity "muxGenerico4x1" for hierarchy "CPU:CPU|muxGenerico4x1:MUX_DESVIO" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 124
-Info (12128): Elaborating entity "ULASomaSub" for hierarchy "CPU:CPU|ULASomaSub:ULA" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 133
-Info (12128): Elaborating entity "decoder" for hierarchy "CPU:CPU|decoder:DECODER" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 141
-Info (12128): Elaborating entity "desvio" for hierarchy "CPU:CPU|desvio:DESVIO" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 145
-Info (12128): Elaborating entity "flipFlop" for hierarchy "CPU:CPU|flipFlop:FLAG" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 154
-Info (12128): Elaborating entity "decoder3x8" for hierarchy "decoder3x8:decoderBlock" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 174
-Info (12128): Elaborating entity "decHex7seg" for hierarchy "decHex7seg:HEX0_decoder" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 184
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "decHex7seg:HEX0_decoder|registradorGenerico:REG_4bits" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/decHex7Seg.vhd Line: 33
-Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "decHex7seg:HEX0_decoder|conversorHex7Seg:DECODER_7seg" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/decHex7Seg.vhd Line: 44
-Info (12128): Elaborating entity "buffer_3_state" for hierarchy "buffer_3_state:bufferSWConj" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 232
-Info (12128): Elaborating entity "buffer_3_state" for hierarchy "buffer_3_state:bufferSW8" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 237
+Warning (10036): Verilog HDL or VHDL warning at contador.vhd(110): object "saidaDebouncer" assigned a value but never read File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 110
+Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM" File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 131
+Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM" File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 135
+Info (12128): Elaborating entity "CPU" for hierarchy "CPU:CPU" File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 144
+Warning (10873): Using initial value X (don't care) for net "control[3..2]" at CPU.vhd(16) File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 16
+Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "CPU:CPU|muxGenerico2x1:MUX_ULA" File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 91
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "CPU:CPU|registradorGenerico:REG_A" File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 98
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "CPU:CPU|registradorGenerico:PC" File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 106
+Info (12128): Elaborating entity "somaUm" for hierarchy "CPU:CPU|somaUm:PC_INC" File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 113
+Info (12128): Elaborating entity "muxGenerico4x1" for hierarchy "CPU:CPU|muxGenerico4x1:MUX_DESVIO" File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 124
+Info (12128): Elaborating entity "ULASomaSub" for hierarchy "CPU:CPU|ULASomaSub:ULA" File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 133
+Info (12128): Elaborating entity "decoder" for hierarchy "CPU:CPU|decoder:DECODER" File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 141
+Info (12128): Elaborating entity "desvio" for hierarchy "CPU:CPU|desvio:DESVIO" File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 145
+Info (12128): Elaborating entity "flipFlop" for hierarchy "CPU:CPU|flipFlop:FLAG" File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 154
+Info (12128): Elaborating entity "decoder3x8" for hierarchy "decoder3x8:decoderBlock" File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 175
+Info (12128): Elaborating entity "decHex7seg" for hierarchy "decHex7seg:HEX0_decoder" File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 185
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "decHex7seg:HEX0_decoder|registradorGenerico:REG_4bits" File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/decHex7Seg.vhd Line: 33
+Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "decHex7seg:HEX0_decoder|conversorHex7Seg:DECODER_7seg" File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/decHex7Seg.vhd Line: 44
+Info (12128): Elaborating entity "buffer_3_state" for hierarchy "buffer_3_state:bufferSWConj" File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 233
+Info (12128): Elaborating entity "buffer_3_state" for hierarchy "buffer_3_state:bufferSW8" File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 238
 Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276007): RAM logic "memoriaRAM:RAM|ram" is uninferred due to asynchronous read logic File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/memoriaRAM.vhd Line: 28
+    Info (276007): RAM logic "memoriaRAM:RAM|ram" is uninferred due to asynchronous read logic File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/memoriaRAM.vhd Line: 28
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
-    Warning (13047): Converted the fan-out from the tri-state buffer "memoriaRAM:RAM|dado_out[0]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[0]" into an OR gate File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/memoriaRAM.vhd Line: 18
-    Warning (13047): Converted the fan-out from the tri-state buffer "memoriaRAM:RAM|dado_out[1]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[1]" into an OR gate File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/memoriaRAM.vhd Line: 18
-    Warning (13047): Converted the fan-out from the tri-state buffer "memoriaRAM:RAM|dado_out[2]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[2]" into an OR gate File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/memoriaRAM.vhd Line: 18
-    Warning (13047): Converted the fan-out from the tri-state buffer "memoriaRAM:RAM|dado_out[3]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[3]" into an OR gate File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/memoriaRAM.vhd Line: 18
-    Warning (13047): Converted the fan-out from the tri-state buffer "memoriaRAM:RAM|dado_out[4]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[4]" into an OR gate File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/memoriaRAM.vhd Line: 18
-    Warning (13047): Converted the fan-out from the tri-state buffer "memoriaRAM:RAM|dado_out[5]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[5]" into an OR gate File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/memoriaRAM.vhd Line: 18
-    Warning (13047): Converted the fan-out from the tri-state buffer "memoriaRAM:RAM|dado_out[6]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[6]" into an OR gate File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/memoriaRAM.vhd Line: 18
-    Warning (13047): Converted the fan-out from the tri-state buffer "memoriaRAM:RAM|dado_out[7]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[7]" into an OR gate File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/memoriaRAM.vhd Line: 18
+    Warning (13047): Converted the fan-out from the tri-state buffer "memoriaRAM:RAM|dado_out[0]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[0]" into an OR gate File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/memoriaRAM.vhd Line: 18
+    Warning (13047): Converted the fan-out from the tri-state buffer "memoriaRAM:RAM|dado_out[1]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[1]" into an OR gate File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/memoriaRAM.vhd Line: 18
+    Warning (13047): Converted the fan-out from the tri-state buffer "memoriaRAM:RAM|dado_out[2]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[2]" into an OR gate File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/memoriaRAM.vhd Line: 18
+    Warning (13047): Converted the fan-out from the tri-state buffer "memoriaRAM:RAM|dado_out[3]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[3]" into an OR gate File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/memoriaRAM.vhd Line: 18
+    Warning (13047): Converted the fan-out from the tri-state buffer "memoriaRAM:RAM|dado_out[4]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[4]" into an OR gate File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/memoriaRAM.vhd Line: 18
+    Warning (13047): Converted the fan-out from the tri-state buffer "memoriaRAM:RAM|dado_out[5]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[5]" into an OR gate File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/memoriaRAM.vhd Line: 18
+    Warning (13047): Converted the fan-out from the tri-state buffer "memoriaRAM:RAM|dado_out[6]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[6]" into an OR gate File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/memoriaRAM.vhd Line: 18
+    Warning (13047): Converted the fan-out from the tri-state buffer "memoriaRAM:RAM|dado_out[7]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[7]" into an OR gate File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/memoriaRAM.vhd Line: 18
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "endRAM[3]" is stuck at GND File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 14
-    Warning (13410): Pin "endRAM[4]" is stuck at GND File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 14
-    Warning (13410): Pin "LEDR[0]" is stuck at GND File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 16
-    Warning (13410): Pin "LEDR[1]" is stuck at GND File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 16
-    Warning (13410): Pin "LEDR[2]" is stuck at GND File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 16
-    Warning (13410): Pin "LEDR[3]" is stuck at GND File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 16
-    Warning (13410): Pin "LEDR[4]" is stuck at GND File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 16
-    Warning (13410): Pin "LEDR[5]" is stuck at GND File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 16
-    Warning (13410): Pin "LEDR[6]" is stuck at GND File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 16
-    Warning (13410): Pin "LEDR[7]" is stuck at GND File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 16
-    Warning (13410): Pin "LEDR[8]" is stuck at GND File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 16
-    Warning (13410): Pin "LEDR[9]" is stuck at GND File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 16
+    Warning (13410): Pin "endRAM[3]" is stuck at GND File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 14
+    Warning (13410): Pin "endRAM[4]" is stuck at GND File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 14
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 393 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "CLOCK_50" File: /home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 26
-Info (21057): Implemented 259 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "clovis" File: C:/Users/Bea/DESIGN DE COMPUTADORES/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 27
+Info (21057): Implemented 273 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 17 input pins
-    Info (21059): Implemented 85 output pins
-    Info (21061): Implemented 157 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 28 warnings
-    Info: Peak virtual memory: 478 megabytes
-    Info: Processing ended: Sat Apr 16 16:53:22 2022
+    Info (21059): Implemented 84 output pins
+    Info (21061): Implemented 172 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 16 warnings
+    Info: Peak virtual memory: 4849 megabytes
+    Info: Processing ended: Tue Apr 19 18:14:05 2022
     Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:25
+    Info: Total CPU time (on all processors): 00:00:23
 
 
