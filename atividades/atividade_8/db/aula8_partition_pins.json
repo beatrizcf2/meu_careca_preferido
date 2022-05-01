@@ -52,6 +52,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "endRAM[3]",
+					"strict" : false
+				},
+				{
+					"name" : "endRAM[4]",
+					"strict" : false
+				},
+				{
 					"name" : "endRAM[5]",
 					"strict" : false
 				},
@@ -336,27 +344,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "SW[0]",
-					"strict" : false
-				},
-				{
-					"name" : "FPGA_RESET_N",
-					"strict" : false
-				},
-				{
-					"name" : "KEY[0]",
-					"strict" : false
-				},
-				{
-					"name" : "KEY[1]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[8]",
-					"strict" : false
-				},
-				{
-					"name" : "KEY[3]",
+					"name" : "KEY[2]",
 					"strict" : false
 				},
 				{
@@ -364,7 +352,27 @@
 					"strict" : false
 				},
 				{
-					"name" : "KEY[2]",
+					"name" : "SW[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[8]",
+					"strict" : false
+				},
+				{
+					"name" : "FPGA_RESET_N",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[1]",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[0]",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[3]",
 					"strict" : false
 				},
 				{
