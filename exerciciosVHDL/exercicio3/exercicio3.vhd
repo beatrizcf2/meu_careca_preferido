@@ -37,15 +37,27 @@ MUX    :  entity work.muxGenerico2x1  generic map (larguraDados => larguraDados)
                       saida_MUX    => saidaMux);
 
 PC     : entity work.registradorGenerico  generic map (larguraDados => larguraDados)
-             port map (DIN     => saidaMux, 
-						     DOUT    => saidaPC, 
+             port map (DIN  => , 
+						     DOUT    => , 
 				   		  ENABLE  => '1', 
 				   		  CLK     => CLK, 
 				   		  RST     => '0');	
 
 PC_INC :  entity work.somaConstante  generic map (larguraDados => larguraDados , constante => 1)
             port map(entrada   => saidaPC, 
-							saida     => saidaIncPC);						  
+							saida     => saidaIncPC);			
+              
+bancoReg : entity work.bancoReg   generic map (larguraDados => valorLocal, larguraEndBancoRegs => valorLocal)
+          port map (  clk => sinalLocal,
+                      enderecoA => sinalLocal,
+                      enderecoB => sinalLocal,
+                      enderecoC => sinalLocal,
+                      dadoEscritaC => sinalLocal,
+                      escreveC => sinalLocal,
+                      saidaA => sinalLocal,
+                      saidaB  => sinalLocal);
+
+
 
 
 

@@ -1,0 +1,81 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity instrucaoR is
+  -- O generic é onde carrega as constantes padroes
+  generic
+  (
+		larguraDados    : natural  :=    32;
+		larguraEnd      : natural  :=    5;
+		larguraFunct    : natural  :=    6;
+		larguraShamt    : natural  :=    5;
+		larguraOpcode   : natural  :=    6
+
+  );
+  
+  -- O port é obrigatório e possui o objeto “signal” implícito.
+  port    
+  (
+		habReg                   : in  std_logic;
+		ULAOp                    : in  std_logic;
+		saida                    : out std_logic_vector(larguraDados-1 downto 0) -- barramento de instrucoes
+  );
+end entity;   -- Também pode ser utilizado: "end entity";
+
+architecture arquitetura of instrucaoR is                                    
+		--signal CLK                      : std_logic;
+		signal saidaPC                  : std_logic_vector (larguraDados-1 downto 0);
+		signal saidaIncPC               : std_logic_vector (larguraDados-1 downto 0);
+
+		signal saidaRs                 : std_logic_vector (larguraDados-1 downto 0);
+		signal saidaRt                 : std_logic_vector (larguraDados-1 downto 0);
+		signal saidaRd                 : std_logic_vector (larguraDados-1 downto 0);
+
+		signal saidaROM                 : std_logic_vector (larguraDados-1 downto 0);
+		alias endRs                 	: std_logic_vector is (larguraEnd-larguraOpcode-1 downto larguraFunct+larguraShamt-1);
+		alias endRt                 	: std_logic_vector is (larguraEnd-larguraOpcode-larguraEnd-1 downto larguraFunct+larguraShamt-1);
+		alias endRd                 	: std_logic_vector is (larguraEnd-larguraOpcode-larguraEnd*2-1 downto larguraFunct+larguraShamt-1);
+
+		signal saidaULA_rd                 : std_logic_vector (larguraDados-1 downto 0);
+
+begin
+
+-- Instanciando os componentes:
+
+
+ULA    : entity work.ULASomaSub  generic map(larguraDados => larguraDados)
+            port map (entradaA  => saidaMUX, 
+							 entradaB  => saidaReg1,
+							 seletor   => opULA,
+							 saida     => saidaULA);
+
+PC     : entity work.registradorGenerico  generic map (larguraDados => larguraDados)
+             port map (DIN     => saidaMux, 
+						     DOUT    => saidaPC, 
+				   		  ENABLE  => '1', 
+				   		  CLK     => CLK, 
+				   		  RST     => '0');	
+
+PC_INC :  entity work.somaConstante  generic map (larguraDados => larguraDados , constante => 1)
+            port map(entrada   => saidaPC, 
+							saida     => saidaIncPC);			
+              
+bancoReg : entity work.bancoReg   generic map (larguraDados => valorLocal, larguraEndBancoRegs => valorLocal)
+          port map (  clk => sinalLocal,
+                      enderecoA => sinalLocal,
+                      enderecoB => sinalLocal,
+                      enderecoC => sinalLocal,
+                      dadoEscritaC => sinalLocal,
+                      escreveC => sinalLocal,
+                      saidaA => sinalLocal,
+                      saidaB  => sinalLocal);
+
+ROMMIPS : entity work.ROMMIPS   generic map (dataWidth => VALOR_LOCAL, addrWidth => VALOR_LOCAL)
+          port map (clk => clk
+			  		Endereco => sinalLocal, 
+		  			Dado => sinalLocal);
+
+
+
+end architecture;
