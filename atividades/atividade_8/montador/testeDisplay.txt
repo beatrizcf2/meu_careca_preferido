@@ -1,0 +1,21 @@
+# Inicializando os displays
+LDI $1			    #Carrega o acumulador com o valor 0
+STA @288			#Armazena o valor do acumulador em HEX0
+
+LDI $2			    #Carrega o acumulador com o valor 0
+STA @289			#Armazena o valor do acumulador em HEX1
+
+LDI $3			    #Carrega o acumulador com o valor 0
+STA @290			#Armazena o valor do acumulador em HEX2
+
+LDI $4			    #Carrega o acumulador com o valor 0
+STA @291			#Armazena o valor do acumulador em HEX3
+
+LDI $5			    #Carrega o acumulador com o valor 0
+STA @292			#Armazena o valor do acumulador em HEX4
+
+LDI $6			    #Carrega o acumulador com o valor 0
+STA @293			#Armazena o valor do acumulador em HEX5
+
+AQUI:
+JMP @AQUI

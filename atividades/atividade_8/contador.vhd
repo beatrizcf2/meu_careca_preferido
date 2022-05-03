@@ -8,7 +8,7 @@ entity contador is
             larguraInstrucao : natural := 13;
             larguraOpCode    : natural := 4;
             addrWidth        : natural := 6;
-            simulacao        : boolean := FALSE	 -- para gravar na placa, altere de TRUE para FALSE
+            simulacao        : boolean := TRUE	 -- para gravar na placa, altere de TRUE para FALSE
   );
   port   (  endROM        : out std_logic_vector(larguraEndereco-1 downto 0);
             endRAM        : out std_logic_vector(addrWidth-1 downto 0);
@@ -21,11 +21,10 @@ entity contador is
 
             FPGA_RESET_N : in std_logic;
 				HEX0, HEX1, HEX2, HEX3, HEX4, HEX5 : out std_logic_vector(6 downto 0);
+				flaginha : out std_logic;
 				
             -- simulacao
-            CLOCK_50      : in std_logic;
-            clovis        : in std_logic
-				
+            CLOCK_50      : in std_logic
   );
 end entity;
 
@@ -108,6 +107,8 @@ architecture arquitetura of contador is
 	
   
   signal saidaDebouncer, ADDR_511   :  std_logic;
+  signal key0_clock : std_logic;
+  
   --signal leituraChaves              : std_logic_vector(7 downto 0); -- n tenho ctz se precisa msm
   
  
@@ -126,6 +127,11 @@ CLK <= CLOCK_50;
 --						saida   => CLK);
 end generate;
 
+
+detectorSub0: work.edgeDetector(bordaSubida)
+        port map (clk     => CLOCK_50, 
+						entrada => (not KEY(0)), 
+						saida   => key0_clock);
 -- port maps
 
 ROM    : entity work.memoriaROM   generic map (dataWidth => 13, addrWidth => 9)
@@ -148,7 +154,8 @@ CPU     : entity work.CPU
 							 ROMAddress    => ROMAddress,
 							 dataAddress   => dataAddress,
 							 dataOut       => dadoEscrito,
-							 CLK           => CLK);
+							 CLK           => CLK,
+							 flag => flaginha);
 							 
 
 FFLED8    : entity work.flipFlop
@@ -247,18 +254,18 @@ bufferSW9 :  entity work.buffer_3_state  generic map (dataWidth => 1)
 
 ADDR_511 <= dataAddress(8) and dataAddress(7) and dataAddress(6) and 
 				dataAddress(5) and dataAddress(4) and dataAddress(3) and 
-				dataAddress(2) and dataAddress(1) and dataAddress(0);
+				dataAddress(2) and dataAddress(1) and dataAddress(0) and WR;
 				
 				
 FF_Debouncer : entity work.flipFlop
              port map (DIN     => '1', 
 						     DOUT    => saidaDebouncer, 
 				   		  ENABLE  => '1', 
-				   		  CLK     => CLK, 
+				   		  CLK     => key0_clock, 
 				   		  RST     => ADDR_511);
 							  
 bufferKEY0 :  entity work.buffer_3_state  generic map (dataWidth => 1)
-              port map(entrada(0)  => KEY(0), 
+              port map(entrada(0)  => saidaDebouncer, 
                        habilita => habKEY0, 
                        saida(0)    => dadoLido(0));
 

@@ -1,0 +1,21 @@
+Quartus Prime Archive log --	C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_13/aula13.qarlog
+
+Archive:	C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_13/aula13.qar
+Date:		Mon May 02 22:29:21 2022
+Quartus Prime		20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_13/ROMMIPS.vhd
+C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_13/ROMcontent.mif
+C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_13/ULASomaSub.vhd
+C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_13/aula13.qpf
+C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_13/aula13.qsf
+C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_13/bancoReg.vhd
+C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_13/instrucaoR.vhd
+C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_13/registradorGenerico.vhd
+C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_13/somaUm.vhd
+c:/intelfpga_lite/20.1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 10 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

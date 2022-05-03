@@ -1,5 +1,5 @@
 Analysis & Synthesis report for aula8
-Sun May 01 16:17:25 2022
+Tue May 03 19:07:26 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -13,51 +13,53 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Multiplexer Restructuring Statistics (Restructuring Performed)
- 10. Parameter Settings for User Entity Instance: Top-level Entity: |contador
- 11. Parameter Settings for User Entity Instance: memoriaROM:ROM
- 12. Parameter Settings for User Entity Instance: memoriaRAM:RAM
- 13. Parameter Settings for User Entity Instance: CPU:CPU
- 14. Parameter Settings for User Entity Instance: CPU:CPU|muxGenerico2x1:MUX_ULA
- 15. Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:REG_A
- 16. Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:PC
- 17. Parameter Settings for User Entity Instance: CPU:CPU|somaUm:PC_INC
- 18. Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:END_RETORNO
- 19. Parameter Settings for User Entity Instance: CPU:CPU|muxGenerico4x1:MUX_DESVIO
- 20. Parameter Settings for User Entity Instance: CPU:CPU|ULASomaSub:ULA
- 21. Parameter Settings for User Entity Instance: registradorGenerico:RegLEDconj
- 22. Parameter Settings for User Entity Instance: decHex7seg:HEX0_decoder|registradorGenerico:REG_4bits
- 23. Parameter Settings for User Entity Instance: decHex7seg:HEX1_decoder|registradorGenerico:REG_4bits
- 24. Parameter Settings for User Entity Instance: decHex7seg:HEX2_decoder|registradorGenerico:REG_4bits
- 25. Parameter Settings for User Entity Instance: decHex7seg:HEX3_decoder|registradorGenerico:REG_4bits
- 26. Parameter Settings for User Entity Instance: decHex7seg:HEX4_decoder|registradorGenerico:REG_4bits
- 27. Parameter Settings for User Entity Instance: decHex7seg:HEX5_decoder|registradorGenerico:REG_4bits
- 28. Parameter Settings for User Entity Instance: buffer_3_state:bufferSWConj
- 29. Parameter Settings for User Entity Instance: buffer_3_state:bufferSW8
- 30. Parameter Settings for User Entity Instance: buffer_3_state:bufferSW9
- 31. Parameter Settings for User Entity Instance: buffer_3_state:bufferKEY0
- 32. Parameter Settings for User Entity Instance: buffer_3_state:bufferKEY1
- 33. Parameter Settings for User Entity Instance: buffer_3_state:bufferKEY2
- 34. Parameter Settings for User Entity Instance: buffer_3_state:bufferKEY3
- 35. Parameter Settings for User Entity Instance: buffer_3_state:bufferRESET
- 36. Port Connectivity Checks: "flipFlop:FF_Debouncer"
- 37. Port Connectivity Checks: "decHex7seg:HEX0_decoder|conversorHex7Seg:DECODER_7seg"
- 38. Port Connectivity Checks: "decHex7seg:HEX0_decoder|registradorGenerico:REG_4bits"
- 39. Port Connectivity Checks: "decoder3x8:decoderAddr"
- 40. Port Connectivity Checks: "decoder3x8:decoderBlock"
- 41. Port Connectivity Checks: "registradorGenerico:RegLEDconj"
- 42. Port Connectivity Checks: "flipFlop:FFLED9"
- 43. Port Connectivity Checks: "flipFlop:FFLED8"
- 44. Port Connectivity Checks: "CPU:CPU|flipFlop:FLAG"
- 45. Port Connectivity Checks: "CPU:CPU|muxGenerico4x1:MUX_DESVIO"
- 46. Port Connectivity Checks: "CPU:CPU|registradorGenerico:END_RETORNO"
- 47. Port Connectivity Checks: "CPU:CPU|registradorGenerico:PC"
- 48. Port Connectivity Checks: "CPU:CPU|registradorGenerico:REG_A"
- 49. Port Connectivity Checks: "CPU:CPU"
- 50. Post-Synthesis Netlist Statistics for Top Partition
- 51. Elapsed Time Per Partition
- 52. Analysis & Synthesis Messages
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |contador
+ 13. Parameter Settings for User Entity Instance: memoriaROM:ROM
+ 14. Parameter Settings for User Entity Instance: memoriaRAM:RAM
+ 15. Parameter Settings for User Entity Instance: CPU:CPU
+ 16. Parameter Settings for User Entity Instance: CPU:CPU|muxGenerico2x1:MUX_ULA
+ 17. Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:REG_A
+ 18. Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:PC
+ 19. Parameter Settings for User Entity Instance: CPU:CPU|somaUm:PC_INC
+ 20. Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:END_RETORNO
+ 21. Parameter Settings for User Entity Instance: CPU:CPU|muxGenerico4x1:MUX_DESVIO
+ 22. Parameter Settings for User Entity Instance: CPU:CPU|ULASomaSub:ULA
+ 23. Parameter Settings for User Entity Instance: registradorGenerico:RegLEDconj
+ 24. Parameter Settings for User Entity Instance: decHex7seg:HEX0_decoder|registradorGenerico:REG_4bits
+ 25. Parameter Settings for User Entity Instance: decHex7seg:HEX1_decoder|registradorGenerico:REG_4bits
+ 26. Parameter Settings for User Entity Instance: decHex7seg:HEX2_decoder|registradorGenerico:REG_4bits
+ 27. Parameter Settings for User Entity Instance: decHex7seg:HEX3_decoder|registradorGenerico:REG_4bits
+ 28. Parameter Settings for User Entity Instance: decHex7seg:HEX4_decoder|registradorGenerico:REG_4bits
+ 29. Parameter Settings for User Entity Instance: decHex7seg:HEX5_decoder|registradorGenerico:REG_4bits
+ 30. Parameter Settings for User Entity Instance: buffer_3_state:bufferSWConj
+ 31. Parameter Settings for User Entity Instance: buffer_3_state:bufferSW8
+ 32. Parameter Settings for User Entity Instance: buffer_3_state:bufferSW9
+ 33. Parameter Settings for User Entity Instance: buffer_3_state:bufferKEY0
+ 34. Parameter Settings for User Entity Instance: buffer_3_state:bufferKEY1
+ 35. Parameter Settings for User Entity Instance: buffer_3_state:bufferKEY2
+ 36. Parameter Settings for User Entity Instance: buffer_3_state:bufferKEY3
+ 37. Parameter Settings for User Entity Instance: buffer_3_state:bufferRESET
+ 38. Port Connectivity Checks: "flipFlop:FF_Debouncer"
+ 39. Port Connectivity Checks: "decHex7seg:HEX0_decoder|conversorHex7Seg:DECODER_7seg"
+ 40. Port Connectivity Checks: "decHex7seg:HEX0_decoder|registradorGenerico:REG_4bits"
+ 41. Port Connectivity Checks: "decoder3x8:decoderAddr"
+ 42. Port Connectivity Checks: "decoder3x8:decoderBlock"
+ 43. Port Connectivity Checks: "registradorGenerico:RegLEDconj"
+ 44. Port Connectivity Checks: "flipFlop:FFLED9"
+ 45. Port Connectivity Checks: "flipFlop:FFLED8"
+ 46. Port Connectivity Checks: "CPU:CPU|flipFlop:FLAGer"
+ 47. Port Connectivity Checks: "CPU:CPU|muxGenerico4x1:MUX_DESVIO"
+ 48. Port Connectivity Checks: "CPU:CPU|registradorGenerico:END_RETORNO"
+ 49. Port Connectivity Checks: "CPU:CPU|registradorGenerico:PC"
+ 50. Port Connectivity Checks: "CPU:CPU|registradorGenerico:REG_A"
+ 51. Port Connectivity Checks: "CPU:CPU"
+ 52. Post-Synthesis Netlist Statistics for Top Partition
+ 53. Elapsed Time Per Partition
+ 54. Analysis & Synthesis Messages
 
 
 
@@ -84,13 +86,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun May 01 16:17:25 2022       ;
+; Analysis & Synthesis Status     ; Successful - Tue May 03 19:07:26 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; aula8                                       ;
 ; Top-level Entity Name           ; contador                                    ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 573                                         ;
+; Total registers                 ; 61                                          ;
 ; Total pins                      ; 101                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -224,6 +226,7 @@ https://fpgasoftware.intel.com/eula.
 ; memoriaRAM.vhd                   ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/memoriaRAM.vhd          ;         ;
 ; memoria.vhd                      ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/memoria.vhd             ;         ;
 ; flipFlop.vhd                     ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/flipFlop.vhd            ;         ;
+; edgeDetector.vhd                 ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/edgeDetector.vhd        ;         ;
 ; desvio.vhd                       ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/desvio.vhd              ;         ;
 ; decoder3x8.vhd                   ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/decoder3x8.vhd          ;         ;
 ; decoder.vhd                      ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/decoder.vhd             ;         ;
@@ -234,81 +237,180 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                  ;
-+---------------------------------------------+----------------+
-; Resource                                    ; Usage          ;
-+---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 467            ;
-;                                             ;                ;
-; Combinational ALUT usage for logic          ; 490            ;
-;     -- 7 input functions                    ; 0              ;
-;     -- 6 input functions                    ; 293            ;
-;     -- 5 input functions                    ; 35             ;
-;     -- 4 input functions                    ; 73             ;
-;     -- <=3 input functions                  ; 89             ;
-;                                             ;                ;
-; Dedicated logic registers                   ; 573            ;
-;                                             ;                ;
-; I/O pins                                    ; 101            ;
-;                                             ;                ;
-; Total DSP Blocks                            ; 0              ;
-;                                             ;                ;
-; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 573            ;
-; Total fan-out                               ; 4337           ;
-; Average fan-out                             ; 3.43           ;
-+---------------------------------------------+----------------+
++------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimate of Logic utilization (ALMs needed) ; 58           ;
+;                                             ;              ;
+; Combinational ALUT usage for logic          ; 93           ;
+;     -- 7 input functions                    ; 0            ;
+;     -- 6 input functions                    ; 16           ;
+;     -- 5 input functions                    ; 19           ;
+;     -- 4 input functions                    ; 12           ;
+;     -- <=3 input functions                  ; 46           ;
+;                                             ;              ;
+; Dedicated logic registers                   ; 61           ;
+;                                             ;              ;
+; I/O pins                                    ; 101          ;
+;                                             ;              ;
+; Total DSP Blocks                            ; 0            ;
+;                                             ;              ;
+; Maximum fan-out node                        ; KEY[0]~input ;
+; Maximum fan-out                             ; 61           ;
+; Total fan-out                               ; 682          ;
+; Average fan-out                             ; 1.92         ;
++---------------------------------------------+--------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                     ;
-+-----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------+---------------------+--------------+
-; Compilation Hierarchy Node              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                             ; Entity Name         ; Library Name ;
-+-----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------+---------------------+--------------+
-; |contador                               ; 490 (12)            ; 573 (0)                   ; 0                 ; 0          ; 101  ; 0            ; |contador                                                       ; contador            ; work         ;
-;    |CPU:CPU|                            ; 53 (0)              ; 27 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU                                               ; CPU                 ; work         ;
-;       |ULASomaSub:ULA|                  ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|ULASomaSub:ULA                                ; ULASomaSub          ; work         ;
-;       |decoder:DECODER|                 ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|decoder:DECODER                               ; decoder             ; work         ;
-;       |desvio:DESVIO|                   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|desvio:DESVIO                                 ; desvio              ; work         ;
-;       |flipFlop:FLAG|                   ; 5 (5)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|flipFlop:FLAG                                 ; flipFlop            ; work         ;
-;       |muxGenerico2x1:MUX_ULA|          ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|muxGenerico2x1:MUX_ULA                        ; muxGenerico2x1      ; work         ;
-;       |muxGenerico4x1:MUX_DESVIO|       ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|muxGenerico4x1:MUX_DESVIO                     ; muxGenerico4x1      ; work         ;
-;       |registradorGenerico:END_RETORNO| ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|registradorGenerico:END_RETORNO               ; registradorGenerico ; work         ;
-;       |registradorGenerico:PC|          ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|registradorGenerico:PC                        ; registradorGenerico ; work         ;
-;       |registradorGenerico:REG_A|       ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|registradorGenerico:REG_A                     ; registradorGenerico ; work         ;
-;       |somaUm:PC_INC|                   ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|somaUm:PC_INC                                 ; somaUm              ; work         ;
-;    |buffer_3_state:bufferKEY0|          ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|buffer_3_state:bufferKEY0                             ; buffer_3_state      ; work         ;
-;    |buffer_3_state:bufferKEY1|          ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|buffer_3_state:bufferKEY1                             ; buffer_3_state      ; work         ;
-;    |buffer_3_state:bufferKEY2|          ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|buffer_3_state:bufferKEY2                             ; buffer_3_state      ; work         ;
-;    |buffer_3_state:bufferKEY3|          ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|buffer_3_state:bufferKEY3                             ; buffer_3_state      ; work         ;
-;    |buffer_3_state:bufferRESET|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|buffer_3_state:bufferRESET                            ; buffer_3_state      ; work         ;
-;    |buffer_3_state:bufferSW9|           ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|buffer_3_state:bufferSW9                              ; buffer_3_state      ; work         ;
-;    |decHex7seg:HEX0_decoder|            ; 7 (0)               ; 4 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|decHex7seg:HEX0_decoder                               ; decHex7seg          ; work         ;
-;       |conversorHex7Seg:DECODER_7seg|   ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|decHex7seg:HEX0_decoder|conversorHex7Seg:DECODER_7seg ; conversorHex7Seg    ; work         ;
-;       |registradorGenerico:REG_4bits|   ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|decHex7seg:HEX0_decoder|registradorGenerico:REG_4bits ; registradorGenerico ; work         ;
-;    |decHex7seg:HEX1_decoder|            ; 7 (0)               ; 4 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|decHex7seg:HEX1_decoder                               ; decHex7seg          ; work         ;
-;       |conversorHex7Seg:DECODER_7seg|   ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|decHex7seg:HEX1_decoder|conversorHex7Seg:DECODER_7seg ; conversorHex7Seg    ; work         ;
-;       |registradorGenerico:REG_4bits|   ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|decHex7seg:HEX1_decoder|registradorGenerico:REG_4bits ; registradorGenerico ; work         ;
-;    |decHex7seg:HEX2_decoder|            ; 7 (0)               ; 4 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|decHex7seg:HEX2_decoder                               ; decHex7seg          ; work         ;
-;       |conversorHex7Seg:DECODER_7seg|   ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|decHex7seg:HEX2_decoder|conversorHex7Seg:DECODER_7seg ; conversorHex7Seg    ; work         ;
-;       |registradorGenerico:REG_4bits|   ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|decHex7seg:HEX2_decoder|registradorGenerico:REG_4bits ; registradorGenerico ; work         ;
-;    |decHex7seg:HEX3_decoder|            ; 7 (0)               ; 4 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|decHex7seg:HEX3_decoder                               ; decHex7seg          ; work         ;
-;       |conversorHex7Seg:DECODER_7seg|   ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|decHex7seg:HEX3_decoder|conversorHex7Seg:DECODER_7seg ; conversorHex7Seg    ; work         ;
-;       |registradorGenerico:REG_4bits|   ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|decHex7seg:HEX3_decoder|registradorGenerico:REG_4bits ; registradorGenerico ; work         ;
-;    |decHex7seg:HEX4_decoder|            ; 7 (0)               ; 4 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|decHex7seg:HEX4_decoder                               ; decHex7seg          ; work         ;
-;       |conversorHex7Seg:DECODER_7seg|   ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|decHex7seg:HEX4_decoder|conversorHex7Seg:DECODER_7seg ; conversorHex7Seg    ; work         ;
-;       |registradorGenerico:REG_4bits|   ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|decHex7seg:HEX4_decoder|registradorGenerico:REG_4bits ; registradorGenerico ; work         ;
-;    |decHex7seg:HEX5_decoder|            ; 7 (0)               ; 4 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|decHex7seg:HEX5_decoder                               ; decHex7seg          ; work         ;
-;       |conversorHex7Seg:DECODER_7seg|   ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|decHex7seg:HEX5_decoder|conversorHex7Seg:DECODER_7seg ; conversorHex7Seg    ; work         ;
-;       |registradorGenerico:REG_4bits|   ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|decHex7seg:HEX5_decoder|registradorGenerico:REG_4bits ; registradorGenerico ; work         ;
-;    |flipFlop:FFLED8|                    ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|flipFlop:FFLED8                                       ; flipFlop            ; work         ;
-;    |flipFlop:FFLED9|                    ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|flipFlop:FFLED9                                       ; flipFlop            ; work         ;
-;    |memoriaRAM:RAM|                     ; 317 (317)           ; 512 (512)                 ; 0                 ; 0          ; 0    ; 0            ; |contador|memoriaRAM:RAM                                        ; memoriaRAM          ; work         ;
-;    |memoriaROM:ROM|                     ; 55 (55)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|memoriaROM:ROM                                        ; memoriaROM          ; work         ;
-;    |registradorGenerico:RegLEDconj|     ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|registradorGenerico:RegLEDconj                        ; registradorGenerico ; work         ;
-+-----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------+---------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                       ;
++-----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                               ; Entity Name         ; Library Name ;
++-----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------+---------------------+--------------+
+; |contador                               ; 93 (0)              ; 61 (0)                    ; 0                 ; 0          ; 101  ; 0            ; |contador                                         ; contador            ; work         ;
+;    |CPU:CPU|                            ; 46 (0)              ; 27 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU                                 ; CPU                 ; work         ;
+;       |ULASomaSub:ULA|                  ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|ULASomaSub:ULA                  ; ULASomaSub          ; work         ;
+;       |decoder:DECODER|                 ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|decoder:DECODER                 ; decoder             ; work         ;
+;       |desvio:DESVIO|                   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|desvio:DESVIO                   ; desvio              ; work         ;
+;       |flipFlop:FLAGer|                 ; 3 (3)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|flipFlop:FLAGer                 ; flipFlop            ; work         ;
+;       |muxGenerico2x1:MUX_ULA|          ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|muxGenerico2x1:MUX_ULA          ; muxGenerico2x1      ; work         ;
+;       |muxGenerico4x1:MUX_DESVIO|       ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|muxGenerico4x1:MUX_DESVIO       ; muxGenerico4x1      ; work         ;
+;       |registradorGenerico:END_RETORNO| ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|registradorGenerico:END_RETORNO ; registradorGenerico ; work         ;
+;       |registradorGenerico:PC|          ; 2 (2)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|registradorGenerico:PC          ; registradorGenerico ; work         ;
+;       |registradorGenerico:REG_A|       ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|registradorGenerico:REG_A       ; registradorGenerico ; work         ;
+;       |somaUm:PC_INC|                   ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|somaUm:PC_INC                   ; somaUm              ; work         ;
+;    |flipFlop:FFLED8|                    ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|flipFlop:FFLED8                         ; flipFlop            ; work         ;
+;    |flipFlop:FFLED9|                    ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|flipFlop:FFLED9                         ; flipFlop            ; work         ;
+;    |memoriaRAM:RAM|                     ; 33 (33)             ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |contador|memoriaRAM:RAM                          ; memoriaRAM          ; work         ;
+;    |memoriaROM:ROM|                     ; 14 (14)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|memoriaROM:ROM                          ; memoriaROM          ; work         ;
++-----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                             ;
++------------------------------------------------------------------+---------------------------------------------+
+; Register name                                                    ; Reason for Removal                          ;
++------------------------------------------------------------------+---------------------------------------------+
+; decHex7seg:HEX0_decoder|registradorGenerico:REG_4bits|DOUT[0..3] ; Stuck at GND due to stuck port clock_enable ;
+; decHex7seg:HEX1_decoder|registradorGenerico:REG_4bits|DOUT[0..3] ; Stuck at GND due to stuck port clock_enable ;
+; decHex7seg:HEX2_decoder|registradorGenerico:REG_4bits|DOUT[0..3] ; Stuck at GND due to stuck port clock_enable ;
+; decHex7seg:HEX3_decoder|registradorGenerico:REG_4bits|DOUT[0..3] ; Stuck at GND due to stuck port clock_enable ;
+; decHex7seg:HEX4_decoder|registradorGenerico:REG_4bits|DOUT[0..3] ; Stuck at GND due to stuck port clock_enable ;
+; decHex7seg:HEX5_decoder|registradorGenerico:REG_4bits|DOUT[0..3] ; Stuck at GND due to stuck port clock_enable ;
+; flipFlop:FF_Debouncer|DOUT                                       ; Stuck at VCC due to stuck port data_in      ;
+; edgeDetector:detectorSub0|saidaQ                                 ; Lost fanout                                 ;
+; memoriaRAM:RAM|ram~127                                           ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~63                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~111                                           ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~47                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~135                                           ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~71                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~119                                           ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~55                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~103                                           ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~39                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~87                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~23                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~128                                           ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~136                                           ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~104                                           ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~64                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~72                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~40                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~112                                           ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~120                                           ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~88                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~48                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~56                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~24                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~129                                           ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~65                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~113                                           ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~49                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~137                                           ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~73                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~121                                           ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~57                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~105                                           ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~41                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~89                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~25                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~130                                           ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~138                                           ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~106                                           ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~66                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~74                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~42                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~114                                           ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~122                                           ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~90                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~50                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~58                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~26                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~131                                           ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~67                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~115                                           ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~51                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~139                                           ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~75                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~123                                           ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~59                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~107                                           ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~43                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~91                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~27                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~132                                           ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~140                                           ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~108                                           ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~68                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~76                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~44                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~116                                           ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~124                                           ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~92                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~52                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~60                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~28                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~133                                           ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~69                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~117                                           ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~53                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~141                                           ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~77                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~125                                           ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~61                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~109                                           ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~45                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~93                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~29                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~134                                           ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~142                                           ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~110                                           ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~70                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~78                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~46                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~118                                           ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~126                                           ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~94                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~54                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~62                                            ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:RAM|ram~30                                            ; Stuck at GND due to stuck port clock_enable ;
+; registradorGenerico:RegLEDconj|DOUT[0..7]                        ; Stuck at GND due to stuck port clock_enable ;
+; Total Number of Removed Registers = 130                          ;                                             ;
++------------------------------------------------------------------+---------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                     ;
++----------------------------+---------------------------+----------------------------------------+
+; Register name              ; Reason for Removal        ; Registers Removed due to This Register ;
++----------------------------+---------------------------+----------------------------------------+
+; flipFlop:FF_Debouncer|DOUT ; Stuck at VCC              ; edgeDetector:detectorSub0|saidaQ       ;
+;                            ; due to stuck port data_in ;                                        ;
++----------------------------+---------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -316,12 +418,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 573   ;
+; Total registers                              ; 61    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 8     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 561   ;
+; Number of registers using Clock Enable       ; 49    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -331,7 +433,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                       ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |contador|CPU:CPU|registradorGenerico:PC|DOUT[1] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |contador|CPU:CPU|registradorGenerico:PC|DOUT[7] ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |contador|CPU:CPU|registradorGenerico:PC|DOUT[0] ;
 ; 7:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |contador|CPU:CPU|decoder:DECODER|saida[3]       ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
 
@@ -346,7 +449,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; larguraInstrucao ; 13    ; Signed Integer                                ;
 ; larguraOpCode    ; 4     ; Signed Integer                                ;
 ; addrWidth        ; 6     ; Signed Integer                                ;
-; simulacao        ; false ; Enumerated                                    ;
+; simulacao        ; true  ; Enumerated                                    ;
 +------------------+-------+-----------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -609,15 +712,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "flipFlop:FF_Debouncer"                                                                ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; Port   ; Type   ; Severity ; Details                                                                             ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; din    ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; dout   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; enable ; Input  ; Info     ; Stuck at VCC                                                                        ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
++---------------------------------------------------+
+; Port Connectivity Checks: "flipFlop:FF_Debouncer" ;
++--------+-------+----------+-----------------------+
+; Port   ; Type  ; Severity ; Details               ;
++--------+-------+----------+-----------------------+
+; din    ; Input ; Info     ; Stuck at VCC          ;
+; enable ; Input ; Info     ; Stuck at VCC          ;
++--------+-------+----------+-----------------------+
 
 
 +-----------------------------------------------------------------------------------+
@@ -686,13 +788,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+-------+----------+-------------------+
 
 
-+---------------------------------------------------+
-; Port Connectivity Checks: "CPU:CPU|flipFlop:FLAG" ;
-+------+-------+----------+-------------------------+
-; Port ; Type  ; Severity ; Details                 ;
-+------+-------+----------+-------------------------+
-; rst  ; Input ; Info     ; Stuck at GND            ;
-+------+-------+----------+-------------------------+
++-----------------------------------------------------+
+; Port Connectivity Checks: "CPU:CPU|flipFlop:FLAGer" ;
++------+-------+----------+---------------------------+
+; Port ; Type  ; Severity ; Details                   ;
++------+-------+----------+---------------------------+
+; rst  ; Input ; Info     ; Stuck at GND              ;
++------+-------+----------+---------------------------+
 
 
 +---------------------------------------------------------------+
@@ -746,25 +848,29 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 573                         ;
-;     ENA               ; 553                         ;
+; arriav_ff             ; 61                          ;
+;     ENA               ; 41                          ;
 ;     ENA SLD           ; 8                           ;
 ;     plain             ; 12                          ;
 ; arriav_io_obuf        ; 8                           ;
-; arriav_lcell_comb     ; 490                         ;
+; arriav_lcell_comb     ; 98                          ;
 ;     arith             ; 18                          ;
-;         1 data inputs ; 10                          ;
-;         5 data inputs ; 8                           ;
-;     normal            ; 472                         ;
-;         2 data inputs ; 67                          ;
-;         3 data inputs ; 12                          ;
-;         4 data inputs ; 73                          ;
-;         5 data inputs ; 27                          ;
-;         6 data inputs ; 293                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 9                           ;
+;         2 data inputs ; 1                           ;
+;         3 data inputs ; 7                           ;
+;     normal            ; 80                          ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 4                           ;
+;         2 data inputs ; 7                           ;
+;         3 data inputs ; 20                          ;
+;         4 data inputs ; 12                          ;
+;         5 data inputs ; 19                          ;
+;         6 data inputs ; 16                          ;
 ; boundary_port         ; 101                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 10.20                       ;
-; Average LUT depth     ; 6.61                        ;
+; Max LUT depth         ; 6.30                        ;
+; Average LUT depth     ; 3.36                        ;
 +-----------------------+-----------------------------+
 
 
@@ -773,7 +879,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -783,7 +889,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sun May 01 16:17:12 2022
+    Info: Processing started: Tue May 03 19:07:14 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off aula8 -c aula8
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file buffer_3_state.vhd
@@ -827,10 +933,10 @@ Info (12021): Found 2 design units, including 1 entities, in source file decoder
     Info (12022): Found design unit 1: decoder-comportamento File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/decoder.vhd Line: 11
     Info (12023): Found entity 1: decoder File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/decoder.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file cpu.vhd
-    Info (12022): Found design unit 1: CPU-arquitetura File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 28
+    Info (12022): Found design unit 1: CPU-arquitetura File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 29
     Info (12023): Found entity 1: CPU File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file contador.vhd
-    Info (12022): Found design unit 1: contador-arquitetura File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 33
+    Info (12022): Found design unit 1: contador-arquitetura File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 32
     Info (12023): Found entity 1: contador File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file decodergeneric.vhd
     Info (12022): Found design unit 1: decoderGeneric-comportamento File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/decoderGeneric.vhd Line: 10
@@ -842,28 +948,44 @@ Info (12021): Found 2 design units, including 1 entities, in source file dechex7
     Info (12022): Found design unit 1: decHex7Seg-arch_name File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/decHex7Seg.vhd Line: 26
     Info (12023): Found entity 1: decHex7seg File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/decHex7Seg.vhd Line: 14
 Info (12127): Elaborating entity "contador" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at contador.vhd(110): object "saidaDebouncer" assigned a value but never read File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 110
-Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 131
-Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 135
-Info (12128): Elaborating entity "CPU" for hierarchy "CPU:CPU" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 144
+Info (12129): Elaborating entity "edgeDetector" using architecture "A:bordasubida" for hierarchy "edgeDetector:detectorSub0" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 131
+Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 137
+Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 141
+Info (12128): Elaborating entity "CPU" for hierarchy "CPU:CPU" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 150
 Warning (10873): Using initial value X (don't care) for net "control[3..2]" at CPU.vhd(16) File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 16
-Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "CPU:CPU|muxGenerico2x1:MUX_ULA" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 91
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "CPU:CPU|registradorGenerico:REG_A" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 98
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "CPU:CPU|registradorGenerico:PC" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 106
-Info (12128): Elaborating entity "somaUm" for hierarchy "CPU:CPU|somaUm:PC_INC" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 113
-Info (12128): Elaborating entity "muxGenerico4x1" for hierarchy "CPU:CPU|muxGenerico4x1:MUX_DESVIO" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 124
-Info (12128): Elaborating entity "ULASomaSub" for hierarchy "CPU:CPU|ULASomaSub:ULA" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 133
-Info (12128): Elaborating entity "decoder" for hierarchy "CPU:CPU|decoder:DECODER" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 141
-Info (12128): Elaborating entity "desvio" for hierarchy "CPU:CPU|desvio:DESVIO" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 145
-Info (12128): Elaborating entity "flipFlop" for hierarchy "CPU:CPU|flipFlop:FLAG" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 154
-Info (12128): Elaborating entity "decoder3x8" for hierarchy "decoder3x8:decoderBlock" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 175
-Info (12128): Elaborating entity "decHex7seg" for hierarchy "decHex7seg:HEX0_decoder" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 185
+Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "CPU:CPU|muxGenerico2x1:MUX_ULA" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 92
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "CPU:CPU|registradorGenerico:REG_A" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 99
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "CPU:CPU|registradorGenerico:PC" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 107
+Info (12128): Elaborating entity "somaUm" for hierarchy "CPU:CPU|somaUm:PC_INC" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 114
+Info (12128): Elaborating entity "muxGenerico4x1" for hierarchy "CPU:CPU|muxGenerico4x1:MUX_DESVIO" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 125
+Info (12128): Elaborating entity "ULASomaSub" for hierarchy "CPU:CPU|ULASomaSub:ULA" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 134
+Info (12128): Elaborating entity "decoder" for hierarchy "CPU:CPU|decoder:DECODER" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 142
+Info (12128): Elaborating entity "desvio" for hierarchy "CPU:CPU|desvio:DESVIO" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 146
+Info (12128): Elaborating entity "flipFlop" for hierarchy "CPU:CPU|flipFlop:FLAGer" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 155
+Info (12128): Elaborating entity "decoder3x8" for hierarchy "decoder3x8:decoderBlock" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 182
+Info (12128): Elaborating entity "decHex7seg" for hierarchy "decHex7seg:HEX0_decoder" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 192
 Info (12128): Elaborating entity "registradorGenerico" for hierarchy "decHex7seg:HEX0_decoder|registradorGenerico:REG_4bits" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/decHex7Seg.vhd Line: 33
 Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "decHex7seg:HEX0_decoder|conversorHex7Seg:DECODER_7seg" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/decHex7Seg.vhd Line: 44
-Info (12128): Elaborating entity "buffer_3_state" for hierarchy "buffer_3_state:bufferSWConj" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 233
-Info (12128): Elaborating entity "buffer_3_state" for hierarchy "buffer_3_state:bufferSW8" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 238
+Info (12128): Elaborating entity "buffer_3_state" for hierarchy "buffer_3_state:bufferSWConj" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 240
+Info (12128): Elaborating entity "buffer_3_state" for hierarchy "buffer_3_state:bufferSW8" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 245
 Info (276014): Found 1 instances of uninferred RAM logic
     Info (276007): RAM logic "memoriaRAM:RAM|ram" is uninferred due to asynchronous read logic File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/memoriaRAM.vhd Line: 28
+Warning (13027): Removed fan-outs from the following always-disabled I/O buffers
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state:bufferSWConj|saida[0]" to the node "valorDado[0]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state.vhd Line: 11
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state:bufferSW8|saida[0]" to the node "valorDado[0]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state.vhd Line: 11
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state:bufferSW9|saida[0]" to the node "valorDado[0]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state.vhd Line: 11
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state:bufferKEY0|saida[0]" to the node "valorDado[0]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state.vhd Line: 11
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state:bufferKEY1|saida[0]" to the node "valorDado[0]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state.vhd Line: 11
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state:bufferKEY2|saida[0]" to the node "valorDado[0]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state.vhd Line: 11
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state:bufferKEY3|saida[0]" to the node "valorDado[0]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state.vhd Line: 11
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state:bufferRESET|saida[0]" to the node "valorDado[0]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state.vhd Line: 11
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state:bufferSWConj|saida[1]" to the node "valorDado[1]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state.vhd Line: 11
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state:bufferSWConj|saida[2]" to the node "valorDado[2]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state.vhd Line: 11
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state:bufferSWConj|saida[3]" to the node "valorDado[3]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state.vhd Line: 11
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state:bufferSWConj|saida[4]" to the node "valorDado[4]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state.vhd Line: 11
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state:bufferSWConj|saida[5]" to the node "valorDado[5]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state.vhd Line: 11
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state:bufferSWConj|saida[6]" to the node "valorDado[6]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state.vhd Line: 11
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state:bufferSWConj|saida[7]" to the node "valorDado[7]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state.vhd Line: 11
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
     Warning (13047): Converted the fan-out from the tri-state buffer "memoriaRAM:RAM|dado_out[0]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[0]" into an OR gate File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/memoriaRAM.vhd Line: 18
     Warning (13047): Converted the fan-out from the tri-state buffer "memoriaRAM:RAM|dado_out[1]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[1]" into an OR gate File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/memoriaRAM.vhd Line: 18
@@ -873,19 +995,80 @@ Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
     Warning (13047): Converted the fan-out from the tri-state buffer "memoriaRAM:RAM|dado_out[5]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[5]" into an OR gate File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/memoriaRAM.vhd Line: 18
     Warning (13047): Converted the fan-out from the tri-state buffer "memoriaRAM:RAM|dado_out[6]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[6]" into an OR gate File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/memoriaRAM.vhd Line: 18
     Warning (13047): Converted the fan-out from the tri-state buffer "memoriaRAM:RAM|dado_out[7]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[7]" into an OR gate File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/memoriaRAM.vhd Line: 18
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "endRAM[4]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 14
+    Warning (13410): Pin "endRAM[5]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 14
+    Warning (13410): Pin "teste_hab" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 19
+    Warning (13410): Pin "HEX0[0]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 23
+    Warning (13410): Pin "HEX0[1]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 23
+    Warning (13410): Pin "HEX0[2]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 23
+    Warning (13410): Pin "HEX0[3]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 23
+    Warning (13410): Pin "HEX0[4]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 23
+    Warning (13410): Pin "HEX0[5]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 23
+    Warning (13410): Pin "HEX0[6]" is stuck at VCC File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 23
+    Warning (13410): Pin "HEX1[0]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 23
+    Warning (13410): Pin "HEX1[1]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 23
+    Warning (13410): Pin "HEX1[2]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 23
+    Warning (13410): Pin "HEX1[3]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 23
+    Warning (13410): Pin "HEX1[4]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 23
+    Warning (13410): Pin "HEX1[5]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 23
+    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 23
+    Warning (13410): Pin "HEX2[0]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 23
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 23
+    Warning (13410): Pin "HEX2[2]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 23
+    Warning (13410): Pin "HEX2[3]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 23
+    Warning (13410): Pin "HEX2[4]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 23
+    Warning (13410): Pin "HEX2[5]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 23
+    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 23
+    Warning (13410): Pin "HEX3[0]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 23
+    Warning (13410): Pin "HEX3[1]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 23
+    Warning (13410): Pin "HEX3[2]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 23
+    Warning (13410): Pin "HEX3[3]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 23
+    Warning (13410): Pin "HEX3[4]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 23
+    Warning (13410): Pin "HEX3[5]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 23
+    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 23
+    Warning (13410): Pin "HEX4[0]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 23
+    Warning (13410): Pin "HEX4[1]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 23
+    Warning (13410): Pin "HEX4[2]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 23
+    Warning (13410): Pin "HEX4[3]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 23
+    Warning (13410): Pin "HEX4[4]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 23
+    Warning (13410): Pin "HEX4[5]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 23
+    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 23
+    Warning (13410): Pin "HEX5[0]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 23
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 23
+    Warning (13410): Pin "HEX5[2]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 23
+    Warning (13410): Pin "HEX5[3]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 23
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 23
+    Warning (13410): Pin "HEX5[5]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 23
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 23
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "clovis" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 27
-Info (21057): Implemented 1152 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 17 input pins
-    Info (21059): Implemented 84 output pins
-    Info (21061): Implemented 1051 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 13 warnings
-    Info: Peak virtual memory: 4850 megabytes
-    Info: Processing ended: Sun May 01 16:17:25 2022
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:26
+Warning (21074): Design contains 15 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "CLOCK_50" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 27
+    Warning (15610): No output dependent on input pin "SW[0]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 17
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 20
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 20
+    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 20
+    Warning (15610): No output dependent on input pin "FPGA_RESET_N" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 22
+    Warning (15610): No output dependent on input pin "SW[1]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 17
+Info (21057): Implemented 245 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 16 input pins
+    Info (21059): Implemented 85 output pins
+    Info (21061): Implemented 144 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 88 warnings
+    Info: Peak virtual memory: 4838 megabytes
+    Info: Processing ended: Tue May 03 19:07:26 2022
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:25
 
 

@@ -44,10 +44,11 @@ INICIO:
 # VERIFICA KEY 0
 KEY0:
 LDA @352              #Ler o botão de incremento de contagem (KEY0) e armazena no acumulador
-CEQ @10               #Compara o valor zero (na MEM[10]) com o valor do KEY0 
-JEQ @KEY1            #Caso nao tenha sido pressionado, desviar para leitura do prox botao.
+#CEQ @10               #Compara o valor zero (na MEM[10]) com o valor do KEY0 
+#JEQ @KEY1            #Caso nao tenha sido pressionado, desviar para leitura do prox botao.
 JSR @INCREMENTO      #pula para a subrotina INCREMENTO caso tenha sido pressionado
 JSR @ESCREVEDISPLAY  #Escrever os valores das variáveis nos respectivos displays (pode ser uma sub-rotina).
+JMP @INICIO
 
 # VERIFICA KEY1
 KEY1:
@@ -62,23 +63,25 @@ LDA @356            #Ler o botão de reiniciar contagem (FPGA_RESET) e armazena 
 CEQ @10             #Compara o valor zero (na MEM[10]) com o valor do FPGA_RESET
 JEQ @INICIO        #Caso NAO tenha sido pressionado, desviar para INICIO
 JSR @RESET            #pula para a subrotina RESET caso tenha sido pressionado, para reiniciar contagem
+JMP @INICIO
 
 # FIM LOOP PRINCIPAL ---------------------
 
 # SUBROTINAS -----------------------------
 
 INCREMENTO:
+STA @511            # lIMPA A CHAVE
 LDA @10             #Carrega 0 no acumulador
 CEQ @6              # verifica se a flag de inibir contagem esta setada
-JEQ @UNIDADES      # pula para iniciar o incremento nas unidades
+JEQ @UNIDADES       # pula para iniciar o incremento nas unidades
 RET                 #Caso esteja setado, deve retornar da sub-rotina.
 
 UNIDADES:
 LDA @11             #Carrega 1 no acumulador
 SOMA @0             #Soma o valor do acumulador com o valor de unidades da contagem
+STA @0              #Guarda o valor do acumulador (unidades incrementado) de volta em MEM[0]
 #CEQ @12             # Compara o valor do acumulador com MEM[12] (valor 10)
 #JEQ @DEZENAS       # Se for igual pula para verificacao dezenas
-STA @0              #Guarda o valor do acumulador (unidades incrementado) de volta em MEM[0]
 RET
 
 DEZENAS:
@@ -112,6 +115,9 @@ LDA @11            # Carrega 1 no acumulador
 STA @257			#Armazena o valor do bit0 do acumulador no LDR8
 LDA @0              # Carrega o valor das unidades no acumulador
 STA @288            # Armazena o valor do acumulador em HEX0
+
+#AQUI:
+#JMP @AQUI          # VOU PARAR AQUI
 #LDA @1              # Carrega o valor das unidades no acumulador
 #STA @289            # Armazena o valor do acumulador em HEX1
 #LDA @2              # Carrega o valor das unidades no acumulador

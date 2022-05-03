@@ -17,27 +17,28 @@ entity instrucaoR is
   -- O port é obrigatório e possui o objeto “signal” implícito.
   port    
   (
-		habReg                   : in  std_logic;
-		ULAOp                    : in  std_logic;
+		habBancoReg              : in  std_logic;
+		opULA                    : in  std_logic_vector (1 downto 0);
 		saida                    : out std_logic_vector(larguraDados-1 downto 0) -- barramento de instrucoes
   );
 end entity;   -- Também pode ser utilizado: "end entity";
 
 architecture arquitetura of instrucaoR is                                    
-		--signal CLK                      : std_logic;
-		signal saidaPC                  : std_logic_vector (larguraDados-1 downto 0);
-		signal saidaIncPC               : std_logic_vector (larguraDados-1 downto 0);
+		signal CLK                    : std_logic;
+		
+		signal saidaPC                : std_logic_vector (larguraDados-1 downto 0);
+		signal saidaIncPC             : std_logic_vector (larguraDados-1 downto 0);
 
-		signal saidaRs                 : std_logic_vector (larguraDados-1 downto 0);
-		signal saidaRt                 : std_logic_vector (larguraDados-1 downto 0);
-		signal saidaRd                 : std_logic_vector (larguraDados-1 downto 0);
+		signal saidaRs                : std_logic_vector (larguraDados-1 downto 0);
+		signal saidaRt                : std_logic_vector (larguraDados-1 downto 0);
+		signal saidaULARd             : std_logic_vector (larguraDados-1 downto 0); -- saida ULA: Rs op Rt
 
-		signal saidaROM                 : std_logic_vector (larguraDados-1 downto 0);
-		alias endRs                 	: std_logic_vector is (larguraEnd-larguraOpcode-1 downto larguraFunct+larguraShamt-1);
-		alias endRt                 	: std_logic_vector is (larguraEnd-larguraOpcode-larguraEnd-1 downto larguraFunct+larguraShamt-1);
-		alias endRd                 	: std_logic_vector is (larguraEnd-larguraOpcode-larguraEnd*2-1 downto larguraFunct+larguraShamt-1);
+		signal saidaROM               : std_logic_vector (larguraDados-1 downto 0);
+		alias endRs                 	: std_logic_vector (larguraEnd-1 downto 0) is saidaROM(25 downto 21);
+		alias endRt                 	: std_logic_vector (larguraEnd-1 downto 0) is saidaROM(20 downto 16);
+		alias endRd                 	: std_logic_vector (larguraEnd-1 downto 0) is saidaROM(15 downto 11);
 
-		signal saidaULA_rd                 : std_logic_vector (larguraDados-1 downto 0);
+		
 
 begin
 
@@ -45,37 +46,39 @@ begin
 
 
 ULA    : entity work.ULASomaSub  generic map(larguraDados => larguraDados)
-            port map (entradaA  => saidaMUX, 
-							 entradaB  => saidaReg1,
+            port map (entradaA  => saidaRs, 
+							 entradaB  => saidaRt,
 							 seletor   => opULA,
-							 saida     => saidaULA);
+							 saida     => saidaULARd);
 
 PC     : entity work.registradorGenerico  generic map (larguraDados => larguraDados)
-             port map (DIN     => saidaMux, 
+             port map (DIN     => saidaIncPC, 
 						     DOUT    => saidaPC, 
 				   		  ENABLE  => '1', 
 				   		  CLK     => CLK, 
 				   		  RST     => '0');	
 
-PC_INC :  entity work.somaConstante  generic map (larguraDados => larguraDados , constante => 1)
+PC_INC :  entity work.somaUm  generic map (larguraDados => larguraDados , constante => 1)
             port map(entrada   => saidaPC, 
 							saida     => saidaIncPC);			
               
-bancoReg : entity work.bancoReg   generic map (larguraDados => valorLocal, larguraEndBancoRegs => valorLocal)
-          port map (  clk => sinalLocal,
-                      enderecoA => sinalLocal,
-                      enderecoB => sinalLocal,
-                      enderecoC => sinalLocal,
-                      dadoEscritaC => sinalLocal,
-                      escreveC => sinalLocal,
-                      saidaA => sinalLocal,
-                      saidaB  => sinalLocal);
+bancoReg : entity work.bancoReg   generic map (larguraDados => larguraDados, larguraEndBancoRegs => larguraEnd)
+          port map (  clk => CLK,
+                      enderecoA => endRs,
+                      enderecoB => endRt,
+                      enderecoC => endRd,
+                      dadoEscritaC => saidaULARd,
+                      escreveC => habBancoReg,
+                      saidaA => saidaRs,
+                      saidaB  => saidaRt);
 
-ROMMIPS : entity work.ROMMIPS   generic map (dataWidth => VALOR_LOCAL, addrWidth => VALOR_LOCAL)
-          port map (clk => clk
-			  		Endereco => sinalLocal, 
-		  			Dado => sinalLocal);
+ROMMIPS : entity work.ROMMIPS   generic map (dataWidth => larguraDados, addrWidth => larguraDados)
+          port map ( clk => CLK,
+							Endereco => saidaPC, 
+							Dado => saidaROM);
 
+
+saida <= saidaROM;
 
 
 end architecture;
