@@ -8,7 +8,7 @@ entity contador is
             larguraInstrucao : natural := 13;
             larguraOpCode    : natural := 4;
             addrWidth        : natural := 6;
-            simulacao        : boolean := FALSE	 -- para gravar na placa, altere de TRUE para FALSE
+            simulacao        : boolean := TRUE	 -- para gravar na placa, altere de TRUE para FALSE
   );
   port   (  endROM        : out std_logic_vector(larguraEndereco-1 downto 0);
             endRAM        : out std_logic_vector(addrWidth-1 downto 0);
@@ -156,7 +156,6 @@ CPU     : entity work.CPU
 							 dataOut       => dadoEscrito,
 							 CLK           => CLK,
 							 flag => flaginha,
-							 ulaain => ula_ain,
 							 ulabin => ula_bin,
 							 ulaout => ula_out);
 							 

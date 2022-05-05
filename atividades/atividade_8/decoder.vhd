@@ -47,7 +47,10 @@ architecture comportamento of decoder is
 	 WR <= '1' when (entrada = STA) else '0';
 	 RD <= '1' when (entrada = LDA) or (entrada = SUM) or (entrada = SUB) or (entrada = CEQ) else '0';
 	 habFlag <= '1' when (entrada = CEQ) else '0';
-	 operacao <= "00" when (entrada = SUB) else "01" when (entrada = SUM) else "10" when (entrada = LDI) else "00";
+	 operacao <= "00" when (entrada = SUB) or (entrada=CEQ) else 
+					 "01" when (entrada = SUM) else 
+					 "10" when (entrada = LDI) or (entrada = LDA) else 
+					 "00";
 	 habAcumulador <= '1' when (entrada = LDA) or  (entrada = SUM) or  (entrada = SUB) or  (entrada = LDI) else '0';
 	 selMux <= '1' when (entrada = LDI) else '0';
 	 jeqI <= '1' when (entrada = JEQ) else '0';
@@ -57,21 +60,6 @@ architecture comportamento of decoder is
 	 habEscritaRetorno <= '1' when (entrada = JSR) else '0';
 	 
 	 saida <= instruction;
-	 
---	 saida <= "001000000000" when (entrada = RET)  else
---				 "100100000000" when (entrada = JSR)  else
---				 "010000000000" when (entrada = JMP)  else
---				 "000010000000" when (entrada = JEQ)  else
---				 "000000000100" when (entrada = CEQ)  else
---				 "000000110010" when (entrada = LDA)  else
---				 "000000101010" when (entrada = SUM)  else
---				 "000000100010" when (entrada = SUB)  else 
---				 "000001110000" when (entrada = LDI)  else
---				 "000000000001" when (entrada = STA)  else 
---				 "000000000000" when (entrada = NOP)  else
---				 "000000000000";
---				 
-
---	saida(2) <= '1' when (entrada = CEQ);
+	
 				 
 end architecture;
