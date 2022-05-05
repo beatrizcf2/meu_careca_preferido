@@ -8,7 +8,7 @@ entity contador is
             larguraInstrucao : natural := 13;
             larguraOpCode    : natural := 4;
             addrWidth        : natural := 6;
-            simulacao        : boolean := TRUE	 -- para gravar na placa, altere de TRUE para FALSE
+            simulacao        : boolean := FALSE	 -- para gravar na placa, altere de TRUE para FALSE
   );
   port   (  endROM        : out std_logic_vector(larguraEndereco-1 downto 0);
             endRAM        : out std_logic_vector(addrWidth-1 downto 0);
@@ -22,7 +22,7 @@ entity contador is
             FPGA_RESET_N : in std_logic;
 				HEX0, HEX1, HEX2, HEX3, HEX4, HEX5 : out std_logic_vector(6 downto 0);
 				flaginha : out std_logic;
-				
+				ula_ain, ula_bin, ula_out : out std_logic_vector(larguraDados-1 downto 0);
             -- simulacao
             CLOCK_50      : in std_logic
   );
@@ -38,8 +38,8 @@ architecture arquitetura of contador is
   alias RD                  : std_logic is control(1);
   alias WR                  : std_logic is control(0);
   
-  -- saida RAM
-  signal dadoLido           : std_logic_vector(larguraDados-1 downto 0);    -- saida da leitura da RAM
+  -- saida dado lido
+  signal dadoLido           : std_logic_vector(larguraDados-1 downto 0);    -- saida da leitura da RAM ou leitura das chaves e botoes
   
   -- CPU Data adress
   signal dataAddress        : std_logic_vector(larguraEndereco-1 downto 0);  
@@ -96,7 +96,7 @@ architecture arquitetura of contador is
   signal habSW9             :  std_logic;
   signal habSWconj          :  std_logic;
 
-  signal saidaBufferKEY0            :  std_logic;
+  signal saidaBufferKEY0            :  std_logic; -- Fazer alias com o dado lido?
   signal saidaBufferKEY1            :  std_logic;
   signal saidaBufferKEY2            :  std_logic;
   signal saidaBufferKEY3            :  std_logic;
@@ -155,7 +155,10 @@ CPU     : entity work.CPU
 							 dataAddress   => dataAddress,
 							 dataOut       => dadoEscrito,
 							 CLK           => CLK,
-							 flag => flaginha);
+							 flag => flaginha,
+							 ulaain => ula_ain,
+							 ulabin => ula_bin,
+							 ulaout => ula_out);
 							 
 
 FFLED8    : entity work.flipFlop

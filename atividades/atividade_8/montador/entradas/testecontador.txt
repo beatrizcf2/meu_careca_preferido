@@ -9,11 +9,9 @@ STA @1			#Armazena o valor do acumulador em MEM[1] (constante 1)
 
 KEY0:	
 LDA @352		#Carrega o acumulador com a leitura do botão KEY0
-CEQ @0			#Compara com o valor de MEM[0] (constante 0)
-JEQ @KEY0			#Desvia se igual a 0 (botão não foi pressionado)
+CEQ @0			#Compara com o valor de MEM[0] (constante 0) 
+JEQ @KEY0		#Desvia se igual a 0 (botão não foi pressionado)
 JSR @INCREMENTO #O botão foi pressionado, chama a sub-rotina de INCREMENTO
-LDI $10
-STA @256
 JMP @KEY0		#Fecha o laço principal, faz uma nova leitura de KEY0
 
 
@@ -23,5 +21,4 @@ LDA @2			#Carrega o valor de MEM[2] (contador)
 SOMA @1			#Soma com a constante em MEM[1]
 STA @2			#Salva o incremento em MEM[2] (contador)
 STA @288		#Armazena o valor do ACUMULADOR NO HEX1
-STA @258
 RET			    #Retorna da sub-rotina

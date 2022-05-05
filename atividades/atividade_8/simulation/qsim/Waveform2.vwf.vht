@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "05/03/2022 19:07:55"
+-- Generated on "05/04/2022 11:33:01"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          contador
 -- 
@@ -50,6 +50,9 @@ SIGNAL LEDR : STD_LOGIC_VECTOR(9 DOWNTO 0);
 SIGNAL SW : STD_LOGIC_VECTOR(9 DOWNTO 0);
 SIGNAL teste_datain : STD_LOGIC_VECTOR(7 DOWNTO 0);
 SIGNAL teste_hab : STD_LOGIC;
+SIGNAL ula_ain : STD_LOGIC_VECTOR(7 DOWNTO 0);
+SIGNAL ula_bin : STD_LOGIC_VECTOR(7 DOWNTO 0);
+SIGNAL ula_out : STD_LOGIC_VECTOR(7 DOWNTO 0);
 SIGNAL valorDado : STD_LOGIC_VECTOR(7 DOWNTO 0);
 COMPONENT contador
 	PORT (
@@ -69,6 +72,9 @@ COMPONENT contador
 	SW : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
 	teste_datain : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
 	teste_hab : OUT STD_LOGIC;
+	ula_ain : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+	ula_bin : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+	ula_out : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
 	valorDado : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
 	);
 END COMPONENT;
@@ -92,6 +98,9 @@ BEGIN
 	SW => SW,
 	teste_datain => teste_datain,
 	teste_hab => teste_hab,
+	ula_ain => ula_ain,
+	ula_bin => ula_bin,
+	ula_out => ula_out,
 	valorDado => valorDado
 	);
 

@@ -33,22 +33,31 @@ architecture assincrona of memoriaROM is
   function initMemory
         return blocoMemoria is variable tmp : blocoMemoria := (others => (others => '0'));
   begin
-tmp(0) := "1001000001110";	-- JSR @14			#Deve desviar para a posição 14
-tmp(1) := "0110000000101";	-- JMP @5			#Deve desviar para a posição 5
-tmp(2) := "0111000001001";	-- JEQ @9			#Deve desviar para a posição 9
-tmp(3) := "0000000000000";	-- NOP			
-tmp(4) := "0000000000000";	-- NOP			
-tmp(5) := "0100000000101";	-- LDI $5			#Carrega acumulador com valor 5
-tmp(6) := "0101000000010";	-- STA @256		#Armazena 5 na posição 256 da memória
-tmp(7) := "1000000000010";	-- CEQ @256		#	A comparação deve fazer o flagIgual ser 1
-tmp(8) := "0110000000010";	-- JMP @2			#Vai testar o flagIgual depois do jump
-tmp(9) := "0000000000000";	-- NOP			
-tmp(10) := "0100000000100";	-- LDI $4			#Carrega acumulador com valor 4
-tmp(11) := "1000100000000";	-- CEQ @256		#Compara com valor 5, deve fazer o flagIgual ser 0
-tmp(12) := "0111000000011";	-- JEQ @3			#Não deve ocorrer o desvio
-tmp(13) := "0110000001101";	-- JMP @13			#Fim. Deve ficar neste laço
-tmp(14) := "0000000000000";	-- NOP			
-tmp(15) := "1010000000000";	-- RET			    #Retorna para a posição 1
+-- Inicializacao das variaveis
+tmp(0) := "0101111111111";	-- STA @511        #Limpa
+tmp(1) := "0100000000000";	-- LDI $0			#Carrega o acumulador com o valor 0
+tmp(2) := "0101100100000";	-- STA @288		#Armazena o valor do ACUMULADOR NO HEX1
+tmp(3) := "0101000000000";	-- STA @0			#Armazena o valor do acumulador em MEM[0] (constante 0)
+tmp(4) := "0101000000010";	-- STA @2			#Armazena o valor do acumulador em MEM[2] (contador)
+tmp(5) := "0100000000001";	-- LDI $1			#Carrega o acumulador com o valor 1
+tmp(6) := "0101000000001";	-- STA @1			#Armazena o valor do acumulador em MEM[1] (constante 1)
+
+tmp(7) := "0001101100000";	-- LDA @352		#Carrega o acumulador com a leitura do botão KEY0
+tmp(8) := "1000000000000";	-- CEQ @0			#Compara com o valor de MEM[0] (constante 0)
+tmp(9) := "0111000000111";	-- JEQ @KEY0			#Desvia se igual a 0 (botão não foi pressionado)
+tmp(10) := "1001000001110";	-- JSR @INCREMENTO #O botão foi pressionado, chama a sub-rotina de INCREMENTO
+tmp(11) := "0100000001010";	-- LDI $10
+tmp(12) := "0101100000000";	-- STA @256
+tmp(13) := "0110000000111";	-- JMP @KEY0		#Fecha o laço principal, faz uma nova leitura de KEY0
+
+
+tmp(14) := "0101111111111";	-- STA @511		#Limpa a leitura do botão
+tmp(15) := "0001000000010";	-- LDA @2			#Carrega o valor de MEM[2] (contador)
+tmp(16) := "0010000000001";	-- SOMA @1			#Soma com a constante em MEM[1]
+tmp(17) := "0101000000010";	-- STA @2			#Salva o incremento em MEM[2] (contador)
+tmp(18) := "0101100100000";	-- STA @288		#Armazena o valor do ACUMULADOR NO HEX1
+tmp(19) := "0101100000010";	-- STA @258
+tmp(20) := "1010000000000";	-- RET			    #Retorna da sub-rotina
 
 
 

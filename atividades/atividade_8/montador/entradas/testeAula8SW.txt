@@ -1,0 +1,17 @@
+LDA @320			#Carrega o acumulador com a leitura das chaves SW0 até SW7
+STA @288			#Armazena o valor do acumulador no display HEX0
+LDA @321			#Carrega o acumulador com a leitura da chave SW8
+STA @289			#Armazena o valor do acumulador no display HEX1
+LDA @322			#Carrega o acumulador com a leitura da chave SW9
+STA @290			#Armazena o valor do acumulador no display HEX2
+LDA @352			#Carrega o acumulador com a leitura do botão KEY0
+STA @291			#Armazena o valor do acumulador no display HEX3
+LDA @353			#Carrega o acumulador com a leitura do botão KEY1
+STA @292			#Armazena o valor do acumulador no display HEX4
+LDA @354			#Carrega o acumulador com a leitura do botão KEY2
+STA @293			#Armazena o valor do acumulador no display HEX5
+LDA @355			#Carrega o acumulador com a leitura do botão KEY3
+STA @257			#Armazena o valor do bit0 do acumulador no LDR8
+LDA @356			#Carrega o acumulador com a leitura do botão FPGA_RESET
+STA @258			#Armazena o valor do bit0 do acumulador no LDR9
+JMP @0			    #Desvia e continua atualizando os valores das entradas nas saídas

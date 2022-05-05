@@ -56,6 +56,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "endRAM[4]",
+					"strict" : false
+				},
+				{
+					"name" : "endRAM[5]",
+					"strict" : false
+				},
+				{
 					"name" : "valorDado[0]",
 					"strict" : false
 				},
@@ -85,6 +93,38 @@
 				},
 				{
 					"name" : "valorDado[7]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[0]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[1]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[2]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[3]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[4]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[5]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[6]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[7]",
 					"strict" : false
 				},
 				{
@@ -128,7 +168,163 @@
 					"strict" : false
 				},
 				{
+					"name" : "HEX0[0]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX0[1]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX0[2]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX0[3]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX0[4]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX0[5]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX0[6]",
+					"strict" : false
+				},
+				{
 					"name" : "flaginha",
+					"strict" : false
+				},
+				{
+					"name" : "ula_ain[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ula_ain[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ula_ain[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ula_ain[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ula_ain[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ula_ain[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ula_ain[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ula_ain[7]",
+					"strict" : false
+				},
+				{
+					"name" : "ula_bin[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ula_bin[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ula_bin[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ula_bin[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ula_bin[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ula_bin[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ula_bin[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ula_bin[7]",
+					"strict" : false
+				},
+				{
+					"name" : "ula_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ula_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ula_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ula_out[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ula_out[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ula_out[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ula_out[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ula_out[7]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[8]",
+					"strict" : false
+				},
+				{
+					"name" : "FPGA_RESET_N",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[1]",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[9]",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[2]",
+					"strict" : false
+				},
+				{
+					"name" : "CLOCK_50",
 					"strict" : false
 				},
 				{

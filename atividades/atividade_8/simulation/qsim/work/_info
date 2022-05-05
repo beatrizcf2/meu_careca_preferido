@@ -10,7 +10,7 @@ z2
 cModel Technology
 d/home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/simulation/qsim
 Econtador
-Z0 w1651615676
+Z0 w1651674782
 Z1 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 ^K2eeK[IVbX]]MLcdOEI91
 Z2 DPx8 cyclonev 19 cyclonev_components 0 22 GFL[QAd@dAZF:`jjOGn9>2
 Z3 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 3dzZ?YU_4FC5UU0cTXRET1
@@ -20,19 +20,19 @@ Z6 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
 Z7 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z8 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
 Z9 DPx6 altera 28 altera_primitives_components 0 22 VSD=32;3391kSOd?PDZYj3
-!i122 38
+!i122 44
 Z10 dC:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/simulation/qsim
 Z11 8aula8.vho
 Z12 Faula8.vho
 l0
 L39 1
-Vm8Li[9LHna=NkTf;2Ze;42
-!s100 N9;M75Bj^XJADXTIo410X2
+VQ]9g93mC^VZ>HHQQ^SSEN0
+!s100 hbh1[zLVC?mZTcM=@BBf]2
 Z13 OV;C;2020.1;71
 32
-Z14 !s110 1651615677
+Z14 !s110 1651674783
 !i10b 1
-Z15 !s108 1651615677.000000
+Z15 !s108 1651674783.000000
 Z16 !s90 -work|work|aula8.vho|
 Z17 !s107 aula8.vho|
 !i113 1
@@ -48,12 +48,12 @@ R6
 R7
 R8
 R9
-DEx4 work 8 contador 0 22 m8Li[9LHna=NkTf;2Ze;42
-!i122 38
-l435
-L61 4361
-V@91M98K90h7^<^HJ`R5[g0
-!s100 [1T?fAfaR1?d8z7g727a62
+DEx4 work 8 contador 0 22 Q]9g93mC^VZ>HHQQ^SSEN0
+!i122 44
+l432
+L64 4336
+V3BG3^3h3?ILzmEQckVCaG1
+!s100 2_FoGWKD`bRBVmKdfK>ad2
 R13
 32
 R14
@@ -65,10 +65,10 @@ R17
 R18
 R19
 Econtador_vhd_vec_tst
-Z20 w1651615675
+Z20 w1651674781
 R7
 R8
-!i122 39
+!i122 45
 R10
 Z21 8Waveform2.vwf.vht
 Z22 FWaveform2.vwf.vht
@@ -78,30 +78,30 @@ VdlY?7K2]@onfaD9j9@zo:2
 !s100 3E>Znb`[6LD<SCQMT6[8<3
 R13
 32
-Z23 !s110 1651615678
+Z23 !s110 1651674784
 !i10b 1
-R15
-Z24 !s90 -work|work|Waveform2.vwf.vht|
-Z25 !s107 Waveform2.vwf.vht|
+Z24 !s108 1651674784.000000
+Z25 !s90 -work|work|Waveform2.vwf.vht|
+Z26 !s107 Waveform2.vwf.vht|
 !i113 1
 R18
 R19
 Acontador_arch
 R7
 R8
-Z26 DEx4 work 20 contador_vhd_vec_tst 0 22 dlY?7K2]@onfaD9j9@zo:2
-!i122 39
-l75
-Z27 L34 175
-Z28 V48^1o0cBecbg0YY5jFFL]2
-Z29 !s100 =5dHN`ZO3d0l^VQZgT9dj3
+Z27 DEx4 work 20 contador_vhd_vec_tst 0 22 dlY?7K2]@onfaD9j9@zo:2
+!i122 45
+l81
+Z28 L34 184
+Z29 VKgYX3E@T@>6c==`4W]b<W1
+Z30 !s100 9FjA[fS2Z3KUaiHS=FLdP3
 R13
 32
 R23
 !i10b 1
-R15
 R24
 R25
+R26
 !i113 1
 R18
 R19
