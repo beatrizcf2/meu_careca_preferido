@@ -18,6 +18,7 @@ entity CPU is
 	 dataAddress   : out std_logic_vector(larguraEndereco-1 downto 0);
 	 dataOut       : out std_logic_vector(larguraDados-1 downto 0);
 	 flag : out std_logic;
+	 habFlaguinha : out std_logic;
 	 
 	 ulabin, ulaout : out std_logic_vector(larguraDados-1 downto 0);
 	
@@ -169,8 +170,8 @@ dataAddress <= imediatoEndereco( larguraEndereco-1 downto 0);
 dataOut    <= saidaRegA;
 control(0) <= habilitaEscritaMEM;
 control(1) <= habilitaLeituraMEM;
-flag <= saidaFlagULA;
-
+flag <= saidaFlag;
+habFlaguinha <= habilitaFlagIgual;
 
 ulabin <= saidaMuxULA;
 ulaout <= saidaOperacaoULA;

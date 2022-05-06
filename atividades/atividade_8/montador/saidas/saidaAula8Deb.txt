@@ -36,5 +36,5 @@ tmp(34) := "0101111111111";	-- STA @511	#		Limpa a leitura do botão
 tmp(35) := "0001000000010";	-- LDA @2		#	Carrega o valor de MEM[2] (contador)
 tmp(36) := "0010000000001";	-- SOMA @1		#	Soma com a constante em MEM[1]
 tmp(37) := "0101000000010";	-- STA @2		#	Salva o incremento em MEM[2] (contador)
-tmp(38) := "0101100000010";	-- STA @258	#
+tmp(38) := "0101100000010";	-- STA @288	#
 tmp(39) := "1010000000000";	-- RET			#Retorna da sub-rotina

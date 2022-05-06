@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "05/05/2022 19:26:37"
+-- Generated on "05/06/2022 16:54:30"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          contador
 -- 
@@ -39,6 +39,7 @@ SIGNAL endRAM : STD_LOGIC_VECTOR(5 DOWNTO 0);
 SIGNAL endROM : STD_LOGIC_VECTOR(8 DOWNTO 0);
 SIGNAL flaginha : STD_LOGIC;
 SIGNAL FPGA_RESET_N : STD_LOGIC;
+SIGNAL habFlaguinha : STD_LOGIC;
 SIGNAL HEX0 : STD_LOGIC_VECTOR(6 DOWNTO 0);
 SIGNAL HEX1 : STD_LOGIC_VECTOR(6 DOWNTO 0);
 SIGNAL HEX2 : STD_LOGIC_VECTOR(6 DOWNTO 0);
@@ -61,6 +62,7 @@ COMPONENT contador
 	endROM : OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
 	flaginha : OUT STD_LOGIC;
 	FPGA_RESET_N : IN STD_LOGIC;
+	habFlaguinha : OUT STD_LOGIC;
 	HEX0 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
 	HEX1 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
 	HEX2 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
@@ -87,6 +89,7 @@ BEGIN
 	endROM => endROM,
 	flaginha => flaginha,
 	FPGA_RESET_N => FPGA_RESET_N,
+	habFlaguinha => habFlaguinha,
 	HEX0 => HEX0,
 	HEX1 => HEX1,
 	HEX2 => HEX2,

@@ -33,33 +33,49 @@ architecture assincrona of memoriaROM is
   function initMemory
         return blocoMemoria is variable tmp : blocoMemoria := (others => (others => '0'));
   begin
--- Inicializacao das variaveis
-tmp(0) := "0101111111111";	-- STA @511        #Limpa
-tmp(1) := "0100000000000";	-- LDI $0			#Carrega o acumulador com o valor 0
-tmp(2) := "0101100100000";	-- STA @288		#Armazena o valor do ACUMULADOR NO HEX0
-tmp(3) := "0101100100001";	-- STA @289		#Armazena o valor do ACUMULADOR NO HEX1
-tmp(4) := "0101100100010";	-- STA @290		#Armazena o valor do ACUMULADOR NO HEX2
-tmp(5) := "0101000000000";	-- STA @0			#Armazena o valor do acumulador em MEM[0] (constante 0)
-tmp(6) := "0101000000010";	-- STA @2			#Armazena o valor do acumulador em MEM[2] (contador)
-tmp(7) := "0100000000001";	-- LDI $1			#Carrega o acumulador com o valor 1
-tmp(8) := "0101000000001";	-- STA @1			#Armazena o valor do acumulador em MEM[1] (constante 1)
+tmp(0) := "0100000000000";	-- LDI $0		#	Carrega o acumulador com o valor 0
+tmp(1) := "0101000000000";	-- STA @0		#	Armazena o valor do acumulador em MEM[0] (constante 0)
+tmp(2) := "0101000000010";	-- STA @2		#	Armazena o valor do acumulador em MEM[2] (contador)
+tmp(3) := "0100000000001";	-- LDI $1		#	Carrega o acumulador com o valor 1
+tmp(4) := "0101000000001";	-- STA @1		#	Armazena o valor do acumulador em MEM[1] (constante 1)
+tmp(5) := "0000000000000";	-- NOP			
+tmp(6) := "0001101100000";	-- LDA @352	#		Carrega o acumulador com a leitura do botão KEY0
+tmp(7) := "1000000000000";	-- CEQ @0		#	Compara com o valor de MEM[0] (constante 0)
+tmp(8) := "0111000001010";	-- JEQ @10		#	Desvia se igual a 0 (botão não foi pressionado)
+tmp(9) := "1001000100010";	-- JSR @LABEL	#		O botão foi pressionado, chama a sub-rotina de incremento
+tmp(10) := "0000000000000";	-- NOP			#Retorno da sub-rotina de incremento
+tmp(11) := "0110000000101";	-- JMP @5		#	Fecha o laço principal, faz uma nova leitura de KEY0
+tmp(12) := "0000000000000";	-- NOP				
+tmp(13) := "0000000000000";	-- NOP				
+tmp(14) := "0000000000000";	-- NOP				
+tmp(15) := "0000000000000";	-- NOP				
+tmp(16) := "0000000000000";	-- NOP				
+tmp(17) := "0000000000000";	-- NOP				
+tmp(18) := "0000000000000";	-- NOP				
+tmp(19) := "0000000000000";	-- NOP				
+tmp(20) := "0000000000000";	-- NOP				
+tmp(21) := "0000000000000";	-- NOP				
+tmp(22) := "0000000000000";	-- NOP				
+tmp(23) := "0000000000000";	-- NOP				
+tmp(24) := "0000000000000";	-- NOP				
+tmp(25) := "0000000000000";	-- NOP				
+tmp(26) := "0000000000000";	-- NOP				
+tmp(27) := "0000000000000";	-- NOP				
+tmp(28) := "0000000000000";	-- NOP				
+tmp(29) := "0000000000000";	-- NOP				
+tmp(30) := "0000000000000";	-- NOP				
+tmp(31) := "0000000000000";	-- NOP				
+tmp(32) := "0000000000000";	-- NOP				
+tmp(33) := "0000000000000";	-- NOP				
+tmp(34) := "0101111111111";	-- STA @511	#		Limpa a leitura do botão
+tmp(35) := "0001000000010";	-- LDA @2		#	Carrega o valor de MEM[2] (contador)
+tmp(36) := "0010000000001";	-- SOMA @1		#	Soma com a constante em MEM[1]
+tmp(37) := "0101000000010";	-- STA @2		#	Salva o incremento em MEM[2] (contador)
+tmp(38) := "0101100000010";	-- STA @258	#
+tmp(39) := "0101100100000";	-- STA @288	# Armazena o valor do acumulador em HEX0
+tmp(40) := "1010000000000";	-- RET			#Retorna da sub-rotina
 
-tmp(9) := "0001101100000";	-- LDA @352		#Carrega o acumulador com a leitura do botão KEY0
-tmp(10) := "1000000000000";	-- CEQ @0			#Compara com o valor de MEM[0] (constante 0) 
-tmp(11) := "0111000001001";	-- JEQ @KEY0		#Desvia se igual a 0 (botão não foi pressionado)
-tmp(12) := "1001000001111";	-- JSR @INCREMENTO #O botão foi pressionado, chama a sub-rotina de INCREMENTO
-tmp(13) := "0000000000000";	-- NOP
-tmp(14) := "0110000001001";	-- JMP @KEY0		#Fecha o laço principal, faz uma nova leitura de KEY0
 
-
-tmp(15) := "0101111111111";	-- STA @511		#Limpa a leitura do botão
-tmp(16) := "0001000000010";	-- LDA @2			#Carrega o acumulador com o valor de MEM[2] (contador)
-tmp(17) := "0010000000001";	-- SOMA @1			#Soma com a constante em MEM[1]
-tmp(18) := "0101000000010";	-- STA @2			#Salva o incremento em MEM[2] (contador)
-tmp(19) := "0101100100000";	-- STA @288		#Armazena o valor do ACUMULADOR NO HEX0
-tmp(20) := "0101100000010";	-- STA @258
---JMP @AQUI       
-tmp(21) := "1010000000000";	-- RET			    #Retorna da sub-rotina
 
 
 
