@@ -1,0 +1,1015 @@
+Analysis & Synthesis report for relogio
+Fri May  6 19:50:55 2022
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Logic Cells Representing Combinational Loops
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |contador
+ 13. Parameter Settings for User Entity Instance: memoriaROM:ROM
+ 14. Parameter Settings for User Entity Instance: memoriaRAM:RAM
+ 15. Parameter Settings for User Entity Instance: CPU:CPU
+ 16. Parameter Settings for User Entity Instance: CPU:CPU|muxGenerico2x1:MUX_MUX_ULA
+ 17. Parameter Settings for User Entity Instance: CPU:CPU|muxGenerico2x1:MUX_ULA
+ 18. Parameter Settings for User Entity Instance: CPU:CPU|bancoRegistradoresArqRegReg:BANCO_REGS
+ 19. Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:PC
+ 20. Parameter Settings for User Entity Instance: CPU:CPU|somaUm:PC_INC
+ 21. Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:END_RETORNO
+ 22. Parameter Settings for User Entity Instance: CPU:CPU|muxGenerico4x1:MUX_DESVIO
+ 23. Parameter Settings for User Entity Instance: CPU:CPU|ULASomaSub:ULA
+ 24. Parameter Settings for User Entity Instance: registradorGenerico:RegLEDconj
+ 25. Parameter Settings for User Entity Instance: decHex7seg:HEX0_decoder|registradorGenerico:REG_4bits
+ 26. Parameter Settings for User Entity Instance: decHex7seg:HEX1_decoder|registradorGenerico:REG_4bits
+ 27. Parameter Settings for User Entity Instance: decHex7seg:HEX2_decoder|registradorGenerico:REG_4bits
+ 28. Parameter Settings for User Entity Instance: decHex7seg:HEX3_decoder|registradorGenerico:REG_4bits
+ 29. Parameter Settings for User Entity Instance: decHex7seg:HEX4_decoder|registradorGenerico:REG_4bits
+ 30. Parameter Settings for User Entity Instance: decHex7seg:HEX5_decoder|registradorGenerico:REG_4bits
+ 31. Parameter Settings for User Entity Instance: buffer_3_state:bufferSWConj
+ 32. Port Connectivity Checks: "flipFlop:FF_Debouncer"
+ 33. Port Connectivity Checks: "decHex7seg:HEX0_decoder|conversorHex7Seg:DECODER_7seg"
+ 34. Port Connectivity Checks: "decHex7seg:HEX0_decoder|registradorGenerico:REG_4bits"
+ 35. Port Connectivity Checks: "decoder3x8:decoderAddr"
+ 36. Port Connectivity Checks: "decoder3x8:decoderBlock"
+ 37. Port Connectivity Checks: "registradorGenerico:RegLEDconj"
+ 38. Port Connectivity Checks: "flipFlop:FFLED9"
+ 39. Port Connectivity Checks: "flipFlop:FFLED8"
+ 40. Port Connectivity Checks: "CPU:CPU|flipFlop:FLAGer"
+ 41. Port Connectivity Checks: "CPU:CPU|muxGenerico4x1:MUX_DESVIO"
+ 42. Port Connectivity Checks: "CPU:CPU|registradorGenerico:END_RETORNO"
+ 43. Port Connectivity Checks: "CPU:CPU|registradorGenerico:PC"
+ 44. Port Connectivity Checks: "CPU:CPU|bancoRegistradoresArqRegReg:BANCO_REGS"
+ 45. Port Connectivity Checks: "CPU:CPU"
+ 46. Post-Synthesis Netlist Statistics for Top Partition
+ 47. Elapsed Time Per Partition
+ 48. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Fri May  6 19:50:55 2022       ;
+; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Revision Name                   ; relogio                                     ;
+; Top-level Entity Name           ; contador                                    ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 9                                           ;
+; Total pins                      ; 126                                         ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CEBA4F23C7        ;                    ;
+; Top-level entity name                                                           ; contador           ; relogio            ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Maximum processors allowed for parallel compilation                             ; All                ;                    ;
+; VHDL Show LMF Mapping Messages                                                  ; Off                ;                    ;
+; VHDL Version                                                                    ; VHDL_2008          ; VHDL_1993          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                              ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                       ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------+---------+
+; ULASomaSub.vhd                   ; yes             ; User VHDL File  ; /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/ULASomaSub.vhd                  ;         ;
+; somaUm.vhd                       ; yes             ; User VHDL File  ; /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/somaUm.vhd                      ;         ;
+; registradorGenerico.vhd          ; yes             ; User VHDL File  ; /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/registradorGenerico.vhd         ;         ;
+; muxGenerico4x1.vhd               ; yes             ; User VHDL File  ; /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/muxGenerico4x1.vhd              ;         ;
+; muxGenerico2x1.vhd               ; yes             ; User VHDL File  ; /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/muxGenerico2x1.vhd              ;         ;
+; memoriaRAM.vhd                   ; yes             ; User VHDL File  ; /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/memoriaRAM.vhd                  ;         ;
+; memoria.vhd                      ; yes             ; User VHDL File  ; /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/memoria.vhd                     ;         ;
+; flipFlop.vhd                     ; yes             ; User VHDL File  ; /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/flipFlop.vhd                    ;         ;
+; edgeDetector.vhd                 ; yes             ; User VHDL File  ; /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/edgeDetector.vhd                ;         ;
+; desvio.vhd                       ; yes             ; User VHDL File  ; /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/desvio.vhd                      ;         ;
+; decoder3x8.vhd                   ; yes             ; User VHDL File  ; /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/decoder3x8.vhd                  ;         ;
+; decoder.vhd                      ; yes             ; User VHDL File  ; /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/decoder.vhd                     ;         ;
+; decHex7Seg.vhd                   ; yes             ; User VHDL File  ; /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/decHex7Seg.vhd                  ;         ;
+; CPU.vhd                          ; yes             ; User VHDL File  ; /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/CPU.vhd                         ;         ;
+; conversorHex7Seg.vhd             ; yes             ; User VHDL File  ; /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/conversorHex7Seg.vhd            ;         ;
+; contador.vhd                     ; yes             ; User VHDL File  ; /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd                    ;         ;
+; buffer_3_state_8bits.vhd         ; yes             ; User VHDL File  ; /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd        ;         ;
+; buffer_3_state.vhd               ; yes             ; User VHDL File  ; /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state.vhd              ;         ;
+; bancoRegistradoresArqRegReg.vhd  ; yes             ; User VHDL File  ; /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/bancoRegistradoresArqRegReg.vhd ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimate of Logic utilization (ALMs needed) ; 9              ;
+;                                             ;                ;
+; Combinational ALUT usage for logic          ; 17             ;
+;     -- 7 input functions                    ; 0              ;
+;     -- 6 input functions                    ; 0              ;
+;     -- 5 input functions                    ; 0              ;
+;     -- 4 input functions                    ; 0              ;
+;     -- <=3 input functions                  ; 17             ;
+;                                             ;                ;
+; Dedicated logic registers                   ; 9              ;
+;                                             ;                ;
+; I/O pins                                    ; 126            ;
+;                                             ;                ;
+; Total DSP Blocks                            ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 9              ;
+; Total fan-out                               ; 185            ;
+; Average fan-out                             ; 0.67           ;
++---------------------------------------------+----------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                     ;
++--------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node     ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                      ; Entity Name         ; Library Name ;
++--------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------+---------------------+--------------+
+; |contador                      ; 17 (0)              ; 9 (0)                     ; 0                 ; 0          ; 126  ; 0            ; |contador                                ; contador            ; work         ;
+;    |CPU:CPU|                   ; 17 (0)              ; 9 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU                        ; CPU                 ; work         ;
+;       |ULASomaSub:ULA|         ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|ULASomaSub:ULA         ; ULASomaSub          ; work         ;
+;       |registradorGenerico:PC| ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|registradorGenerico:PC ; registradorGenerico ; work         ;
+;       |somaUm:PC_INC|          ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU:CPU|somaUm:PC_INC          ; somaUm              ; work         ;
++--------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops               ;
++--------------------------------------------------------+---+
+; Logic Cell Name                                        ;   ;
++--------------------------------------------------------+---+
+; CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[0]~0          ;   ;
+; CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[1]~7          ;   ;
+; CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[2]~6          ;   ;
+; CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[3]~5          ;   ;
+; CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[4]~4          ;   ;
+; CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[5]~3          ;   ;
+; CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[6]~2          ;   ;
+; CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[7]~1          ;   ;
+; Number of logic cells representing combinational loops ; 8 ;
++--------------------------------------------------------+---+
+Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                             ;
++------------------------------------------------------------------+---------------------------------------------+
+; Register name                                                    ; Reason for Removal                          ;
++------------------------------------------------------------------+---------------------------------------------+
+; flipFlop:FF_Debouncer|DOUT                                       ; Stuck at VCC due to stuck port data_in      ;
+; edgeDetector:detectorSub0|saidaQ                                 ; Lost fanout                                 ;
+; decHex7seg:HEX5_decoder|registradorGenerico:REG_4bits|DOUT[0..3] ; Stuck at GND due to stuck port clock_enable ;
+; decHex7seg:HEX4_decoder|registradorGenerico:REG_4bits|DOUT[0..3] ; Stuck at GND due to stuck port clock_enable ;
+; decHex7seg:HEX3_decoder|registradorGenerico:REG_4bits|DOUT[0..3] ; Stuck at GND due to stuck port clock_enable ;
+; decHex7seg:HEX2_decoder|registradorGenerico:REG_4bits|DOUT[0..3] ; Stuck at GND due to stuck port clock_enable ;
+; decHex7seg:HEX1_decoder|registradorGenerico:REG_4bits|DOUT[0..3] ; Stuck at GND due to stuck port clock_enable ;
+; decHex7seg:HEX0_decoder|registradorGenerico:REG_4bits|DOUT[0..3] ; Stuck at GND due to stuck port clock_enable ;
+; registradorGenerico:RegLEDconj|DOUT[0..7]                        ; Stuck at GND due to stuck port clock_enable ;
+; flipFlop:FFLED9|DOUT                                             ; Stuck at GND due to stuck port clock_enable ;
+; flipFlop:FFLED8|DOUT                                             ; Stuck at GND due to stuck port clock_enable ;
+; CPU:CPU|flipFlop:FLAGer|DOUT                                     ; Stuck at GND due to stuck port clock_enable ;
+; CPU:CPU|registradorGenerico:END_RETORNO|DOUT[0..8]               ; Stuck at GND due to stuck port clock_enable ;
+; Total Number of Removed Registers = 46                           ;                                             ;
++------------------------------------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                      ;
++---------------------------------------------------------------+--------------------------------+---------------------------------------------------------------------------------+
+; Register name                                                 ; Reason for Removal             ; Registers Removed due to This Register                                          ;
++---------------------------------------------------------------+--------------------------------+---------------------------------------------------------------------------------+
+; decHex7seg:HEX4_decoder|registradorGenerico:REG_4bits|DOUT[3] ; Stuck at GND                   ; registradorGenerico:RegLEDconj|DOUT[7], registradorGenerico:RegLEDconj|DOUT[5], ;
+;                                                               ; due to stuck port clock_enable ; registradorGenerico:RegLEDconj|DOUT[4]                                          ;
+; flipFlop:FF_Debouncer|DOUT                                    ; Stuck at VCC                   ; edgeDetector:detectorSub0|saidaQ, CPU:CPU|flipFlop:FLAGer|DOUT                  ;
+;                                                               ; due to stuck port data_in      ;                                                                                 ;
+; decHex7seg:HEX5_decoder|registradorGenerico:REG_4bits|DOUT[3] ; Stuck at GND                   ; registradorGenerico:RegLEDconj|DOUT[1]                                          ;
+;                                                               ; due to stuck port clock_enable ;                                                                                 ;
++---------------------------------------------------------------+--------------------------------+---------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 9     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |contador ;
++------------------+-------+-----------------------------------------------+
+; Parameter Name   ; Value ; Type                                          ;
++------------------+-------+-----------------------------------------------+
+; larguraDados     ; 8     ; Signed Integer                                ;
+; larguraEndereco  ; 9     ; Signed Integer                                ;
+; larguraInstrucao ; 22    ; Signed Integer                                ;
+; larguraOpCode    ; 4     ; Signed Integer                                ;
+; addrWidth        ; 6     ; Signed Integer                                ;
+; simulacao        ; false ; Enumerated                                    ;
++------------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: memoriaROM:ROM ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; datawidth      ; 22    ; Signed Integer                     ;
+; addrwidth      ; 9     ; Signed Integer                     ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: memoriaRAM:RAM ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; datawidth      ; 8     ; Signed Integer                     ;
+; addrwidth      ; 6     ; Signed Integer                     ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CPU:CPU ;
++------------------+-------+---------------------------+
+; Parameter Name   ; Value ; Type                      ;
++------------------+-------+---------------------------+
+; larguradados     ; 8     ; Signed Integer            ;
+; larguraendereco  ; 9     ; Signed Integer            ;
+; largurainstrucao ; 22    ; Signed Integer            ;
+; larguraopcode    ; 4     ; Signed Integer            ;
+; tamanhobanco     ; 3     ; Signed Integer            ;
+; addrwidth        ; 6     ; Signed Integer            ;
+; simulacao        ; true  ; Enumerated                ;
++------------------+-------+---------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CPU:CPU|muxGenerico2x1:MUX_MUX_ULA ;
++----------------+-------+--------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                   ;
++----------------+-------+--------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                         ;
++----------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CPU:CPU|muxGenerico2x1:MUX_ULA ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CPU:CPU|bancoRegistradoresArqRegReg:BANCO_REGS ;
++---------------------+-------+---------------------------------------------------------------+
+; Parameter Name      ; Value ; Type                                                          ;
++---------------------+-------+---------------------------------------------------------------+
+; larguradados        ; 8     ; Signed Integer                                                ;
+; larguraendbancoregs ; 3     ; Signed Integer                                                ;
++---------------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:PC ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; larguradados   ; 9     ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CPU:CPU|somaUm:PC_INC ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; larguradados   ; 9     ; Signed Integer                            ;
+; constante      ; 1     ; Signed Integer                            ;
++----------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:END_RETORNO ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 9     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CPU:CPU|muxGenerico4x1:MUX_DESVIO ;
++----------------+-------+-------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                  ;
++----------------+-------+-------------------------------------------------------+
+; larguradados   ; 9     ; Signed Integer                                        ;
++----------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CPU:CPU|ULASomaSub:ULA ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: registradorGenerico:RegLEDconj ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: decHex7seg:HEX0_decoder|registradorGenerico:REG_4bits ;
++----------------+-------+---------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                      ;
++----------------+-------+---------------------------------------------------------------------------+
+; larguradados   ; 4     ; Signed Integer                                                            ;
++----------------+-------+---------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: decHex7seg:HEX1_decoder|registradorGenerico:REG_4bits ;
++----------------+-------+---------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                      ;
++----------------+-------+---------------------------------------------------------------------------+
+; larguradados   ; 4     ; Signed Integer                                                            ;
++----------------+-------+---------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: decHex7seg:HEX2_decoder|registradorGenerico:REG_4bits ;
++----------------+-------+---------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                      ;
++----------------+-------+---------------------------------------------------------------------------+
+; larguradados   ; 4     ; Signed Integer                                                            ;
++----------------+-------+---------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: decHex7seg:HEX3_decoder|registradorGenerico:REG_4bits ;
++----------------+-------+---------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                      ;
++----------------+-------+---------------------------------------------------------------------------+
+; larguradados   ; 4     ; Signed Integer                                                            ;
++----------------+-------+---------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: decHex7seg:HEX4_decoder|registradorGenerico:REG_4bits ;
++----------------+-------+---------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                      ;
++----------------+-------+---------------------------------------------------------------------------+
+; larguradados   ; 4     ; Signed Integer                                                            ;
++----------------+-------+---------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: decHex7seg:HEX5_decoder|registradorGenerico:REG_4bits ;
++----------------+-------+---------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                      ;
++----------------+-------+---------------------------------------------------------------------------+
+; larguradados   ; 4     ; Signed Integer                                                            ;
++----------------+-------+---------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: buffer_3_state:bufferSWConj ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; datawidth      ; 8     ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------+
+; Port Connectivity Checks: "flipFlop:FF_Debouncer" ;
++--------+-------+----------+-----------------------+
+; Port   ; Type  ; Severity ; Details               ;
++--------+-------+----------+-----------------------+
+; din    ; Input ; Info     ; Stuck at VCC          ;
+; enable ; Input ; Info     ; Stuck at VCC          ;
++--------+-------+----------+-----------------------+
+
+
++-----------------------------------------------------------------------------------+
+; Port Connectivity Checks: "decHex7seg:HEX0_decoder|conversorHex7Seg:DECODER_7seg" ;
++----------+-------+----------+-----------------------------------------------------+
+; Port     ; Type  ; Severity ; Details                                             ;
++----------+-------+----------+-----------------------------------------------------+
+; apaga    ; Input ; Info     ; Stuck at GND                                        ;
+; negativo ; Input ; Info     ; Stuck at GND                                        ;
+; overflow ; Input ; Info     ; Stuck at GND                                        ;
++----------+-------+----------+-----------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------+
+; Port Connectivity Checks: "decHex7seg:HEX0_decoder|registradorGenerico:REG_4bits" ;
++------+-------+----------+---------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                 ;
++------+-------+----------+---------------------------------------------------------+
+; rst  ; Input ; Info     ; Stuck at GND                                            ;
++------+-------+----------+---------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "decoder3x8:decoderAddr"                                                                    ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; saida[7..6] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "decoder3x8:decoderBlock"                                                                   ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; saida[7..6] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; saida[3..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------+
+; Port Connectivity Checks: "registradorGenerico:RegLEDconj" ;
++------+-------+----------+----------------------------------+
+; Port ; Type  ; Severity ; Details                          ;
++------+-------+----------+----------------------------------+
+; rst  ; Input ; Info     ; Stuck at GND                     ;
++------+-------+----------+----------------------------------+
+
+
++---------------------------------------------+
+; Port Connectivity Checks: "flipFlop:FFLED9" ;
++------+-------+----------+-------------------+
+; Port ; Type  ; Severity ; Details           ;
++------+-------+----------+-------------------+
+; rst  ; Input ; Info     ; Stuck at GND      ;
++------+-------+----------+-------------------+
+
+
++---------------------------------------------+
+; Port Connectivity Checks: "flipFlop:FFLED8" ;
++------+-------+----------+-------------------+
+; Port ; Type  ; Severity ; Details           ;
++------+-------+----------+-------------------+
+; rst  ; Input ; Info     ; Stuck at GND      ;
++------+-------+----------+-------------------+
+
+
++-----------------------------------------------------+
+; Port Connectivity Checks: "CPU:CPU|flipFlop:FLAGer" ;
++------+-------+----------+---------------------------+
+; Port ; Type  ; Severity ; Details                   ;
++------+-------+----------+---------------------------+
+; rst  ; Input ; Info     ; Stuck at GND              ;
++------+-------+----------+---------------------------+
+
+
++---------------------------------------------------------------+
+; Port Connectivity Checks: "CPU:CPU|muxGenerico4x1:MUX_DESVIO" ;
++--------------+-------+----------+-----------------------------+
+; Port         ; Type  ; Severity ; Details                     ;
++--------------+-------+----------+-----------------------------+
+; entradad_mux ; Input ; Info     ; Stuck at GND                ;
++--------------+-------+----------+-----------------------------+
+
+
++---------------------------------------------------------------------+
+; Port Connectivity Checks: "CPU:CPU|registradorGenerico:END_RETORNO" ;
++------+-------+----------+-------------------------------------------+
+; Port ; Type  ; Severity ; Details                                   ;
++------+-------+----------+-------------------------------------------+
+; rst  ; Input ; Info     ; Stuck at GND                              ;
++------+-------+----------+-------------------------------------------+
+
+
++------------------------------------------------------------+
+; Port Connectivity Checks: "CPU:CPU|registradorGenerico:PC" ;
++--------+-------+----------+--------------------------------+
+; Port   ; Type  ; Severity ; Details                        ;
++--------+-------+----------+--------------------------------+
+; enable ; Input ; Info     ; Stuck at VCC                   ;
+; rst    ; Input ; Info     ; Stuck at GND                   ;
++--------+-------+----------+--------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CPU:CPU|bancoRegistradoresArqRegReg:BANCO_REGS"                                       ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; saidaa ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; saidab ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CPU:CPU"                                                                                     ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; control[3..2] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 9                           ;
+;     plain             ; 9                           ;
+; arriav_io_obuf        ; 8                           ;
+; arriav_lcell_comb     ; 19                          ;
+;     arith             ; 17                          ;
+;         0 data inputs ; 8                           ;
+;         1 data inputs ; 9                           ;
+;     normal            ; 2                           ;
+;         0 data inputs ; 2                           ;
+; boundary_port         ; 126                         ;
+;                       ;                             ;
+; Max LUT depth         ; 1.80                        ;
+; Average LUT depth     ; 0.94                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+    Info: Processing started: Fri May  6 19:50:44 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off relogio -c relogio
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file ULASomaSub.vhd
+    Info (12022): Found design unit 1: ULASomaSub-comportamento File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/ULASomaSub.vhd Line: 15
+    Info (12023): Found entity 1: ULASomaSub File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/ULASomaSub.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file somaUm.vhd
+    Info (12022): Found design unit 1: somaUm-comportamento File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/somaUm.vhd Line: 19
+    Info (12023): Found entity 1: somaUm File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/somaUm.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file registradorGenerico.vhd
+    Info (12022): Found design unit 1: registradorGenerico-comportamento File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/registradorGenerico.vhd Line: 16
+    Info (12023): Found entity 1: registradorGenerico File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/registradorGenerico.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file muxGenerico4x1.vhd
+    Info (12022): Found design unit 1: muxGenerico4x1-comportamento File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/muxGenerico4x1.vhd Line: 15
+    Info (12023): Found entity 1: muxGenerico4x1 File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/muxGenerico4x1.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file muxGenerico2x1.vhd
+    Info (12022): Found design unit 1: muxGenerico2x1-comportamento File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/muxGenerico2x1.vhd Line: 15
+    Info (12023): Found entity 1: muxGenerico2x1 File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/muxGenerico2x1.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file memoriaRAM.vhd
+    Info (12022): Found design unit 1: memoriaRAM-rtl File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/memoriaRAM.vhd Line: 22
+    Info (12023): Found entity 1: memoriaRAM File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/memoriaRAM.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file memoria.vhd
+    Info (12022): Found design unit 1: memoriaROM-assincrona File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/memoria.vhd Line: 17
+    Info (12023): Found entity 1: memoriaROM File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/memoria.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file flipFlop.vhd
+    Info (12022): Found design unit 1: flipFlop-comportamento File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/flipFlop.vhd Line: 14
+    Info (12023): Found entity 1: flipFlop File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/flipFlop.vhd Line: 5
+Info (12021): Found 3 design units, including 1 entities, in source file edgeDetector.vhd
+    Info (12022): Found design unit 1: edgeDetector-bordaSubida File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/edgeDetector.vhd Line: 10
+    Info (12022): Found design unit 2: edgeDetector-bordaDescida File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/edgeDetector.vhd Line: 23
+    Info (12023): Found entity 1: edgeDetector File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/edgeDetector.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file desvio.vhd
+    Info (12022): Found design unit 1: desvio-comportamento File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/desvio.vhd Line: 13
+    Info (12023): Found entity 1: desvio File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/desvio.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file decoderGeneric.vhd
+    Info (12022): Found design unit 1: decoderGeneric-comportamento File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/decoderGeneric.vhd Line: 10
+    Info (12023): Found entity 1: decoderGeneric File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/decoderGeneric.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file decoder3x8.vhd
+    Info (12022): Found design unit 1: decoder3x8-comportamento File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/decoder3x8.vhd Line: 10
+    Info (12023): Found entity 1: decoder3x8 File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/decoder3x8.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file decoder.vhd
+    Info (12022): Found design unit 1: decoder-comportamento File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/decoder.vhd Line: 11
+    Info (12023): Found entity 1: decoder File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/decoder.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file decHex7Seg.vhd
+    Info (12022): Found design unit 1: decHex7Seg-arch_name File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/decHex7Seg.vhd Line: 26
+    Info (12023): Found entity 1: decHex7seg File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/decHex7Seg.vhd Line: 14
+Info (12021): Found 2 design units, including 1 entities, in source file CPU.vhd
+    Info (12022): Found design unit 1: CPU-arquitetura File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/CPU.vhd Line: 33
+    Info (12023): Found entity 1: CPU File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/CPU.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file conversorHex7Seg.vhd
+    Info (12022): Found design unit 1: conversorHex7Seg-comportamento File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/conversorHex7Seg.vhd Line: 17
+    Info (12023): Found entity 1: conversorHex7Seg File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/conversorHex7Seg.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file contador.vhd
+    Info (12022): Found design unit 1: contador-arquitetura File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 32
+    Info (12023): Found entity 1: contador File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file buffer_3_state_8bits.vhd
+    Info (12022): Found design unit 1: buffer_3_state_8bits-comportamento File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 11
+    Info (12023): Found entity 1: buffer_3_state_8bits File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file buffer_3_state_1porta.vhd
+    Info (12022): Found design unit 1: buffer_3_state_1porta-comportamento File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_1porta.vhd Line: 11
+    Info (12023): Found entity 1: buffer_3_state_1porta File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_1porta.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file buffer_3_state.vhd
+    Info (12022): Found design unit 1: buffer_3_state-comportamento File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state.vhd Line: 14
+    Info (12023): Found entity 1: buffer_3_state File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file bancoRegistradoresArqRegReg.vhd
+    Info (12022): Found design unit 1: bancoRegistradoresArqRegReg-comportamento File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/bancoRegistradoresArqRegReg.vhd Line: 26
+    Info (12023): Found entity 1: bancoRegistradoresArqRegReg File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/bancoRegistradoresArqRegReg.vhd Line: 5
+Info (12127): Elaborating entity "contador" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at contador.vhd(25): used implicit default value for signal "ula_ain" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 25
+Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 133
+Warning (10542): VHDL Variable Declaration warning at memoria.vhd(34): used initial value expression for variable "tmp" because variable was never assigned a value File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/memoria.vhd Line: 34
+Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 137
+Info (12128): Elaborating entity "CPU" for hierarchy "CPU:CPU" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 146
+Warning (10036): Verilog HDL or VHDL warning at CPU.vhd(46): object "saidaRC_banco" assigned a value but never read File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/CPU.vhd Line: 46
+Warning (10036): Verilog HDL or VHDL warning at CPU.vhd(47): object "saidaRB_banco" assigned a value but never read File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/CPU.vhd Line: 47
+Warning (10541): VHDL Signal Declaration warning at CPU.vhd(57): used implicit default value for signal "saidaRegA" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/CPU.vhd Line: 57
+Warning (10873): Using initial value X (don't care) for net "control[3..2]" at CPU.vhd(17) File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/CPU.vhd Line: 17
+Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "CPU:CPU|muxGenerico2x1:MUX_MUX_ULA" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/CPU.vhd Line: 109
+Info (12128): Elaborating entity "bancoRegistradoresArqRegReg" for hierarchy "CPU:CPU|bancoRegistradoresArqRegReg:BANCO_REGS" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/CPU.vhd Line: 122
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "CPU:CPU|registradorGenerico:PC" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/CPU.vhd Line: 133
+Info (12128): Elaborating entity "somaUm" for hierarchy "CPU:CPU|somaUm:PC_INC" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/CPU.vhd Line: 140
+Info (12128): Elaborating entity "muxGenerico4x1" for hierarchy "CPU:CPU|muxGenerico4x1:MUX_DESVIO" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/CPU.vhd Line: 151
+Info (12128): Elaborating entity "ULASomaSub" for hierarchy "CPU:CPU|ULASomaSub:ULA" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/CPU.vhd Line: 160
+Info (12128): Elaborating entity "decoder" for hierarchy "CPU:CPU|decoder:DECODER" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/CPU.vhd Line: 168
+Info (12128): Elaborating entity "desvio" for hierarchy "CPU:CPU|desvio:DESVIO" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/CPU.vhd Line: 172
+Info (12128): Elaborating entity "flipFlop" for hierarchy "CPU:CPU|flipFlop:FLAGer" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/CPU.vhd Line: 181
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:RegLEDconj" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 174
+Info (12128): Elaborating entity "decoder3x8" for hierarchy "decoder3x8:decoderBlock" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 181
+Info (12128): Elaborating entity "decHex7seg" for hierarchy "decHex7seg:HEX0_decoder" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 191
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "decHex7seg:HEX0_decoder|registradorGenerico:REG_4bits" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/decHex7Seg.vhd Line: 33
+Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "decHex7seg:HEX0_decoder|conversorHex7Seg:DECODER_7seg" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/decHex7Seg.vhd Line: 44
+Info (12128): Elaborating entity "buffer_3_state" for hierarchy "buffer_3_state:bufferSWConj" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 239
+Info (12128): Elaborating entity "buffer_3_state_8bits" for hierarchy "buffer_3_state_8bits:bufferSW8" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 244
+Info (12129): Elaborating entity "edgeDetector" using architecture "A:bordasubida" for hierarchy "edgeDetector:detectorSub0" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 260
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276007): RAM logic "memoriaRAM:RAM|ram" is uninferred due to asynchronous read logic File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/memoriaRAM.vhd Line: 28
+Warning (13027): Removed fan-outs from the following always-disabled I/O buffers
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state:bufferSWConj|saida[0]" to the node "valorDado[0]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state.vhd Line: 11
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferSW8|saida[0]" to the node "valorDado[0]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferSW9|saida[0]" to the node "valorDado[0]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferKEY0|saida[0]" to the node "valorDado[0]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferKEY1|saida[0]" to the node "valorDado[0]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferKEY2|saida[0]" to the node "valorDado[0]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferKEY3|saida[0]" to the node "valorDado[0]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferRESET|saida[0]" to the node "valorDado[0]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state:bufferSWConj|saida[1]" to the node "valorDado[1]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state.vhd Line: 11
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state:bufferSWConj|saida[2]" to the node "valorDado[2]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state.vhd Line: 11
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state:bufferSWConj|saida[3]" to the node "valorDado[3]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state.vhd Line: 11
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state:bufferSWConj|saida[4]" to the node "valorDado[4]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state.vhd Line: 11
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state:bufferSWConj|saida[5]" to the node "valorDado[5]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state.vhd Line: 11
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state:bufferSWConj|saida[6]" to the node "valorDado[6]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state.vhd Line: 11
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state:bufferSWConj|saida[7]" to the node "valorDado[7]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state.vhd Line: 11
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "memoriaRAM:RAM|dado_out[1]" to the node "valorDado[1]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/memoriaRAM.vhd Line: 18
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferSW8|saida[1]" to the node "valorDado[1]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferSW9|saida[1]" to the node "valorDado[1]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferKEY0|saida[1]" to the node "valorDado[1]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferKEY1|saida[1]" to the node "valorDado[1]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferKEY2|saida[1]" to the node "valorDado[1]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferKEY3|saida[1]" to the node "valorDado[1]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "memoriaRAM:RAM|dado_out[2]" to the node "valorDado[2]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/memoriaRAM.vhd Line: 18
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferSW8|saida[2]" to the node "valorDado[2]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferSW9|saida[2]" to the node "valorDado[2]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferKEY0|saida[2]" to the node "valorDado[2]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferKEY1|saida[2]" to the node "valorDado[2]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferKEY2|saida[2]" to the node "valorDado[2]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferKEY3|saida[2]" to the node "valorDado[2]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "memoriaRAM:RAM|dado_out[3]" to the node "valorDado[3]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/memoriaRAM.vhd Line: 18
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferSW8|saida[3]" to the node "valorDado[3]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferSW9|saida[3]" to the node "valorDado[3]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferKEY0|saida[3]" to the node "valorDado[3]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferKEY1|saida[3]" to the node "valorDado[3]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferKEY2|saida[3]" to the node "valorDado[3]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferKEY3|saida[3]" to the node "valorDado[3]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "memoriaRAM:RAM|dado_out[4]" to the node "valorDado[4]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/memoriaRAM.vhd Line: 18
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferSW8|saida[4]" to the node "valorDado[4]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferSW9|saida[4]" to the node "valorDado[4]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferKEY0|saida[4]" to the node "valorDado[4]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferKEY1|saida[4]" to the node "valorDado[4]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferKEY2|saida[4]" to the node "valorDado[4]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferKEY3|saida[4]" to the node "valorDado[4]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "memoriaRAM:RAM|dado_out[5]" to the node "valorDado[5]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/memoriaRAM.vhd Line: 18
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferSW8|saida[5]" to the node "valorDado[5]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferSW9|saida[5]" to the node "valorDado[5]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferKEY0|saida[5]" to the node "valorDado[5]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferKEY1|saida[5]" to the node "valorDado[5]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferKEY2|saida[5]" to the node "valorDado[5]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferKEY3|saida[5]" to the node "valorDado[5]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "memoriaRAM:RAM|dado_out[6]" to the node "valorDado[6]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/memoriaRAM.vhd Line: 18
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferSW8|saida[6]" to the node "valorDado[6]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferSW9|saida[6]" to the node "valorDado[6]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferKEY0|saida[6]" to the node "valorDado[6]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferKEY1|saida[6]" to the node "valorDado[6]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferKEY2|saida[6]" to the node "valorDado[6]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferKEY3|saida[6]" to the node "valorDado[6]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "memoriaRAM:RAM|dado_out[7]" to the node "valorDado[7]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/memoriaRAM.vhd Line: 18
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferSW8|saida[7]" to the node "valorDado[7]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferSW9|saida[7]" to the node "valorDado[7]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferKEY0|saida[7]" to the node "valorDado[7]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferKEY1|saida[7]" to the node "valorDado[7]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferKEY2|saida[7]" to the node "valorDado[7]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "buffer_3_state_8bits:bufferKEY3|saida[7]" to the node "valorDado[7]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+Warning (13050): Open-drain buffer(s) that do not directly drive top-level pin(s) are removed
+    Warning (13051): Converted the fanout from the open-drain buffer "memoriaRAM:RAM|dado_out[0]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[0]" into a wire File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/memoriaRAM.vhd Line: 18
+    Warning (13051): Converted the fanout from the open-drain buffer "buffer_3_state_8bits:bufferRESET|saida[1]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[1]" into a wire File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13051): Converted the fanout from the open-drain buffer "buffer_3_state_8bits:bufferRESET|saida[2]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[2]" into a wire File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13051): Converted the fanout from the open-drain buffer "buffer_3_state_8bits:bufferRESET|saida[3]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[3]" into a wire File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13051): Converted the fanout from the open-drain buffer "buffer_3_state_8bits:bufferRESET|saida[4]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[4]" into a wire File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13051): Converted the fanout from the open-drain buffer "buffer_3_state_8bits:bufferRESET|saida[5]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[5]" into a wire File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13051): Converted the fanout from the open-drain buffer "buffer_3_state_8bits:bufferRESET|saida[6]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[6]" into a wire File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+    Warning (13051): Converted the fanout from the open-drain buffer "buffer_3_state_8bits:bufferRESET|saida[7]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[7]" into a wire File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/buffer_3_state_8bits.vhd Line: 8
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "endRAM[0]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 14
+    Warning (13410): Pin "endRAM[1]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 14
+    Warning (13410): Pin "endRAM[2]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 14
+    Warning (13410): Pin "endRAM[3]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 14
+    Warning (13410): Pin "endRAM[4]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 14
+    Warning (13410): Pin "endRAM[5]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 14
+    Warning (13410): Pin "LEDR[0]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 16
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 16
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 16
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 16
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 16
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 16
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 16
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 16
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 16
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 16
+    Warning (13410): Pin "teste_datain[0]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 18
+    Warning (13410): Pin "teste_datain[1]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 18
+    Warning (13410): Pin "teste_datain[2]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 18
+    Warning (13410): Pin "teste_datain[3]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 18
+    Warning (13410): Pin "teste_datain[4]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 18
+    Warning (13410): Pin "teste_datain[5]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 18
+    Warning (13410): Pin "teste_datain[6]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 18
+    Warning (13410): Pin "teste_datain[7]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 18
+    Warning (13410): Pin "teste_hab" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 19
+    Warning (13410): Pin "habFlaguinha" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 21
+    Warning (13410): Pin "HEX0[0]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 23
+    Warning (13410): Pin "HEX0[1]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 23
+    Warning (13410): Pin "HEX0[2]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 23
+    Warning (13410): Pin "HEX0[3]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 23
+    Warning (13410): Pin "HEX0[4]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 23
+    Warning (13410): Pin "HEX0[5]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 23
+    Warning (13410): Pin "HEX0[6]" is stuck at VCC File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 23
+    Warning (13410): Pin "HEX1[0]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 23
+    Warning (13410): Pin "HEX1[1]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 23
+    Warning (13410): Pin "HEX1[2]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 23
+    Warning (13410): Pin "HEX1[3]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 23
+    Warning (13410): Pin "HEX1[4]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 23
+    Warning (13410): Pin "HEX1[5]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 23
+    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 23
+    Warning (13410): Pin "HEX2[0]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 23
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 23
+    Warning (13410): Pin "HEX2[2]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 23
+    Warning (13410): Pin "HEX2[3]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 23
+    Warning (13410): Pin "HEX2[4]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 23
+    Warning (13410): Pin "HEX2[5]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 23
+    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 23
+    Warning (13410): Pin "HEX3[0]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 23
+    Warning (13410): Pin "HEX3[1]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 23
+    Warning (13410): Pin "HEX3[2]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 23
+    Warning (13410): Pin "HEX3[3]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 23
+    Warning (13410): Pin "HEX3[4]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 23
+    Warning (13410): Pin "HEX3[5]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 23
+    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 23
+    Warning (13410): Pin "HEX4[0]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 23
+    Warning (13410): Pin "HEX4[1]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 23
+    Warning (13410): Pin "HEX4[2]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 23
+    Warning (13410): Pin "HEX4[3]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 23
+    Warning (13410): Pin "HEX4[4]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 23
+    Warning (13410): Pin "HEX4[5]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 23
+    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 23
+    Warning (13410): Pin "HEX5[0]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 23
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 23
+    Warning (13410): Pin "HEX5[2]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 23
+    Warning (13410): Pin "HEX5[3]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 23
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 23
+    Warning (13410): Pin "HEX5[5]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 23
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 23
+    Warning (13410): Pin "flaginha" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 24
+    Warning (13410): Pin "ula_ain[0]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 25
+    Warning (13410): Pin "ula_ain[1]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 25
+    Warning (13410): Pin "ula_ain[2]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 25
+    Warning (13410): Pin "ula_ain[3]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 25
+    Warning (13410): Pin "ula_ain[4]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 25
+    Warning (13410): Pin "ula_ain[5]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 25
+    Warning (13410): Pin "ula_ain[6]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 25
+    Warning (13410): Pin "ula_ain[7]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 25
+    Warning (13410): Pin "ula_bin[0]" is stuck at VCC File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 25
+    Warning (13410): Pin "ula_bin[1]" is stuck at VCC File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 25
+    Warning (13410): Pin "ula_bin[2]" is stuck at VCC File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 25
+    Warning (13410): Pin "ula_bin[3]" is stuck at VCC File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 25
+    Warning (13410): Pin "ula_bin[4]" is stuck at VCC File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 25
+    Warning (13410): Pin "ula_bin[5]" is stuck at VCC File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 25
+    Warning (13410): Pin "ula_bin[6]" is stuck at VCC File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 25
+    Warning (13410): Pin "ula_bin[7]" is stuck at VCC File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 25
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 15 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[0]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 20
+    Warning (15610): No output dependent on input pin "SW[0]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[8]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[9]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 17
+    Warning (15610): No output dependent on input pin "KEY[1]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 20
+    Warning (15610): No output dependent on input pin "KEY[2]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 20
+    Warning (15610): No output dependent on input pin "KEY[3]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 20
+    Warning (15610): No output dependent on input pin "FPGA_RESET_N" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 22
+    Warning (15610): No output dependent on input pin "SW[1]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[2]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[3]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[4]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[5]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[6]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[7]" File: /home/borg/Insper/meu_careca_preferido/projetos/projeto1 - relogio/contador.vhd Line: 17
+Info (21057): Implemented 143 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 16 input pins
+    Info (21059): Implemented 110 output pins
+    Info (21061): Implemented 17 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 182 warnings
+    Info: Peak virtual memory: 478 megabytes
+    Info: Processing ended: Fri May  6 19:50:55 2022
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:24
+
+

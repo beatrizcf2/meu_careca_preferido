@@ -1,0 +1,81 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "endROM[0]",
+					"strict" : false
+				},
+				{
+					"name" : "endROM[1]",
+					"strict" : false
+				},
+				{
+					"name" : "endROM[2]",
+					"strict" : false
+				},
+				{
+					"name" : "endROM[3]",
+					"strict" : false
+				},
+				{
+					"name" : "endROM[4]",
+					"strict" : false
+				},
+				{
+					"name" : "endROM[5]",
+					"strict" : false
+				},
+				{
+					"name" : "endROM[6]",
+					"strict" : false
+				},
+				{
+					"name" : "endROM[7]",
+					"strict" : false
+				},
+				{
+					"name" : "endROM[8]",
+					"strict" : false
+				},
+				{
+					"name" : "ula_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ula_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ula_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ula_out[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ula_out[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ula_out[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ula_out[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ula_out[7]",
+					"strict" : false
+				},
+				{
+					"name" : "CLOCK_50",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
