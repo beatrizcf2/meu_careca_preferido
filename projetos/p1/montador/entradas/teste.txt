@@ -1,0 +1,10 @@
+
+SOMA %r1, @2 #comentario teste 
+# comentario teste
+
+LABEL1:           #comentario teste
+LDA %r1, @2      #comentario teste
+JMP $LABEL1       #comentario teste
+
+NOP
+RET

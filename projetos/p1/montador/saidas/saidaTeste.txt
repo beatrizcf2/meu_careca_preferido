@@ -1,0 +1,9 @@
+
+tmp(0) := "0010001000000010";	-- SOMA %r1, @2 #comentario teste 
+-- comentario teste
+
+tmp(1) := "0001001000000010";	-- LDA %r1, @2      #comentario teste
+tmp(2) := "0110000000000001";	-- JMP $LABEL1       #comentario teste
+
+tmp(3) := "0000000000000000";	-- NOP
+tmp(4) := "1010000000000000";	-- RET
