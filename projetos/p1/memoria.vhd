@@ -83,6 +83,7 @@ tmp(39) := "1010000000000000";	-- RET			    #   Retorna da sub-rotina
 
 
 
+
 		  
         return tmp;
     end initMemory;

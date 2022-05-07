@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(5CEBA4F23) Path("C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/output_files/") File("relogioRM.sof") MfrSpec(OpMask(1));
+		Device PartName(5CEBA4F23) Path("/home/borg/Insper/meu_careca_preferido/projetos/p1/output_files/") File("relogioRM.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

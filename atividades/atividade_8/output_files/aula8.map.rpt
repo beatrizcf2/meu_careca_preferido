@@ -1,5 +1,5 @@
 Analysis & Synthesis report for aula8
-Fri May 06 17:21:51 2022
+Sat May  7 18:50:02 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -78,7 +78,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri May 06 17:21:51 2022       ;
+; Analysis & Synthesis Status     ; Successful - Sat May  7 18:50:01 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; aula8                                       ;
 ; Top-level Entity Name           ; contador                                    ;
@@ -192,42 +192,43 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 2           ;
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 2           ;
+; Maximum used               ; 6           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.0%      ;
+;     Processors 3-6         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                     ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                              ; Library ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------+---------+
-; buffer_3_state.vhd               ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state.vhd       ;         ;
-; ULASomaSub.vhd                   ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/ULASomaSub.vhd           ;         ;
-; somaUm.vhd                       ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/somaUm.vhd               ;         ;
-; registradorGenerico.vhd          ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/registradorGenerico.vhd  ;         ;
-; muxGenerico4x1.vhd               ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/muxGenerico4x1.vhd       ;         ;
-; muxGenerico2x1.vhd               ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/muxGenerico2x1.vhd       ;         ;
-; memoriaRAM.vhd                   ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/memoriaRAM.vhd           ;         ;
-; memoria.vhd                      ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/memoria.vhd              ;         ;
-; flipFlop.vhd                     ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/flipFlop.vhd             ;         ;
-; edgeDetector.vhd                 ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/edgeDetector.vhd         ;         ;
-; desvio.vhd                       ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/desvio.vhd               ;         ;
-; decoder3x8.vhd                   ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/decoder3x8.vhd           ;         ;
-; decoder.vhd                      ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/decoder.vhd              ;         ;
-; CPU.vhd                          ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd                  ;         ;
-; contador.vhd                     ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd             ;         ;
-; conversorHex7Seg.vhd             ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/conversorHex7Seg.vhd     ;         ;
-; decHex7Seg.vhd                   ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/decHex7Seg.vhd           ;         ;
-; buffer_3_state_8bits.vhd         ; yes             ; User VHDL File  ; C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state_8bits.vhd ;         ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                  ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                           ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------+---------+
+; buffer_3_state.vhd               ; yes             ; User VHDL File  ; /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/buffer_3_state.vhd       ;         ;
+; ULASomaSub.vhd                   ; yes             ; User VHDL File  ; /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/ULASomaSub.vhd           ;         ;
+; somaUm.vhd                       ; yes             ; User VHDL File  ; /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/somaUm.vhd               ;         ;
+; registradorGenerico.vhd          ; yes             ; User VHDL File  ; /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/registradorGenerico.vhd  ;         ;
+; muxGenerico4x1.vhd               ; yes             ; User VHDL File  ; /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/muxGenerico4x1.vhd       ;         ;
+; muxGenerico2x1.vhd               ; yes             ; User VHDL File  ; /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/muxGenerico2x1.vhd       ;         ;
+; memoriaRAM.vhd                   ; yes             ; User VHDL File  ; /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/memoriaRAM.vhd           ;         ;
+; memoria.vhd                      ; yes             ; User VHDL File  ; /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/memoria.vhd              ;         ;
+; flipFlop.vhd                     ; yes             ; User VHDL File  ; /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/flipFlop.vhd             ;         ;
+; edgeDetector.vhd                 ; yes             ; User VHDL File  ; /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/edgeDetector.vhd         ;         ;
+; desvio.vhd                       ; yes             ; User VHDL File  ; /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/desvio.vhd               ;         ;
+; decoder3x8.vhd                   ; yes             ; User VHDL File  ; /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/decoder3x8.vhd           ;         ;
+; decoder.vhd                      ; yes             ; User VHDL File  ; /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/decoder.vhd              ;         ;
+; CPU.vhd                          ; yes             ; User VHDL File  ; /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/CPU.vhd                  ;         ;
+; contador.vhd                     ; yes             ; User VHDL File  ; /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/contador.vhd             ;         ;
+; conversorHex7Seg.vhd             ; yes             ; User VHDL File  ; /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/conversorHex7Seg.vhd     ;         ;
+; decHex7Seg.vhd                   ; yes             ; User VHDL File  ; /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/decHex7Seg.vhd           ;         ;
+; buffer_3_state_8bits.vhd         ; yes             ; User VHDL File  ; /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/buffer_3_state_8bits.vhd ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------+
@@ -817,7 +818,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                       ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
-; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |contador|CPU:CPU|registradorGenerico:PC|DOUT[1] ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |contador|CPU:CPU|registradorGenerico:PC|DOUT[0] ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |contador|CPU:CPU|registradorGenerico:PC|DOUT[7] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
 
@@ -1202,130 +1203,130 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Fri May 06 17:21:39 2022
+    Info: Processing started: Sat May  7 18:49:56 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off aula8 -c aula8
-Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file buffer_3_state.vhd
-    Info (12022): Found design unit 1: buffer_3_state-comportamento File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state.vhd Line: 14
-    Info (12023): Found entity 1: buffer_3_state File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file ulasomasub.vhd
-    Info (12022): Found design unit 1: ULASomaSub-comportamento File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/ULASomaSub.vhd Line: 15
-    Info (12023): Found entity 1: ULASomaSub File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/ULASomaSub.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file somaum.vhd
-    Info (12022): Found design unit 1: somaUm-comportamento File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/somaUm.vhd Line: 19
-    Info (12023): Found entity 1: somaUm File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/somaUm.vhd Line: 6
-Info (12021): Found 2 design units, including 1 entities, in source file registradorgenerico.vhd
-    Info (12022): Found design unit 1: registradorGenerico-comportamento File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/registradorGenerico.vhd Line: 16
-    Info (12023): Found entity 1: registradorGenerico File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/registradorGenerico.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file muxgenerico4x1.vhd
-    Info (12022): Found design unit 1: muxGenerico4x1-comportamento File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/muxGenerico4x1.vhd Line: 15
-    Info (12023): Found entity 1: muxGenerico4x1 File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/muxGenerico4x1.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file muxgenerico2x1.vhd
-    Info (12022): Found design unit 1: muxGenerico2x1-comportamento File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/muxGenerico2x1.vhd Line: 15
-    Info (12023): Found entity 1: muxGenerico2x1 File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/muxGenerico2x1.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file memoriaram.vhd
-    Info (12022): Found design unit 1: memoriaRAM-rtl File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/memoriaRAM.vhd Line: 22
-    Info (12023): Found entity 1: memoriaRAM File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/memoriaRAM.vhd Line: 6
+    Info (12022): Found design unit 1: buffer_3_state-comportamento File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/buffer_3_state.vhd Line: 14
+    Info (12023): Found entity 1: buffer_3_state File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/buffer_3_state.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file ULASomaSub.vhd
+    Info (12022): Found design unit 1: ULASomaSub-comportamento File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/ULASomaSub.vhd Line: 15
+    Info (12023): Found entity 1: ULASomaSub File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/ULASomaSub.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file somaUm.vhd
+    Info (12022): Found design unit 1: somaUm-comportamento File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/somaUm.vhd Line: 19
+    Info (12023): Found entity 1: somaUm File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/somaUm.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file registradorGenerico.vhd
+    Info (12022): Found design unit 1: registradorGenerico-comportamento File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/registradorGenerico.vhd Line: 16
+    Info (12023): Found entity 1: registradorGenerico File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/registradorGenerico.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file muxGenerico4x1.vhd
+    Info (12022): Found design unit 1: muxGenerico4x1-comportamento File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/muxGenerico4x1.vhd Line: 15
+    Info (12023): Found entity 1: muxGenerico4x1 File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/muxGenerico4x1.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file muxGenerico2x1.vhd
+    Info (12022): Found design unit 1: muxGenerico2x1-comportamento File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/muxGenerico2x1.vhd Line: 15
+    Info (12023): Found entity 1: muxGenerico2x1 File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/muxGenerico2x1.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file memoriaRAM.vhd
+    Info (12022): Found design unit 1: memoriaRAM-rtl File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/memoriaRAM.vhd Line: 22
+    Info (12023): Found entity 1: memoriaRAM File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/memoriaRAM.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file memoria.vhd
-    Info (12022): Found design unit 1: memoriaROM-assincrona File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/memoria.vhd Line: 17
-    Info (12023): Found entity 1: memoriaROM File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/memoria.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file flipflop.vhd
-    Info (12022): Found design unit 1: flipFlop-comportamento File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/flipFlop.vhd Line: 14
-    Info (12023): Found entity 1: flipFlop File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/flipFlop.vhd Line: 5
-Info (12021): Found 3 design units, including 1 entities, in source file edgedetector.vhd
-    Info (12022): Found design unit 1: edgeDetector-bordaSubida File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/edgeDetector.vhd Line: 10
-    Info (12022): Found design unit 2: edgeDetector-bordaDescida File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/edgeDetector.vhd Line: 23
-    Info (12023): Found entity 1: edgeDetector File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/edgeDetector.vhd Line: 4
+    Info (12022): Found design unit 1: memoriaROM-assincrona File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/memoria.vhd Line: 17
+    Info (12023): Found entity 1: memoriaROM File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/memoria.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file flipFlop.vhd
+    Info (12022): Found design unit 1: flipFlop-comportamento File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/flipFlop.vhd Line: 14
+    Info (12023): Found entity 1: flipFlop File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/flipFlop.vhd Line: 5
+Info (12021): Found 3 design units, including 1 entities, in source file edgeDetector.vhd
+    Info (12022): Found design unit 1: edgeDetector-bordaSubida File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/edgeDetector.vhd Line: 10
+    Info (12022): Found design unit 2: edgeDetector-bordaDescida File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/edgeDetector.vhd Line: 23
+    Info (12023): Found entity 1: edgeDetector File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/edgeDetector.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file desvio.vhd
-    Info (12022): Found design unit 1: desvio-comportamento File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/desvio.vhd Line: 13
-    Info (12023): Found entity 1: desvio File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/desvio.vhd Line: 7
+    Info (12022): Found design unit 1: desvio-comportamento File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/desvio.vhd Line: 13
+    Info (12023): Found entity 1: desvio File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/desvio.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file decoder3x8.vhd
-    Info (12022): Found design unit 1: decoder3x8-comportamento File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/decoder3x8.vhd Line: 10
-    Info (12023): Found entity 1: decoder3x8 File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/decoder3x8.vhd Line: 4
+    Info (12022): Found design unit 1: decoder3x8-comportamento File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/decoder3x8.vhd Line: 10
+    Info (12023): Found entity 1: decoder3x8 File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/decoder3x8.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file decoder.vhd
-    Info (12022): Found design unit 1: decoder-comportamento File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/decoder.vhd Line: 11
-    Info (12023): Found entity 1: decoder File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/decoder.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file cpu.vhd
-    Info (12022): Found design unit 1: CPU-arquitetura File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 32
-    Info (12023): Found entity 1: CPU File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 4
+    Info (12022): Found design unit 1: decoder-comportamento File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/decoder.vhd Line: 11
+    Info (12023): Found entity 1: decoder File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/decoder.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file CPU.vhd
+    Info (12022): Found design unit 1: CPU-arquitetura File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 32
+    Info (12023): Found entity 1: CPU File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file contador.vhd
-    Info (12022): Found design unit 1: contador-arquitetura File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 32
-    Info (12023): Found entity 1: contador File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file decodergeneric.vhd
-    Info (12022): Found design unit 1: decoderGeneric-comportamento File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/decoderGeneric.vhd Line: 10
-    Info (12023): Found entity 1: decoderGeneric File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/decoderGeneric.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file conversorhex7seg.vhd
-    Info (12022): Found design unit 1: conversorHex7Seg-comportamento File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/conversorHex7Seg.vhd Line: 17
-    Info (12023): Found entity 1: conversorHex7Seg File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/conversorHex7Seg.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file dechex7seg.vhd
-    Info (12022): Found design unit 1: decHex7Seg-arch_name File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/decHex7Seg.vhd Line: 26
-    Info (12023): Found entity 1: decHex7seg File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/decHex7Seg.vhd Line: 14
+    Info (12022): Found design unit 1: contador-arquitetura File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 32
+    Info (12023): Found entity 1: contador File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file decoderGeneric.vhd
+    Info (12022): Found design unit 1: decoderGeneric-comportamento File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/decoderGeneric.vhd Line: 10
+    Info (12023): Found entity 1: decoderGeneric File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/decoderGeneric.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file conversorHex7Seg.vhd
+    Info (12022): Found design unit 1: conversorHex7Seg-comportamento File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/conversorHex7Seg.vhd Line: 17
+    Info (12023): Found entity 1: conversorHex7Seg File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/conversorHex7Seg.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file decHex7Seg.vhd
+    Info (12022): Found design unit 1: decHex7Seg-arch_name File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/decHex7Seg.vhd Line: 26
+    Info (12023): Found entity 1: decHex7seg File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/decHex7Seg.vhd Line: 14
 Info (12021): Found 2 design units, including 1 entities, in source file buffer_3_state_8bits.vhd
-    Info (12022): Found design unit 1: buffer_3_state_8bits-comportamento File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state_8bits.vhd Line: 11
-    Info (12023): Found entity 1: buffer_3_state_8bits File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state_8bits.vhd Line: 4
+    Info (12022): Found design unit 1: buffer_3_state_8bits-comportamento File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/buffer_3_state_8bits.vhd Line: 11
+    Info (12023): Found entity 1: buffer_3_state_8bits File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/buffer_3_state_8bits.vhd Line: 4
 Info (12127): Elaborating entity "contador" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at contador.vhd(25): used implicit default value for signal "ula_ain" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 25
-Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 133
-Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 137
-Info (12128): Elaborating entity "CPU" for hierarchy "CPU:CPU" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 146
-Warning (10873): Using initial value X (don't care) for net "control[3..2]" at CPU.vhd(16) File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 16
-Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "CPU:CPU|muxGenerico2x1:MUX_ULA" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 95
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "CPU:CPU|registradorGenerico:REG_A" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 102
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "CPU:CPU|registradorGenerico:PC" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 110
-Info (12128): Elaborating entity "somaUm" for hierarchy "CPU:CPU|somaUm:PC_INC" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 117
-Info (12128): Elaborating entity "muxGenerico4x1" for hierarchy "CPU:CPU|muxGenerico4x1:MUX_DESVIO" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 128
-Info (12128): Elaborating entity "ULASomaSub" for hierarchy "CPU:CPU|ULASomaSub:ULA" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 137
-Info (12128): Elaborating entity "decoder" for hierarchy "CPU:CPU|decoder:DECODER" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 145
-Info (12128): Elaborating entity "desvio" for hierarchy "CPU:CPU|desvio:DESVIO" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 149
-Info (12128): Elaborating entity "flipFlop" for hierarchy "CPU:CPU|flipFlop:FLAGer" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 158
-Info (12128): Elaborating entity "decoder3x8" for hierarchy "decoder3x8:decoderBlock" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 181
-Info (12128): Elaborating entity "decHex7seg" for hierarchy "decHex7seg:HEX0_decoder" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 191
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "decHex7seg:HEX0_decoder|registradorGenerico:REG_4bits" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/decHex7Seg.vhd Line: 33
-Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "decHex7seg:HEX0_decoder|conversorHex7Seg:DECODER_7seg" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/decHex7Seg.vhd Line: 44
-Info (12128): Elaborating entity "buffer_3_state" for hierarchy "buffer_3_state:bufferSWConj" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 239
-Info (12128): Elaborating entity "buffer_3_state_8bits" for hierarchy "buffer_3_state_8bits:bufferSW8" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 244
-Info (12129): Elaborating entity "edgeDetector" using architecture "A:bordasubida" for hierarchy "edgeDetector:detectorSub0" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 260
+Warning (10541): VHDL Signal Declaration warning at contador.vhd(25): used implicit default value for signal "ula_ain" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 25
+Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM" File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 133
+Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM" File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 137
+Info (12128): Elaborating entity "CPU" for hierarchy "CPU:CPU" File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 146
+Warning (10873): Using initial value X (don't care) for net "control[3..2]" at CPU.vhd(16) File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 16
+Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "CPU:CPU|muxGenerico2x1:MUX_ULA" File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 95
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "CPU:CPU|registradorGenerico:REG_A" File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 102
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "CPU:CPU|registradorGenerico:PC" File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 110
+Info (12128): Elaborating entity "somaUm" for hierarchy "CPU:CPU|somaUm:PC_INC" File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 117
+Info (12128): Elaborating entity "muxGenerico4x1" for hierarchy "CPU:CPU|muxGenerico4x1:MUX_DESVIO" File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 128
+Info (12128): Elaborating entity "ULASomaSub" for hierarchy "CPU:CPU|ULASomaSub:ULA" File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 137
+Info (12128): Elaborating entity "decoder" for hierarchy "CPU:CPU|decoder:DECODER" File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 145
+Info (12128): Elaborating entity "desvio" for hierarchy "CPU:CPU|desvio:DESVIO" File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 149
+Info (12128): Elaborating entity "flipFlop" for hierarchy "CPU:CPU|flipFlop:FLAGer" File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/CPU.vhd Line: 158
+Info (12128): Elaborating entity "decoder3x8" for hierarchy "decoder3x8:decoderBlock" File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 181
+Info (12128): Elaborating entity "decHex7seg" for hierarchy "decHex7seg:HEX0_decoder" File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 191
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "decHex7seg:HEX0_decoder|registradorGenerico:REG_4bits" File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/decHex7Seg.vhd Line: 33
+Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "decHex7seg:HEX0_decoder|conversorHex7Seg:DECODER_7seg" File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/decHex7Seg.vhd Line: 44
+Info (12128): Elaborating entity "buffer_3_state" for hierarchy "buffer_3_state:bufferSWConj" File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 239
+Info (12128): Elaborating entity "buffer_3_state_8bits" for hierarchy "buffer_3_state_8bits:bufferSW8" File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 244
+Info (12129): Elaborating entity "edgeDetector" using architecture "A:bordasubida" for hierarchy "edgeDetector:detectorSub0" File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 260
 Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276007): RAM logic "memoriaRAM:RAM|ram" is uninferred due to asynchronous read logic File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/memoriaRAM.vhd Line: 28
+    Info (276007): RAM logic "memoriaRAM:RAM|ram" is uninferred due to asynchronous read logic File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/memoriaRAM.vhd Line: 28
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
-    Warning (13047): Converted the fan-out from the tri-state buffer "memoriaRAM:RAM|dado_out[0]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[0]" into an OR gate File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/memoriaRAM.vhd Line: 18
-    Warning (13047): Converted the fan-out from the tri-state buffer "buffer_3_state_8bits:bufferSW8|saida[1]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[1]" into an OR gate File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state_8bits.vhd Line: 8
-    Warning (13047): Converted the fan-out from the tri-state buffer "buffer_3_state_8bits:bufferSW8|saida[2]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[2]" into an OR gate File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state_8bits.vhd Line: 8
-    Warning (13047): Converted the fan-out from the tri-state buffer "buffer_3_state_8bits:bufferSW8|saida[3]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[3]" into an OR gate File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state_8bits.vhd Line: 8
-    Warning (13047): Converted the fan-out from the tri-state buffer "buffer_3_state_8bits:bufferSW8|saida[4]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[4]" into an OR gate File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state_8bits.vhd Line: 8
-    Warning (13047): Converted the fan-out from the tri-state buffer "buffer_3_state_8bits:bufferSW8|saida[5]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[5]" into an OR gate File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state_8bits.vhd Line: 8
-    Warning (13047): Converted the fan-out from the tri-state buffer "buffer_3_state_8bits:bufferSW8|saida[6]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[6]" into an OR gate File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state_8bits.vhd Line: 8
-    Warning (13047): Converted the fan-out from the tri-state buffer "buffer_3_state_8bits:bufferSW8|saida[7]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[7]" into an OR gate File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/buffer_3_state_8bits.vhd Line: 8
+    Warning (13047): Converted the fan-out from the tri-state buffer "memoriaRAM:RAM|dado_out[0]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[0]" into an OR gate File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/memoriaRAM.vhd Line: 18
+    Warning (13047): Converted the fan-out from the tri-state buffer "buffer_3_state_8bits:bufferSW8|saida[1]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[1]" into an OR gate File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/buffer_3_state_8bits.vhd Line: 8
+    Warning (13047): Converted the fan-out from the tri-state buffer "buffer_3_state_8bits:bufferSW8|saida[2]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[2]" into an OR gate File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/buffer_3_state_8bits.vhd Line: 8
+    Warning (13047): Converted the fan-out from the tri-state buffer "buffer_3_state_8bits:bufferSW8|saida[3]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[3]" into an OR gate File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/buffer_3_state_8bits.vhd Line: 8
+    Warning (13047): Converted the fan-out from the tri-state buffer "buffer_3_state_8bits:bufferSW8|saida[4]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[4]" into an OR gate File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/buffer_3_state_8bits.vhd Line: 8
+    Warning (13047): Converted the fan-out from the tri-state buffer "buffer_3_state_8bits:bufferSW8|saida[5]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[5]" into an OR gate File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/buffer_3_state_8bits.vhd Line: 8
+    Warning (13047): Converted the fan-out from the tri-state buffer "buffer_3_state_8bits:bufferSW8|saida[6]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[6]" into an OR gate File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/buffer_3_state_8bits.vhd Line: 8
+    Warning (13047): Converted the fan-out from the tri-state buffer "buffer_3_state_8bits:bufferSW8|saida[7]" to the node "CPU:CPU|muxGenerico2x1:MUX_ULA|saida_MUX[7]" into an OR gate File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/buffer_3_state_8bits.vhd Line: 8
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "ula_ain[0]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 25
-    Warning (13410): Pin "ula_ain[1]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 25
-    Warning (13410): Pin "ula_ain[2]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 25
-    Warning (13410): Pin "ula_ain[3]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 25
-    Warning (13410): Pin "ula_ain[4]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 25
-    Warning (13410): Pin "ula_ain[5]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 25
-    Warning (13410): Pin "ula_ain[6]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 25
-    Warning (13410): Pin "ula_ain[7]" is stuck at GND File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 25
+    Warning (13410): Pin "ula_ain[0]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 25
+    Warning (13410): Pin "ula_ain[1]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 25
+    Warning (13410): Pin "ula_ain[2]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 25
+    Warning (13410): Pin "ula_ain[3]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 25
+    Warning (13410): Pin "ula_ain[4]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 25
+    Warning (13410): Pin "ula_ain[5]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 25
+    Warning (13410): Pin "ula_ain[6]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 25
+    Warning (13410): Pin "ula_ain[7]" is stuck at GND File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 25
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 9 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 17
-    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 17
-    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 20
-    Warning (15610): No output dependent on input pin "SW[0]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 17
-    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 20
-    Warning (15610): No output dependent on input pin "SW[1]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 17
-    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 17
-    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 17
-    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[8]" File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[9]" File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 17
+    Warning (15610): No output dependent on input pin "KEY[2]" File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 20
+    Warning (15610): No output dependent on input pin "SW[0]" File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 17
+    Warning (15610): No output dependent on input pin "KEY[1]" File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 20
+    Warning (15610): No output dependent on input pin "SW[1]" File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[4]" File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[5]" File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[7]" File: /home/borg/Insper/meu_careca_preferido/atividades/atividade_8/contador.vhd Line: 17
 Info (21057): Implemented 349 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 16 input pins
     Info (21059): Implemented 110 output pins
     Info (21061): Implemented 223 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 30 warnings
-    Info: Peak virtual memory: 4841 megabytes
-    Info: Processing ended: Fri May 06 17:21:51 2022
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:25
+    Info: Peak virtual memory: 539 megabytes
+    Info: Processing ended: Sat May  7 18:50:02 2022
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:11
 
 

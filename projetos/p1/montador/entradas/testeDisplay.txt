@@ -1,0 +1,15 @@
+LDI %r1, $1 	    #Carrega o acumulador com o valor 1
+STA @0, %r1 	    #Armazena o valor do acumulador na posição zero da memória (MEM[0])
+SOMA %r1, @0 	#Soma o valor atual do acumulador com o conteúdo de MEM[0]
+STA @288, %r1 	#Armazena o valor do acumulador em HEX0
+SOMA %r1, @0 	#Incrementa o valor do acumulador em uma unidade
+STA @289, %r1 	#Armazena o valor do acumulador em HEX1
+SOMA %r1, @0 	#Incrementa o valor do acumulador em uma unidade
+STA @290, %r1 	#Armazena o valor do acumulador em HEX2
+SOMA %r1, @0 	#Incrementa o valor do acumulador em uma unidade
+STA @291, %r1 	#Armazena o valor do acumulador em HEX3
+SOMA %r1, @0 	#Incrementa o valor do acumulador em uma unidade
+STA @292, %r1 	#Armazena o valor do acumulador em HEX4
+SOMA %r1, @0 	#Incrementa o valor do acumulador em uma unidade
+STA @293, %r1 	#Armazena o valor do acumulador em HEX5
+JMP @2 	    #Desvia e continua incrementando e escrevendo nos displays

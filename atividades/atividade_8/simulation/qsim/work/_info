@@ -10,7 +10,7 @@ z2
 cModel Technology
 d/home/leviosa/Documents/Insper/descomp/meu_careca_preferido/atividades/atividade_8/simulation/qsim
 Econtador
-Z0 w1651866871
+Z0 w1651966018
 Z1 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 ^K2eeK[IVbX]]MLcdOEI91
 Z2 DPx8 cyclonev 19 cyclonev_components 0 22 GFL[QAd@dAZF:`jjOGn9>2
 Z3 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 3dzZ?YU_4FC5UU0cTXRET1
@@ -20,8 +20,8 @@ Z6 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
 Z7 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z8 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
 Z9 DPx6 altera 28 altera_primitives_components 0 22 VSD=32;3391kSOd?PDZYj3
-!i122 72
-Z10 dC:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/simulation/qsim
+!i122 74
+Z10 d/home/borg/Insper/meu_careca_preferido/atividades/atividade_8/simulation/qsim
 Z11 8aula8.vho
 Z12 Faula8.vho
 l0
@@ -30,9 +30,9 @@ Vj^hn<FHDGL]11<WN@fjn11
 !s100 Bl?jL:Z:G;hhc7S[b:<LP0
 Z13 OV;C;2020.1;71
 32
-Z14 !s110 1651866872
+Z14 !s110 1651966019
 !i10b 1
-Z15 !s108 1651866872.000000
+Z15 !s108 1651966019.000000
 Z16 !s90 -work|work|aula8.vho|
 Z17 !s107 aula8.vho|
 !i113 1
@@ -49,11 +49,11 @@ R7
 R8
 R9
 DEx4 work 8 contador 0 22 j^hn<FHDGL]11<WN@fjn11
-!i122 72
-l626
-L65 7000
-VV07Fb?VZgf;;ilhYm?Q?B0
-!s100 M38Fg@I9>Be?ez]gFT38T0
+!i122 74
+l645
+L194 6763
+Vj@UK@Oegm90La4^]SiLR=0
+!s100 88XfPg3dV9F?>X?mM>b`@3
 R13
 32
 R14
@@ -65,48 +65,48 @@ R17
 R18
 R19
 Econtador_vhd_vec_tst
-Z20 w1651866870
+R0
 R7
 R8
-!i122 73
+!i122 75
 R10
-Z21 8Waveform2.vwf.vht
-Z22 FWaveform2.vwf.vht
+Z20 8Waveform5.vwf.vht
+Z21 FWaveform5.vwf.vht
 l0
-Z23 L32 1
+Z22 L32 1
 VdlY?7K2]@onfaD9j9@zo:2
 !s100 3E>Znb`[6LD<SCQMT6[8<3
 R13
 32
-Z24 !s110 1651866873
+Z23 !s110 1651966020
 !i10b 1
 R15
-Z25 !s90 -work|work|Waveform2.vwf.vht|
-Z26 !s107 Waveform2.vwf.vht|
+Z24 !s90 -work|work|Waveform5.vwf.vht|
+!s107 Waveform5.vwf.vht|
 !i113 1
 R18
 R19
 Acontador_arch
 R7
 R8
-Z27 DEx4 work 20 contador_vhd_vec_tst 0 22 dlY?7K2]@onfaD9j9@zo:2
-!i122 73
+Z25 DEx4 work 20 contador_vhd_vec_tst 0 22 dlY?7K2]@onfaD9j9@zo:2
+!i122 75
 l83
-Z28 L34 187
-Z29 VC5SYmRgW;nB7ZJM_H1Xlf1
-Z30 !s100 SF_g]jG>18h]FGETdn63^1
+L34 174
+VlBfoSa6ehk0V]74Yn:FdV0
+!s100 D4g^kJb8BZZY4TX7cWAlQ1
 R13
 32
-R24
+R23
 !i10b 1
 R15
-R25
-R26
+R24
+Z26 !s107 Waveform5.vwf.vht|
 !i113 1
 R18
 R19
 Eulasomasub
-Z31 w1651789409
+Z27 w1651789409
 R4
 R1
 R6
@@ -115,7 +115,7 @@ R7
 R8
 R3
 !i122 64
-R10
+Z28 dC:/Users/Bea/descomp/meu_careca_preferido/atividades/atividade_8/simulation/qsim
 R11
 R12
 l0
@@ -124,9 +124,9 @@ ViTV85FgYP<zeEcc`kOLmS3
 !s100 bPVAgbOVe<;C5[]ff9XSU2
 R13
 32
-Z32 !s110 1651789410
+Z29 !s110 1651789410
 !i10b 1
-Z33 !s108 1651789410.000000
+Z30 !s108 1651789410.000000
 R16
 R17
 !i113 1
@@ -148,33 +148,33 @@ VkKn3FH^b=XL5Hbe_1W5[h2
 !s100 X]hhcD5SH3:VKok3FG@o<3
 R13
 32
-R32
+R29
 !i10b 1
-R33
+R30
 R16
 R17
 !i113 1
 R18
 R19
 Eulasomasub_vhd_vec_tst
-Z34 w1651789407
+Z31 w1651789407
 R7
 R8
 !i122 65
-R10
-Z35 8Waveform4.vwf.vht
-Z36 FWaveform4.vwf.vht
+R28
+Z32 8Waveform4.vwf.vht
+Z33 FWaveform4.vwf.vht
 l0
-R23
+R22
 VUEQK2kF:EId_Q4IHbfMg20
 !s100 AdK[;L9fO8jUo3@EniiNV3
 R13
 32
-R32
+R29
 !i10b 1
-R33
-Z37 !s90 -work|work|Waveform4.vwf.vht|
-Z38 !s107 Waveform4.vwf.vht|
+R30
+Z34 !s90 -work|work|Waveform4.vwf.vht|
+Z35 !s107 Waveform4.vwf.vht|
 !i113 1
 R18
 R19
@@ -189,11 +189,11 @@ VEP]A:WIbYD9XKRHBY1M950
 !s100 Iin7Y@GW;8OzP<Za6oWJl0
 R13
 32
-R32
+R29
 !i10b 1
-R33
-R37
-R38
+R30
+R34
+R35
 !i113 1
 R18
 R19

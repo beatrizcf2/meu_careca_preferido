@@ -31,7 +31,7 @@ architecture comportamento of decoder is
   
   alias  jeqI         : std_logic is instruction(7);
   alias  selMux         : std_logic is instruction(6);
-  alias  habAcumulador         : std_logic is instruction(5);
+  alias  habBanco         : std_logic is instruction(5);
   
   alias  operacao         : std_logic_vector is instruction(4 downto 3);
   alias  habFlag         : std_logic is instruction(2);
@@ -51,7 +51,7 @@ architecture comportamento of decoder is
 					 "01" when (entrada = SUM) else 
 					 "10" when (entrada = LDI) or (entrada = LDA) else 
 					 "00";
-	 habAcumulador <= '1' when (entrada = LDA) or  (entrada = SUM) or  (entrada = SUB) or  (entrada = LDI) else '0';
+	 habBanco <= '1' when (entrada = LDA) or  (entrada = SUM) or  (entrada = SUB) or  (entrada = LDI) else '0';
 	 selMux <= '1' when (entrada = LDI) else '0';
 	 jeqI <= '1' when (entrada = JEQ) else '0';
 	 jsrI <= '1' when (entrada = JSR) else '0';
