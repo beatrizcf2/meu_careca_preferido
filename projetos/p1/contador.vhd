@@ -21,6 +21,7 @@ entity contador is
 				--habFlaguinha  : out std_logic;
             FPGA_RESET_N : in std_logic;
 				HEX0, HEX1, HEX2, HEX3, HEX4, HEX5 : out std_logic_vector(6 downto 0);
+				saidaBanco           : out std_logic_vector(larguraDados-1 downto 0);
 				--flaginha : out std_logic;
 				--ula_ain, ula_bin, ula_out : out std_logic_vector(larguraDados-1 downto 0);
             -- simulacao
@@ -85,7 +86,7 @@ architecture arquitetura of contador is
   signal saidaDecHEX5       :  std_logic_vector(6 downto 0);
 
 
-  -- chaves e botoes
+  -- chaves, botoes e tempo
 
   signal habKEY0            :  std_logic;
   signal habKEY1            :  std_logic;
@@ -95,7 +96,8 @@ architecture arquitetura of contador is
   signal habSW8             :  std_logic;
   signal habSW9             :  std_logic;
   signal habSWconj          :  std_logic;
-
+  signal habTempo           :  std_logic;
+  
   signal saidaBufferKEY0            :  std_logic; -- Fazer alias com o dado lido?
   signal saidaBufferKEY1            :  std_logic;
   signal saidaBufferKEY2            :  std_logic;
@@ -105,10 +107,12 @@ architecture arquitetura of contador is
   signal saidaBufferSW9             :  std_logic;
   signal saidaBufferSWconj          :  std_logic;
 	
+-- 
+  signal saidaDebouncer 			   :  std_logic;
+  signal ADDR_511, ADDR_507   		:  std_logic;
+  signal key0_clock 						:  std_logic;
   
-  signal saidaDebouncer, ADDR_511   :  std_logic;
-  signal key0_clock : std_logic;
-  
+  signal bancoSaida           : std_logic_vector(larguraDados-1 downto 0);
   --signal leituraChaves              : std_logic_vector(7 downto 0); -- n tenho ctz se precisa msm
   
  
@@ -150,6 +154,7 @@ CPU     : entity work.CPU_rm
 							 ROMAddress    => ROMAddress,
 							 dataAddress   => dataAddress,
 							 dataOut       => dadoEscrito,
+							 bancoSaida    => saidaBanco,
 							 CLK           => CLK);
 							 
 
@@ -250,8 +255,11 @@ bufferSW9 :  entity work.buffer_3_state_8bits
 ADDR_511 <= dataAddress(8) and dataAddress(7) and dataAddress(6) and 
 				dataAddress(5) and dataAddress(4) and dataAddress(3) and 
 				dataAddress(2) and dataAddress(1) and dataAddress(0) and WR;
+-- ADDR_510/ADDR_509/ADDR_508	
 				
-				
+ADDR_507 <= dataAddress(8) and dataAddress(7) and dataAddress(6) and 
+				dataAddress(5) and dataAddress(4) and dataAddress(3) and 
+				(not dataAddress(2)) and dataAddress(1) and dataAddress(0) and WR;
 				
 detectorSub0: work.edgeDetector(bordaSubida)
         port map (clk     => CLOCK_50, 
@@ -312,7 +320,31 @@ habSWconj  <= RD AND saidaDecoderBlock(5) AND saidaDecoderAddr(0) AND (NOT dataA
 habSW8     <= RD AND saidaDecoderBlock(5) AND saidaDecoderAddr(1) AND (NOT dataAddress(5));
 habSW9     <= RD AND saidaDecoderBlock(5) AND saidaDecoderAddr(2) AND (NOT dataAddress(5));
 
+habTempo   <= RD AND saidaDecoderBlock(5) AND saidaDecoderAddr(3) AND (NOT dataAddress(5));
 
+
+interfaceTempo0 : entity work.divisorGenerico_e_Interface 
+			generic map (divisor => 25000000)
+			port map (clk => CLK,
+						 habilitaLeitura => habTempo and ((not SW(9)) and (not SW(8))),
+						 limpaLeitura => ADDR_507,
+						 leituraUmSegundo => dadoLido);
+interfaceTempo1 : entity work.divisorGenerico_e_Interface 
+			generic map (divisor => 2500000)
+			port map (clk => CLK,
+						 habilitaLeitura => habTempo and (SW(9) and (not SW(8))),
+						 limpaLeitura => ADDR_507,
+						 leituraUmSegundo => dadoLido);
+	
+interfaceTempo2 : entity work.divisorGenerico_e_Interface 
+			generic map (divisor => 250000)
+			port map (clk => CLK,
+						 habilitaLeitura => habTempo and ((not SW(9)) and SW(8)),
+						 limpaLeitura => ADDR_507,
+						 leituraUmSegundo => dadoLido);
+						 
+
+						 
 endROM     <= ROMAddress;
 endRAM     <= enderecoRAM;
 valorDado  <= dadoLido;

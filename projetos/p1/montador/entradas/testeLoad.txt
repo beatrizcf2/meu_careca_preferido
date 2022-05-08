@@ -1,0 +1,14 @@
+LDI %r1, $1		#	Carrega o acumulador com o valor 0
+STA @1, %r1
+LDI %r1, $0		#	Carrega o acumulador com o valor 1
+STA @288, %r1   # 
+SOMA %r1, @1
+STA @289, %r1
+SOMA %r1, @1
+STA @290, %r1
+SOMA %r1, @1
+STA @291, %r1
+SOMA %r1, @1
+STA @292, %r1
+SOMA %r1, @1
+STA @293, %r1

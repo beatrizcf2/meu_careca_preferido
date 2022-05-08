@@ -37,5 +37,6 @@ STA @511, %r1	#	Limpa a leitura do botão
 LDA %r1, @2		    #	Carrega o valor de MEM[2] (contador)
 SOMA %r1, @1		    #	Soma com a constante em MEM[1]
 STA @2, %r1		#	Salva o incremento em MEM[2] (contador)
+STA @288, %r1
 STA @258, %r1	#   Armazena o valor do bit0 do acumulador no LDR9
 RET			    #   Retorna da sub-rotina

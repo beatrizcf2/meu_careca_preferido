@@ -21,7 +21,7 @@ entity CPU_rm is
 	 ROMAddress    : out std_logic_vector(larguraEndereco-1 downto 0);   -- endereco da instrucao da ROM
 	 dataAddress   : out std_logic_vector(larguraEndereco-1 downto 0);   -- barramento  de enderecos da RAM
 	 dataOut       : out std_logic_vector(larguraDados-1 downto 0);      -- barramento de escrita de dados - entrada de dados da RAM
-	 
+	 bancoSaida    : out std_logic_vector(larguraDados-1 downto 0);
 	 
 	 -- fins de debug
 --	 flag : out std_logic;
@@ -195,6 +195,6 @@ control(1) <= habilitaLeituraMEM;
 --
 --ulabin <= saidaMuxULA;
 --ulaout <= saidaOperacaoULA;
-
+bancoSaida <= saidaBanco;
 
 end architecture;

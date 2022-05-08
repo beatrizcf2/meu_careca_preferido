@@ -39,7 +39,7 @@ tmp(2) := "0101001000000010";	-- STA @2, %r1		#	Armazena o valor do acumulador e
 tmp(3) := "0100001000000001";	-- LDI %r1, $1		#	Carrega o acumulador com o valor 1
 tmp(4) := "0101001000000001";	-- STA @1, %r1		#	Armazena o valor do acumulador em MEM[1] (constante 1)
 tmp(5) := "0000000000000000";	-- NOP			
-tmp(6) := "0001001101100000";	-- LDA %r1, @352	#	Carrega o acumulador com a leitura do botão KEY0
+tmp(6) := "0001001101000011";	-- LDA %r1, @323	#	Carrega o acumulador com a leitura do botão KEY0
 tmp(7) := "1000001000000000";	-- CEQ %r1, @0		#	Compara com o valor de MEM[0] (constante 0)
 tmp(8) := "0111000000001010";	-- JEQ @10		#	Desvia se igual a 0 (botão não foi pressionado)
 tmp(9) := "1001000000100010";	-- JSR $LABEL	#	O botão foi pressionado, chama a sub-rotina de incremento
@@ -67,12 +67,16 @@ tmp(30) := "0000000000000000";	-- NOP
 tmp(31) := "0000000000000000";	-- NOP				
 tmp(32) := "0000000000000000";	-- NOP				
 tmp(33) := "0000000000000000";	-- NOP				
-tmp(34) := "0101001111111111";	-- STA @511, %r1	#	Limpa a leitura do botão
+tmp(34) := "0101001111111011";	-- STA @507, %r1	#	Limpa a leitura do botão
 tmp(35) := "0001001000000010";	-- LDA %r1, @2		    #	Carrega o valor de MEM[2] (contador)
 tmp(36) := "0010001000000001";	-- SOMA %r1, @1		    #	Soma com a constante em MEM[1]
 tmp(37) := "0101001000000010";	-- STA @2, %r1		#	Salva o incremento em MEM[2] (contador)
-tmp(38) := "0101001100000010";	-- STA @258, %r1	#   Armazena o valor do bit0 do acumulador no LDR9
-tmp(39) := "1010000000000000";	-- RET			    #   Retorna da sub-rotina
+tmp(38) := "0101001100100000";	-- STA @288, %r1
+tmp(39) := "0101001100000010";	-- STA @258, %r1	#   Armazena o valor do bit0 do acumulador no LDR9
+tmp(40) := "1010000000000000";	-- RET			    #   Retorna da sub-rotina
+
+
+
 
 
 
