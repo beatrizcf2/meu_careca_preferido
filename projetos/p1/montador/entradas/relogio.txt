@@ -88,7 +88,7 @@ VERIFICA_KEY2:
 LDA %r1, @354                   # Carrega valor KEY2
 CEQ %r1, @0                     # Compara com 0
 JEQ $VERIFICA_KEY3              # Desvia para verificar KEY0 se KEY2 nao foi pressionado
-JSR $INCREMENTO_KEY2                 # Desvia para o incremento
+JSR $INCREMENTO_KEY2            # Desvia para o incremento
 NOP			                    # NOP
 JMP $VERIFICA_KEY3              # Pulo para a verificacao do KEY0 
 
@@ -100,15 +100,13 @@ JSR $SELECIONA_CAMPO            # Desvia para a mudanca de campo
 NOP			                    # NOP
 JMP $VERIFICA_KEY0              # Pulo para a verificacao do KEY0 
 
-
-
 CONFIGURACAO_DESATIVADA:
 # Verifica se deu um segundo
 VERIFICA_SEGUNDO:
 LDA %r1, @323	                #Carrega o r1 com a base de tempo
 CEQ %r1, @0		                #Compara com o valor de MEM[0] (constante 0)
 JEQ $VERIFICA_KEY0		        #Desvia para verificar key0 se igual a 0 (ainda nao deu um segundo) 
-JSR $INCREMENTO_CLK                 #Passou um segundo, chama a sub-rotina de incremento 
+JSR $INCREMENTO_CLK             #Passou um segundo, chama a sub-rotina de incremento 
 NOP			                    #  NOP
 JMP $VERIFICA_KEY0              #Pulo para a verificacao do KEY0  
 
@@ -163,8 +161,12 @@ JEQ $MINUTO_UNIDADE
 JMP $ESCREVE_DISPLAY
 
 MINUTO_UNIDADE:
+LDA %r1, @320                   # Carrega valor SW0~SW7
+CEQ %r1, @1                     # Compara com 1
+JEQ $PULA_ZERO0       # Se for 1, verifico a leitura de segundo a partir do a partir do botao
 LDA %r1, @0      #Carrega o valor de MEM[0] (constante zero) no r0
 STA @11, %r1     # Zero as unidades dos segundos
+PULA_ZERO0:
 LDA %r2, @12     #Carrega o valor de MEM[12] (unidades minuto) no r2
 SOMA %r2, @1     #Soma o r2 com o valor de MEM[1] (constante 1)
 STA @12, %r2     #Salva o incremento em MEM[12] (unidades minuto)
@@ -183,8 +185,12 @@ JEQ $HORA_UNIDADE
 JMP $ESCREVE_DISPLAY
 
 HORA_UNIDADE:
+LDA %r1, @320                   # Carrega valor SW0~SW7
+CEQ %r1, @1                     # Compara com 1
+JEQ $PULA_ZERO1       # Se for 1, verifico a leitura de segundo a partir do a partir do botao
 LDA %r3, @0      #Carrega o valor de MEM[0] (constante zero) no r3
 STA @13, %r3     # Zero as unidades dos segundos
+PULA_ZERO1:
 LDA %r4, @14     #Carrega o valor de MEM[14] (unidades hora) no r4
 SOMA %r4, @1     #Soma o r4 com o valor de MEM[1] (constante 1)
 STA @14, %r4     #Salva o incremento em MEM[14] (unidades hora)
