@@ -17,6 +17,8 @@ LDI %r0, $4
 STA @4, %r0      #Armazena o valor de r0 em MEM[4] (constante 4)
 LDI %r0, $2
 STA @5, %r0      #Armazena o valor de r0 em MEM[5] (constante 2)
+LDI %r0, $3
+STA @6, %r0      #Armazena o valor de r0 em MEM[5] (constante 3)
 LDI %r0, $0
 STA @7, %r0       #Armazena o valor de r0 em MEM[7] (flag ta_tarde)
 STA @8, %r0       #Armazena o valor de r0 em MEM[8] (flag meia_noite)
@@ -24,6 +26,8 @@ LDI %r0, $4
 STA @16, %r0      #Armazena o valor de r0 em MEM[16] (constante 4)
 LDI %r0, $2
 STA @17, %r0      #Armazena o valor de r0 em MEM[17] (constante 2)
+LDI %r0, $0
+STA @18, %r0      #Armazena o valor de r0 em MEM[18] (variavel campo) 0-seg 1-min 2-hr
 
 LDI %r7, $0       # Inicializa o r7 com 0 para zerar leituras de botoes futuras
 
@@ -83,10 +87,19 @@ JMP $VERIFICA_KEY2              #Pulo para a verificacao do KEY0 (nao pode passa
 VERIFICA_KEY2:
 LDA %r1, @354                   # Carrega valor KEY2
 CEQ %r1, @0                     # Compara com 0
-JEQ $VERIFICA_KEY0              # Desvia para verificar KEY0 se KEY2 nao foi pressionado
+JEQ $VERIFICA_KEY3              # Desvia para verificar KEY0 se KEY2 nao foi pressionado
 JSR $INCREMENTO_KEY2                 # Desvia para o incremento
 NOP			                    # NOP
+JMP $VERIFICA_KEY3              # Pulo para a verificacao do KEY0 
+
+VERIFICA_KEY3:
+LDA %r1, @355                   # Carrega valor KEY3
+CEQ %r1, @0                     # Compara com 0
+JEQ $VERIFICA_KEY0              # Desvia para verificar KEY0 se KEY3 nao foi pressionado
+JSR $SELECIONA_CAMPO            # Desvia para a mudanca de campo 
+NOP			                    # NOP
 JMP $VERIFICA_KEY0              # Pulo para a verificacao do KEY0 
+
 
 
 CONFIGURACAO_DESATIVADA:
@@ -98,6 +111,8 @@ JEQ $VERIFICA_KEY0		        #Desvia para verificar key0 se igual a 0 (ainda nao 
 JSR $INCREMENTO_CLK                 #Passou um segundo, chama a sub-rotina de incremento 
 NOP			                    #  NOP
 JMP $VERIFICA_KEY0              #Pulo para a verificacao do KEY0  
+
+
 
 # Verifica se key0 foi pressionado
 VERIFICA_KEY0:
@@ -111,11 +126,20 @@ JMP $LOOP_PRINCIPAL     # Desvia para o inicio do loop depois da mudanca de
 # Sub-rotina de incremento ----------------------------------------------
 INCREMENTO_KEY2:
 STA @509, %r7	 #Limpa a leitura do da base de tempo
+LDA %r0, @18
+CEQ %r0, @0      # Compara com zero - se for zero pula pra segundo
+JEQ $SEGUNDO_UNIDADE
+CEQ %r0, @1      # Compara com UM - se for zero pula pra minuto
+JEQ $MINUTO_UNIDADE
+CEQ %r0, @5      # Compara com DOIS - se for zero pula pra hora
+JEQ $HORA_UNIDADE
 JMP $SEGUNDO_UNIDADE
 
 INCREMENTO_CLK:
 STA @507, %r7	 #Limpa a leitura do da base de tempo
 JMP $SEGUNDO_UNIDADE
+
+
 
 SEGUNDO_UNIDADE:
 LDA %r0, @10     #Carrega o valor de MEM[10] (unidades segundo) no r0
@@ -251,3 +275,17 @@ LDA %r1, @4             # Carrega quatro no registrador
 STA @16, %r1            # Muda a variavel de unidade de hora para quatro
 JMP $FIM_MUDANCA_BASE   # Volta para o fim da mudanca de base, para retornar da sub-rotina
 # ------------------------------------------------------------------------
+
+SELECIONA_CAMPO:
+STA @508, %r7
+LDA %r0, @18     # Carrega variavel campo
+SOMA %r0, @1
+STA @18, %r0
+CEQ %r0, @6      # Compara r0 com tres
+JEQ $RESETA_CAMPO
+RET
+
+RESETA_CAMPO:
+LDA %r0, @0        # Carrega zero no registrador
+STA @18, %r0       # Carrega zero na MEM[18]
+RET

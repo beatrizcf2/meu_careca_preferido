@@ -1,0 +1,12 @@
+LDI %r0, $12
+STA @10, %r0
+LABEL0:
+LDI %r0, $LABEL1
+STA @1, %r0
+
+LABEL1:
+LDI %r0, $LABEL0
+STA @1, %r0
+
+LDA %r1,
+JMP %r1
