@@ -1,4 +1,4 @@
-LDI $	    # Carrega o acumulador com o valor 1
+LDI $1	    # Carrega o acumulador com o valor 1
 STA @0	    # Armazena o valor do acumulador na posição zero da memória (MEM[0])
 AQUI:
 LDI $1

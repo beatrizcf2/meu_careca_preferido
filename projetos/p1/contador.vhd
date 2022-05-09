@@ -342,6 +342,13 @@ interfaceTempo2 : entity work.divisorGenerico_e_Interface
 						 habilitaLeitura => habTempo and ((not SW(9)) and SW(8)),
 						 limpaLeitura => ADDR_507,
 						 leituraUmSegundo => dadoLido);
+		
+interfaceTempo3 : entity work.divisorGenerico_e_Interface 
+			generic map (divisor => 2500)
+			port map (clk => CLK,
+						 habilitaLeitura => habTempo and (SW(9) and SW(8)),
+						 limpaLeitura => ADDR_507,
+						 leituraUmSegundo => dadoLido);
 						 
 
 						 

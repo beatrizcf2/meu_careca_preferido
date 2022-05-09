@@ -1,12 +1,12 @@
-Fitter Status : Successful - Sun May  8 00:35:43 2022
+Fitter Status : Successful - Mon May  9 01:48:35 2022
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : relogioRM
 Top-level Entity Name : contador
 Family : Cyclone V
 Device : 5CEBA4F23C7
 Timing Models : Final
-Logic utilization (in ALMs) : 158 / 18,480 ( < 1 % )
-Total registers : 165
+Logic utilization (in ALMs) : 510 / 18,480 ( 3 % )
+Total registers : 754
 Total pins : 99 / 224 ( 44 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 3,153,920 ( 0 % )

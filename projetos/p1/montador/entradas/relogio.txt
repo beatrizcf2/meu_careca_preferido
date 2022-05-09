@@ -1,0 +1,162 @@
+#-----------------------------------------------------------------
+#CODIGO ASSEMBLY RELOGIO
+#-----------------------------------------------------------------
+
+# SETUP()
+
+# Inicializa constantes na memória - usando registrador 0
+LDI %r0, $0
+STA @0, %r0      #Armazena o valor de r0 em MEM[0] (constante 0)
+LDI %r0, $1      
+STA @1, %r0      #Armazena o valor de r0 em MEM[1] (constante 1)
+LDI %r0, $10
+STA @2, %r0      #Armazena o valor de r0 em MEM[2] (constante 10)
+LDI %r0, $6
+STA @3, %r0      #Armazena o valor de r0 em MEM[3] (constante 6)
+LDI %r0, $0
+STA @7, %r0       #Armazena o valor de r0 em MEM[7] (flag ta_tarde)
+STA @8, %r0       #Armazena o valor de r0 em MEM[8] (flag meia_noite)
+LDI %r0, $4
+STA @16, %r0      #Armazena o valor de r0 em MEM[16] (constante 4)
+LDI %r0, $2
+STA @17, %r0      #Armazena o valor de r0 em MEM[17] (constante 2)
+
+INICIO:
+# Inicializa variáveis de tempo (segundos,minutos,horas)
+LDA %r0, @0      # apago o led da flag
+STA @259, %r0  
+LDI %r0, $0 
+STA @7, %r0      #Zero a flag ta_tarde
+LDI %r0, $0 
+STA @8, %r0      #Zero a flag meia_noite
+STA @10, %r0     #Armazena o valor de r0 em MEM[10] (unidades segundo)
+STA @11, %r0     #Armazena o valor de r1 em MEM[11] (dezenas segundo)
+STA @12, %r0     #Armazena o valor de r2 em MEM[12] (unidades minuto)
+STA @13, %r0     #Armazena o valor de r3 em MEM[13] (dezenas minuto)
+STA @14, %r0     #Armazena o valor de r4 em MEM[14] (unidades hora)
+STA @15, %r0     #Armazena o valor de r5 em MEM[15] (dezenas hora)
+
+# Inicializa os displays
+LDI %r0, $0 
+STA @288, %r0    #Inicializa display HEX0 com valor 0
+STA @289, %r0    #Inicializa display HEX1 com valor 0
+STA @290, %r0    #Inicializa display HEX2 com valor 0
+STA @291, %r0    #Inicializa display HEX3 com valor 0
+STA @292, %r0    #Inicializa display HEX4 com valor 0
+STA @293, %r0    #Inicializa display HEX5 com valor 0
+
+LOOP_PRINCIPAL:
+LDA %r0, @8      #Carrega flag meia-noite
+CEQ %r0, @1      #Compara flag com MEM[1] (constante 1)
+JEQ $INICIO      # Se for meia-noite, zero tudo
+LDA %r1, @323	 #Carrega o r1 com a base de tempo
+CEQ %r1, @0		 #Compara com o valor de MEM[0] (constante 0)
+JEQ $LOOP_PRINCIPAL		 #Desvia se igual a 0 (botão não foi pressionado)
+JSR $INCREMENTO  #O botão foi pressionado, chama a sub-rotina de incremento 
+NOP			     #  NOP
+JMP $LOOP_PRINCIPAL      #Fecha o laço principal, faz uma nova leitura de KEY0
+
+INCREMENTO:
+SEGUNDO_UNIDADE:
+STA @507, %r7	 #Limpa a leitura do da base de tempo
+LDA %r0, @10     #Carrega o valor de MEM[10] (unidades segundo) no r0
+SOMA %r0, @1     #Soma o r0 com o valor de MEM[1] (constante 1)
+STA @10, %r0     #Salva o incremento em MEM[10] (unidades segundo)
+CEQ %r0, @2      #Compara as unidades de segundo com MEM[2] (constante 10)
+JEQ $SEGUNDO_DEZENA #Caso o valor das unidades venha a ser igual a 10, pula para dezenas
+JMP $ESCREVE_DISPLAY
+FIM_INCREMENTO:
+RET
+
+
+SEGUNDO_DEZENA:
+LDA %r0, @0      #Carrega o valor de MEM[0] (constante zero) no r0
+STA @10, %r0     # Zero as unidades dos segundos
+LDA %r1, @11     #Carrega o valor de MEM[11] (dezenas segundo) no r1
+SOMA %r1, @1     #Soma o r0 com o valor de MEM[1] (constante 1)
+STA @11, %r1     #Salva o incremento em MEM[11] (dezenas segundo)
+CEQ %r1, @3      #Compara as unidades de segundo com MEM[3] (constante 6)
+JEQ $MINUTO_UNIDADE
+JMP $ESCREVE_DISPLAY
+
+MINUTO_UNIDADE:
+LDA %r1, @0      #Carrega o valor de MEM[0] (constante zero) no r0
+STA @11, %r1     # Zero as unidades dos segundos
+LDA %r2, @12     #Carrega o valor de MEM[12] (unidades minuto) no r2
+SOMA %r2, @1     #Soma o r2 com o valor de MEM[1] (constante 1)
+STA @12, %r2     #Salva o incremento em MEM[12] (unidades minuto)
+CEQ %r2, @2      #Compara as unidades de minuto com MEM[2] (constante 10)
+JEQ $MINUTO_DEZENA #Caso o valor das unidades venha a ser igual a 10, pula para dezenas
+JMP $ESCREVE_DISPLAY
+
+MINUTO_DEZENA:
+LDA %r2, @0      #Carrega o valor de MEM[0] (constante zero) no r0
+STA @12, %r2     # Zero as unidades dos segundos
+LDA %r3, @13     #Carrega o valor de MEM[13] (dezenas minuto) no r3
+SOMA %r3, @1     #Soma o r0 com o valor de MEM[1] (constante 1)
+STA @13, %r3     #Salva o incremento em MEM[13] (dezenas minuto)
+CEQ %r3, @3      #Compara as unidades de minuto com MEM[3] (constante 6)
+JEQ $HORA_UNIDADE
+JMP $ESCREVE_DISPLAY
+
+HORA_UNIDADE:
+LDA %r3, @0      #Carrega o valor de MEM[0] (constante zero) no r3
+STA @13, %r3     # Zero as unidades dos segundos
+LDA %r4, @14     #Carrega o valor de MEM[14] (unidades hora) no r4
+SOMA %r4, @1     #Soma o r4 com o valor de MEM[1] (constante 1)
+STA @14, %r4     #Salva o incremento em MEM[14] (unidades hora)
+CEQ %r4, @2      #Compara as unidades de hora com MEM[2] (constante 10)
+JEQ $HORA_DEZENA #Caso o valor das unidades venha a ser igual a 10, pula para dezenas
+LDA %r6, @7      #Carrega o valor de MEM[7] (flag ta_tarde) no r6
+CEQ %r6, @1      # Verifica se flag ta_tarde é um
+JEQ $TA_TARDE    # pula para verificacao do valor de unidade de hora max (2 ou 4)
+JMP $ESCREVE_DISPLAY
+
+HORA_DEZENA:
+LDA %r4, @0      #Carrega o valor de MEM[0] (constante zero) no r0
+STA @14, %r4     # Zero as unidades dos segundos
+LDA %r5, @15     #Carrega o valor de MEM[15] (dezenas minuto) no r5
+SOMA %r5, @1     #Soma o r0 com o valor de MEM[1] (constante 1)
+STA @15, %r5     #Salva o incremento em MEM[15] (dezenas minuto)
+CEQ %r5, @17      #Compara as dezenas da hora com MEM[17] (2 ou 1)
+JEQ $SETA_FLAG
+JMP $ESCREVE_DISPLAY
+
+ESCREVE_DISPLAY:
+LDA %r0, @10     #Carrega o valor dos segundos em r0
+STA @288, %r0    #Inicializa display HEX0 com valor 0
+LDA %r0, @11
+STA @289, %r0    #Inicializa display HEX1 com valor 0
+LDA %r0, @12     #Carrega o valor dos segundos em r0
+STA @290, %r2    #Inicializa display HEX2 com valor 0
+LDA %r0, @13     #Carrega o valor dos segundos em r0
+STA @291, %r0    #Inicializa display HEX3 com valor 0
+LDA %r0, @14     #Carrega o valor dos segundos em r0
+STA @292, %r0    #Inicializa display HEX4 com valor 0
+LDA %r0, @15     #Carrega o valor dos segundos em r0
+STA @293, %r0    #Inicializa display HEX5 com valor 0
+JMP $FIM_INCREMENTO
+
+# Aciona a flag, indicando max dezena hora
+SETA_FLAG:
+LDA %r0, @1     # acendo led da flag
+STA @258, %r0
+LDI %r6, $1
+STA @7, %r6     # Guarda 1 na flag ta_tarde
+JMP $ESCREVE_DISPLAY
+
+# Verifica se deu meia-noite
+TA_TARDE:
+LDA %r0, @0      # apago o led da flag
+STA @258, %r0  
+LDA %r4, @14     #Carrega o valor de MEM[14] (unidades hora) no r4
+CEQ %r4, @16      #Compara as unidades de hora com MEM[4] (constante 4)
+JEQ $MEIA_NOITE
+JMP $ESCREVE_DISPLAY
+
+MEIA_NOITE:
+LDA %r0, @1      # acendo o led da flag
+STA @259, %r0  
+LDI %r6, $1
+STA @8, %r6     # Guarda 1 na flag meia_noite
+JMP $FIM_INCREMENTO

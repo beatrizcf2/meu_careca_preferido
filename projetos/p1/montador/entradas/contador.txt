@@ -1,0 +1,140 @@
+#-----------------------------------------
+#CODIGO ASSEMBLY
+#-----------------------------------------
+
+# SETUP ---------------------------------
+# Inicializando os displays
+LDI $0			    #Carrega o acumulador com o valor 0
+STA @288			#Armazena o valor do acumulador em HEX0
+STA @289			#Armazena o valor do acumulador em HEX1
+STA @290			#Armazena o valor do acumulador em HEX2
+STA @291			#Armazena o valor do acumulador em HEX3
+STA @292			#Armazena o valor do acumulador em HEX4
+STA @293			#Armazena o valor do acumulador em HEX5
+
+# inicializando os leds
+LDI $0			    #Carrega o acumulador com o valor 0
+STA @256			#Armazena o valor do bit0 do acumulador no LDR0 ~ LEDR7
+STA @257			#Armazena o valor do bit0 do acumulador no LDR8
+STA @258			#Armazena o valor do bit0 do acumulador no LDR9
+
+#inicializando os enderecos de memoria
+LDI $0			    #Carrega o acumulador com o valor 0
+STA @0			    #Armazena o valor do acumulador em MEM[0] (unidades)
+STA @1			    #Armazena o valor do acumulador em MEM[1] (dezenas)
+STA @2			    #Armazena o valor do acumulador em MEM[2] (centenas)
+STA @3			    #Armazena o valor do acumulador em MEM[3] (limite unidades)
+STA @4			    #Armazena o valor do acumulador em MEM[4] (limite dezenas)
+STA @5			    #Armazena o valor do acumulador em MEM[5] (limite centenas)
+STA @6			    #Armazena o valor do acumulador em MEM[6] (flag inibir contagem)
+
+# inicializando as variaveiss necessarias
+LDI $0			    #Carrega o acumulador com o valor 0
+STA @10             #Armazena o valor zero em MEM[10], para poder fazer comparações;
+
+LDI $1			    #Carrega o acumulador com o valor 1
+STA @11             #Armazena o valor um em MEM[11], para fazer incrementos;
+
+LDI $10			    #Carrega o acumulador com o valor 10
+STA @12             #Armazena o valor dez em MEM[12], para poder fazer comparações que definem o limite da faixa a ser exibida no display.
+
+# LOOP PRINCIPAL -----------------------
+
+INICIO:
+# VERIFICA KEY 0
+KEY0:
+LDA @352              #Ler o botão de incremento de contagem (KEY0) e armazena no acumulador
+#CEQ @10               #Compara o valor zero (na MEM[10]) com o valor do KEY0 
+#JEQ @KEY1            #Caso nao tenha sido pressionado, desviar para leitura do prox botao.
+JSR @INCREMENTO      #pula para a subrotina INCREMENTO caso tenha sido pressionado
+JSR @ESCREVEDISPLAY  #Escrever os valores das variáveis nos respectivos displays (pode ser uma sub-rotina).
+JMP @INICIO
+
+# VERIFICA KEY1
+KEY1:
+LDA @353              #Ler o botão de configuração do limite de incremento (KEY1):
+CEQ @10               #Compara o valor zero (na MEM[10]) com o valor do KEY0 
+JEQ @FPGA_RESET      #Caso nao tenha sido pressionado, desviar para o prox botao
+JSR @CONFIGURACAO    #pula para a subrotina CONFIGURACAO caso tenha sido pressionado
+
+# VERIFICA FPGA_RESET
+FPGA_RESET:
+LDA @356            #Ler o botão de reiniciar contagem (FPGA_RESET) e armazena no acumulador
+CEQ @10             #Compara o valor zero (na MEM[10]) com o valor do FPGA_RESET
+JEQ @INICIO        #Caso NAO tenha sido pressionado, desviar para INICIO
+JSR @RESET            #pula para a subrotina RESET caso tenha sido pressionado, para reiniciar contagem
+JMP @INICIO
+
+# FIM LOOP PRINCIPAL ---------------------
+
+# SUBROTINAS -----------------------------
+
+INCREMENTO:
+STA @511            # lIMPA A CHAVE
+LDA @10             #Carrega 0 no acumulador
+CEQ @6              # verifica se a flag de inibir contagem esta setada
+JEQ @UNIDADES       # pula para iniciar o incremento nas unidades
+RET                 #Caso esteja setado, deve retornar da sub-rotina.
+
+UNIDADES:
+LDA @11             #Carrega 1 no acumulador
+SOMA @0             #Soma o valor do acumulador com o valor de unidades da contagem
+STA @0              #Guarda o valor do acumulador (unidades incrementado) de volta em MEM[0]
+#CEQ @12             # Compara o valor do acumulador com MEM[12] (valor 10)
+#JEQ @DEZENAS       # Se for igual pula para verificacao dezenas
+RET
+
+DEZENAS:
+LDA @10             # Carregaa 0 no acumulador
+STA @0              # Carrega 0 em MEM[0] (unidades), para zerar
+LDA @11             #Carrega 1 no acumulador
+SOMA @1             #Soma o valor do acumulador com o valor de dezenas da contagem
+CEQ @12             # Compara o valor do acumulador com MEM[12] (valor 10)
+JEQ @CENTENAS      # Se for igual pula para verificacao centenas
+STA @1              # Guarda o valor do acumulador (unidades incrementado) de volta em MEM[0]
+RET
+
+CENTENAS:
+LDA @10             # Carrega 0 no acumulador
+STA @1              # Carrega 0 em MEM[0] (dezenas), para zerar
+LDA @11             # Carrega 1 no acumulador
+SOMA @2             # Soma o valor do acumulador com o valor de centenas da contagem
+CEQ @12             # Compara o valor do acumulador com MEM[12] (valor 10)
+JEQ @OVERFLOW      # Se for igual pula para indicar overflow
+STA @2              #Guarda o valor do acumulador (unidades incrementado) de volta em MEM[0]
+RET
+
+OVERFLOW:
+LDA @10             # Carrega 0 no acumulador para acender o LED de overflow
+STA @257            # Acende o LED de overflow
+LDA @11             # Carrega 1 no acumulador para setar a flag de inibir contagem 
+RET                 # Sai do incremento
+
+ESCREVEDISPLAY:
+LDA @11            # Carrega 1 no acumulador
+STA @257			#Armazena o valor do bit0 do acumulador no LDR8
+LDA @0              # Carrega o valor das unidades no acumulador
+STA @288            # Armazena o valor do acumulador em HEX0
+
+#AQUI:
+#JMP @AQUI          # VOU PARAR AQUI
+#LDA @1              # Carrega o valor das unidades no acumulador
+#STA @289            # Armazena o valor do acumulador em HEX1
+#LDA @2              # Carrega o valor das unidades no acumulador
+#STA @290            # Armazena o valor do acumulador em HEX2
+RET			        # Retorna da sub-rotina
+
+#testando ligar o led ao apertar o key1
+CONFIGURACAO:
+LDA @11            # Carrega 1 no acumulador
+STA @257			#Armazena o valor do bit0 do acumulador no LDR8
+RET
+
+RESET:
+LDI $0			    #Carrega o acumulador com o valor 0
+STA @0			    #Armazena o valor do acumulador em MEM[0] (unidades)
+STA @1			    #Armazena o valor do acumulador em MEM[1] (dezenas)
+STA @2			    #Armazena o valor do acumulador em MEM[2] (centenas)
+STA @257            #Desliga o LED overflow
+STA @6              #Seta a flag de inibir contagem para 0
+RET
