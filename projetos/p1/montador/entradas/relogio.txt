@@ -13,6 +13,10 @@ LDI %r0, $10
 STA @2, %r0      #Armazena o valor de r0 em MEM[2] (constante 10)
 LDI %r0, $6
 STA @3, %r0      #Armazena o valor de r0 em MEM[3] (constante 6)
+LDI %r0, $4
+STA @4, %r0      #Armazena o valor de r0 em MEM[4] (constante 4)
+LDI %r0, $2
+STA @5, %r0      #Armazena o valor de r0 em MEM[5] (constante 2)
 LDI %r0, $0
 STA @7, %r0       #Armazena o valor de r0 em MEM[7] (flag ta_tarde)
 STA @8, %r0       #Armazena o valor de r0 em MEM[8] (flag meia_noite)
@@ -20,6 +24,15 @@ LDI %r0, $4
 STA @16, %r0      #Armazena o valor de r0 em MEM[16] (constante 4)
 LDI %r0, $2
 STA @17, %r0      #Armazena o valor de r0 em MEM[17] (constante 2)
+
+LDI %r7, $0       # Inicializa o r7 com 0 para zerar leituras de botoes futuras
+
+# Inicializa os LEDs
+LDI %r0, $0			    #Carrega o acumulador com o valor 0
+STA @257, %r0			#Armazena o valor do bit0 do acumulador no LDR8
+STA @258, %r0			#Armazena o valor do bit0 do acumulador no LDR9
+LDI %r0, $1			    #Carrega o acumulador com o valor 0
+STA @256, %r0			#Armazena o valor do bit0 do acumulador no LDR0 ~ LEDR7
 
 INICIO:
 # Inicializa variáveis de tempo (segundos,minutos,horas)
@@ -45,17 +58,32 @@ STA @291, %r0    #Inicializa display HEX3 com valor 0
 STA @292, %r0    #Inicializa display HEX4 com valor 0
 STA @293, %r0    #Inicializa display HEX5 com valor 0
 
+# Inicializa os LEDs
+
 LOOP_PRINCIPAL:
+# Verifica se deu meia-noite
 LDA %r0, @8      #Carrega flag meia-noite
 CEQ %r0, @1      #Compara flag com MEM[1] (constante 1)
 JEQ $INICIO      # Se for meia-noite, zero tudo
+
+# Verifica se deu um segundo
+VERIFICA_SEGUNDO:
 LDA %r1, @323	 #Carrega o r1 com a base de tempo
 CEQ %r1, @0		 #Compara com o valor de MEM[0] (constante 0)
-JEQ $LOOP_PRINCIPAL		 #Desvia se igual a 0 (botão não foi pressionado)
-JSR $INCREMENTO  #O botão foi pressionado, chama a sub-rotina de incremento 
+JEQ $VERIFICA_KEY0		 #Desvia para verificar key0 se igual a 0 (ainda nao deu um segundo) 
+JSR $INCREMENTO  #Passou um segundo, chama a sub-rotina de incremento 
 NOP			     #  NOP
-JMP $LOOP_PRINCIPAL      #Fecha o laço principal, faz uma nova leitura de KEY0
 
+# Verifica se key0 foi pressionado
+VERIFICA_KEY0:
+LDA %r1, @352	        #Carrega o r1 com o valor de KEY0
+CEQ %r1, @0		        #Compara com o valor de MEM[0] (constante 0)
+JEQ $LOOP_PRINCIPAL		#Desvia se igual a 0 (botão não foi pressionado)
+JSR $MUDANCA_BASE       #Passou um segundo, chama a sub-rotina de mudanca de base de tempo
+NOP			            #  NOP
+JMP $LOOP_PRINCIPAL     #Fecha o laço principal, faz uma nova leitura de KEY0
+
+# Sub-rotina de incremento ----------------------------------------------
 INCREMENTO:
 SEGUNDO_UNIDADE:
 STA @507, %r7	 #Limpa a leitura do da base de tempo
@@ -160,3 +188,35 @@ STA @259, %r0
 LDI %r6, $1
 STA @8, %r6     # Guarda 1 na flag meia_noite
 JMP $FIM_INCREMENTO
+# ------------------------------------------------------------------------
+
+# Sub-rotina de mudanca de base (12-24) ----------------------------------
+MUDANCA_BASE:
+STA @511, %r7   # Limpa leitura botao
+LDA %r0, @0     # Carrega constante 0
+STA @256, %r0   # Apaga led
+LDA %r0, @17    # Carrega a variavel de dezena de hora max no r0
+CEQ %r0, @5     # Compara valor da variavel com dois
+JEQ $TO_12      # Se for igual a dois, muda de 24 para 12
+JMP $TO_24      # Se nao, muda de 12 para 24
+FIM_MUDANCA_BASE:
+RET
+
+TO_12:
+LDA %r0, @5             # carrega constante 2
+STA @256, %r0
+LDA %r1, @1             # Carrega um no registrador
+STA @17, %r1            # Muda a variavel de dezena de hora para um
+LDA %r1, @5             # Carrega dois no registrador
+STA @16, %r1            # Muda a variavel de unidade de hora para dois
+JMP $FIM_MUDANCA_BASE   # Volta para o fim da mudanca de base, para retornar da sub-rotina
+
+TO_24:
+LDA %r0, @1             # Carrega constante 1
+STA @256, %r0
+LDA %r1, @5             # Carrega dois no registrador
+STA @17, %r1            # Muda a variavel de dezena de hora para um
+LDA %r1, @4             # Carrega quatro no registrador
+STA @16, %r1            # Muda a variavel de unidade de hora para quatro
+JMP $FIM_MUDANCA_BASE   # Volta para o fim da mudanca de base, para retornar da sub-rotina
+# ------------------------------------------------------------------------
