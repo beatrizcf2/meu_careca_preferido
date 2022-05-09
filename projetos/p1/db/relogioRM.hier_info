@@ -51,10 +51,10 @@ SW[9] => buffer_3_state_8bits:bufferSW9.entrada
 SW[9] => comb.IN1
 SW[9] => comb.IN1
 KEY[0] => edgedetector:detectorSub0.entrada
-KEY[1] => buffer_3_state_8bits:bufferKEY1.entrada
-KEY[2] => buffer_3_state_8bits:bufferKEY2.entrada
-KEY[3] => buffer_3_state_8bits:bufferKEY3.entrada
-FPGA_RESET_N => buffer_3_state_8bits:bufferRESET.entrada
+KEY[1] => edgedetector:detectorSub1.entrada
+KEY[2] => edgedetector:detectorSub2.entrada
+KEY[3] => edgedetector:detectorSub3.entrada
+FPGA_RESET_N => edgedetector:detectorSubReset.entrada
 HEX0[0] <= dechex7seg:HEX0_decoder.DATA_OUT[0]
 HEX0[1] <= dechex7seg:HEX0_decoder.DATA_OUT[1]
 HEX0[2] <= dechex7seg:HEX0_decoder.DATA_OUT[2]
@@ -117,6 +117,10 @@ CLOCK_50 => dechex7seg:HEX2_decoder.CLK
 CLOCK_50 => dechex7seg:HEX3_decoder.CLK
 CLOCK_50 => dechex7seg:HEX4_decoder.CLK
 CLOCK_50 => dechex7seg:HEX5_decoder.CLK
+CLOCK_50 => edgedetector:detectorSub1.clk
+CLOCK_50 => edgedetector:detectorSub2.clk
+CLOCK_50 => edgedetector:detectorSub3.clk
+CLOCK_50 => edgedetector:detectorSubReset.clk
 CLOCK_50 => divisorgenerico_e_interface:interfaceTempo0.clk
 CLOCK_50 => divisorgenerico_e_interface:interfaceTempo1.clk
 CLOCK_50 => divisorgenerico_e_interface:interfaceTempo2.clk
@@ -1651,7 +1655,67 @@ entrada => saidaQ.DATAIN
 saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|contador|flipFlop:FF_Debouncer
+|contador|edgeDetector:detectorSub1
+clk => saidaQ.CLK
+entrada => saida.IN1
+entrada => saidaQ.DATAIN
+saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|contador|edgeDetector:detectorSub2
+clk => saidaQ.CLK
+entrada => saida.IN1
+entrada => saidaQ.DATAIN
+saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|contador|edgeDetector:detectorSub3
+clk => saidaQ.CLK
+entrada => saida.IN1
+entrada => saidaQ.DATAIN
+saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|contador|edgeDetector:detectorSubReset
+clk => saidaQ.CLK
+entrada => saida.IN1
+entrada => saidaQ.DATAIN
+saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|contador|flipFlop:FF_Debouncer0
+DIN => DOUT~reg0.DATAIN
+DOUT <= DOUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ENABLE => DOUT~reg0.ENA
+CLK => DOUT~reg0.CLK
+RST => DOUT~reg0.ACLR
+
+
+|contador|flipFlop:FF_Debouncer1
+DIN => DOUT~reg0.DATAIN
+DOUT <= DOUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ENABLE => DOUT~reg0.ENA
+CLK => DOUT~reg0.CLK
+RST => DOUT~reg0.ACLR
+
+
+|contador|flipFlop:FF_Debouncer2
+DIN => DOUT~reg0.DATAIN
+DOUT <= DOUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ENABLE => DOUT~reg0.ENA
+CLK => DOUT~reg0.CLK
+RST => DOUT~reg0.ACLR
+
+
+|contador|flipFlop:FF_Debouncer3
+DIN => DOUT~reg0.DATAIN
+DOUT <= DOUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ENABLE => DOUT~reg0.ENA
+CLK => DOUT~reg0.CLK
+RST => DOUT~reg0.ACLR
+
+
+|contador|flipFlop:FF_DebouncerReset
 DIN => DOUT~reg0.DATAIN
 DOUT <= DOUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
 ENABLE => DOUT~reg0.ENA

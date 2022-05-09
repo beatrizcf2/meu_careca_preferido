@@ -26,7 +26,6 @@ architecture comportamento of ULASomaSub is
 		passa     <= entradaB;
       saida     <= soma      when (seletor = "01") else
 						 subtracao when (seletor = "00") else
-						 
 						 passa;		 
 		flagEqual <= '1' when unsigned(saida) = unsigned(zero) else '0';
 end architecture;

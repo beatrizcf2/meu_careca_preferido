@@ -107,10 +107,19 @@ architecture arquitetura of contador is
   signal saidaBufferSW9             :  std_logic;
   signal saidaBufferSWconj          :  std_logic;
 	
--- 
-  signal saidaDebouncer 			   :  std_logic;
-  signal ADDR_511, ADDR_507   		:  std_logic;
-  signal key0_clock 						:  std_logic;
+-- Debouncer das chaves
+  signal saidaDebouncer0 			     :  std_logic;
+  signal saidaDebouncer1 			     :  std_logic;
+  signal saidaDebouncer2 			     :  std_logic;
+  signal saidaDebouncer3 			     :  std_logic;
+  signal saidaDebouncerReset 			  :  std_logic;
+  signal ADDR_511, ADDR_510, ADDR_509 :  std_logic;
+  signal ADDR_508, ADDR_507, ADDR_506 :  std_logic;
+  signal key0_clock 						  :  std_logic;
+  signal key1_clock 						  :  std_logic;
+  signal key2_clock 						  :  std_logic;
+  signal key3_clock 						  :  std_logic;
+  signal keyReset_clock 				  :  std_logic;
   
   signal bancoSaida           : std_logic_vector(larguraDados-1 downto 0);
   --signal leituraChaves              : std_logic_vector(7 downto 0); -- n tenho ctz se precisa msm
@@ -255,47 +264,109 @@ bufferSW9 :  entity work.buffer_3_state_8bits
 ADDR_511 <= dataAddress(8) and dataAddress(7) and dataAddress(6) and 
 				dataAddress(5) and dataAddress(4) and dataAddress(3) and 
 				dataAddress(2) and dataAddress(1) and dataAddress(0) and WR;
--- ADDR_510/ADDR_509/ADDR_508	
+				
+ADDR_510 <= dataAddress(8) and dataAddress(7) and dataAddress(6) and 
+				dataAddress(5) and dataAddress(4) and dataAddress(3) and 
+				dataAddress(2) and dataAddress(1) and (not dataAddress(0)) and WR;
+				
+ADDR_509 <= dataAddress(8) and dataAddress(7) and dataAddress(6) and 
+				dataAddress(5) and dataAddress(4) and dataAddress(3) and 
+				dataAddress(2) and (not dataAddress(1)) and dataAddress(0) and WR;
+				
+ADDR_508 <= dataAddress(8) and dataAddress(7) and dataAddress(6) and 
+				dataAddress(5) and dataAddress(4) and dataAddress(3) and 
+				dataAddress(2) and (not dataAddress(1)) and (not dataAddress(0)) and WR;
 				
 ADDR_507 <= dataAddress(8) and dataAddress(7) and dataAddress(6) and 
 				dataAddress(5) and dataAddress(4) and dataAddress(3) and 
 				(not dataAddress(2)) and dataAddress(1) and dataAddress(0) and WR;
-				
+
+ADDR_506 <= dataAddress(8) and dataAddress(7) and dataAddress(6) and 
+				dataAddress(5) and dataAddress(4) and dataAddress(3) and 
+				(not dataAddress(2)) and dataAddress(1) and (not dataAddress(0)) and WR;
+
 detectorSub0: work.edgeDetector(bordaSubida)
         port map (clk     => CLOCK_50, 
 						entrada => (not KEY(0)), 
 						saida   => key0_clock);
+
+detectorSub1: work.edgeDetector(bordaSubida)
+        port map (clk     => CLOCK_50, 
+						entrada => (not KEY(1)), 
+						saida   => key1_clock);
+						
+detectorSub2: work.edgeDetector(bordaSubida)
+        port map (clk     => CLOCK_50, 
+						entrada => (not KEY(2)), 
+						saida   => key2_clock);
+						
+detectorSub3: work.edgeDetector(bordaSubida)
+        port map (clk     => CLOCK_50, 
+						entrada => (not KEY(3)), 
+						saida   => key3_clock);
+
+detectorSubReset: work.edgeDetector(bordaSubida)
+        port map (clk     => CLOCK_50, 
+						entrada => (not FPGA_RESET_N), 
+						saida   => keyReset_clock);
 				
-				
-FF_Debouncer : entity work.flipFlop
+FF_Debouncer0 : entity work.flipFlop
              port map (DIN     => '1', 
-						     DOUT    => saidaDebouncer, 
+						     DOUT    => saidaDebouncer0, 
 				   		  ENABLE  => '1', 
 				   		  CLK     => key0_clock, 
 				   		  RST     => ADDR_511);
-							  
+
+FF_Debouncer1 : entity work.flipFlop
+             port map (DIN     => '1', 
+						     DOUT    => saidaDebouncer1, 
+				   		  ENABLE  => '1', 
+				   		  CLK     => key1_clock, 
+				   		  RST     => ADDR_510);
+
+FF_Debouncer2 : entity work.flipFlop
+             port map (DIN     => '1', 
+						     DOUT    => saidaDebouncer2, 
+				   		  ENABLE  => '1', 
+				   		  CLK     => key2_clock, 
+				   		  RST     => ADDR_509);
+
+FF_Debouncer3 : entity work.flipFlop
+             port map (DIN     => '1', 
+						     DOUT    => saidaDebouncer3, 
+				   		  ENABLE  => '1', 
+				   		  CLK     => key3_clock, 
+				   		  RST     => ADDR_508);
+
+FF_DebouncerReset : entity work.flipFlop
+             port map (DIN     => '1', 
+						     DOUT    => saidaDebouncerReset, 
+				   		  ENABLE  => '1', 
+				   		  CLK     => keyReset_clock, 
+				   		  RST     => ADDR_506);
+									  
 bufferKEY0 :  entity work.buffer_3_state_8bits
-              port map(entrada  => saidaDebouncer, 
+              port map(entrada  => saidaDebouncer0, 
                        habilita => habKEY0, 
                        saida    => dadoLido);
 
 bufferKEY1 :  entity work.buffer_3_state_8bits
-              port map(entrada  => not KEY(1), 
+              port map(entrada  => saidaDebouncer1, 
                        habilita => habKEY1, 
                        saida    => dadoLido);
 
 bufferKEY2 :  entity work.buffer_3_state_8bits
-              port map(entrada  => not KEY(2), 
+              port map(entrada  => saidaDebouncer2, 
                        habilita => habKEY2, 
                        saida    => dadoLido);
 
 bufferKEY3 :  entity work.buffer_3_state_8bits
-              port map(entrada  => not KEY(3), 
+              port map(entrada  => saidaDebouncer3, 
                        habilita => habKEY3, 
                        saida   => dadoLido);
 
 bufferRESET :  entity work.buffer_3_state_8bits
-              port map(entrada  => not FPGA_RESET_N, 
+              port map(entrada  => saidaDebouncerReset, 
                        habilita => habRESET, 
                        saida    => dadoLido);
 							 

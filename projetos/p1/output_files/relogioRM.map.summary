@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Mon May 09 13:33:34 2022
+Analysis & Synthesis Status : Successful - Mon May 09 18:35:58 2022
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : relogioRM
 Top-level Entity Name : contador
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 716
+Total registers : 724
 Total pins : 99
 Total virtual pins : 0
 Total block memory bits : 0

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for relogioRM
-Mon May 09 13:33:34 2022
+Mon May 09 18:35:58 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -46,22 +46,26 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
  38. Port Connectivity Checks: "divisorGenerico_e_Interface:interfaceTempo2|flipFlop:registraUmSegundo"
  39. Port Connectivity Checks: "divisorGenerico_e_Interface:interfaceTempo1|flipFlop:registraUmSegundo"
  40. Port Connectivity Checks: "divisorGenerico_e_Interface:interfaceTempo0|flipFlop:registraUmSegundo"
- 41. Port Connectivity Checks: "flipFlop:FF_Debouncer"
- 42. Port Connectivity Checks: "decHex7seg:HEX0_decoder|conversorHex7Seg:DECODER_7seg"
- 43. Port Connectivity Checks: "decHex7seg:HEX0_decoder|registradorGenerico:REG_4bits"
- 44. Port Connectivity Checks: "decoder3x8:decoderAddr"
- 45. Port Connectivity Checks: "decoder3x8:decoderBlock"
- 46. Port Connectivity Checks: "registradorGenerico:RegLEDconj"
- 47. Port Connectivity Checks: "flipFlop:FFLED9"
- 48. Port Connectivity Checks: "flipFlop:FFLED8"
- 49. Port Connectivity Checks: "CPU_rm:CPU|flipFlop:FLAGer"
- 50. Port Connectivity Checks: "CPU_rm:CPU|muxGenerico4x1:MUX_DESVIO"
- 51. Port Connectivity Checks: "CPU_rm:CPU|registradorGenerico:END_RETORNO"
- 52. Port Connectivity Checks: "CPU_rm:CPU|registradorGenerico:PC"
- 53. Port Connectivity Checks: "CPU_rm:CPU"
- 54. Post-Synthesis Netlist Statistics for Top Partition
- 55. Elapsed Time Per Partition
- 56. Analysis & Synthesis Messages
+ 41. Port Connectivity Checks: "flipFlop:FF_DebouncerReset"
+ 42. Port Connectivity Checks: "flipFlop:FF_Debouncer3"
+ 43. Port Connectivity Checks: "flipFlop:FF_Debouncer2"
+ 44. Port Connectivity Checks: "flipFlop:FF_Debouncer1"
+ 45. Port Connectivity Checks: "flipFlop:FF_Debouncer0"
+ 46. Port Connectivity Checks: "decHex7seg:HEX0_decoder|conversorHex7Seg:DECODER_7seg"
+ 47. Port Connectivity Checks: "decHex7seg:HEX0_decoder|registradorGenerico:REG_4bits"
+ 48. Port Connectivity Checks: "decoder3x8:decoderAddr"
+ 49. Port Connectivity Checks: "decoder3x8:decoderBlock"
+ 50. Port Connectivity Checks: "registradorGenerico:RegLEDconj"
+ 51. Port Connectivity Checks: "flipFlop:FFLED9"
+ 52. Port Connectivity Checks: "flipFlop:FFLED8"
+ 53. Port Connectivity Checks: "CPU_rm:CPU|flipFlop:FLAGer"
+ 54. Port Connectivity Checks: "CPU_rm:CPU|muxGenerico4x1:MUX_DESVIO"
+ 55. Port Connectivity Checks: "CPU_rm:CPU|registradorGenerico:END_RETORNO"
+ 56. Port Connectivity Checks: "CPU_rm:CPU|registradorGenerico:PC"
+ 57. Port Connectivity Checks: "CPU_rm:CPU"
+ 58. Post-Synthesis Netlist Statistics for Top Partition
+ 59. Elapsed Time Per Partition
+ 60. Analysis & Synthesis Messages
 
 
 
@@ -88,13 +92,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon May 09 13:33:34 2022       ;
+; Analysis & Synthesis Status     ; Successful - Mon May 09 18:35:58 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; relogioRM                                   ;
 ; Top-level Entity Name           ; contador                                    ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 716                                         ;
+; Total registers                 ; 724                                         ;
 ; Total pins                      ; 99                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -247,25 +251,25 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 584            ;
+; Estimate of Logic utilization (ALMs needed) ; 593            ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 664            ;
-;     -- 7 input functions                    ; 18             ;
-;     -- 6 input functions                    ; 320            ;
-;     -- 5 input functions                    ; 67             ;
-;     -- 4 input functions                    ; 79             ;
-;     -- <=3 input functions                  ; 180            ;
+; Combinational ALUT usage for logic          ; 674            ;
+;     -- 7 input functions                    ; 20             ;
+;     -- 6 input functions                    ; 335            ;
+;     -- 5 input functions                    ; 57             ;
+;     -- 4 input functions                    ; 77             ;
+;     -- <=3 input functions                  ; 185            ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 716            ;
+; Dedicated logic registers                   ; 724            ;
 ;                                             ;                ;
 ; I/O pins                                    ; 99             ;
 ;                                             ;                ;
 ; Total DSP Blocks                            ; 0              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 711            ;
-; Total fan-out                               ; 5517           ;
-; Average fan-out                             ; 3.50           ;
+; Maximum fan-out                             ; 715            ;
+; Total fan-out                               ; 5577           ;
+; Average fan-out                             ; 3.49           ;
 +---------------------------------------------+----------------+
 
 
@@ -274,20 +278,19 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------+-----------------------------+--------------+
 ; Compilation Hierarchy Node                       ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                              ; Entity Name                 ; Library Name ;
 +--------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------+-----------------------------+--------------+
-; |contador                                        ; 664 (30)            ; 716 (0)                   ; 0                 ; 0          ; 99   ; 0            ; |contador                                                                        ; contador                    ; work         ;
-;    |CPU_rm:CPU|                                  ; 80 (0)              ; 83 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU_rm:CPU                                                             ; CPU_rm                      ; work         ;
+; |contador                                        ; 674 (29)            ; 724 (0)                   ; 0                 ; 0          ; 99   ; 0            ; |contador                                                                        ; contador                    ; work         ;
+;    |CPU_rm:CPU|                                  ; 78 (0)              ; 83 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU_rm:CPU                                                             ; CPU_rm                      ; work         ;
 ;       |ULASomaSub:ULA|                           ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU_rm:CPU|ULASomaSub:ULA                                              ; ULASomaSub                  ; work         ;
 ;       |bancoRegistradoresArqRegMem:BANCO_REG|    ; 24 (24)             ; 64 (64)                   ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU_rm:CPU|bancoRegistradoresArqRegMem:BANCO_REG                       ; bancoRegistradoresArqRegMem ; work         ;
 ;       |decoder:DECODER|                          ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU_rm:CPU|decoder:DECODER                                             ; decoder                     ; work         ;
 ;       |desvio:DESVIO|                            ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU_rm:CPU|desvio:DESVIO                                               ; desvio                      ; work         ;
-;       |flipFlop:FLAGer|                          ; 9 (9)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU_rm:CPU|flipFlop:FLAGer                                             ; flipFlop                    ; work         ;
+;       |flipFlop:FLAGer|                          ; 8 (8)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU_rm:CPU|flipFlop:FLAGer                                             ; flipFlop                    ; work         ;
 ;       |muxGenerico2x1:MUX_ULA|                   ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU_rm:CPU|muxGenerico2x1:MUX_ULA                                      ; muxGenerico2x1              ; work         ;
-;       |muxGenerico4x1:MUX_DESVIO|                ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU_rm:CPU|muxGenerico4x1:MUX_DESVIO                                   ; muxGenerico4x1              ; work         ;
+;       |muxGenerico4x1:MUX_DESVIO|                ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU_rm:CPU|muxGenerico4x1:MUX_DESVIO                                   ; muxGenerico4x1              ; work         ;
 ;       |registradorGenerico:END_RETORNO|          ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU_rm:CPU|registradorGenerico:END_RETORNO                             ; registradorGenerico         ; work         ;
 ;       |registradorGenerico:PC|                   ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU_rm:CPU|registradorGenerico:PC                                      ; registradorGenerico         ; work         ;
 ;       |somaUm:PC_INC|                            ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|CPU_rm:CPU|somaUm:PC_INC                                               ; somaUm                      ; work         ;
-;    |buffer_3_state_8bits:bufferKEY2|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|buffer_3_state_8bits:bufferKEY2                                        ; buffer_3_state_8bits        ; work         ;
-;    |buffer_3_state_8bits:bufferKEY3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|buffer_3_state_8bits:bufferKEY3                                        ; buffer_3_state_8bits        ; work         ;
+;    |buffer_3_state:bufferSWConj|                 ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|buffer_3_state:bufferSWConj                                            ; buffer_3_state              ; work         ;
 ;    |buffer_3_state_8bits:bufferSW8|              ; 17 (17)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|buffer_3_state_8bits:bufferSW8                                         ; buffer_3_state_8bits        ; work         ;
 ;    |decHex7seg:HEX0_decoder|                     ; 7 (0)               ; 4 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|decHex7seg:HEX0_decoder                                                ; decHex7seg                  ; work         ;
 ;       |conversorHex7Seg:DECODER_7seg|            ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|decHex7seg:HEX0_decoder|conversorHex7Seg:DECODER_7seg                  ; conversorHex7Seg            ; work         ;
@@ -307,7 +310,7 @@ https://fpgasoftware.intel.com/eula.
 ;    |decHex7seg:HEX5_decoder|                     ; 7 (0)               ; 4 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|decHex7seg:HEX5_decoder                                                ; decHex7seg                  ; work         ;
 ;       |conversorHex7Seg:DECODER_7seg|            ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|decHex7seg:HEX5_decoder|conversorHex7Seg:DECODER_7seg                  ; conversorHex7Seg            ; work         ;
 ;       |registradorGenerico:REG_4bits|            ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|decHex7seg:HEX5_decoder|registradorGenerico:REG_4bits                  ; registradorGenerico         ; work         ;
-;    |decoder3x8:decoderBlock|                     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|decoder3x8:decoderBlock                                                ; decoder3x8                  ; work         ;
+;    |decoder3x8:decoderBlock|                     ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|decoder3x8:decoderBlock                                                ; decoder3x8                  ; work         ;
 ;    |divisorGenerico_e_Interface:interfaceTempo0| ; 33 (0)              ; 27 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |contador|divisorGenerico_e_Interface:interfaceTempo0                            ; divisorGenerico_e_Interface ; work         ;
 ;       |divisorGenerico:baseTempo|                ; 33 (33)             ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |contador|divisorGenerico_e_Interface:interfaceTempo0|divisorGenerico:baseTempo  ; divisorGenerico             ; work         ;
 ;       |flipFlop:registraUmSegundo|               ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|divisorGenerico_e_Interface:interfaceTempo0|flipFlop:registraUmSegundo ; flipFlop                    ; work         ;
@@ -317,15 +320,23 @@ https://fpgasoftware.intel.com/eula.
 ;    |divisorGenerico_e_Interface:interfaceTempo2| ; 24 (0)              ; 20 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |contador|divisorGenerico_e_Interface:interfaceTempo2                            ; divisorGenerico_e_Interface ; work         ;
 ;       |divisorGenerico:baseTempo|                ; 24 (24)             ; 19 (19)                   ; 0                 ; 0          ; 0    ; 0            ; |contador|divisorGenerico_e_Interface:interfaceTempo2|divisorGenerico:baseTempo  ; divisorGenerico             ; work         ;
 ;       |flipFlop:registraUmSegundo|               ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|divisorGenerico_e_Interface:interfaceTempo2|flipFlop:registraUmSegundo ; flipFlop                    ; work         ;
-;    |divisorGenerico_e_Interface:interfaceTempo3| ; 17 (1)              ; 14 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |contador|divisorGenerico_e_Interface:interfaceTempo3                            ; divisorGenerico_e_Interface ; work         ;
+;    |divisorGenerico_e_Interface:interfaceTempo3| ; 18 (2)              ; 14 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |contador|divisorGenerico_e_Interface:interfaceTempo3                            ; divisorGenerico_e_Interface ; work         ;
 ;       |divisorGenerico:baseTempo|                ; 16 (16)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |contador|divisorGenerico_e_Interface:interfaceTempo3|divisorGenerico:baseTempo  ; divisorGenerico             ; work         ;
 ;       |flipFlop:registraUmSegundo|               ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|divisorGenerico_e_Interface:interfaceTempo3|flipFlop:registraUmSegundo ; flipFlop                    ; work         ;
 ;    |edgeDetector:detectorSub0|                   ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|edgeDetector:detectorSub0                                              ; edgeDetector                ; work         ;
+;    |edgeDetector:detectorSub1|                   ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|edgeDetector:detectorSub1                                              ; edgeDetector                ; work         ;
+;    |edgeDetector:detectorSub2|                   ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|edgeDetector:detectorSub2                                              ; edgeDetector                ; work         ;
+;    |edgeDetector:detectorSub3|                   ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|edgeDetector:detectorSub3                                              ; edgeDetector                ; work         ;
+;    |edgeDetector:detectorSubReset|               ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|edgeDetector:detectorSubReset                                          ; edgeDetector                ; work         ;
 ;    |flipFlop:FFLED8|                             ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|flipFlop:FFLED8                                                        ; flipFlop                    ; work         ;
 ;    |flipFlop:FFLED9|                             ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|flipFlop:FFLED9                                                        ; flipFlop                    ; work         ;
-;    |flipFlop:FF_Debouncer|                       ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|flipFlop:FF_Debouncer                                                  ; flipFlop                    ; work         ;
-;    |memoriaRAM:RAM|                              ; 308 (308)           ; 512 (512)                 ; 0                 ; 0          ; 0    ; 0            ; |contador|memoriaRAM:RAM                                                         ; memoriaRAM                  ; work         ;
-;    |memoriaROM:ROM|                              ; 76 (76)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|memoriaROM:ROM                                                         ; memoriaROM                  ; work         ;
+;    |flipFlop:FF_Debouncer0|                      ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|flipFlop:FF_Debouncer0                                                 ; flipFlop                    ; work         ;
+;    |flipFlop:FF_Debouncer1|                      ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|flipFlop:FF_Debouncer1                                                 ; flipFlop                    ; work         ;
+;    |flipFlop:FF_Debouncer2|                      ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|flipFlop:FF_Debouncer2                                                 ; flipFlop                    ; work         ;
+;    |flipFlop:FF_Debouncer3|                      ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|flipFlop:FF_Debouncer3                                                 ; flipFlop                    ; work         ;
+;    |flipFlop:FF_DebouncerReset|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|flipFlop:FF_DebouncerReset                                             ; flipFlop                    ; work         ;
+;    |memoriaRAM:RAM|                              ; 313 (313)           ; 512 (512)                 ; 0                 ; 0          ; 0    ; 0            ; |contador|memoriaRAM:RAM                                                         ; memoriaRAM                  ; work         ;
+;    |memoriaROM:ROM|                              ; 72 (72)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|memoriaROM:ROM                                                         ; memoriaROM                  ; work         ;
 ;    |registradorGenerico:RegLEDconj|              ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |contador|registradorGenerico:RegLEDconj                                         ; registradorGenerico         ; work         ;
 +--------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------+-----------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -336,10 +347,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 716   ;
+; Total registers                              ; 724   ;
 ; Number of registers using Synchronous Clear  ; 77    ;
 ; Number of registers using Synchronous Load   ; 64    ;
-; Number of registers using Asynchronous Clear ; 5     ;
+; Number of registers using Asynchronous Clear ; 9     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 617   ;
 ; Number of registers using Preset             ; 0     ;
@@ -683,14 +694,54 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------+-------+----------+------------------------------------------------------------------------+
 
 
-+---------------------------------------------------+
-; Port Connectivity Checks: "flipFlop:FF_Debouncer" ;
-+--------+-------+----------+-----------------------+
-; Port   ; Type  ; Severity ; Details               ;
-+--------+-------+----------+-----------------------+
-; din    ; Input ; Info     ; Stuck at VCC          ;
-; enable ; Input ; Info     ; Stuck at VCC          ;
-+--------+-------+----------+-----------------------+
++--------------------------------------------------------+
+; Port Connectivity Checks: "flipFlop:FF_DebouncerReset" ;
++--------+-------+----------+----------------------------+
+; Port   ; Type  ; Severity ; Details                    ;
++--------+-------+----------+----------------------------+
+; din    ; Input ; Info     ; Stuck at VCC               ;
+; enable ; Input ; Info     ; Stuck at VCC               ;
++--------+-------+----------+----------------------------+
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "flipFlop:FF_Debouncer3" ;
++--------+-------+----------+------------------------+
+; Port   ; Type  ; Severity ; Details                ;
++--------+-------+----------+------------------------+
+; din    ; Input ; Info     ; Stuck at VCC           ;
+; enable ; Input ; Info     ; Stuck at VCC           ;
++--------+-------+----------+------------------------+
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "flipFlop:FF_Debouncer2" ;
++--------+-------+----------+------------------------+
+; Port   ; Type  ; Severity ; Details                ;
++--------+-------+----------+------------------------+
+; din    ; Input ; Info     ; Stuck at VCC           ;
+; enable ; Input ; Info     ; Stuck at VCC           ;
++--------+-------+----------+------------------------+
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "flipFlop:FF_Debouncer1" ;
++--------+-------+----------+------------------------+
+; Port   ; Type  ; Severity ; Details                ;
++--------+-------+----------+------------------------+
+; din    ; Input ; Info     ; Stuck at VCC           ;
+; enable ; Input ; Info     ; Stuck at VCC           ;
++--------+-------+----------+------------------------+
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "flipFlop:FF_Debouncer0" ;
++--------+-------+----------+------------------------+
+; Port   ; Type  ; Severity ; Details                ;
++--------+-------+----------+------------------------+
+; din    ; Input ; Info     ; Stuck at VCC           ;
+; enable ; Input ; Info     ; Stuck at VCC           ;
++--------+-------+----------+------------------------+
 
 
 +-----------------------------------------------------------------------------------+
@@ -810,31 +861,31 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 716                         ;
-;     CLR               ; 5                           ;
+; arriav_ff             ; 724                         ;
+;     CLR               ; 9                           ;
 ;     ENA               ; 553                         ;
 ;     ENA SLD           ; 64                          ;
 ;     SCLR              ; 77                          ;
-;     plain             ; 17                          ;
+;     plain             ; 21                          ;
 ; arriav_io_obuf        ; 8                           ;
-; arriav_lcell_comb     ; 664                         ;
+; arriav_lcell_comb     ; 674                         ;
 ;     arith             ; 95                          ;
 ;         1 data inputs ; 86                          ;
 ;         2 data inputs ; 1                           ;
 ;         5 data inputs ; 8                           ;
-;     extend            ; 18                          ;
-;         7 data inputs ; 18                          ;
-;     normal            ; 551                         ;
-;         1 data inputs ; 1                           ;
-;         2 data inputs ; 78                          ;
-;         3 data inputs ; 14                          ;
-;         4 data inputs ; 79                          ;
-;         5 data inputs ; 59                          ;
-;         6 data inputs ; 320                         ;
+;     extend            ; 20                          ;
+;         7 data inputs ; 20                          ;
+;     normal            ; 559                         ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 87                          ;
+;         3 data inputs ; 6                           ;
+;         4 data inputs ; 77                          ;
+;         5 data inputs ; 49                          ;
+;         6 data inputs ; 335                         ;
 ; boundary_port         ; 99                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 11.00                       ;
-; Average LUT depth     ; 6.54                        ;
+; Average LUT depth     ; 6.55                        ;
 +-----------------------+-----------------------------+
 
 
@@ -853,7 +904,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Mon May 09 13:33:21 2022
+    Info: Processing started: Mon May 09 18:35:45 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off relogioRM -c relogioRM
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -928,9 +979,9 @@ Info (12021): Found 2 design units, including 1 entities, in source file divisor
     Info (12022): Found design unit 1: divisorGenerico_e_Interface-interface File: C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/divisorGenerico_e_Interface.vhd Line: 15
     Info (12023): Found entity 1: divisorGenerico_e_Interface File: C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/divisorGenerico_e_Interface.vhd Line: 5
 Info (12127): Elaborating entity "contador" for the top level hierarchy
-Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM" File: C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/contador.vhd Line: 137
-Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM" File: C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/contador.vhd Line: 141
-Info (12128): Elaborating entity "CPU_rm" for hierarchy "CPU_rm:CPU" File: C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/contador.vhd Line: 150
+Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM" File: C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/contador.vhd Line: 146
+Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM" File: C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/contador.vhd Line: 150
+Info (12128): Elaborating entity "CPU_rm" for hierarchy "CPU_rm:CPU" File: C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/contador.vhd Line: 159
 Warning (10873): Using initial value X (don't care) for net "control[3..2]" at CPU_rm.vhd(20) File: C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/CPU_rm.vhd Line: 20
 Info (12128): Elaborating entity "bancoRegistradoresArqRegMem" for hierarchy "CPU_rm:CPU|bancoRegistradoresArqRegMem:BANCO_REG" File: C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/CPU_rm.vhd Line: 105
 Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "CPU_rm:CPU|muxGenerico2x1:MUX_ULA" File: C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/CPU_rm.vhd Line: 113
@@ -941,21 +992,21 @@ Info (12128): Elaborating entity "ULASomaSub" for hierarchy "CPU_rm:CPU|ULASomaS
 Info (12128): Elaborating entity "decoder" for hierarchy "CPU_rm:CPU|decoder:DECODER" File: C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/CPU_rm.vhd Line: 163
 Info (12128): Elaborating entity "desvio" for hierarchy "CPU_rm:CPU|desvio:DESVIO" File: C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/CPU_rm.vhd Line: 167
 Info (12128): Elaborating entity "flipFlop" for hierarchy "CPU_rm:CPU|flipFlop:FLAGer" File: C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/CPU_rm.vhd Line: 176
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:RegLEDconj" File: C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/contador.vhd Line: 175
-Info (12128): Elaborating entity "decoder3x8" for hierarchy "decoder3x8:decoderBlock" File: C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/contador.vhd Line: 182
-Info (12128): Elaborating entity "decHex7seg" for hierarchy "decHex7seg:HEX0_decoder" File: C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/contador.vhd Line: 192
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:RegLEDconj" File: C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/contador.vhd Line: 184
+Info (12128): Elaborating entity "decoder3x8" for hierarchy "decoder3x8:decoderBlock" File: C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/contador.vhd Line: 191
+Info (12128): Elaborating entity "decHex7seg" for hierarchy "decHex7seg:HEX0_decoder" File: C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/contador.vhd Line: 201
 Info (12128): Elaborating entity "registradorGenerico" for hierarchy "decHex7seg:HEX0_decoder|registradorGenerico:REG_4bits" File: C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/decHex7Seg.vhd Line: 33
 Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "decHex7seg:HEX0_decoder|conversorHex7Seg:DECODER_7seg" File: C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/decHex7Seg.vhd Line: 44
-Info (12128): Elaborating entity "buffer_3_state" for hierarchy "buffer_3_state:bufferSWConj" File: C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/contador.vhd Line: 240
-Info (12128): Elaborating entity "buffer_3_state_8bits" for hierarchy "buffer_3_state_8bits:bufferSW8" File: C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/contador.vhd Line: 245
-Info (12129): Elaborating entity "edgeDetector" using architecture "A:bordasubida" for hierarchy "edgeDetector:detectorSub0" File: C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/contador.vhd Line: 264
-Info (12128): Elaborating entity "divisorGenerico_e_Interface" for hierarchy "divisorGenerico_e_Interface:interfaceTempo0" File: C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/contador.vhd Line: 326
+Info (12128): Elaborating entity "buffer_3_state" for hierarchy "buffer_3_state:bufferSWConj" File: C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/contador.vhd Line: 249
+Info (12128): Elaborating entity "buffer_3_state_8bits" for hierarchy "buffer_3_state_8bits:bufferSW8" File: C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/contador.vhd Line: 254
+Info (12129): Elaborating entity "edgeDetector" using architecture "A:bordasubida" for hierarchy "edgeDetector:detectorSub0" File: C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/contador.vhd Line: 288
+Info (12128): Elaborating entity "divisorGenerico_e_Interface" for hierarchy "divisorGenerico_e_Interface:interfaceTempo0" File: C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/contador.vhd Line: 397
 Info (12128): Elaborating entity "divisorGenerico" for hierarchy "divisorGenerico_e_Interface:interfaceTempo0|divisorGenerico:baseTempo" File: C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/divisorGenerico_e_Interface.vhd Line: 20
-Info (12128): Elaborating entity "divisorGenerico_e_Interface" for hierarchy "divisorGenerico_e_Interface:interfaceTempo1" File: C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/contador.vhd Line: 332
+Info (12128): Elaborating entity "divisorGenerico_e_Interface" for hierarchy "divisorGenerico_e_Interface:interfaceTempo1" File: C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/contador.vhd Line: 403
 Info (12128): Elaborating entity "divisorGenerico" for hierarchy "divisorGenerico_e_Interface:interfaceTempo1|divisorGenerico:baseTempo" File: C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/divisorGenerico_e_Interface.vhd Line: 20
-Info (12128): Elaborating entity "divisorGenerico_e_Interface" for hierarchy "divisorGenerico_e_Interface:interfaceTempo2" File: C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/contador.vhd Line: 339
+Info (12128): Elaborating entity "divisorGenerico_e_Interface" for hierarchy "divisorGenerico_e_Interface:interfaceTempo2" File: C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/contador.vhd Line: 410
 Info (12128): Elaborating entity "divisorGenerico" for hierarchy "divisorGenerico_e_Interface:interfaceTempo2|divisorGenerico:baseTempo" File: C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/divisorGenerico_e_Interface.vhd Line: 20
-Info (12128): Elaborating entity "divisorGenerico_e_Interface" for hierarchy "divisorGenerico_e_Interface:interfaceTempo3" File: C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/contador.vhd Line: 346
+Info (12128): Elaborating entity "divisorGenerico_e_Interface" for hierarchy "divisorGenerico_e_Interface:interfaceTempo3" File: C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/contador.vhd Line: 417
 Info (12128): Elaborating entity "divisorGenerico" for hierarchy "divisorGenerico_e_Interface:interfaceTempo3|divisorGenerico:baseTempo" File: C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/divisorGenerico_e_Interface.vhd Line: 20
 Info (276014): Found 2 instances of uninferred RAM logic
     Info (276007): RAM logic "CPU_rm:CPU|bancoRegistradoresArqRegMem:BANCO_REG|registrador" is uninferred due to asynchronous read logic File: C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/bancoRegistradoresArqRegMem.vhd Line: 29
@@ -972,13 +1023,13 @@ Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1385 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1399 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 16 input pins
     Info (21059): Implemented 83 output pins
-    Info (21061): Implemented 1286 logic cells
+    Info (21061): Implemented 1300 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 11 warnings
-    Info: Peak virtual memory: 4850 megabytes
-    Info: Processing ended: Mon May 09 13:33:34 2022
+    Info: Peak virtual memory: 4852 megabytes
+    Info: Processing ended: Mon May 09 18:35:58 2022
     Info: Elapsed time: 00:00:13
     Info: Total CPU time (on all processors): 00:00:25
 
