@@ -40,6 +40,7 @@ STA @256, %r0			#Armazena o valor do bit0 do acumulador no LDR0 ~ LEDR7
 
 INICIO:
 # Inicializa variáveis de tempo (segundos,minutos,horas)
+
 LDA %r0, @0      # apago o led da flag
 STA @259, %r0  
 LDI %r0, $0 
@@ -131,7 +132,7 @@ CEQ %r0, @1      # Compara com UM - se for zero pula pra minuto
 JEQ $MINUTO_UNIDADE
 CEQ %r0, @5      # Compara com DOIS - se for zero pula pra hora
 JEQ $HORA_UNIDADE
-JMP $SEGUNDO_UNIDADE
+#JMP $SEGUNDO_UNIDADE
 
 INCREMENTO_CLK:
 STA @507, %r7	 #Limpa a leitura do da base de tempo
@@ -144,66 +145,67 @@ LDA %r0, @10     #Carrega o valor de MEM[10] (unidades segundo) no r0
 SOMA %r0, @1     #Soma o r0 com o valor de MEM[1] (constante 1)
 STA @10, %r0     #Salva o incremento em MEM[10] (unidades segundo)
 CEQ %r0, @2      #Compara as unidades de segundo com MEM[2] (constante 10)
-JEQ $SEGUNDO_DEZENA #Caso o valor das unidades venha a ser igual a 10, pula para dezenas
+JEQ $ZERA_SEGUNDO_DEZENA #Caso o valor das unidades venha a ser igual a 10, pula para dezenas
 JMP $ESCREVE_DISPLAY
 FIM_INCREMENTO:
 RET
 
-
-SEGUNDO_DEZENA:
+ZERA_SEGUNDO_DEZENA:
 LDA %r0, @0      #Carrega o valor de MEM[0] (constante zero) no r0
 STA @10, %r0     # Zero as unidades dos segundos
+
+SEGUNDO_DEZENA:
 LDA %r1, @11     #Carrega o valor de MEM[11] (dezenas segundo) no r1
 SOMA %r1, @1     #Soma o r0 com o valor de MEM[1] (constante 1)
 STA @11, %r1     #Salva o incremento em MEM[11] (dezenas segundo)
 CEQ %r1, @3      #Compara as unidades de segundo com MEM[3] (constante 6)
-JEQ $MINUTO_UNIDADE
+JEQ $ZERA_MINUTO_UNIDADE
 JMP $ESCREVE_DISPLAY
 
-MINUTO_UNIDADE:
-LDA %r1, @320                   # Carrega valor SW0~SW7
-CEQ %r1, @1                     # Compara com 1
-JEQ $PULA_ZERO0       # Se for 1, verifico a leitura de segundo a partir do a partir do botao
+ZERA_MINUTO_UNIDADE:
 LDA %r1, @0      #Carrega o valor de MEM[0] (constante zero) no r0
 STA @11, %r1     # Zero as unidades dos segundos
-PULA_ZERO0:
+
+MINUTO_UNIDADE:
 LDA %r2, @12     #Carrega o valor de MEM[12] (unidades minuto) no r2
 SOMA %r2, @1     #Soma o r2 com o valor de MEM[1] (constante 1)
 STA @12, %r2     #Salva o incremento em MEM[12] (unidades minuto)
 CEQ %r2, @2      #Compara as unidades de minuto com MEM[2] (constante 10)
-JEQ $MINUTO_DEZENA #Caso o valor das unidades venha a ser igual a 10, pula para dezenas
+JEQ $ZERA_MINUTO_DEZENA #Caso o valor das unidades venha a ser igual a 10, pula para dezenas
 JMP $ESCREVE_DISPLAY
 
-MINUTO_DEZENA:
+ZERA_MINUTO_DEZENA:
 LDA %r2, @0      #Carrega o valor de MEM[0] (constante zero) no r0
 STA @12, %r2     # Zero as unidades dos segundos
+
+MINUTO_DEZENA:
 LDA %r3, @13     #Carrega o valor de MEM[13] (dezenas minuto) no r3
 SOMA %r3, @1     #Soma o r0 com o valor de MEM[1] (constante 1)
 STA @13, %r3     #Salva o incremento em MEM[13] (dezenas minuto)
 CEQ %r3, @3      #Compara as unidades de minuto com MEM[3] (constante 6)
-JEQ $HORA_UNIDADE
+JEQ $ZERA_HORA_UNIDADE
 JMP $ESCREVE_DISPLAY
 
-HORA_UNIDADE:
-LDA %r1, @320                   # Carrega valor SW0~SW7
-CEQ %r1, @1                     # Compara com 1
-JEQ $PULA_ZERO1       # Se for 1, verifico a leitura de segundo a partir do a partir do botao
+ZERA_HORA_UNIDADE:
 LDA %r3, @0      #Carrega o valor de MEM[0] (constante zero) no r3
 STA @13, %r3     # Zero as unidades dos segundos
-PULA_ZERO1:
+
+HORA_UNIDADE:
 LDA %r4, @14     #Carrega o valor de MEM[14] (unidades hora) no r4
 SOMA %r4, @1     #Soma o r4 com o valor de MEM[1] (constante 1)
 STA @14, %r4     #Salva o incremento em MEM[14] (unidades hora)
 CEQ %r4, @2      #Compara as unidades de hora com MEM[2] (constante 10)
-JEQ $HORA_DEZENA #Caso o valor das unidades venha a ser igual a 10, pula para dezenas
+JEQ $ZERA_HORA_DEZENA #Caso o valor das unidades venha a ser igual a 10, pula para dezenas
 LDA %r6, @7      #Carrega o valor de MEM[7] (flag ta_tarde) no r6
 CEQ %r6, @1      # Verifica se flag ta_tarde é um
 JEQ $TA_TARDE    # pula para verificacao do valor de unidade de hora max (2 ou 4)
 JMP $ESCREVE_DISPLAY
 
-HORA_DEZENA:
+ZERA_HORA_DEZENA:
 LDA %r4, @0      #Carrega o valor de MEM[0] (constante zero) no r0
 STA @14, %r4     # Zero as unidades dos segundos
+
+HORA_DEZENA:
 LDA %r5, @15     #Carrega o valor de MEM[15] (dezenas minuto) no r5
 SOMA %r5, @1     #Soma o r0 com o valor de MEM[1] (constante 1)
 STA @15, %r5     #Salva o incremento em MEM[15] (dezenas minuto)
@@ -217,7 +219,7 @@ STA @288, %r0    #Inicializa display HEX0 com valor 0
 LDA %r0, @11
 STA @289, %r0    #Inicializa display HEX1 com valor 0
 LDA %r0, @12     #Carrega o valor dos segundos em r0
-STA @290, %r2    #Inicializa display HEX2 com valor 0
+STA @290, %r0    #Inicializa display HEX2 com valor 0
 LDA %r0, @13     #Carrega o valor dos segundos em r0
 STA @291, %r0    #Inicializa display HEX3 com valor 0
 LDA %r0, @14     #Carrega o valor dos segundos em r0

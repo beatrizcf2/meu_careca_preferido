@@ -74,6 +74,7 @@ tmp(27) := "0100000000000001";	-- LDI %r0, $1			    #Carrega o acumulador com o 
 tmp(28) := "0101000100000000";	-- STA @256, %r0			#Armazena o valor do bit0 do acumulador no LDR0 ~ LEDR7
 
 -- Inicializa variáveis de tempo (segundos,minutos,horas)
+
 tmp(29) := "0001000000000000";	-- LDA %r0, @0      # apago o led da flag
 tmp(30) := "0101000100000011";	-- STA @259, %r0  
 tmp(31) := "0100000000000000";	-- LDI %r0, $0 
@@ -125,7 +126,7 @@ tmp(65) := "0110000001000010";	-- JMP $VERIFICA_KEY3              # Pulo para a 
 tmp(66) := "0001001101100011";	-- LDA %r1, @355                   # Carrega valor KEY3
 tmp(67) := "1000001000000000";	-- CEQ %r1, @0                     # Compara com 0
 tmp(68) := "0111000001001110";	-- JEQ $VERIFICA_KEY0              # Desvia para verificar KEY0 se KEY3 nao foi pressionado
-tmp(69) := "1001000011000110";	-- JSR $SELECIONA_CAMPO            # Desvia para a mudanca de campo 
+tmp(69) := "1001000010111111";	-- JSR $SELECIONA_CAMPO            # Desvia para a mudanca de campo 
 tmp(70) := "0000000000000000";	-- NOP			                    # NOP
 tmp(71) := "0110000001001110";	-- JMP $VERIFICA_KEY0              # Pulo para a verificacao do KEY0 
 
@@ -133,7 +134,7 @@ tmp(71) := "0110000001001110";	-- JMP $VERIFICA_KEY0              # Pulo para a 
 tmp(72) := "0001001101000011";	-- LDA %r1, @323	                #Carrega o r1 com a base de tempo
 tmp(73) := "1000001000000000";	-- CEQ %r1, @0		                #Compara com o valor de MEM[0] (constante 0)
 tmp(74) := "0111000001001110";	-- JEQ $VERIFICA_KEY0		        #Desvia para verificar key0 se igual a 0 (ainda nao deu um segundo) 
-tmp(75) := "1001000001011101";	-- JSR $INCREMENTO_CLK             #Passou um segundo, chama a sub-rotina de incremento 
+tmp(75) := "1001000001011100";	-- JSR $INCREMENTO_CLK             #Passou um segundo, chama a sub-rotina de incremento 
 tmp(76) := "0000000000000000";	-- NOP			                    #  NOP
 tmp(77) := "0110000001001110";	-- JMP $VERIFICA_KEY0              #Pulo para a verificacao do KEY0  
 
@@ -143,7 +144,7 @@ tmp(77) := "0110000001001110";	-- JMP $VERIFICA_KEY0              #Pulo para a v
 tmp(78) := "0001001101100000";	-- LDA %r1, @352	        #Carrega o r1 com o valor de KEY0
 tmp(79) := "1000001000000000";	-- CEQ %r1, @0		        #Compara com o valor de MEM[0] (constante 0)
 tmp(80) := "0111000000110000";	-- JEQ $LOOP_PRINCIPAL		#Desvia para o inicio do loop se igual a 0 (botão não foi pressionado)
-tmp(81) := "1001000010110000";	-- JSR $MUDANCA_BASE       #Passou um segundo, chama a sub-rotina de mudanca de base de tempo
+tmp(81) := "1001000010101001";	-- JSR $MUDANCA_BASE       #Passou um segundo, chama a sub-rotina de mudanca de base de tempo
 tmp(82) := "0000000000000000";	-- NOP			            #  NOP
 tmp(83) := "0110000000110000";	-- JMP $LOOP_PRINCIPAL     # Desvia para o inicio do loop depois da mudanca de
 
@@ -151,153 +152,151 @@ tmp(83) := "0110000000110000";	-- JMP $LOOP_PRINCIPAL     # Desvia para o inicio
 tmp(84) := "0101111111111101";	-- STA @509, %r7	 #Limpa a leitura do da base de tempo
 tmp(85) := "0001000000010010";	-- LDA %r0, @18
 tmp(86) := "1000000000000000";	-- CEQ %r0, @0      # Compara com zero - se for zero pula pra segundo
-tmp(87) := "0111000001011111";	-- JEQ $SEGUNDO_UNIDADE
+tmp(87) := "0111000001011110";	-- JEQ $SEGUNDO_UNIDADE
 tmp(88) := "1000000000000001";	-- CEQ %r0, @1      # Compara com UM - se for zero pula pra minuto
-tmp(89) := "0111000001101110";	-- JEQ $MINUTO_UNIDADE
+tmp(89) := "0111000001101111";	-- JEQ $MINUTO_UNIDADE
 tmp(90) := "1000000000000101";	-- CEQ %r0, @5      # Compara com DOIS - se for zero pula pra hora
-tmp(91) := "0111000010000001";	-- JEQ $HORA_UNIDADE
-tmp(92) := "0110000001011111";	-- JMP $SEGUNDO_UNIDADE
+tmp(91) := "0111000001111111";	-- JEQ $HORA_UNIDADE
+--JMP $SEGUNDO_UNIDADE
 
-tmp(93) := "0101111111111011";	-- STA @507, %r7	 #Limpa a leitura do da base de tempo
-tmp(94) := "0110000001011111";	-- JMP $SEGUNDO_UNIDADE
-
-
-
-tmp(95) := "0001000000001010";	-- LDA %r0, @10     #Carrega o valor de MEM[10] (unidades segundo) no r0
-tmp(96) := "0010000000000001";	-- SOMA %r0, @1     #Soma o r0 com o valor de MEM[1] (constante 1)
-tmp(97) := "0101000000001010";	-- STA @10, %r0     #Salva o incremento em MEM[10] (unidades segundo)
-tmp(98) := "1000000000000010";	-- CEQ %r0, @2      #Compara as unidades de segundo com MEM[2] (constante 10)
-tmp(99) := "0111000001100110";	-- JEQ $SEGUNDO_DEZENA #Caso o valor das unidades venha a ser igual a 10, pula para dezenas
-tmp(100) := "0110000010010111";	-- JMP $ESCREVE_DISPLAY
-tmp(101) := "1010000000000000";	-- RET
+tmp(92) := "0101111111111011";	-- STA @507, %r7	 #Limpa a leitura do da base de tempo
+tmp(93) := "0110000001011110";	-- JMP $SEGUNDO_UNIDADE
 
 
-tmp(102) := "0001000000000000";	-- LDA %r0, @0      #Carrega o valor de MEM[0] (constante zero) no r0
-tmp(103) := "0101000000001010";	-- STA @10, %r0     # Zero as unidades dos segundos
-tmp(104) := "0001001000001011";	-- LDA %r1, @11     #Carrega o valor de MEM[11] (dezenas segundo) no r1
-tmp(105) := "0010001000000001";	-- SOMA %r1, @1     #Soma o r0 com o valor de MEM[1] (constante 1)
-tmp(106) := "0101001000001011";	-- STA @11, %r1     #Salva o incremento em MEM[11] (dezenas segundo)
-tmp(107) := "1000001000000011";	-- CEQ %r1, @3      #Compara as unidades de segundo com MEM[3] (constante 6)
-tmp(108) := "0111000001101110";	-- JEQ $MINUTO_UNIDADE
-tmp(109) := "0110000010010111";	-- JMP $ESCREVE_DISPLAY
 
-tmp(110) := "0001001101000000";	-- LDA %r1, @320                   # Carrega valor SW0~SW7
-tmp(111) := "1000001000000001";	-- CEQ %r1, @1                     # Compara com 1
-tmp(112) := "0111000001110011";	-- JEQ $PULA_ZERO0       # Se for 1, verifico a leitura de segundo a partir do a partir do botao
-tmp(113) := "0001001000000000";	-- LDA %r1, @0      #Carrega o valor de MEM[0] (constante zero) no r0
-tmp(114) := "0101001000001011";	-- STA @11, %r1     # Zero as unidades dos segundos
-tmp(115) := "0001010000001100";	-- LDA %r2, @12     #Carrega o valor de MEM[12] (unidades minuto) no r2
-tmp(116) := "0010010000000001";	-- SOMA %r2, @1     #Soma o r2 com o valor de MEM[1] (constante 1)
-tmp(117) := "0101010000001100";	-- STA @12, %r2     #Salva o incremento em MEM[12] (unidades minuto)
-tmp(118) := "1000010000000010";	-- CEQ %r2, @2      #Compara as unidades de minuto com MEM[2] (constante 10)
-tmp(119) := "0111000001111001";	-- JEQ $MINUTO_DEZENA #Caso o valor das unidades venha a ser igual a 10, pula para dezenas
-tmp(120) := "0110000010010111";	-- JMP $ESCREVE_DISPLAY
+tmp(94) := "0001000000001010";	-- LDA %r0, @10     #Carrega o valor de MEM[10] (unidades segundo) no r0
+tmp(95) := "0010000000000001";	-- SOMA %r0, @1     #Soma o r0 com o valor de MEM[1] (constante 1)
+tmp(96) := "0101000000001010";	-- STA @10, %r0     #Salva o incremento em MEM[10] (unidades segundo)
+tmp(97) := "1000000000000010";	-- CEQ %r0, @2      #Compara as unidades de segundo com MEM[2] (constante 10)
+tmp(98) := "0111000001100101";	-- JEQ $ZERA_SEGUNDO_DEZENA #Caso o valor das unidades venha a ser igual a 10, pula para dezenas
+tmp(99) := "0110000010010000";	-- JMP $ESCREVE_DISPLAY
+tmp(100) := "1010000000000000";	-- RET
 
-tmp(121) := "0001010000000000";	-- LDA %r2, @0      #Carrega o valor de MEM[0] (constante zero) no r0
-tmp(122) := "0101010000001100";	-- STA @12, %r2     # Zero as unidades dos segundos
-tmp(123) := "0001011000001101";	-- LDA %r3, @13     #Carrega o valor de MEM[13] (dezenas minuto) no r3
-tmp(124) := "0010011000000001";	-- SOMA %r3, @1     #Soma o r0 com o valor de MEM[1] (constante 1)
-tmp(125) := "0101011000001101";	-- STA @13, %r3     #Salva o incremento em MEM[13] (dezenas minuto)
-tmp(126) := "1000011000000011";	-- CEQ %r3, @3      #Compara as unidades de minuto com MEM[3] (constante 6)
-tmp(127) := "0111000010000001";	-- JEQ $HORA_UNIDADE
-tmp(128) := "0110000010010111";	-- JMP $ESCREVE_DISPLAY
+tmp(101) := "0001000000000000";	-- LDA %r0, @0      #Carrega o valor de MEM[0] (constante zero) no r0
+tmp(102) := "0101000000001010";	-- STA @10, %r0     # Zero as unidades dos segundos
 
-tmp(129) := "0001001101000000";	-- LDA %r1, @320                   # Carrega valor SW0~SW7
-tmp(130) := "1000001000000001";	-- CEQ %r1, @1                     # Compara com 1
-tmp(131) := "0111000010000110";	-- JEQ $PULA_ZERO1       # Se for 1, verifico a leitura de segundo a partir do a partir do botao
-tmp(132) := "0001011000000000";	-- LDA %r3, @0      #Carrega o valor de MEM[0] (constante zero) no r3
-tmp(133) := "0101011000001101";	-- STA @13, %r3     # Zero as unidades dos segundos
-tmp(134) := "0001100000001110";	-- LDA %r4, @14     #Carrega o valor de MEM[14] (unidades hora) no r4
-tmp(135) := "0010100000000001";	-- SOMA %r4, @1     #Soma o r4 com o valor de MEM[1] (constante 1)
-tmp(136) := "0101100000001110";	-- STA @14, %r4     #Salva o incremento em MEM[14] (unidades hora)
-tmp(137) := "1000100000000010";	-- CEQ %r4, @2      #Compara as unidades de hora com MEM[2] (constante 10)
-tmp(138) := "0111000010001111";	-- JEQ $HORA_DEZENA #Caso o valor das unidades venha a ser igual a 10, pula para dezenas
-tmp(139) := "0001110000000111";	-- LDA %r6, @7      #Carrega o valor de MEM[7] (flag ta_tarde) no r6
-tmp(140) := "1000110000000001";	-- CEQ %r6, @1      # Verifica se flag ta_tarde é um
-tmp(141) := "0111000010100111";	-- JEQ $TA_TARDE    # pula para verificacao do valor de unidade de hora max (2 ou 4)
-tmp(142) := "0110000010010111";	-- JMP $ESCREVE_DISPLAY
+tmp(103) := "0001001000001011";	-- LDA %r1, @11     #Carrega o valor de MEM[11] (dezenas segundo) no r1
+tmp(104) := "0010001000000001";	-- SOMA %r1, @1     #Soma o r0 com o valor de MEM[1] (constante 1)
+tmp(105) := "0101001000001011";	-- STA @11, %r1     #Salva o incremento em MEM[11] (dezenas segundo)
+tmp(106) := "1000001000000011";	-- CEQ %r1, @3      #Compara as unidades de segundo com MEM[3] (constante 6)
+tmp(107) := "0111000001101101";	-- JEQ $ZERA_MINUTO_UNIDADE
+tmp(108) := "0110000010010000";	-- JMP $ESCREVE_DISPLAY
 
-tmp(143) := "0001100000000000";	-- LDA %r4, @0      #Carrega o valor de MEM[0] (constante zero) no r0
-tmp(144) := "0101100000001110";	-- STA @14, %r4     # Zero as unidades dos segundos
-tmp(145) := "0001101000001111";	-- LDA %r5, @15     #Carrega o valor de MEM[15] (dezenas minuto) no r5
-tmp(146) := "0010101000000001";	-- SOMA %r5, @1     #Soma o r0 com o valor de MEM[1] (constante 1)
-tmp(147) := "0101101000001111";	-- STA @15, %r5     #Salva o incremento em MEM[15] (dezenas minuto)
-tmp(148) := "1000101000010001";	-- CEQ %r5, @17      #Compara as dezenas da hora com MEM[17] (2 ou 1)
-tmp(149) := "0111000010100100";	-- JEQ $SETA_FLAG
-tmp(150) := "0110000010010111";	-- JMP $ESCREVE_DISPLAY
+tmp(109) := "0001001000000000";	-- LDA %r1, @0      #Carrega o valor de MEM[0] (constante zero) no r0
+tmp(110) := "0101001000001011";	-- STA @11, %r1     # Zero as unidades dos segundos
 
-tmp(151) := "0001000000001010";	-- LDA %r0, @10     #Carrega o valor dos segundos em r0
-tmp(152) := "0101000100100000";	-- STA @288, %r0    #Inicializa display HEX0 com valor 0
-tmp(153) := "0001000000001011";	-- LDA %r0, @11
-tmp(154) := "0101000100100001";	-- STA @289, %r0    #Inicializa display HEX1 com valor 0
-tmp(155) := "0001000000001100";	-- LDA %r0, @12     #Carrega o valor dos segundos em r0
-tmp(156) := "0101010100100010";	-- STA @290, %r2    #Inicializa display HEX2 com valor 0
-tmp(157) := "0001000000001101";	-- LDA %r0, @13     #Carrega o valor dos segundos em r0
-tmp(158) := "0101000100100011";	-- STA @291, %r0    #Inicializa display HEX3 com valor 0
-tmp(159) := "0001000000001110";	-- LDA %r0, @14     #Carrega o valor dos segundos em r0
-tmp(160) := "0101000100100100";	-- STA @292, %r0    #Inicializa display HEX4 com valor 0
-tmp(161) := "0001000000001111";	-- LDA %r0, @15     #Carrega o valor dos segundos em r0
-tmp(162) := "0101000100100101";	-- STA @293, %r0    #Inicializa display HEX5 com valor 0
-tmp(163) := "0110000001100101";	-- JMP $FIM_INCREMENTO
+tmp(111) := "0001010000001100";	-- LDA %r2, @12     #Carrega o valor de MEM[12] (unidades minuto) no r2
+tmp(112) := "0010010000000001";	-- SOMA %r2, @1     #Soma o r2 com o valor de MEM[1] (constante 1)
+tmp(113) := "0101010000001100";	-- STA @12, %r2     #Salva o incremento em MEM[12] (unidades minuto)
+tmp(114) := "1000010000000010";	-- CEQ %r2, @2      #Compara as unidades de minuto com MEM[2] (constante 10)
+tmp(115) := "0111000001110101";	-- JEQ $ZERA_MINUTO_DEZENA #Caso o valor das unidades venha a ser igual a 10, pula para dezenas
+tmp(116) := "0110000010010000";	-- JMP $ESCREVE_DISPLAY
+
+tmp(117) := "0001010000000000";	-- LDA %r2, @0      #Carrega o valor de MEM[0] (constante zero) no r0
+tmp(118) := "0101010000001100";	-- STA @12, %r2     # Zero as unidades dos segundos
+
+tmp(119) := "0001011000001101";	-- LDA %r3, @13     #Carrega o valor de MEM[13] (dezenas minuto) no r3
+tmp(120) := "0010011000000001";	-- SOMA %r3, @1     #Soma o r0 com o valor de MEM[1] (constante 1)
+tmp(121) := "0101011000001101";	-- STA @13, %r3     #Salva o incremento em MEM[13] (dezenas minuto)
+tmp(122) := "1000011000000011";	-- CEQ %r3, @3      #Compara as unidades de minuto com MEM[3] (constante 6)
+tmp(123) := "0111000001111101";	-- JEQ $ZERA_HORA_UNIDADE
+tmp(124) := "0110000010010000";	-- JMP $ESCREVE_DISPLAY
+
+tmp(125) := "0001011000000000";	-- LDA %r3, @0      #Carrega o valor de MEM[0] (constante zero) no r3
+tmp(126) := "0101011000001101";	-- STA @13, %r3     # Zero as unidades dos segundos
+
+tmp(127) := "0001100000001110";	-- LDA %r4, @14     #Carrega o valor de MEM[14] (unidades hora) no r4
+tmp(128) := "0010100000000001";	-- SOMA %r4, @1     #Soma o r4 com o valor de MEM[1] (constante 1)
+tmp(129) := "0101100000001110";	-- STA @14, %r4     #Salva o incremento em MEM[14] (unidades hora)
+tmp(130) := "1000100000000010";	-- CEQ %r4, @2      #Compara as unidades de hora com MEM[2] (constante 10)
+tmp(131) := "0111000010001000";	-- JEQ $ZERA_HORA_DEZENA #Caso o valor das unidades venha a ser igual a 10, pula para dezenas
+tmp(132) := "0001110000000111";	-- LDA %r6, @7      #Carrega o valor de MEM[7] (flag ta_tarde) no r6
+tmp(133) := "1000110000000001";	-- CEQ %r6, @1      # Verifica se flag ta_tarde é um
+tmp(134) := "0111000010100000";	-- JEQ $TA_TARDE    # pula para verificacao do valor de unidade de hora max (2 ou 4)
+tmp(135) := "0110000010010000";	-- JMP $ESCREVE_DISPLAY
+
+tmp(136) := "0001100000000000";	-- LDA %r4, @0      #Carrega o valor de MEM[0] (constante zero) no r0
+tmp(137) := "0101100000001110";	-- STA @14, %r4     # Zero as unidades dos segundos
+
+tmp(138) := "0001101000001111";	-- LDA %r5, @15     #Carrega o valor de MEM[15] (dezenas minuto) no r5
+tmp(139) := "0010101000000001";	-- SOMA %r5, @1     #Soma o r0 com o valor de MEM[1] (constante 1)
+tmp(140) := "0101101000001111";	-- STA @15, %r5     #Salva o incremento em MEM[15] (dezenas minuto)
+tmp(141) := "1000101000010001";	-- CEQ %r5, @17      #Compara as dezenas da hora com MEM[17] (2 ou 1)
+tmp(142) := "0111000010011101";	-- JEQ $SETA_FLAG
+tmp(143) := "0110000010010000";	-- JMP $ESCREVE_DISPLAY
+
+tmp(144) := "0001000000001010";	-- LDA %r0, @10     #Carrega o valor dos segundos em r0
+tmp(145) := "0101000100100000";	-- STA @288, %r0    #Inicializa display HEX0 com valor 0
+tmp(146) := "0001000000001011";	-- LDA %r0, @11
+tmp(147) := "0101000100100001";	-- STA @289, %r0    #Inicializa display HEX1 com valor 0
+tmp(148) := "0001000000001100";	-- LDA %r0, @12     #Carrega o valor dos segundos em r0
+tmp(149) := "0101000100100010";	-- STA @290, %r0    #Inicializa display HEX2 com valor 0
+tmp(150) := "0001000000001101";	-- LDA %r0, @13     #Carrega o valor dos segundos em r0
+tmp(151) := "0101000100100011";	-- STA @291, %r0    #Inicializa display HEX3 com valor 0
+tmp(152) := "0001000000001110";	-- LDA %r0, @14     #Carrega o valor dos segundos em r0
+tmp(153) := "0101000100100100";	-- STA @292, %r0    #Inicializa display HEX4 com valor 0
+tmp(154) := "0001000000001111";	-- LDA %r0, @15     #Carrega o valor dos segundos em r0
+tmp(155) := "0101000100100101";	-- STA @293, %r0    #Inicializa display HEX5 com valor 0
+tmp(156) := "0110000001100100";	-- JMP $FIM_INCREMENTO
 
 -- Aciona a flag, indicando max dezena hora
 --LDA %r0, @1     --STA @258, %r0
-tmp(164) := "0100110000000001";	-- LDI %r6, $1
-tmp(165) := "0101110000000111";	-- STA @7, %r6     # Guarda 1 na flag ta_tarde
-tmp(166) := "0110000010010111";	-- JMP $ESCREVE_DISPLAY
+tmp(157) := "0100110000000001";	-- LDI %r6, $1
+tmp(158) := "0101110000000111";	-- STA @7, %r6     # Guarda 1 na flag ta_tarde
+tmp(159) := "0110000010010000";	-- JMP $ESCREVE_DISPLAY
 
 -- Verifica se deu meia-noite
 --LDA %r0, @0      --STA @258, %r0  
-tmp(167) := "0001100000001110";	-- LDA %r4, @14     #Carrega o valor de MEM[14] (unidades hora) no r4
-tmp(168) := "1000100000010000";	-- CEQ %r4, @16      #Compara as unidades de hora com MEM[4] (constante 4)
-tmp(169) := "0111000010101011";	-- JEQ $MEIA_NOITE
-tmp(170) := "0110000010010111";	-- JMP $ESCREVE_DISPLAY
+tmp(160) := "0001100000001110";	-- LDA %r4, @14     #Carrega o valor de MEM[14] (unidades hora) no r4
+tmp(161) := "1000100000010000";	-- CEQ %r4, @16      #Compara as unidades de hora com MEM[4] (constante 4)
+tmp(162) := "0111000010100100";	-- JEQ $MEIA_NOITE
+tmp(163) := "0110000010010000";	-- JMP $ESCREVE_DISPLAY
 
-tmp(171) := "0001000000000001";	-- LDA %r0, @1      # acendo o led da flag
-tmp(172) := "0101000100000011";	-- STA @259, %r0  
-tmp(173) := "0100110000000001";	-- LDI %r6, $1
-tmp(174) := "0101110000001000";	-- STA @8, %r6     # Guarda 1 na flag meia_noite
-tmp(175) := "0110000001100101";	-- JMP $FIM_INCREMENTO
+tmp(164) := "0001000000000001";	-- LDA %r0, @1      # acendo o led da flag
+tmp(165) := "0101000100000011";	-- STA @259, %r0  
+tmp(166) := "0100110000000001";	-- LDI %r6, $1
+tmp(167) := "0101110000001000";	-- STA @8, %r6     # Guarda 1 na flag meia_noite
+tmp(168) := "0110000001100100";	-- JMP $FIM_INCREMENTO
 -- ------------------------------------------------------------------------
 
 -- Sub-rotina de mudanca de base (12-24) ----------------------------------
-tmp(176) := "0101111111111111";	-- STA @511, %r7   # Limpa leitura botao
-tmp(177) := "0001000000000000";	-- LDA %r0, @0     # Carrega constante 0
-tmp(178) := "0101000100000000";	-- STA @256, %r0   # Apaga led
-tmp(179) := "0001000000010001";	-- LDA %r0, @17    # Carrega a variavel de dezena de hora max no r0
-tmp(180) := "1000000000000101";	-- CEQ %r0, @5     # Compara valor da variavel com dois
-tmp(181) := "0111000010111000";	-- JEQ $TO_12      # Se for igual a dois, muda de 24 para 12
-tmp(182) := "0110000010111111";	-- JMP $TO_24      # Se nao, muda de 12 para 24
-tmp(183) := "1010000000000000";	-- RET
+tmp(169) := "0101111111111111";	-- STA @511, %r7   # Limpa leitura botao
+tmp(170) := "0001000000000000";	-- LDA %r0, @0     # Carrega constante 0
+tmp(171) := "0101000100000000";	-- STA @256, %r0   # Apaga led
+tmp(172) := "0001000000010001";	-- LDA %r0, @17    # Carrega a variavel de dezena de hora max no r0
+tmp(173) := "1000000000000101";	-- CEQ %r0, @5     # Compara valor da variavel com dois
+tmp(174) := "0111000010110001";	-- JEQ $TO_12      # Se for igual a dois, muda de 24 para 12
+tmp(175) := "0110000010111000";	-- JMP $TO_24      # Se nao, muda de 12 para 24
+tmp(176) := "1010000000000000";	-- RET
 
-tmp(184) := "0001000000000101";	-- LDA %r0, @5             # carrega constante 2
+tmp(177) := "0001000000000101";	-- LDA %r0, @5             # carrega constante 2
+tmp(178) := "0101000100000000";	-- STA @256, %r0
+tmp(179) := "0001001000000001";	-- LDA %r1, @1             # Carrega um no registrador
+tmp(180) := "0101001000010001";	-- STA @17, %r1            # Muda a variavel de dezena de hora para um
+tmp(181) := "0001001000000101";	-- LDA %r1, @5             # Carrega dois no registrador
+tmp(182) := "0101001000010000";	-- STA @16, %r1            # Muda a variavel de unidade de hora para dois
+tmp(183) := "0110000010110000";	-- JMP $FIM_MUDANCA_BASE   # Volta para o fim da mudanca de base, para retornar da sub-rotina
+
+tmp(184) := "0001000000000001";	-- LDA %r0, @1             # Carrega constante 1
 tmp(185) := "0101000100000000";	-- STA @256, %r0
-tmp(186) := "0001001000000001";	-- LDA %r1, @1             # Carrega um no registrador
+tmp(186) := "0001001000000101";	-- LDA %r1, @5             # Carrega dois no registrador
 tmp(187) := "0101001000010001";	-- STA @17, %r1            # Muda a variavel de dezena de hora para um
-tmp(188) := "0001001000000101";	-- LDA %r1, @5             # Carrega dois no registrador
-tmp(189) := "0101001000010000";	-- STA @16, %r1            # Muda a variavel de unidade de hora para dois
-tmp(190) := "0110000010110111";	-- JMP $FIM_MUDANCA_BASE   # Volta para o fim da mudanca de base, para retornar da sub-rotina
-
-tmp(191) := "0001000000000001";	-- LDA %r0, @1             # Carrega constante 1
-tmp(192) := "0101000100000000";	-- STA @256, %r0
-tmp(193) := "0001001000000101";	-- LDA %r1, @5             # Carrega dois no registrador
-tmp(194) := "0101001000010001";	-- STA @17, %r1            # Muda a variavel de dezena de hora para um
-tmp(195) := "0001001000000100";	-- LDA %r1, @4             # Carrega quatro no registrador
-tmp(196) := "0101001000010000";	-- STA @16, %r1            # Muda a variavel de unidade de hora para quatro
-tmp(197) := "0110000010110111";	-- JMP $FIM_MUDANCA_BASE   # Volta para o fim da mudanca de base, para retornar da sub-rotina
+tmp(188) := "0001001000000100";	-- LDA %r1, @4             # Carrega quatro no registrador
+tmp(189) := "0101001000010000";	-- STA @16, %r1            # Muda a variavel de unidade de hora para quatro
+tmp(190) := "0110000010110000";	-- JMP $FIM_MUDANCA_BASE   # Volta para o fim da mudanca de base, para retornar da sub-rotina
 -- ------------------------------------------------------------------------
 
-tmp(198) := "0101111111111100";	-- STA @508, %r7
-tmp(199) := "0001000000010010";	-- LDA %r0, @18     # Carrega variavel campo
-tmp(200) := "0010000000000001";	-- SOMA %r0, @1
-tmp(201) := "0101000000010010";	-- STA @18, %r0
-tmp(202) := "1000000000000110";	-- CEQ %r0, @6      # Compara r0 com tres
-tmp(203) := "0111000011001101";	-- JEQ $RESETA_CAMPO
-tmp(204) := "1010000000000000";	-- RET
+tmp(191) := "0101111111111100";	-- STA @508, %r7
+tmp(192) := "0001000000010010";	-- LDA %r0, @18     # Carrega variavel campo
+tmp(193) := "0010000000000001";	-- SOMA %r0, @1
+tmp(194) := "0101000000010010";	-- STA @18, %r0
+tmp(195) := "1000000000000110";	-- CEQ %r0, @6      # Compara r0 com tres
+tmp(196) := "0111000011000110";	-- JEQ $RESETA_CAMPO
+tmp(197) := "1010000000000000";	-- RET
 
-tmp(205) := "0001000000000000";	-- LDA %r0, @0        # Carrega zero no registrador
-tmp(206) := "0101000000010010";	-- STA @18, %r0       # Carrega zero na MEM[18]
-tmp(207) := "1010000000000000";	-- RET
+tmp(198) := "0001000000000000";	-- LDA %r0, @0        # Carrega zero no registrador
+tmp(199) := "0101000000010010";	-- STA @18, %r0       # Carrega zero na MEM[18]
+tmp(200) := "1010000000000000";	-- RET
 
         return tmp;
     end initMemory;

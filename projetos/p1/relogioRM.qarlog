@@ -1,0 +1,38 @@
+Quartus Prime Archive log --	C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/relogioRM.qarlog
+
+Archive:	C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/relogioRM.qar
+Date:		Mon May 09 22:57:34 2022
+Quartus Prime		20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/CPU_rm.vhd
+C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/ULASomaSub.vhd
+C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/Waveform.vwf
+C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/bancoRegistradoresArqRegMem.vhd
+C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/buffer_3_state.vhd
+C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/buffer_3_state_1porta.vhd
+C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/buffer_3_state_8bits.vhd
+C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/contador.vhd
+C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/conversorHex7Seg.vhd
+C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/decHex7Seg.vhd
+C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/decoder.vhd
+C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/decoder3x8.vhd
+C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/decoderGeneric.vhd
+C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/desvio.vhd
+C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/divisorGenerico.vhd
+C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/divisorGenerico_e_Interface.vhd
+C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/edgeDetector.vhd
+C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/flipFlop.vhd
+C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/memoria.vhd
+C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/memoriaRAM.vhd
+C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/muxGenerico2x1.vhd
+C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/muxGenerico4x1.vhd
+C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/registradorGenerico.vhd
+C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/relogioRM.qpf
+C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/relogioRM.qsf
+C:/Users/Bea/descomp/meu_careca_preferido/projetos/p1/somaUm.vhd
+c:/intelfpga_lite/20.1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 27 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
