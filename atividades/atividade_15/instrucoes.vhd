@@ -83,7 +83,11 @@ architecture arquitetura of instrucoes is
 		signal dadoLidoRAM             : std_logic_vector(larguraDados-1 downto 0);
 
 		-- SOMADOR
-		signal saidaSomador            : std_logic_vector(larguraDados-1 downto 0)
+		signal saidaSomador            : std_logic_vector(larguraDados-1 downto 0);
+
+		-- SHIFT
+		signal saidaShiftPC            : std_logic_vector(larguraDados-1 downto 0);
+		
 
 
 begin
@@ -108,7 +112,7 @@ PC_INC :  entity work.somaUm  generic map (larguraDados => larguraDados , consta
             port map(   entrada   => saidaPC, 
 					    saida     => saidaIncPC);			
               
-bancoReg : entity work.bancoReg   generic map (larguraDados => larguraDados, larguraEndBancoRegs => larguraEnd)
+BANCO_REG : entity work.bancoReg   generic map (larguraDados => larguraDados, larguraEndBancoRegs => larguraEnd)
           port map (  	clk => CLK,
                       	enderecoA => endRs,
                       	enderecoB => endRt,
@@ -118,45 +122,69 @@ bancoReg : entity work.bancoReg   generic map (larguraDados => larguraDados, lar
                       	saidaA => saidaRs,
                       	saidaB  => saidaRt);
 
-ROMMIPS : entity work.ROMMIPS   generic map (dataWidth => larguraDados, addrWidth => larguraDados)
+ROM_MIPS : entity work.ROMMIPS   generic map (dataWidth => larguraDados, addrWidth => larguraDados)
           port map ( 	clk => CLK,
 						Endereco => saidaPC, 
 						Dado => saidaROM);
 							
-muxULAMem :  entity work.muxGenerico2x1  generic map (larguraDados => VALOR_LOCAL)
+MUX_ULA_MEM :  entity work.muxGenerico2x1  generic map (larguraDados => larguraDados)
+          port map( 	entradaA_MUX => saidaOpULA,
+                 		entradaB_MUX =>  dadoLidoRAM,
+                 		seletor_MUX => habMuxULAMem,
+                 		saida_MUX => saidaMuxULAMem);
+
+MUX_RT_IMEDIATO :  entity work.muxGenerico2x1  generic map (larguraDados => larguraDados)
+          port map( 	entradaA_MUX => saidaRt,
+                 		entradaB_MUX =>  sinalEstendido,
+                 		seletor_MUX => habMuxRtImediato,
+                 		saida_MUX => saidaMuxRtImediato);
+
+MUX_BEQ :  entity work.muxGenerico2x1  generic map (larguraDados => larguraDados)
+          port map( 	entradaA_MUX => saidaIncPC,
+                 		entradaB_MUX =>  saidaSomador,
+                 		seletor_MUX => saidaZeroULA and BEQ;,
+                 		saida_MUX => saidaMuxBEQ);
+
+MUX_RT_RD :  entity work.muxGenerico2x1  generic map (larguraDados => 5)
+          port map( 	entradaA_MUX => endRt,
+                 		entradaB_MUX =>  endRd,
+                 		seletor_MUX => habMuxRtRd,
+                 		saida_MUX => saidaMuxRtRd);
+
+MUX_PC :  entity work.muxGenerico2x1  generic map (larguraDados => larguraDados)
           port map( 	entradaA_MUX => sinalLocal,
-                 		entradaB_MUX =>  sinalLocal,
+                 		entradaB_MUX =>  saidaIncPC(31 downto 28) & saidaShiftPC & "00",
                  		seletor_MUX => sinalLocal,
                  		saida_MUX => sinalLocal);
 
-muxRtImediato :  entity work.muxGenerico2x1  generic map (larguraDados => VALOR_LOCAL)
-          port map( 	entradaA_MUX => sinalLocal,
-                 		entradaB_MUX =>  sinalLocal,
-                 		seletor_MUX => sinalLocal,
-                 		saida_MUX => sinalLocal);
+ESTENDE : entity work.estendeSinalGenerico   generic map (larguraDadoEntrada => 16, larguraDadoSaida => larguraDados)
+          port map (	estendeSinal_IN => saidaROM(15 downto 0), 
+		  				estendeSinal_OUT =>  sinalEstendidoShiftado);
 
-muxBEQ :  entity work.muxGenerico2x1  generic map (larguraDados => VALOR_LOCAL)
-          port map( 	entradaA_MUX => sinalLocal,
-                 		entradaB_MUX =>  sinalLocal,
-                 		seletor_MUX => sinalLocal,
-                 		saida_MUX => sinalLocal);
+SOMADOR :  entity work.somadorGenerico  generic map (larguraDados => larguraDados)
+          port map(  	entradaA => saidaIncPC, 
+					    entradaB =>  sinalEstendidoShiftado, 
+						saida => saidaSomador);
 
-muxRtRd :  entity work.muxGenerico2x1  generic map (larguraDados => VALOR_LOCAL)
-          port map( 	entradaA_MUX => sinalLocal,
-                 		entradaB_MUX =>  sinalLocal,
-                 		seletor_MUX => sinalLocal,
-                 		saida_MUX => sinalLocal);
+RAM_MIPS : entity work.RAMMIPS   generic map (dataWidth => larguraDados, addrWidth => larguraDados)
+          port map (	Endereco => saidaOpULA, 
+		  				we => WR, 
+					    re => RD, 
+						habilita => '1',
+						Dado_in => saidaRt, 
+						Dado_out => dadoLidoRAM, 
+						clk => CLK);
+-- shift1
+-- shift2
 
-muxPC :  entity work.muxGenerico2x1  generic map (larguraDados => VALOR_LOCAL)
-          port map( 	entradaA_MUX => sinalLocal,
-                 		entradaB_MUX =>  sinalLocal,
-                 		seletor_MUX => sinalLocal,
-                 		saida_MUX => sinalLocal);
 
 				 
 
 
 controle <= pontosControle;
+
+
+
 
 
 
