@@ -5,7 +5,7 @@ use ieee.numeric_std.all;
 entity shift2 is
     generic
     (
-        larguraDados : natural := 32
+        dataWidth : natural := 32
     );
     port
     (
@@ -16,5 +16,7 @@ end entity;
 
 architecture comportamento of shift2 is
     begin
+	 
+	 saida(larguraDados-1 downto 0) <= entrada(larguraDados-3 downto 0) & "00" ;
        
 end architecture;
