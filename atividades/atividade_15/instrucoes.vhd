@@ -175,9 +175,17 @@ RAM_MIPS : entity work.RAMMIPS   generic map (dataWidth => larguraDados, addrWid
 						Dado_out => dadoLidoRAM, 
 						clk => CLK);
 -- shift1
+SHIFT1 : entity work.shift2   generic map (dataWidth => larguraDados)
+port map (	entrada => sinalEstendido, 
+				saida => sinalEstendidoShiftado
+			);
+
+
 -- shift2
-
-
+SHIFT2 : entity work.shift2   generic map (dataWidth => larguraDados)
+port map (	entrada => imediato, 
+				saida => saidaShiftPC
+			);
 				 
 
 
