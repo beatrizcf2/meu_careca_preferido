@@ -1,0 +1,45 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+-- o codigo abaixo esta incompleto
+-- 'e apenas um rascunho
+
+entity instrucoes is
+  -- O generic é onde carrega as constantes padroes
+  generic
+  (
+		larguraDados    : natural  :=    32;
+		
+
+  );
+  
+  -- O port é obrigatório e possui o objeto “signal” implícito.
+  port    
+  (	
+		pontosControle           : in  std_logic_vector(larguraControle-1 downto 0);
+		opcode                   : out std_logic_vector(larguraDados-1 downto 0) -- saida para a unidade de controle
+  );
+  
+end entity;   -- Também pode ser utilizado: "end entity";
+
+architecture arquitetura of instrucoes is                                    
+
+		-- ULA
+		signal saidaOpULA              : std_logic_vector(larguraDados-1 downto 0);
+		signal saidaZeroULA            : std_logic;
+		
+
+begin
+
+-- Instanciando os componentes:
+
+
+ULA    : entity work.ULASomaSub  generic map(larguraDados => larguraDados)
+            port map (  entradaA  => saidaRs, 
+						entradaB  => saidaRt,
+					    seletor   => ULActrl,
+						saida     => saidaOpULA);
+
+
+end architecture;
