@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ULA_MIPS
-Thu May 19 15:57:25 2022
+Thu May 19 17:36:42 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -14,14 +14,106 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Parameter Settings for User Entity Instance: muxGenerico2x1:MUX2
- 10. Parameter Settings for User Entity Instance: and1:AND1
- 11. Parameter Settings for User Entity Instance: or1:OR1
- 12. Parameter Settings for User Entity Instance: xor1:Overflow_1
- 13. Parameter Settings for User Entity Instance: muxGenerico4x1:MUX4
- 14. Post-Synthesis Netlist Statistics for Top Partition
- 15. Elapsed Time Per Partition
- 16. Analysis & Synthesis Messages
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Parameter Settings for User Entity Instance: Top-level Entity: |ULA_MIPS_32
+ 11. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA0|muxGenerico2x1:MUX2
+ 12. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA0|muxGenerico4x1:MUX4
+ 13. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA1|muxGenerico2x1:MUX2
+ 14. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA1|muxGenerico4x1:MUX4
+ 15. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA2|muxGenerico2x1:MUX2
+ 16. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA2|muxGenerico4x1:MUX4
+ 17. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA3|muxGenerico2x1:MUX2
+ 18. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA3|muxGenerico4x1:MUX4
+ 19. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA4|muxGenerico2x1:MUX2
+ 20. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA4|muxGenerico4x1:MUX4
+ 21. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA5|muxGenerico2x1:MUX2
+ 22. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA5|muxGenerico4x1:MUX4
+ 23. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA6|muxGenerico2x1:MUX2
+ 24. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA6|muxGenerico4x1:MUX4
+ 25. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA7|muxGenerico2x1:MUX2
+ 26. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA7|muxGenerico4x1:MUX4
+ 27. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA8|muxGenerico2x1:MUX2
+ 28. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA8|muxGenerico4x1:MUX4
+ 29. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA9|muxGenerico2x1:MUX2
+ 30. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA9|muxGenerico4x1:MUX4
+ 31. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA10|muxGenerico2x1:MUX2
+ 32. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA10|muxGenerico4x1:MUX4
+ 33. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA11|muxGenerico2x1:MUX2
+ 34. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA11|muxGenerico4x1:MUX4
+ 35. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA12|muxGenerico2x1:MUX2
+ 36. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA12|muxGenerico4x1:MUX4
+ 37. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA13|muxGenerico2x1:MUX2
+ 38. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA13|muxGenerico4x1:MUX4
+ 39. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA14|muxGenerico2x1:MUX2
+ 40. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA14|muxGenerico4x1:MUX4
+ 41. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA15|muxGenerico2x1:MUX2
+ 42. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA15|muxGenerico4x1:MUX4
+ 43. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA16|muxGenerico2x1:MUX2
+ 44. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA16|muxGenerico4x1:MUX4
+ 45. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA17|muxGenerico2x1:MUX2
+ 46. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA17|muxGenerico4x1:MUX4
+ 47. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA18|muxGenerico2x1:MUX2
+ 48. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA18|muxGenerico4x1:MUX4
+ 49. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA19|muxGenerico2x1:MUX2
+ 50. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA19|muxGenerico4x1:MUX4
+ 51. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA20|muxGenerico2x1:MUX2
+ 52. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA20|muxGenerico4x1:MUX4
+ 53. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA21|muxGenerico2x1:MUX2
+ 54. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA21|muxGenerico4x1:MUX4
+ 55. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA22|muxGenerico2x1:MUX2
+ 56. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA22|muxGenerico4x1:MUX4
+ 57. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA23|muxGenerico2x1:MUX2
+ 58. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA23|muxGenerico4x1:MUX4
+ 59. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA24|muxGenerico2x1:MUX2
+ 60. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA24|muxGenerico4x1:MUX4
+ 61. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA25|muxGenerico2x1:MUX2
+ 62. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA25|muxGenerico4x1:MUX4
+ 63. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA26|muxGenerico2x1:MUX2
+ 64. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA26|muxGenerico4x1:MUX4
+ 65. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA27|muxGenerico2x1:MUX2
+ 66. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA27|muxGenerico4x1:MUX4
+ 67. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA28|muxGenerico2x1:MUX2
+ 68. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA28|muxGenerico4x1:MUX4
+ 69. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA29|muxGenerico2x1:MUX2
+ 70. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA29|muxGenerico4x1:MUX4
+ 71. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA30|muxGenerico2x1:MUX2
+ 72. Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA30|muxGenerico4x1:MUX4
+ 73. Parameter Settings for User Entity Instance: ULA_MIPS_bit31:ULA31|muxGenerico2x1:MUX2
+ 74. Parameter Settings for User Entity Instance: ULA_MIPS_bit31:ULA31|muxGenerico4x1:MUX4
+ 75. Port Connectivity Checks: "ULA_MIPS_bit31:ULA31"
+ 76. Port Connectivity Checks: "ULA_MIPS_1bit:ULA30"
+ 77. Port Connectivity Checks: "ULA_MIPS_1bit:ULA29"
+ 78. Port Connectivity Checks: "ULA_MIPS_1bit:ULA28"
+ 79. Port Connectivity Checks: "ULA_MIPS_1bit:ULA27"
+ 80. Port Connectivity Checks: "ULA_MIPS_1bit:ULA26"
+ 81. Port Connectivity Checks: "ULA_MIPS_1bit:ULA25"
+ 82. Port Connectivity Checks: "ULA_MIPS_1bit:ULA24"
+ 83. Port Connectivity Checks: "ULA_MIPS_1bit:ULA23"
+ 84. Port Connectivity Checks: "ULA_MIPS_1bit:ULA22"
+ 85. Port Connectivity Checks: "ULA_MIPS_1bit:ULA21"
+ 86. Port Connectivity Checks: "ULA_MIPS_1bit:ULA20"
+ 87. Port Connectivity Checks: "ULA_MIPS_1bit:ULA19"
+ 88. Port Connectivity Checks: "ULA_MIPS_1bit:ULA18"
+ 89. Port Connectivity Checks: "ULA_MIPS_1bit:ULA17"
+ 90. Port Connectivity Checks: "ULA_MIPS_1bit:ULA16"
+ 91. Port Connectivity Checks: "ULA_MIPS_1bit:ULA15"
+ 92. Port Connectivity Checks: "ULA_MIPS_1bit:ULA14"
+ 93. Port Connectivity Checks: "ULA_MIPS_1bit:ULA13"
+ 94. Port Connectivity Checks: "ULA_MIPS_1bit:ULA12"
+ 95. Port Connectivity Checks: "ULA_MIPS_1bit:ULA11"
+ 96. Port Connectivity Checks: "ULA_MIPS_1bit:ULA10"
+ 97. Port Connectivity Checks: "ULA_MIPS_1bit:ULA9"
+ 98. Port Connectivity Checks: "ULA_MIPS_1bit:ULA8"
+ 99. Port Connectivity Checks: "ULA_MIPS_1bit:ULA7"
+100. Port Connectivity Checks: "ULA_MIPS_1bit:ULA6"
+101. Port Connectivity Checks: "ULA_MIPS_1bit:ULA5"
+102. Port Connectivity Checks: "ULA_MIPS_1bit:ULA4"
+103. Port Connectivity Checks: "ULA_MIPS_1bit:ULA3"
+104. Port Connectivity Checks: "ULA_MIPS_1bit:ULA2"
+105. Port Connectivity Checks: "ULA_MIPS_1bit:ULA1"
+106. Post-Synthesis Netlist Statistics for Top Partition
+107. Elapsed Time Per Partition
+108. Analysis & Synthesis Messages
 
 
 
@@ -48,14 +140,14 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu May 19 15:57:24 2022       ;
+; Analysis & Synthesis Status     ; Successful - Thu May 19 17:36:42 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; ULA_MIPS                                    ;
-; Top-level Entity Name           ; ULA_MIPS                                    ;
+; Top-level Entity Name           ; ULA_MIPS_32                                 ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
 ; Total registers                 ; 0                                           ;
-; Total pins                      ; 10                                          ;
+; Total pins                      ; 99                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -74,7 +166,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
-; Top-level entity name                                                           ; ULA_MIPS           ; ULA_MIPS           ;
+; Top-level entity name                                                           ; ULA_MIPS_32        ; ULA_MIPS           ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -176,52 +268,165 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                            ; Library ;
 +----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------+---------+
-; and1.vhd                         ; yes             ; User VHDL File  ; //Mac/Home/Downloads/6SEMESTRE/DESCOMP/meu_careca_preferido/atividades/atividade_16/and1.vhd            ;         ;
-; or1.vhd                          ; yes             ; User VHDL File  ; //Mac/Home/Downloads/6SEMESTRE/DESCOMP/meu_careca_preferido/atividades/atividade_16/or1.vhd             ;         ;
-; ULA_MIPS.vhd                     ; yes             ; User VHDL File  ; //Mac/Home/Downloads/6SEMESTRE/DESCOMP/meu_careca_preferido/atividades/atividade_16/ULA_MIPS.vhd        ;         ;
 ; muxGenerico2x1.vhd               ; yes             ; User VHDL File  ; //Mac/Home/Downloads/6SEMESTRE/DESCOMP/meu_careca_preferido/atividades/atividade_16/muxGenerico2x1.vhd  ;         ;
 ; muxGenerico4x1.vhd               ; yes             ; User VHDL File  ; //Mac/Home/Downloads/6SEMESTRE/DESCOMP/meu_careca_preferido/atividades/atividade_16/muxGenerico4x1.vhd  ;         ;
-; xor1.vhd                         ; yes             ; User VHDL File  ; //Mac/Home/Downloads/6SEMESTRE/DESCOMP/meu_careca_preferido/atividades/atividade_16/xor1.vhd            ;         ;
 ; SomadorCompleto.vhd              ; yes             ; User VHDL File  ; //Mac/Home/Downloads/6SEMESTRE/DESCOMP/meu_careca_preferido/atividades/atividade_16/SomadorCompleto.vhd ;         ;
+; ULA_MIPS_32.vhd                  ; yes             ; User VHDL File  ; //Mac/Home/Downloads/6SEMESTRE/DESCOMP/meu_careca_preferido/atividades/atividade_16/ULA_MIPS_32.vhd     ;         ;
+; ULA_MIPS_bit31.vhd               ; yes             ; User VHDL File  ; //Mac/Home/Downloads/6SEMESTRE/DESCOMP/meu_careca_preferido/atividades/atividade_16/ULA_MIPS_bit31.vhd  ;         ;
+; ULA_MIPS_1bit.vhd                ; yes             ; User VHDL File  ; //Mac/Home/Downloads/6SEMESTRE/DESCOMP/meu_careca_preferido/atividades/atividade_16/ULA_MIPS_1bit.vhd   ;         ;
 +----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                  ;
-+---------------------------------------------+----------------+
-; Resource                                    ; Usage          ;
-+---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 2              ;
-;                                             ;                ;
-; Combinational ALUT usage for logic          ; 2              ;
-;     -- 7 input functions                    ; 1              ;
-;     -- 6 input functions                    ; 0              ;
-;     -- 5 input functions                    ; 0              ;
-;     -- 4 input functions                    ; 1              ;
-;     -- <=3 input functions                  ; 0              ;
-;                                             ;                ;
-; Dedicated logic registers                   ; 0              ;
-;                                             ;                ;
-; I/O pins                                    ; 10             ;
-;                                             ;                ;
-; Total DSP Blocks                            ; 0              ;
-;                                             ;                ;
-; Maximum fan-out node                        ; entradaA~input ;
-; Maximum fan-out                             ; 2              ;
-; Total fan-out                               ; 23             ;
-; Average fan-out                             ; 1.05           ;
-+---------------------------------------------+----------------+
++-----------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                     ;
++---------------------------------------------+-------------------+
+; Resource                                    ; Usage             ;
++---------------------------------------------+-------------------+
+; Estimate of Logic utilization (ALMs needed) ; 62                ;
+;                                             ;                   ;
+; Combinational ALUT usage for logic          ; 103               ;
+;     -- 7 input functions                    ; 0                 ;
+;     -- 6 input functions                    ; 21                ;
+;     -- 5 input functions                    ; 27                ;
+;     -- 4 input functions                    ; 1                 ;
+;     -- <=3 input functions                  ; 54                ;
+;                                             ;                   ;
+; Dedicated logic registers                   ; 0                 ;
+;                                             ;                   ;
+; I/O pins                                    ; 99                ;
+;                                             ;                   ;
+; Total DSP Blocks                            ; 0                 ;
+;                                             ;                   ;
+; Maximum fan-out node                        ; SelMux_invB~input ;
+; Maximum fan-out                             ; 46                ;
+; Total fan-out                               ; 528               ;
+; Average fan-out                             ; 1.75              ;
++---------------------------------------------+-------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                        ;
-+------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name               ; Entity Name     ; Library Name ;
-+------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------+-----------------+--------------+
-; |ULA_MIPS                    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 10   ; 0            ; |ULA_MIPS                         ; ULA_MIPS        ; work         ;
-;    |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS|SomadorCompleto:Somador ; SomadorCompleto ; work         ;
-;    |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS|muxGenerico4x1:MUX4     ; muxGenerico4x1  ; work         ;
-+------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------+-----------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                  ;
++---------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node      ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                      ; Entity Name     ; Library Name ;
++---------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------+-----------------+--------------+
+; |ULA_MIPS_32                    ; 103 (0)             ; 0 (0)                     ; 0                 ; 0          ; 99   ; 0            ; |ULA_MIPS_32                                             ; ULA_MIPS_32     ; work         ;
+;    |ULA_MIPS_1bit:ULA0|         ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA0                          ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA0|SomadorCompleto:Somador  ; SomadorCompleto ; work         ;
+;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA0|muxGenerico4x1:MUX4      ; muxGenerico4x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA10|        ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA10                         ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA10|SomadorCompleto:Somador ; SomadorCompleto ; work         ;
+;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA10|muxGenerico2x1:MUX2     ; muxGenerico2x1  ; work         ;
+;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA10|muxGenerico4x1:MUX4     ; muxGenerico4x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA11|        ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA11                         ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA11|SomadorCompleto:Somador ; SomadorCompleto ; work         ;
+;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA11|muxGenerico2x1:MUX2     ; muxGenerico2x1  ; work         ;
+;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA11|muxGenerico4x1:MUX4     ; muxGenerico4x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA12|        ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA12                         ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA12|SomadorCompleto:Somador ; SomadorCompleto ; work         ;
+;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA12|muxGenerico2x1:MUX2     ; muxGenerico2x1  ; work         ;
+;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA12|muxGenerico4x1:MUX4     ; muxGenerico4x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA13|        ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA13                         ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA13|SomadorCompleto:Somador ; SomadorCompleto ; work         ;
+;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA13|muxGenerico2x1:MUX2     ; muxGenerico2x1  ; work         ;
+;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA13|muxGenerico4x1:MUX4     ; muxGenerico4x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA14|        ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA14                         ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA14|SomadorCompleto:Somador ; SomadorCompleto ; work         ;
+;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA14|muxGenerico4x1:MUX4     ; muxGenerico4x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA15|        ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA15                         ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA15|SomadorCompleto:Somador ; SomadorCompleto ; work         ;
+;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA15|muxGenerico2x1:MUX2     ; muxGenerico2x1  ; work         ;
+;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA15|muxGenerico4x1:MUX4     ; muxGenerico4x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA16|        ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA16                         ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA16|SomadorCompleto:Somador ; SomadorCompleto ; work         ;
+;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA16|muxGenerico2x1:MUX2     ; muxGenerico2x1  ; work         ;
+;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA16|muxGenerico4x1:MUX4     ; muxGenerico4x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA17|        ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA17                         ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA17|SomadorCompleto:Somador ; SomadorCompleto ; work         ;
+;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA17|muxGenerico2x1:MUX2     ; muxGenerico2x1  ; work         ;
+;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA17|muxGenerico4x1:MUX4     ; muxGenerico4x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA18|        ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA18                         ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA18|SomadorCompleto:Somador ; SomadorCompleto ; work         ;
+;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA18|muxGenerico2x1:MUX2     ; muxGenerico2x1  ; work         ;
+;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA18|muxGenerico4x1:MUX4     ; muxGenerico4x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA19|        ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA19                         ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA19|SomadorCompleto:Somador ; SomadorCompleto ; work         ;
+;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA19|muxGenerico4x1:MUX4     ; muxGenerico4x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA1|         ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA1                          ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA1|SomadorCompleto:Somador  ; SomadorCompleto ; work         ;
+;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA1|muxGenerico4x1:MUX4      ; muxGenerico4x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA20|        ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA20                         ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA20|SomadorCompleto:Somador ; SomadorCompleto ; work         ;
+;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA20|muxGenerico2x1:MUX2     ; muxGenerico2x1  ; work         ;
+;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA20|muxGenerico4x1:MUX4     ; muxGenerico4x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA21|        ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA21                         ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA21|SomadorCompleto:Somador ; SomadorCompleto ; work         ;
+;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA21|muxGenerico2x1:MUX2     ; muxGenerico2x1  ; work         ;
+;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA21|muxGenerico4x1:MUX4     ; muxGenerico4x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA22|        ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA22                         ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA22|SomadorCompleto:Somador ; SomadorCompleto ; work         ;
+;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA22|muxGenerico2x1:MUX2     ; muxGenerico2x1  ; work         ;
+;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA22|muxGenerico4x1:MUX4     ; muxGenerico4x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA23|        ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA23                         ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA23|SomadorCompleto:Somador ; SomadorCompleto ; work         ;
+;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA23|muxGenerico2x1:MUX2     ; muxGenerico2x1  ; work         ;
+;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA23|muxGenerico4x1:MUX4     ; muxGenerico4x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA24|        ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA24                         ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA24|SomadorCompleto:Somador ; SomadorCompleto ; work         ;
+;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA24|muxGenerico2x1:MUX2     ; muxGenerico2x1  ; work         ;
+;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA24|muxGenerico4x1:MUX4     ; muxGenerico4x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA25|        ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA25                         ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA25|SomadorCompleto:Somador ; SomadorCompleto ; work         ;
+;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA25|muxGenerico2x1:MUX2     ; muxGenerico2x1  ; work         ;
+;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA25|muxGenerico4x1:MUX4     ; muxGenerico4x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA26|        ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA26                         ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA26|SomadorCompleto:Somador ; SomadorCompleto ; work         ;
+;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA26|muxGenerico2x1:MUX2     ; muxGenerico2x1  ; work         ;
+;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA26|muxGenerico4x1:MUX4     ; muxGenerico4x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA27|        ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA27                         ; ULA_MIPS_1bit   ; work         ;
+;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA27|muxGenerico2x1:MUX2     ; muxGenerico2x1  ; work         ;
+;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA27|muxGenerico4x1:MUX4     ; muxGenerico4x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA28|        ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA28                         ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA28|SomadorCompleto:Somador ; SomadorCompleto ; work         ;
+;       |muxGenerico4x1:MUX4|     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA28|muxGenerico4x1:MUX4     ; muxGenerico4x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA29|        ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA29                         ; ULA_MIPS_1bit   ; work         ;
+;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA29|muxGenerico2x1:MUX2     ; muxGenerico2x1  ; work         ;
+;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA29|muxGenerico4x1:MUX4     ; muxGenerico4x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA2|         ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA2                          ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA2|SomadorCompleto:Somador  ; SomadorCompleto ; work         ;
+;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA2|muxGenerico2x1:MUX2      ; muxGenerico2x1  ; work         ;
+;       |muxGenerico4x1:MUX4|     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA2|muxGenerico4x1:MUX4      ; muxGenerico4x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA30|        ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA30                         ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA30|SomadorCompleto:Somador ; SomadorCompleto ; work         ;
+;       |muxGenerico4x1:MUX4|     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA30|muxGenerico4x1:MUX4     ; muxGenerico4x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA3|         ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA3                          ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA3|SomadorCompleto:Somador  ; SomadorCompleto ; work         ;
+;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA3|muxGenerico2x1:MUX2      ; muxGenerico2x1  ; work         ;
+;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA3|muxGenerico4x1:MUX4      ; muxGenerico4x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA4|         ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA4                          ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA4|SomadorCompleto:Somador  ; SomadorCompleto ; work         ;
+;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA4|muxGenerico4x1:MUX4      ; muxGenerico4x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA5|         ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA5                          ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA5|SomadorCompleto:Somador  ; SomadorCompleto ; work         ;
+;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA5|muxGenerico2x1:MUX2      ; muxGenerico2x1  ; work         ;
+;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA5|muxGenerico4x1:MUX4      ; muxGenerico4x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA6|         ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA6                          ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA6|SomadorCompleto:Somador  ; SomadorCompleto ; work         ;
+;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA6|muxGenerico2x1:MUX2      ; muxGenerico2x1  ; work         ;
+;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA6|muxGenerico4x1:MUX4      ; muxGenerico4x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA7|         ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA7                          ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA7|SomadorCompleto:Somador  ; SomadorCompleto ; work         ;
+;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA7|muxGenerico2x1:MUX2      ; muxGenerico2x1  ; work         ;
+;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA7|muxGenerico4x1:MUX4      ; muxGenerico4x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA8|         ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA8                          ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA8|SomadorCompleto:Somador  ; SomadorCompleto ; work         ;
+;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA8|muxGenerico2x1:MUX2      ; muxGenerico2x1  ; work         ;
+;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA8|muxGenerico4x1:MUX4      ; muxGenerico4x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA9|         ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA9                          ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA9|SomadorCompleto:Somador  ; SomadorCompleto ; work         ;
+;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA9|muxGenerico4x1:MUX4      ; muxGenerico4x1  ; work         ;
+;    |ULA_MIPS_bit31:ULA31|       ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_bit31:ULA31                        ; ULA_MIPS_bit31  ; work         ;
+;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_bit31:ULA31|muxGenerico4x1:MUX4    ; muxGenerico4x1  ; work         ;
++---------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -240,54 +445,944 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: muxGenerico2x1:MUX2 ;
-+----------------+-------+-----------------------------------------+
-; Parameter Name ; Value ; Type                                    ;
-+----------------+-------+-----------------------------------------+
-; larguradados   ; 1     ; Signed Integer                          ;
-+----------------+-------+-----------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA8|muxGenerico4x1:MUX4|saida_MUX ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |ULA_MIPS_32 ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; larguraDados   ; 32    ; Signed Integer                                     ;
+; SLT            ; '0'   ; Enumerated                                         ;
++----------------+-------+----------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+--------------------------------------------------------+
-; Parameter Settings for User Entity Instance: and1:AND1 ;
-+----------------+-------+-------------------------------+
-; Parameter Name ; Value ; Type                          ;
-+----------------+-------+-------------------------------+
-; larguradados   ; 1     ; Signed Integer                ;
-+----------------+-------+-------------------------------+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA0|muxGenerico2x1:MUX2 ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------+
-; Parameter Settings for User Entity Instance: or1:OR1 ;
-+----------------+-------+-----------------------------+
-; Parameter Name ; Value ; Type                        ;
-+----------------+-------+-----------------------------+
-; larguradados   ; 1     ; Signed Integer              ;
-+----------------+-------+-----------------------------+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA0|muxGenerico4x1:MUX4 ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+--------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: xor1:Overflow_1 ;
-+----------------+-------+-------------------------------------+
-; Parameter Name ; Value ; Type                                ;
-+----------------+-------+-------------------------------------+
-; larguradados   ; 1     ; Signed Integer                      ;
-+----------------+-------+-------------------------------------+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA1|muxGenerico2x1:MUX2 ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: muxGenerico4x1:MUX4 ;
-+----------------+-------+-----------------------------------------+
-; Parameter Name ; Value ; Type                                    ;
-+----------------+-------+-----------------------------------------+
-; larguradados   ; 1     ; Signed Integer                          ;
-+----------------+-------+-----------------------------------------+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA1|muxGenerico4x1:MUX4 ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA2|muxGenerico2x1:MUX2 ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA2|muxGenerico4x1:MUX4 ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA3|muxGenerico2x1:MUX2 ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA3|muxGenerico4x1:MUX4 ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA4|muxGenerico2x1:MUX2 ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA4|muxGenerico4x1:MUX4 ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA5|muxGenerico2x1:MUX2 ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA5|muxGenerico4x1:MUX4 ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA6|muxGenerico2x1:MUX2 ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA6|muxGenerico4x1:MUX4 ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA7|muxGenerico2x1:MUX2 ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA7|muxGenerico4x1:MUX4 ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA8|muxGenerico2x1:MUX2 ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA8|muxGenerico4x1:MUX4 ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA9|muxGenerico2x1:MUX2 ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA9|muxGenerico4x1:MUX4 ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA10|muxGenerico2x1:MUX2 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA10|muxGenerico4x1:MUX4 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA11|muxGenerico2x1:MUX2 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA11|muxGenerico4x1:MUX4 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA12|muxGenerico2x1:MUX2 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA12|muxGenerico4x1:MUX4 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA13|muxGenerico2x1:MUX2 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA13|muxGenerico4x1:MUX4 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA14|muxGenerico2x1:MUX2 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA14|muxGenerico4x1:MUX4 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA15|muxGenerico2x1:MUX2 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA15|muxGenerico4x1:MUX4 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA16|muxGenerico2x1:MUX2 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA16|muxGenerico4x1:MUX4 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA17|muxGenerico2x1:MUX2 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA17|muxGenerico4x1:MUX4 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA18|muxGenerico2x1:MUX2 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA18|muxGenerico4x1:MUX4 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA19|muxGenerico2x1:MUX2 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA19|muxGenerico4x1:MUX4 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA20|muxGenerico2x1:MUX2 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA20|muxGenerico4x1:MUX4 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA21|muxGenerico2x1:MUX2 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA21|muxGenerico4x1:MUX4 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA22|muxGenerico2x1:MUX2 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA22|muxGenerico4x1:MUX4 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA23|muxGenerico2x1:MUX2 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA23|muxGenerico4x1:MUX4 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA24|muxGenerico2x1:MUX2 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA24|muxGenerico4x1:MUX4 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA25|muxGenerico2x1:MUX2 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA25|muxGenerico4x1:MUX4 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA26|muxGenerico2x1:MUX2 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA26|muxGenerico4x1:MUX4 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA27|muxGenerico2x1:MUX2 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA27|muxGenerico4x1:MUX4 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA28|muxGenerico2x1:MUX2 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA28|muxGenerico4x1:MUX4 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA29|muxGenerico2x1:MUX2 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA29|muxGenerico4x1:MUX4 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA30|muxGenerico2x1:MUX2 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_1bit:ULA30|muxGenerico4x1:MUX4 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_bit31:ULA31|muxGenerico2x1:MUX2 ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA_MIPS_bit31:ULA31|muxGenerico4x1:MUX4 ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ULA_MIPS_bit31:ULA31"                                                                    ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; carry_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; slt       ; Input  ; Info     ; Stuck at GND                                                                        ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "ULA_MIPS_1bit:ULA30" ;
++------+-------+----------+-----------------------+
+; Port ; Type  ; Severity ; Details               ;
++------+-------+----------+-----------------------+
+; slt  ; Input ; Info     ; Stuck at GND          ;
++------+-------+----------+-----------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "ULA_MIPS_1bit:ULA29" ;
++------+-------+----------+-----------------------+
+; Port ; Type  ; Severity ; Details               ;
++------+-------+----------+-----------------------+
+; slt  ; Input ; Info     ; Stuck at GND          ;
++------+-------+----------+-----------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "ULA_MIPS_1bit:ULA28" ;
++------+-------+----------+-----------------------+
+; Port ; Type  ; Severity ; Details               ;
++------+-------+----------+-----------------------+
+; slt  ; Input ; Info     ; Stuck at GND          ;
++------+-------+----------+-----------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "ULA_MIPS_1bit:ULA27" ;
++------+-------+----------+-----------------------+
+; Port ; Type  ; Severity ; Details               ;
++------+-------+----------+-----------------------+
+; slt  ; Input ; Info     ; Stuck at GND          ;
++------+-------+----------+-----------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "ULA_MIPS_1bit:ULA26" ;
++------+-------+----------+-----------------------+
+; Port ; Type  ; Severity ; Details               ;
++------+-------+----------+-----------------------+
+; slt  ; Input ; Info     ; Stuck at GND          ;
++------+-------+----------+-----------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "ULA_MIPS_1bit:ULA25" ;
++------+-------+----------+-----------------------+
+; Port ; Type  ; Severity ; Details               ;
++------+-------+----------+-----------------------+
+; slt  ; Input ; Info     ; Stuck at GND          ;
++------+-------+----------+-----------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "ULA_MIPS_1bit:ULA24" ;
++------+-------+----------+-----------------------+
+; Port ; Type  ; Severity ; Details               ;
++------+-------+----------+-----------------------+
+; slt  ; Input ; Info     ; Stuck at GND          ;
++------+-------+----------+-----------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "ULA_MIPS_1bit:ULA23" ;
++------+-------+----------+-----------------------+
+; Port ; Type  ; Severity ; Details               ;
++------+-------+----------+-----------------------+
+; slt  ; Input ; Info     ; Stuck at GND          ;
++------+-------+----------+-----------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "ULA_MIPS_1bit:ULA22" ;
++------+-------+----------+-----------------------+
+; Port ; Type  ; Severity ; Details               ;
++------+-------+----------+-----------------------+
+; slt  ; Input ; Info     ; Stuck at GND          ;
++------+-------+----------+-----------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "ULA_MIPS_1bit:ULA21" ;
++------+-------+----------+-----------------------+
+; Port ; Type  ; Severity ; Details               ;
++------+-------+----------+-----------------------+
+; slt  ; Input ; Info     ; Stuck at GND          ;
++------+-------+----------+-----------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "ULA_MIPS_1bit:ULA20" ;
++------+-------+----------+-----------------------+
+; Port ; Type  ; Severity ; Details               ;
++------+-------+----------+-----------------------+
+; slt  ; Input ; Info     ; Stuck at GND          ;
++------+-------+----------+-----------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "ULA_MIPS_1bit:ULA19" ;
++------+-------+----------+-----------------------+
+; Port ; Type  ; Severity ; Details               ;
++------+-------+----------+-----------------------+
+; slt  ; Input ; Info     ; Stuck at GND          ;
++------+-------+----------+-----------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "ULA_MIPS_1bit:ULA18" ;
++------+-------+----------+-----------------------+
+; Port ; Type  ; Severity ; Details               ;
++------+-------+----------+-----------------------+
+; slt  ; Input ; Info     ; Stuck at GND          ;
++------+-------+----------+-----------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "ULA_MIPS_1bit:ULA17" ;
++------+-------+----------+-----------------------+
+; Port ; Type  ; Severity ; Details               ;
++------+-------+----------+-----------------------+
+; slt  ; Input ; Info     ; Stuck at GND          ;
++------+-------+----------+-----------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "ULA_MIPS_1bit:ULA16" ;
++------+-------+----------+-----------------------+
+; Port ; Type  ; Severity ; Details               ;
++------+-------+----------+-----------------------+
+; slt  ; Input ; Info     ; Stuck at GND          ;
++------+-------+----------+-----------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "ULA_MIPS_1bit:ULA15" ;
++------+-------+----------+-----------------------+
+; Port ; Type  ; Severity ; Details               ;
++------+-------+----------+-----------------------+
+; slt  ; Input ; Info     ; Stuck at GND          ;
++------+-------+----------+-----------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "ULA_MIPS_1bit:ULA14" ;
++------+-------+----------+-----------------------+
+; Port ; Type  ; Severity ; Details               ;
++------+-------+----------+-----------------------+
+; slt  ; Input ; Info     ; Stuck at GND          ;
++------+-------+----------+-----------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "ULA_MIPS_1bit:ULA13" ;
++------+-------+----------+-----------------------+
+; Port ; Type  ; Severity ; Details               ;
++------+-------+----------+-----------------------+
+; slt  ; Input ; Info     ; Stuck at GND          ;
++------+-------+----------+-----------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "ULA_MIPS_1bit:ULA12" ;
++------+-------+----------+-----------------------+
+; Port ; Type  ; Severity ; Details               ;
++------+-------+----------+-----------------------+
+; slt  ; Input ; Info     ; Stuck at GND          ;
++------+-------+----------+-----------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "ULA_MIPS_1bit:ULA11" ;
++------+-------+----------+-----------------------+
+; Port ; Type  ; Severity ; Details               ;
++------+-------+----------+-----------------------+
+; slt  ; Input ; Info     ; Stuck at GND          ;
++------+-------+----------+-----------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "ULA_MIPS_1bit:ULA10" ;
++------+-------+----------+-----------------------+
+; Port ; Type  ; Severity ; Details               ;
++------+-------+----------+-----------------------+
+; slt  ; Input ; Info     ; Stuck at GND          ;
++------+-------+----------+-----------------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "ULA_MIPS_1bit:ULA9" ;
++------+-------+----------+----------------------+
+; Port ; Type  ; Severity ; Details              ;
++------+-------+----------+----------------------+
+; slt  ; Input ; Info     ; Stuck at GND         ;
++------+-------+----------+----------------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "ULA_MIPS_1bit:ULA8" ;
++------+-------+----------+----------------------+
+; Port ; Type  ; Severity ; Details              ;
++------+-------+----------+----------------------+
+; slt  ; Input ; Info     ; Stuck at GND         ;
++------+-------+----------+----------------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "ULA_MIPS_1bit:ULA7" ;
++------+-------+----------+----------------------+
+; Port ; Type  ; Severity ; Details              ;
++------+-------+----------+----------------------+
+; slt  ; Input ; Info     ; Stuck at GND         ;
++------+-------+----------+----------------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "ULA_MIPS_1bit:ULA6" ;
++------+-------+----------+----------------------+
+; Port ; Type  ; Severity ; Details              ;
++------+-------+----------+----------------------+
+; slt  ; Input ; Info     ; Stuck at GND         ;
++------+-------+----------+----------------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "ULA_MIPS_1bit:ULA5" ;
++------+-------+----------+----------------------+
+; Port ; Type  ; Severity ; Details              ;
++------+-------+----------+----------------------+
+; slt  ; Input ; Info     ; Stuck at GND         ;
++------+-------+----------+----------------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "ULA_MIPS_1bit:ULA4" ;
++------+-------+----------+----------------------+
+; Port ; Type  ; Severity ; Details              ;
++------+-------+----------+----------------------+
+; slt  ; Input ; Info     ; Stuck at GND         ;
++------+-------+----------+----------------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "ULA_MIPS_1bit:ULA3" ;
++------+-------+----------+----------------------+
+; Port ; Type  ; Severity ; Details              ;
++------+-------+----------+----------------------+
+; slt  ; Input ; Info     ; Stuck at GND         ;
++------+-------+----------+----------------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "ULA_MIPS_1bit:ULA2" ;
++------+-------+----------+----------------------+
+; Port ; Type  ; Severity ; Details              ;
++------+-------+----------+----------------------+
+; slt  ; Input ; Info     ; Stuck at GND         ;
++------+-------+----------+----------------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "ULA_MIPS_1bit:ULA1" ;
++------+-------+----------+----------------------+
+; Port ; Type  ; Severity ; Details              ;
++------+-------+----------+----------------------+
+; slt  ; Input ; Info     ; Stuck at GND         ;
++------+-------+----------+----------------------+
 
 
 +-----------------------------------------------------+
@@ -295,16 +1390,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 3                           ;
-;     extend            ; 1                           ;
-;         7 data inputs ; 1                           ;
-;     normal            ; 2                           ;
-;         0 data inputs ; 1                           ;
+; arriav_lcell_comb     ; 103                         ;
+;     normal            ; 103                         ;
+;         2 data inputs ; 30                          ;
+;         3 data inputs ; 24                          ;
 ;         4 data inputs ; 1                           ;
-; boundary_port         ; 10                          ;
+;         5 data inputs ; 27                          ;
+;         6 data inputs ; 21                          ;
+; boundary_port         ; 99                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 1.00                        ;
-; Average LUT depth     ; 0.90                        ;
+; Max LUT depth         ; 14.00                       ;
+; Average LUT depth     ; 8.57                        ;
 +-----------------------+-----------------------------+
 
 
@@ -323,52 +1419,46 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Thu May 19 15:57:11 2022
+    Info: Processing started: Thu May 19 17:36:29 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ULA_MIPS -c ULA_MIPS
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file and1.vhd
-    Info (12022): Found design unit 1: and1-comportamento File: //Mac/Home/Downloads/6SEMESTRE/DESCOMP/meu_careca_preferido/atividades/atividade_16/and1.vhd Line: 24
-    Info (12023): Found entity 1: and1 File: //Mac/Home/Downloads/6SEMESTRE/DESCOMP/meu_careca_preferido/atividades/atividade_16/and1.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file or1.vhd
-    Info (12022): Found design unit 1: or1-comportamento File: //Mac/Home/Downloads/6SEMESTRE/DESCOMP/meu_careca_preferido/atividades/atividade_16/or1.vhd Line: 23
-    Info (12023): Found entity 1: or1 File: //Mac/Home/Downloads/6SEMESTRE/DESCOMP/meu_careca_preferido/atividades/atividade_16/or1.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file ula_mips.vhd
-    Info (12022): Found design unit 1: ULA_MIPS-arquitetura File: //Mac/Home/Downloads/6SEMESTRE/DESCOMP/meu_careca_preferido/atividades/atividade_16/ULA_MIPS.vhd Line: 32
-    Info (12023): Found entity 1: ULA_MIPS File: //Mac/Home/Downloads/6SEMESTRE/DESCOMP/meu_careca_preferido/atividades/atividade_16/ULA_MIPS.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file muxgenerico2x1.vhd
     Info (12022): Found design unit 1: muxGenerico2x1-comportamento File: //Mac/Home/Downloads/6SEMESTRE/DESCOMP/meu_careca_preferido/atividades/atividade_16/muxGenerico2x1.vhd Line: 14
     Info (12023): Found entity 1: muxGenerico2x1 File: //Mac/Home/Downloads/6SEMESTRE/DESCOMP/meu_careca_preferido/atividades/atividade_16/muxGenerico2x1.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file muxgenerico4x1.vhd
     Info (12022): Found design unit 1: muxGenerico4x1-comportamento File: //Mac/Home/Downloads/6SEMESTRE/DESCOMP/meu_careca_preferido/atividades/atividade_16/muxGenerico4x1.vhd Line: 14
     Info (12023): Found entity 1: muxGenerico4x1 File: //Mac/Home/Downloads/6SEMESTRE/DESCOMP/meu_careca_preferido/atividades/atividade_16/muxGenerico4x1.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file xor1.vhd
-    Info (12022): Found design unit 1: xor1-comportamento File: //Mac/Home/Downloads/6SEMESTRE/DESCOMP/meu_careca_preferido/atividades/atividade_16/xor1.vhd Line: 23
-    Info (12023): Found entity 1: xor1 File: //Mac/Home/Downloads/6SEMESTRE/DESCOMP/meu_careca_preferido/atividades/atividade_16/xor1.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file somadorcompleto.vhd
     Info (12022): Found design unit 1: SomadorCompleto-comportamento File: //Mac/Home/Downloads/6SEMESTRE/DESCOMP/meu_careca_preferido/atividades/atividade_16/SomadorCompleto.vhd Line: 16
     Info (12023): Found entity 1: SomadorCompleto File: //Mac/Home/Downloads/6SEMESTRE/DESCOMP/meu_careca_preferido/atividades/atividade_16/SomadorCompleto.vhd Line: 5
-Info (12127): Elaborating entity "ULA_MIPS" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at ULA_MIPS.vhd(37): used implicit default value for signal "carry_out_overflow" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: //Mac/Home/Downloads/6SEMESTRE/DESCOMP/meu_careca_preferido/atividades/atividade_16/ULA_MIPS.vhd Line: 37
-Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "muxGenerico2x1:MUX2" File: //Mac/Home/Downloads/6SEMESTRE/DESCOMP/meu_careca_preferido/atividades/atividade_16/ULA_MIPS.vhd Line: 41
-Info (12128): Elaborating entity "and1" for hierarchy "and1:AND1" File: //Mac/Home/Downloads/6SEMESTRE/DESCOMP/meu_careca_preferido/atividades/atividade_16/ULA_MIPS.vhd Line: 47
-Info (12128): Elaborating entity "or1" for hierarchy "or1:OR1" File: //Mac/Home/Downloads/6SEMESTRE/DESCOMP/meu_careca_preferido/atividades/atividade_16/ULA_MIPS.vhd Line: 52
-Info (12128): Elaborating entity "SomadorCompleto" for hierarchy "SomadorCompleto:Somador" File: //Mac/Home/Downloads/6SEMESTRE/DESCOMP/meu_careca_preferido/atividades/atividade_16/ULA_MIPS.vhd Line: 57
-Info (12128): Elaborating entity "xor1" for hierarchy "xor1:Overflow_1" File: //Mac/Home/Downloads/6SEMESTRE/DESCOMP/meu_careca_preferido/atividades/atividade_16/ULA_MIPS.vhd Line: 64
-Info (12128): Elaborating entity "muxGenerico4x1" for hierarchy "muxGenerico4x1:MUX4" File: //Mac/Home/Downloads/6SEMESTRE/DESCOMP/meu_careca_preferido/atividades/atividade_16/ULA_MIPS.vhd Line: 70
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "overflow" is stuck at GND File: //Mac/Home/Downloads/6SEMESTRE/DESCOMP/meu_careca_preferido/atividades/atividade_16/ULA_MIPS.vhd Line: 26
+Info (12021): Found 2 design units, including 1 entities, in source file ula_mips_32.vhd
+    Info (12022): Found design unit 1: ULA_MIPS_32-arquitetura File: //Mac/Home/Downloads/6SEMESTRE/DESCOMP/meu_careca_preferido/atividades/atividade_16/ULA_MIPS_32.vhd Line: 33
+    Info (12023): Found entity 1: ULA_MIPS_32 File: //Mac/Home/Downloads/6SEMESTRE/DESCOMP/meu_careca_preferido/atividades/atividade_16/ULA_MIPS_32.vhd Line: 9
+Info (12021): Found 2 design units, including 1 entities, in source file ula_mips_bit31.vhd
+    Info (12022): Found design unit 1: ULA_MIPS_bit31-arquitetura File: //Mac/Home/Downloads/6SEMESTRE/DESCOMP/meu_careca_preferido/atividades/atividade_16/ULA_MIPS_bit31.vhd Line: 32
+    Info (12023): Found entity 1: ULA_MIPS_bit31 File: //Mac/Home/Downloads/6SEMESTRE/DESCOMP/meu_careca_preferido/atividades/atividade_16/ULA_MIPS_bit31.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file ula_mips_1bit.vhd
+    Info (12022): Found design unit 1: ULA_MIPS_1bit-arquitetura File: //Mac/Home/Downloads/6SEMESTRE/DESCOMP/meu_careca_preferido/atividades/atividade_16/ULA_MIPS_1bit.vhd Line: 31
+    Info (12023): Found entity 1: ULA_MIPS_1bit File: //Mac/Home/Downloads/6SEMESTRE/DESCOMP/meu_careca_preferido/atividades/atividade_16/ULA_MIPS_1bit.vhd Line: 8
+Info (12127): Elaborating entity "ULA_MIPS_32" for the top level hierarchy
+Info (12128): Elaborating entity "ULA_MIPS_1bit" for hierarchy "ULA_MIPS_1bit:ULA0" File: //Mac/Home/Downloads/6SEMESTRE/DESCOMP/meu_careca_preferido/atividades/atividade_16/ULA_MIPS_32.vhd Line: 39
+Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "ULA_MIPS_1bit:ULA0|muxGenerico2x1:MUX2" File: //Mac/Home/Downloads/6SEMESTRE/DESCOMP/meu_careca_preferido/atividades/atividade_16/ULA_MIPS_1bit.vhd Line: 39
+Info (12128): Elaborating entity "SomadorCompleto" for hierarchy "ULA_MIPS_1bit:ULA0|SomadorCompleto:Somador" File: //Mac/Home/Downloads/6SEMESTRE/DESCOMP/meu_careca_preferido/atividades/atividade_16/ULA_MIPS_1bit.vhd Line: 45
+Info (12128): Elaborating entity "muxGenerico4x1" for hierarchy "ULA_MIPS_1bit:ULA0|muxGenerico4x1:MUX4" File: //Mac/Home/Downloads/6SEMESTRE/DESCOMP/meu_careca_preferido/atividades/atividade_16/ULA_MIPS_1bit.vhd Line: 53
+Info (12128): Elaborating entity "ULA_MIPS_bit31" for hierarchy "ULA_MIPS_bit31:ULA31" File: //Mac/Home/Downloads/6SEMESTRE/DESCOMP/meu_careca_preferido/atividades/atividade_16/ULA_MIPS_32.vhd Line: 349
+Warning (10541): VHDL Signal Declaration warning at ULA_MIPS_bit31.vhd(37): used implicit default value for signal "carry_out_overflow" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: //Mac/Home/Downloads/6SEMESTRE/DESCOMP/meu_careca_preferido/atividades/atividade_16/ULA_MIPS_bit31.vhd Line: 37
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 12 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 7 input pins
-    Info (21059): Implemented 3 output pins
-    Info (21061): Implemented 2 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 4853 megabytes
-    Info: Processing ended: Thu May 19 15:57:25 2022
-    Info: Elapsed time: 00:00:14
+Info (21057): Implemented 202 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 67 input pins
+    Info (21059): Implemented 32 output pins
+    Info (21061): Implemented 103 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 4844 megabytes
+    Info: Processing ended: Thu May 19 17:36:42 2022
+    Info: Elapsed time: 00:00:13
     Info: Total CPU time (on all processors): 00:00:19
 
 

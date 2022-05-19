@@ -21,20 +21,21 @@ entity ULA_MIPS_bit31 is
 		
 		-- Mux 4x1
 		SLT                : in  std_logic;
+		SLT_out            : out  std_logic;
 		SelMux             : in  std_logic_vector(1 downto 0);
-		resultado          : out  std_logic;
-		overflow           : out std_logic
+		resultado          : out  std_logic
 		
   );
   
 end entity;
 
-architecture arquitetura of ULA_MIPS is      
+architecture arquitetura of ULA_MIPS_bit31 is      
 		signal saidaMUX_B              : std_logic;
 		signal saida_AND               : std_logic;
 		signal saida_OR                : std_logic;
 		signal saida_somador           : std_logic;
 		signal carry_out_overflow      : std_logic;
+		signal overflow                : std_logic;
 
 begin
 
@@ -43,16 +44,6 @@ MUX2 :  entity work.muxGenerico2x1  generic map (larguraDados => 1)
                  entrada1_MUX => (NOT entradaB),
                  seletor_MUX  => SelMux_invB,
                  saida_MUX    => saidaMUX_B);
-
-AND1  : entity work.and1
-        port map(entradaA => saidaMUX_B,
-                 entradaB => entradaA,
-                 saida    => saida_AND);
-					  
-OR1  : entity work.or1
-        port map(entradaA => saidaMUX_B,
-                 entradaB => entradaA,
-                 saida    => saida_OR);
 					  
 Somador : entity work.SomadorCompleto
         port map (entradaA => saidaMUX_B, 
@@ -60,11 +51,6 @@ Somador : entity work.SomadorCompleto
 						carry_in => carry_in,
 						carry_out=> carry_out,
 			         soma    => saida_somador);
-						
-Overflow_1  : entity work.xor1
-        port map(entradaA => carry_in,
-                 entradaB => carry_out_overflow,
-                 saida    => overflow);
 					
 						
 MUX4 :  entity work.muxGenerico4x1  generic map (larguraDados => 1)
@@ -74,5 +60,11 @@ MUX4 :  entity work.muxGenerico4x1  generic map (larguraDados => 1)
                       entrada3_MUX => SLT,
                       seletor_MUX  => SelMux,
                       saida_MUX    => resultado);
+							 
+
+saida_AND <= saidaMUX_B AND entradaA;
+saida_OR <= saidaMUX_B OR entradaA;
+overflow <= carry_in XOR carry_out_overflow;
+SLT_out <= overflow XOR saida_somador;
 
 end architecture;
