@@ -5,7 +5,7 @@ use ieee.numeric_std.all;
 -- o codigo abaixo esta incompleto
 -- 'e apenas um rascunho
 
-entity ULA_MIPS is
+entity ULA_MIPS_bit31 is
   
   -- O port é obrigatório e possui o objeto “signal” implícito.
   port    
@@ -17,7 +17,7 @@ entity ULA_MIPS is
 		carry_out          : out  std_logic;
 		
 		-- Mux 2x1
-		SelMux_invB         : in  std_logic;
+		SelMux_invB        : in  std_logic;
 		
 		-- Mux 4x1
 		SLT                : in  std_logic;

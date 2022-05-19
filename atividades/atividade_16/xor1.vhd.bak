@@ -2,12 +2,11 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity and1 is
+entity xor1 is
   -- O generic é onde carrega as constantes padroes
   generic
   (
-		larguraDados    : natural  :=    1
-		
+		larguraDados    : natural  :=    1;
 
   );
   
@@ -21,9 +20,9 @@ entity and1 is
   
 end entity;
 
-architecture comportamento of and1 is
+architecture comportamento of xor1 is
 
     begin
-        saida <= entradaA AND entradaB;
+        saida <= entradaA XOR entradaB;
 		  
 end architecture;

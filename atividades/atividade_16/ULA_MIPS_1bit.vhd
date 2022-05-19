@@ -5,7 +5,7 @@ use ieee.numeric_std.all;
 -- o codigo abaixo esta incompleto
 -- 'e apenas um rascunho
 
-entity ULA_MIPS is
+entity ULA_MIPS_1bit is
   
   -- O port é obrigatório e possui o objeto “signal” implícito.
   port    
@@ -17,24 +17,22 @@ entity ULA_MIPS is
 		carry_out          : out  std_logic;
 		
 		-- Mux 2x1
-		SelMux_invB         : in  std_logic;
+		SelMux_invB        : in  std_logic;
 		
 		-- Mux 4x1
 		SLT                : in  std_logic;
 		SelMux             : in  std_logic_vector(1 downto 0);
-		resultado          : out  std_logic;
-		overflow           : out std_logic
+		resultado          : out  std_logic
 		
   );
   
 end entity;
 
-architecture arquitetura of ULA_MIPS is      
+architecture arquitetura of ULA_MIPS_1bit is      
 		signal saidaMUX_B              : std_logic;
 		signal saida_AND               : std_logic;
 		signal saida_OR                : std_logic;
 		signal saida_somador           : std_logic;
-		signal carry_out_overflow      : std_logic;
 
 begin
 
@@ -60,11 +58,6 @@ Somador : entity work.SomadorCompleto
 						carry_in => carry_in,
 						carry_out=> carry_out,
 			         soma    => saida_somador);
-						
-Overflow_1  : entity work.xor1
-        port map(entradaA => carry_in,
-                 entradaB => carry_out_overflow,
-                 saida    => overflow);
 					
 						
 MUX4 :  entity work.muxGenerico4x1  generic map (larguraDados => 1)

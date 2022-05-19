@@ -7,17 +7,17 @@ entity SomadorCompleto is
       entradaA:    in std_logic;
 		entradaB:    in std_logic;
       carry_in:    in STD_LOGIC;
-		carry_out:   in std_logic;
-      soma:        out std_logic;
+		carry_out:   out std_logic;
+      soma:        out std_logic
     );
 	 
 end entity;
 
 architecture comportamento of SomadorCompleto is
 
-   signal saidaXOR_AB :     std_logic;
-   signal saidaAND_AB :     std_logic;
-	signal saidaAND_carry_in:  in std_logic;
+   signal saidaXOR_AB :        std_logic;
+   signal saidaAND_AB :        std_logic;
+	signal saidaAND_carry_in:   std_logic;
 	
    
 begin	

@@ -6,7 +6,7 @@ entity xor1 is
   -- O generic é onde carrega as constantes padroes
   generic
   (
-		larguraDados    : natural  :=    1;
+		larguraDados    : natural  :=    1
 
   );
   

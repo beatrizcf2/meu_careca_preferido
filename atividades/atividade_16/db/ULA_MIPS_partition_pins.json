@@ -1,0 +1,45 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "carry_out",
+					"strict" : false
+				},
+				{
+					"name" : "resultado",
+					"strict" : false
+				},
+				{
+					"name" : "entradaA",
+					"strict" : false
+				},
+				{
+					"name" : "carry_in",
+					"strict" : false
+				},
+				{
+					"name" : "entradaB",
+					"strict" : false
+				},
+				{
+					"name" : "SelMux_invB",
+					"strict" : false
+				},
+				{
+					"name" : "SelMux[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SelMux[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SLT",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

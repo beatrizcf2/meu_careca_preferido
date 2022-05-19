@@ -5,7 +5,7 @@ use ieee.numeric_std.all;
 -- o codigo abaixo esta incompleto
 -- 'e apenas um rascunho
 
-entity ULA_MIPS is
+entity ULA_MIPS_bit31 is
   
   -- O port é obrigatório e possui o objeto “signal” implícito.
   port    
