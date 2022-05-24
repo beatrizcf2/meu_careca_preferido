@@ -1,0 +1,34 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity UnidadeDeControleULA is
+
+  generic
+  (
+		larguraDados    : natural    :=    32;
+		SLT             : std_logic  :=    '0'
+	);
+  
+  -- O port é obrigatório e possui o objeto “signal” implícito.
+  port    
+  (	
+		-- desmembrar em cada ULA
+		exemplo           : in  std_logic_vector(larguraDados-1 downto 0)
+  );
+  
+end entity;
+
+architecture arquitetura of UnidadeDeControleULA is      
+		signal exemplo          : std_logic_vector(larguraDados-1 downto 0);
+
+begin
+
+ULA32 :  entity work.ULA_MIPS_32
+        port map(entradaA     => entradaA(0),
+                 entradaB     => entradaB(0),
+					  SelMux_invB  => SelMux_invB,
+					  SelMux       => SelMux,
+					  Zero         => resultado(0));
+					  
+end architecture;

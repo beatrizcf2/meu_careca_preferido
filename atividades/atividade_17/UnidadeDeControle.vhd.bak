@@ -1,0 +1,45 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity ULA_MIPS_32 is
+
+  generic
+  (
+		larguraDados    : natural    :=    32;
+		SLT             : std_logic  :=    '0'
+	);
+  
+  -- O port é obrigatório e possui o objeto “signal” implícito.
+  port    
+  (	
+		-- desmembrar em cada ULA
+		entradaA           : in  std_logic_vector(larguraDados-1 downto 0);
+		entradaB           : in  std_logic_vector(larguraDados-1 downto 0);
+		
+		-- igual para todas as ULAs
+		SelMux_invB        : in  std_logic;
+		SelMux             : in  std_logic_vector(1 downto 0);
+		
+		Zero               : out std_logic
+  );
+  
+end entity;
+
+architecture arquitetura of ULA_MIPS_32 is      
+		signal carry_out          : std_logic_vector(larguraDados-1 downto 0);
+		signal overflow_SLT       : std_logic;
+		signal resultado          : std_logic_vector(larguraDados-1 downto 0);
+begin
+
+ULA0 :  entity work.ULA_MIPS_1bit
+        port map(entradaA     => entradaA(0),
+                 entradaB     => entradaB(0),
+                 carry_in     => SelMux_invB,
+                 carry_out    => carry_out(0),
+					  SelMux_invB  => SelMux_invB,
+					  SLT          => overflow_SLT,
+					  SelMux       => SelMux,
+					  resultado    => resultado(0));
+					  
+end architecture;
