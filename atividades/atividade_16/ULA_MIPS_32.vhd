@@ -1,7 +1,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
-use ieee.std_logic_misc.all;
+use ieee.std_logic_misc.or_reduce;
 
 -- o codigo abaixo esta incompleto
 -- 'e apenas um rascunho
@@ -25,7 +25,7 @@ entity ULA_MIPS_32 is
 		SelMux_invB        : in  std_logic;
 		SelMux             : in  std_logic_vector(1 downto 0);
 		
-		resultado          : out std_logic_vector(larguraDados-1 downto 0)
+		Zero               : out std_logic
   );
   
 end entity;
@@ -33,7 +33,7 @@ end entity;
 architecture arquitetura of ULA_MIPS_32 is      
 		signal carry_out          : std_logic_vector(larguraDados-1 downto 0);
 		signal overflow_SLT       : std_logic;
-		signal Zero               : std_logic;
+		signal resultado          : std_logic_vector(larguraDados-1 downto 0);
 begin
 
 ULA0 :  entity work.ULA_MIPS_1bit
@@ -357,6 +357,6 @@ ULA31 :  entity work.ULA_MIPS_bit31
 					  resultado    => resultado(31),
 					  SLT_out      => overflow_SLT);
 
--- Zero <= NOT(or_reduce(resultado));
+Zero <= NOT(or_reduce(resultado));
 
 end architecture;

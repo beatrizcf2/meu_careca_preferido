@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ULA_MIPS
-Thu May 19 17:36:42 2022
+Tue May 24 15:16:39 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -140,14 +140,14 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu May 19 17:36:42 2022       ;
+; Analysis & Synthesis Status     ; Successful - Tue May 24 15:16:39 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; ULA_MIPS                                    ;
 ; Top-level Entity Name           ; ULA_MIPS_32                                 ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
 ; Total registers                 ; 0                                           ;
-; Total pins                      ; 99                                          ;
+; Total pins                      ; 68                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -282,151 +282,109 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------------+
 ; Resource                                    ; Usage             ;
 +---------------------------------------------+-------------------+
-; Estimate of Logic utilization (ALMs needed) ; 62                ;
+; Estimate of Logic utilization (ALMs needed) ; 78                ;
 ;                                             ;                   ;
-; Combinational ALUT usage for logic          ; 103               ;
-;     -- 7 input functions                    ; 0                 ;
-;     -- 6 input functions                    ; 21                ;
-;     -- 5 input functions                    ; 27                ;
-;     -- 4 input functions                    ; 1                 ;
-;     -- <=3 input functions                  ; 54                ;
+; Combinational ALUT usage for logic          ; 118               ;
+;     -- 7 input functions                    ; 1                 ;
+;     -- 6 input functions                    ; 36                ;
+;     -- 5 input functions                    ; 31                ;
+;     -- 4 input functions                    ; 4                 ;
+;     -- <=3 input functions                  ; 46                ;
 ;                                             ;                   ;
 ; Dedicated logic registers                   ; 0                 ;
 ;                                             ;                   ;
-; I/O pins                                    ; 99                ;
+; I/O pins                                    ; 68                ;
 ;                                             ;                   ;
 ; Total DSP Blocks                            ; 0                 ;
 ;                                             ;                   ;
 ; Maximum fan-out node                        ; SelMux_invB~input ;
-; Maximum fan-out                             ; 46                ;
-; Total fan-out                               ; 528               ;
-; Average fan-out                             ; 1.75              ;
+; Maximum fan-out                             ; 66                ;
+; Total fan-out                               ; 573               ;
+; Average fan-out                             ; 2.26              ;
 +---------------------------------------------+-------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                  ;
-+---------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node      ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                      ; Entity Name     ; Library Name ;
-+---------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------+-----------------+--------------+
-; |ULA_MIPS_32                    ; 103 (0)             ; 0 (0)                     ; 0                 ; 0          ; 99   ; 0            ; |ULA_MIPS_32                                             ; ULA_MIPS_32     ; work         ;
-;    |ULA_MIPS_1bit:ULA0|         ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA0                          ; ULA_MIPS_1bit   ; work         ;
-;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA0|SomadorCompleto:Somador  ; SomadorCompleto ; work         ;
-;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA0|muxGenerico4x1:MUX4      ; muxGenerico4x1  ; work         ;
-;    |ULA_MIPS_1bit:ULA10|        ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA10                         ; ULA_MIPS_1bit   ; work         ;
-;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA10|SomadorCompleto:Somador ; SomadorCompleto ; work         ;
-;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA10|muxGenerico2x1:MUX2     ; muxGenerico2x1  ; work         ;
-;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA10|muxGenerico4x1:MUX4     ; muxGenerico4x1  ; work         ;
-;    |ULA_MIPS_1bit:ULA11|        ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA11                         ; ULA_MIPS_1bit   ; work         ;
-;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA11|SomadorCompleto:Somador ; SomadorCompleto ; work         ;
-;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA11|muxGenerico2x1:MUX2     ; muxGenerico2x1  ; work         ;
-;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA11|muxGenerico4x1:MUX4     ; muxGenerico4x1  ; work         ;
-;    |ULA_MIPS_1bit:ULA12|        ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA12                         ; ULA_MIPS_1bit   ; work         ;
-;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA12|SomadorCompleto:Somador ; SomadorCompleto ; work         ;
-;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA12|muxGenerico2x1:MUX2     ; muxGenerico2x1  ; work         ;
-;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA12|muxGenerico4x1:MUX4     ; muxGenerico4x1  ; work         ;
-;    |ULA_MIPS_1bit:ULA13|        ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA13                         ; ULA_MIPS_1bit   ; work         ;
-;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA13|SomadorCompleto:Somador ; SomadorCompleto ; work         ;
-;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA13|muxGenerico2x1:MUX2     ; muxGenerico2x1  ; work         ;
-;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA13|muxGenerico4x1:MUX4     ; muxGenerico4x1  ; work         ;
-;    |ULA_MIPS_1bit:ULA14|        ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA14                         ; ULA_MIPS_1bit   ; work         ;
-;       |SomadorCompleto:Somador| ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA14|SomadorCompleto:Somador ; SomadorCompleto ; work         ;
-;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA14|muxGenerico4x1:MUX4     ; muxGenerico4x1  ; work         ;
-;    |ULA_MIPS_1bit:ULA15|        ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA15                         ; ULA_MIPS_1bit   ; work         ;
-;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA15|SomadorCompleto:Somador ; SomadorCompleto ; work         ;
-;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA15|muxGenerico2x1:MUX2     ; muxGenerico2x1  ; work         ;
-;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA15|muxGenerico4x1:MUX4     ; muxGenerico4x1  ; work         ;
-;    |ULA_MIPS_1bit:ULA16|        ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA16                         ; ULA_MIPS_1bit   ; work         ;
-;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA16|SomadorCompleto:Somador ; SomadorCompleto ; work         ;
-;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA16|muxGenerico2x1:MUX2     ; muxGenerico2x1  ; work         ;
-;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA16|muxGenerico4x1:MUX4     ; muxGenerico4x1  ; work         ;
-;    |ULA_MIPS_1bit:ULA17|        ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA17                         ; ULA_MIPS_1bit   ; work         ;
-;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA17|SomadorCompleto:Somador ; SomadorCompleto ; work         ;
-;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA17|muxGenerico2x1:MUX2     ; muxGenerico2x1  ; work         ;
-;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA17|muxGenerico4x1:MUX4     ; muxGenerico4x1  ; work         ;
-;    |ULA_MIPS_1bit:ULA18|        ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA18                         ; ULA_MIPS_1bit   ; work         ;
-;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA18|SomadorCompleto:Somador ; SomadorCompleto ; work         ;
-;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA18|muxGenerico2x1:MUX2     ; muxGenerico2x1  ; work         ;
-;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA18|muxGenerico4x1:MUX4     ; muxGenerico4x1  ; work         ;
-;    |ULA_MIPS_1bit:ULA19|        ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA19                         ; ULA_MIPS_1bit   ; work         ;
-;       |SomadorCompleto:Somador| ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA19|SomadorCompleto:Somador ; SomadorCompleto ; work         ;
-;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA19|muxGenerico4x1:MUX4     ; muxGenerico4x1  ; work         ;
-;    |ULA_MIPS_1bit:ULA1|         ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA1                          ; ULA_MIPS_1bit   ; work         ;
-;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA1|SomadorCompleto:Somador  ; SomadorCompleto ; work         ;
-;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA1|muxGenerico4x1:MUX4      ; muxGenerico4x1  ; work         ;
-;    |ULA_MIPS_1bit:ULA20|        ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA20                         ; ULA_MIPS_1bit   ; work         ;
-;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA20|SomadorCompleto:Somador ; SomadorCompleto ; work         ;
-;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA20|muxGenerico2x1:MUX2     ; muxGenerico2x1  ; work         ;
-;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA20|muxGenerico4x1:MUX4     ; muxGenerico4x1  ; work         ;
-;    |ULA_MIPS_1bit:ULA21|        ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA21                         ; ULA_MIPS_1bit   ; work         ;
-;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA21|SomadorCompleto:Somador ; SomadorCompleto ; work         ;
-;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA21|muxGenerico2x1:MUX2     ; muxGenerico2x1  ; work         ;
-;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA21|muxGenerico4x1:MUX4     ; muxGenerico4x1  ; work         ;
-;    |ULA_MIPS_1bit:ULA22|        ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA22                         ; ULA_MIPS_1bit   ; work         ;
-;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA22|SomadorCompleto:Somador ; SomadorCompleto ; work         ;
-;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA22|muxGenerico2x1:MUX2     ; muxGenerico2x1  ; work         ;
-;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA22|muxGenerico4x1:MUX4     ; muxGenerico4x1  ; work         ;
-;    |ULA_MIPS_1bit:ULA23|        ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA23                         ; ULA_MIPS_1bit   ; work         ;
-;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA23|SomadorCompleto:Somador ; SomadorCompleto ; work         ;
-;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA23|muxGenerico2x1:MUX2     ; muxGenerico2x1  ; work         ;
-;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA23|muxGenerico4x1:MUX4     ; muxGenerico4x1  ; work         ;
-;    |ULA_MIPS_1bit:ULA24|        ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA24                         ; ULA_MIPS_1bit   ; work         ;
-;       |SomadorCompleto:Somador| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA24|SomadorCompleto:Somador ; SomadorCompleto ; work         ;
-;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA24|muxGenerico2x1:MUX2     ; muxGenerico2x1  ; work         ;
-;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA24|muxGenerico4x1:MUX4     ; muxGenerico4x1  ; work         ;
-;    |ULA_MIPS_1bit:ULA25|        ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA25                         ; ULA_MIPS_1bit   ; work         ;
-;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA25|SomadorCompleto:Somador ; SomadorCompleto ; work         ;
-;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA25|muxGenerico2x1:MUX2     ; muxGenerico2x1  ; work         ;
-;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA25|muxGenerico4x1:MUX4     ; muxGenerico4x1  ; work         ;
-;    |ULA_MIPS_1bit:ULA26|        ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA26                         ; ULA_MIPS_1bit   ; work         ;
-;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA26|SomadorCompleto:Somador ; SomadorCompleto ; work         ;
-;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA26|muxGenerico2x1:MUX2     ; muxGenerico2x1  ; work         ;
-;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA26|muxGenerico4x1:MUX4     ; muxGenerico4x1  ; work         ;
-;    |ULA_MIPS_1bit:ULA27|        ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA27                         ; ULA_MIPS_1bit   ; work         ;
-;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA27|muxGenerico2x1:MUX2     ; muxGenerico2x1  ; work         ;
-;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA27|muxGenerico4x1:MUX4     ; muxGenerico4x1  ; work         ;
-;    |ULA_MIPS_1bit:ULA28|        ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA28                         ; ULA_MIPS_1bit   ; work         ;
-;       |SomadorCompleto:Somador| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA28|SomadorCompleto:Somador ; SomadorCompleto ; work         ;
-;       |muxGenerico4x1:MUX4|     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA28|muxGenerico4x1:MUX4     ; muxGenerico4x1  ; work         ;
-;    |ULA_MIPS_1bit:ULA29|        ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA29                         ; ULA_MIPS_1bit   ; work         ;
-;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA29|muxGenerico2x1:MUX2     ; muxGenerico2x1  ; work         ;
-;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA29|muxGenerico4x1:MUX4     ; muxGenerico4x1  ; work         ;
-;    |ULA_MIPS_1bit:ULA2|         ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA2                          ; ULA_MIPS_1bit   ; work         ;
-;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA2|SomadorCompleto:Somador  ; SomadorCompleto ; work         ;
-;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA2|muxGenerico2x1:MUX2      ; muxGenerico2x1  ; work         ;
-;       |muxGenerico4x1:MUX4|     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA2|muxGenerico4x1:MUX4      ; muxGenerico4x1  ; work         ;
-;    |ULA_MIPS_1bit:ULA30|        ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA30                         ; ULA_MIPS_1bit   ; work         ;
-;       |SomadorCompleto:Somador| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA30|SomadorCompleto:Somador ; SomadorCompleto ; work         ;
-;       |muxGenerico4x1:MUX4|     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA30|muxGenerico4x1:MUX4     ; muxGenerico4x1  ; work         ;
-;    |ULA_MIPS_1bit:ULA3|         ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA3                          ; ULA_MIPS_1bit   ; work         ;
-;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA3|SomadorCompleto:Somador  ; SomadorCompleto ; work         ;
-;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA3|muxGenerico2x1:MUX2      ; muxGenerico2x1  ; work         ;
-;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA3|muxGenerico4x1:MUX4      ; muxGenerico4x1  ; work         ;
-;    |ULA_MIPS_1bit:ULA4|         ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA4                          ; ULA_MIPS_1bit   ; work         ;
-;       |SomadorCompleto:Somador| ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA4|SomadorCompleto:Somador  ; SomadorCompleto ; work         ;
-;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA4|muxGenerico4x1:MUX4      ; muxGenerico4x1  ; work         ;
-;    |ULA_MIPS_1bit:ULA5|         ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA5                          ; ULA_MIPS_1bit   ; work         ;
-;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA5|SomadorCompleto:Somador  ; SomadorCompleto ; work         ;
-;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA5|muxGenerico2x1:MUX2      ; muxGenerico2x1  ; work         ;
-;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA5|muxGenerico4x1:MUX4      ; muxGenerico4x1  ; work         ;
-;    |ULA_MIPS_1bit:ULA6|         ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA6                          ; ULA_MIPS_1bit   ; work         ;
-;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA6|SomadorCompleto:Somador  ; SomadorCompleto ; work         ;
-;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA6|muxGenerico2x1:MUX2      ; muxGenerico2x1  ; work         ;
-;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA6|muxGenerico4x1:MUX4      ; muxGenerico4x1  ; work         ;
-;    |ULA_MIPS_1bit:ULA7|         ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA7                          ; ULA_MIPS_1bit   ; work         ;
-;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA7|SomadorCompleto:Somador  ; SomadorCompleto ; work         ;
-;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA7|muxGenerico2x1:MUX2      ; muxGenerico2x1  ; work         ;
-;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA7|muxGenerico4x1:MUX4      ; muxGenerico4x1  ; work         ;
-;    |ULA_MIPS_1bit:ULA8|         ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA8                          ; ULA_MIPS_1bit   ; work         ;
-;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA8|SomadorCompleto:Somador  ; SomadorCompleto ; work         ;
-;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA8|muxGenerico2x1:MUX2      ; muxGenerico2x1  ; work         ;
-;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA8|muxGenerico4x1:MUX4      ; muxGenerico4x1  ; work         ;
-;    |ULA_MIPS_1bit:ULA9|         ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA9                          ; ULA_MIPS_1bit   ; work         ;
-;       |SomadorCompleto:Somador| ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA9|SomadorCompleto:Somador  ; SomadorCompleto ; work         ;
-;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA9|muxGenerico4x1:MUX4      ; muxGenerico4x1  ; work         ;
-;    |ULA_MIPS_bit31:ULA31|       ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_bit31:ULA31                        ; ULA_MIPS_bit31  ; work         ;
-;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_bit31:ULA31|muxGenerico4x1:MUX4    ; muxGenerico4x1  ; work         ;
-+---------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------+-----------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                   ;
++---------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node      ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                       ; Entity Name     ; Library Name ;
++---------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------+-----------------+--------------+
+; |ULA_MIPS_32                    ; 118 (53)            ; 0 (0)                     ; 0                 ; 0          ; 68   ; 0            ; |ULA_MIPS_32                                              ; ULA_MIPS_32     ; work         ;
+;    |ULA_MIPS_1bit:ULA10|        ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA10                          ; ULA_MIPS_1bit   ; work         ;
+;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA10|muxGenerico2x1:MUX2      ; muxGenerico2x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA11|        ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA11                          ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA11|SomadorCompleto:Somador  ; SomadorCompleto ; work         ;
+;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA11|muxGenerico2x1:MUX2      ; muxGenerico2x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA12|        ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA12                          ; ULA_MIPS_1bit   ; work         ;
+;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA12|muxGenerico2x1:MUX2      ; muxGenerico2x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA13|        ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA13                          ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA13|SomadorCompleto:Somador  ; SomadorCompleto ; work         ;
+;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA13|muxGenerico2x1:MUX2      ; muxGenerico2x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA14|        ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA14                          ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA14|SomadorCompleto:Somador  ; SomadorCompleto ; work         ;
+;    |ULA_MIPS_1bit:ULA15|        ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA15                          ; ULA_MIPS_1bit   ; work         ;
+;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA15|muxGenerico2x1:MUX2      ; muxGenerico2x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA16|        ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA16                          ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA16|SomadorCompleto:Somador  ; SomadorCompleto ; work         ;
+;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA16|muxGenerico2x1:MUX2      ; muxGenerico2x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA17|        ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA17                          ; ULA_MIPS_1bit   ; work         ;
+;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA17|muxGenerico2x1:MUX2      ; muxGenerico2x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA18|        ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA18                          ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA18|SomadorCompleto:Somador  ; SomadorCompleto ; work         ;
+;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA18|muxGenerico2x1:MUX2      ; muxGenerico2x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA19|        ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA19                          ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA19|SomadorCompleto:Somador  ; SomadorCompleto ; work         ;
+;    |ULA_MIPS_1bit:ULA1|         ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA1                           ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA1|SomadorCompleto:Somador   ; SomadorCompleto ; work         ;
+;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA1|muxGenerico4x1:MUX4       ; muxGenerico4x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA20|        ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA20                          ; ULA_MIPS_1bit   ; work         ;
+;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA20|muxGenerico2x1:MUX2      ; muxGenerico2x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA21|        ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA21                          ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA21|SomadorCompleto:Somador  ; SomadorCompleto ; work         ;
+;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA21|muxGenerico2x1:MUX2      ; muxGenerico2x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA22|        ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA22                          ; ULA_MIPS_1bit   ; work         ;
+;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA22|muxGenerico2x1:MUX2      ; muxGenerico2x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA23|        ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA23                          ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA23|SomadorCompleto:Somador  ; SomadorCompleto ; work         ;
+;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA23|muxGenerico2x1:MUX2      ; muxGenerico2x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA24|        ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA24                          ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA24|SomadorCompleto:Somador  ; SomadorCompleto ; work         ;
+;    |ULA_MIPS_1bit:ULA25|        ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA25                          ; ULA_MIPS_1bit   ; work         ;
+;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA25|muxGenerico2x1:MUX2      ; muxGenerico2x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA26|        ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA26                          ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA26|SomadorCompleto:Somador  ; SomadorCompleto ; work         ;
+;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA26|muxGenerico2x1:MUX2      ; muxGenerico2x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA27|        ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA27                          ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA27|SomadorCompleto:Somador  ; SomadorCompleto ; work         ;
+;    |ULA_MIPS_1bit:ULA28|        ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA28                          ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA28|SomadorCompleto:Somador  ; SomadorCompleto ; work         ;
+;    |ULA_MIPS_1bit:ULA29|        ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA29                          ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA29|SomadorCompleto:Somador  ; SomadorCompleto ; work         ;
+;    |ULA_MIPS_1bit:ULA2|         ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA2                           ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA2|SomadorCompleto:Somador   ; SomadorCompleto ; work         ;
+;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA2|muxGenerico2x1:MUX2       ; muxGenerico2x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA30|        ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA30                          ; ULA_MIPS_1bit   ; work         ;
+;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA30|muxGenerico2x1:MUX2      ; muxGenerico2x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA3|         ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA3                           ; ULA_MIPS_1bit   ; work         ;
+;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA3|muxGenerico2x1:MUX2       ; muxGenerico2x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA4|         ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA4                           ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA4|SomadorCompleto:Somador   ; SomadorCompleto ; work         ;
+;    |ULA_MIPS_1bit:ULA5|         ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA5                           ; ULA_MIPS_1bit   ; work         ;
+;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA5|muxGenerico2x1:MUX2       ; muxGenerico2x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA6|         ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA6                           ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA6|SomadorCompleto:Somador   ; SomadorCompleto ; work         ;
+;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA6|muxGenerico2x1:MUX2       ; muxGenerico2x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA7|         ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA7                           ; ULA_MIPS_1bit   ; work         ;
+;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA7|muxGenerico2x1:MUX2       ; muxGenerico2x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA8|         ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA8                           ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA8|SomadorCompleto:Somador   ; SomadorCompleto ; work         ;
+;       |muxGenerico2x1:MUX2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA8|muxGenerico2x1:MUX2       ; muxGenerico2x1  ; work         ;
+;       |muxGenerico4x1:MUX4|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA8|muxGenerico4x1:MUX4       ; muxGenerico4x1  ; work         ;
+;    |ULA_MIPS_1bit:ULA9|         ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA9                           ; ULA_MIPS_1bit   ; work         ;
+;       |SomadorCompleto:Somador| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_1bit:ULA9|SomadorCompleto:Somador   ; SomadorCompleto ; work         ;
+;    |ULA_MIPS_bit31:ULA31|       ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_bit31:ULA31                         ; ULA_MIPS_bit31  ; work         ;
+;       |SomadorCompleto:Somador| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA_MIPS_32|ULA_MIPS_bit31:ULA31|SomadorCompleto:Somador ; SomadorCompleto ; work         ;
++---------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -1390,17 +1348,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 103                         ;
-;     normal            ; 103                         ;
-;         2 data inputs ; 30                          ;
-;         3 data inputs ; 24                          ;
-;         4 data inputs ; 1                           ;
-;         5 data inputs ; 27                          ;
-;         6 data inputs ; 21                          ;
-; boundary_port         ; 99                          ;
+; arriav_lcell_comb     ; 119                         ;
+;     extend            ; 1                           ;
+;         7 data inputs ; 1                           ;
+;     normal            ; 118                         ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 28                          ;
+;         3 data inputs ; 18                          ;
+;         4 data inputs ; 4                           ;
+;         5 data inputs ; 31                          ;
+;         6 data inputs ; 36                          ;
+; boundary_port         ; 68                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 14.00                       ;
-; Average LUT depth     ; 8.57                        ;
+; Max LUT depth         ; 15.00                       ;
+; Average LUT depth     ; 13.24                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1409,7 +1370,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -1419,7 +1380,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Thu May 19 17:36:29 2022
+    Info: Processing started: Tue May 24 15:16:24 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ULA_MIPS -c ULA_MIPS
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -1451,14 +1412,14 @@ Warning (10541): VHDL Signal Declaration warning at ULA_MIPS_bit31.vhd(37): used
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 202 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 186 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 67 input pins
-    Info (21059): Implemented 32 output pins
-    Info (21061): Implemented 103 logic cells
+    Info (21059): Implemented 1 output pins
+    Info (21061): Implemented 118 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4844 megabytes
-    Info: Processing ended: Thu May 19 17:36:42 2022
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:19
+    Info: Peak virtual memory: 4843 megabytes
+    Info: Processing ended: Tue May 24 15:16:39 2022
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:20
 
 
