@@ -5,7 +5,7 @@ use ieee.numeric_std.all;
 -- o codigo abaixo esta incompleto
 -- 'e apenas um rascunho
 
-entity ULA_MIPS_1bit is
+entity ULA_MIPS_bit31 is
   
   -- O port é obrigatório e possui o objeto “signal” implícito.
   port    
@@ -21,6 +21,7 @@ entity ULA_MIPS_1bit is
 		
 		-- Mux 4x1
 		SLT                : in  std_logic;
+		SLT_out            : out  std_logic;
 		SelMux             : in  std_logic_vector(1 downto 0);
 		resultado          : out  std_logic
 		
@@ -28,20 +29,22 @@ entity ULA_MIPS_1bit is
   
 end entity;
 
-architecture arquitetura of ULA_MIPS_1bit is      
+architecture arquitetura of ULA_MIPS_bit31 is      
 		signal saidaMUX_B              : std_logic;
 		signal saida_AND               : std_logic;
 		signal saida_OR                : std_logic;
 		signal saida_somador           : std_logic;
+		signal carry_out_overflow      : std_logic;
+		signal overflow                : std_logic;
 
 begin
 
-MUX2 :  entity work.muxGenericoULA2x1  generic map (larguraDados => 1)
+MUX2 :  entity work.muxGenerico2x1  generic map (larguraDados => 1)
         port map(entrada0_MUX => entradaB,
                  entrada1_MUX => (NOT entradaB),
                  seletor_MUX  => SelMux_invB,
                  saida_MUX    => saidaMUX_B);
-
+					  
 Somador : entity work.SomadorCompleto
         port map (entradaA => saidaMUX_B, 
 			         entradaB => entradaA, 
@@ -58,7 +61,10 @@ MUX4 :  entity work.muxGenerico4x1  generic map (larguraDados => 1)
                       seletor_MUX  => SelMux,
                       saida_MUX    => resultado);
 							 
+
 saida_AND <= saidaMUX_B AND entradaA;
 saida_OR <= saidaMUX_B OR entradaA;
+overflow <= carry_in XOR carry_out_overflow;
+SLT_out <= overflow XOR saida_somador;
 
 end architecture;

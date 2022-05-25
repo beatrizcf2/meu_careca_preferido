@@ -38,7 +38,7 @@ architecture arquitetura of ULA_MIPS is
 
 begin
 
-MUX2 :  entity work.muxGenerico2x1  generic map (larguraDados => 1)
+MUX2 :  entity work.muxGenericoULA2x1  generic map (larguraDados => 1)
         port map(entrada0_MUX => entradaB,
                  entrada1_MUX => (NOT entradaB),
                  seletor_MUX  => SelMux_invB,

@@ -12,8 +12,7 @@ entity instrucoes is
 		larguraShamt    : natural  :=    5;
 		larguraOpcode   : natural  :=    6;
 		larguraImediato : natural  :=    16;
-		
-
+		larguraControle  : natural  :=    10
   );
   
   -- O port é obrigatório e possui o objeto “signal” implícito.
@@ -30,7 +29,6 @@ architecture arquitetura of instrucoes is
 		-- PC
 		signal saidaPC                : std_logic_vector (larguraDados-1 downto 0); -- endereco instrucao da ROM
 		signal saidaIncPC             : std_logic_vector (larguraDados-1 downto 0); -- saida do PC+4
-		signal saidaMuxPC             : std_logic_vector (larguraDados-1 downto 0); 
 		
 		-- ROM
 		signal saidaROM               : std_logic_vector (larguraDados-1 downto 0); -- instrucao da ROM
@@ -142,7 +140,7 @@ MUX_RT_IMEDIATO :  entity work.muxGenerico2x1  generic map (larguraDados => larg
 MUX_BEQ :  entity work.muxGenerico2x1  generic map (larguraDados => larguraDados)
           port map( 	entradaA_MUX => saidaIncPC,
                  		entradaB_MUX =>  saidaSomador,
-                 		seletor_MUX => saidaZeroULA and BEQ;,
+                 		seletor_MUX => saidaZeroULA and BEQ,
                  		saida_MUX => saidaMuxBEQ);
 
 MUX_RT_RD :  entity work.muxGenerico2x1  generic map (larguraDados => 5)
@@ -152,10 +150,10 @@ MUX_RT_RD :  entity work.muxGenerico2x1  generic map (larguraDados => 5)
                  		saida_MUX => saidaMuxRtRd);
 
 MUX_PC :  entity work.muxGenerico2x1  generic map (larguraDados => larguraDados)
-          port map( 	entradaA_MUX => sinalLocal,
+          port map( 	entradaA_MUX => saidaMuxBEQ,
                  		entradaB_MUX =>  saidaIncPC(31 downto 28) & saidaShiftPC & "00",
-                 		seletor_MUX => sinalLocal,
-                 		saida_MUX => sinalLocal);
+                 		seletor_MUX => habMuxPC,
+                 		saida_MUX => saidaMuxPC);
 
 ESTENDE : entity work.estendeSinalGenerico   generic map (larguraDadoEntrada => 16, larguraDadoSaida => larguraDados)
           port map (	estendeSinal_IN => saidaROM(15 downto 0), 
@@ -168,25 +166,23 @@ SOMADOR :  entity work.somadorGenerico  generic map (larguraDados => larguraDado
 
 RAM_MIPS : entity work.RAMMIPS   generic map (dataWidth => larguraDados, addrWidth => larguraDados)
           port map (	Endereco => saidaOpULA, 
-		  				we => WR, 
-					    re => RD, 
-						habilita => '1',
+		  				we => WR,  
 						Dado_in => saidaRt, 
 						Dado_out => dadoLidoRAM, 
 						clk => CLK);
--- shift1
-SHIFT1 : entity work.shift2   generic map (dataWidth => larguraDados)
+
+-- shift sinal imediato extentido 
+SHIFT_IMEDIATO_EXT : entity work.shift2   generic map (dataWidth => larguraDados)
 port map (	entrada => sinalEstendido, 
-				saida => sinalEstendidoShiftado
-			);
+			saida => sinalEstendidoShiftado
+		);
 
 
--- shift2
-SHIFT2 : entity work.shift2   generic map (dataWidth => larguraDados)
+-- shift sinal imediato
+SHIFT_IMEDIATO : entity work.shift2   generic map (dataWidth => larguraDados)
 port map (	entrada => imediato, 
-				saida => saidaShiftPC
-			);
-				 
+			saida => saidaShiftPC
+		);		 
 
 
 controle <= pontosControle;
