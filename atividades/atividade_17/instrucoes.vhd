@@ -6,24 +6,30 @@ entity instrucoes is
   -- O generic é onde carrega as constantes padroes
   generic
   (
-		larguraDados    : natural  :=    32;
-		larguraEnd      : natural  :=    5;
-		larguraFunct    : natural  :=    6;
-		larguraShamt    : natural  :=    5;
-		larguraOpcode   : natural  :=    6;
-		larguraImediato : natural  :=    16;
-		larguraControle  : natural  :=    10
+		larguraDados     : natural  :=    32;
+		larguraEnd       : natural  :=    5;
+		larguraFunct     : natural  :=    6;
+		larguraShamt     : natural  :=    5;
+		larguraOpcode    : natural  :=    6;
+		larguraImediato  : natural  :=    26;
+		larguraControle  : natural  :=    10;
+		simulacao        : boolean  :=   TRUE	 -- para gravar na placa, altere de TRUE para FALSE
   );
   
   -- O port é obrigatório e possui o objeto “signal” implícito.
   port    
   (	
 		pontosControle           : in  std_logic_vector(larguraControle-1 downto 0);
-		opcode                   : out std_logic_vector(larguraDados-1 downto 0) -- saida para a unidade de controle
+		--opcode                   : out std_logic_vector(larguraOpcode-1 downto 0); -- saida para a unidade de controle
+		-- simulacao
+      CLOCK_50      				 : in std_logic;
+		KEY           				 : in std_logic_vector(3 downto 0)
   );
 end entity;   -- Também pode ser utilizado: "end entity";
 
-architecture arquitetura of instrucoes is                                    
+architecture arquitetura of instrucoes is 
+
+                                   
 		signal CLK                    : std_logic;
 		
 		-- PC
@@ -31,11 +37,12 @@ architecture arquitetura of instrucoes is
 		signal saidaIncPC             : std_logic_vector (larguraDados-1 downto 0); -- saida do PC+4
 		
 		-- ROM
-		signal saidaROM               : std_logic_vector (larguraDados-1 downto 0); -- instrucao da ROM
+		signal saidaROM                 : std_logic_vector (larguraDados-1 downto 0); -- instrucao da ROM
+		alias opcode                  : std_logic_vector (larguraOpcode-1 downto 0) is saidaROM(31 downto 26);
 		alias endRs                 	: std_logic_vector (larguraEnd-1 downto 0) is saidaROM(25 downto 21);
 		alias endRt                 	: std_logic_vector (larguraEnd-1 downto 0) is saidaROM(20 downto 16);
 		alias endRd                 	: std_logic_vector (larguraEnd-1 downto 0) is saidaROM(15 downto 11);
-		alias imediato                : std_logic_vector (larguraImediato-1 downto 0) is saidaROM(15 downto 0);
+		alias funct                     : std_logic_vector (larguraFunct-1 downto 0) is saidaROM(5 downto 0);
 		
 		-- BANCO REG
 		-- Dados lidos do Banco Reg
@@ -48,11 +55,14 @@ architecture arquitetura of instrucoes is
 		alias RD                       : std_logic is controle(1);
 		alias BEQ                      : std_logic is controle(2);
 		alias habMuxULAMem             : std_logic is controle(3);
-		alias ULActrl                 : std_logic_vector(1 downto 0) is controle(4 downto 3);
+		alias ULAop                    : std_logic_vector(1 downto 0) is controle(4 downto 3);
 		alias habMuxRtImediato         : std_logic is controle(6);
 		alias habBancoReg              : std_logic is controle(7);
 		alias habMuxRtRd               : std_logic is controle(8);
 		alias habMuxPC                 : std_logic is controle(9);
+
+		-- Unidade de controle ULA
+		signal ULActrl                 : std_logic_vector (3 downto 0);
 
 		-- ULA
 		signal saidaOpULA              : std_logic_vector(larguraDados-1 downto 0);
@@ -84,20 +94,41 @@ architecture arquitetura of instrucoes is
 		signal saidaSomador            : std_logic_vector(larguraDados-1 downto 0);
 
 		-- SHIFT
-		signal saidaShiftPC            : std_logic_vector(larguraDados-1 downto 0);
+		signal saidaShiftPC            : std_logic_vector(larguraImediato-1 downto 0);
 		
-
-
 begin
+
+-- Para simular, fica mais simples tirar o edgeDetector
+gravar:  if simulacao generate
+CLK <= KEY(0);
+else generate
+CLK <= CLOCK_50;
+end generate;
+
 
 -- Instanciando os componentes:
 
+-- ULA    : entity work.ULASomaSub  generic map(larguraDados => larguraDados)
+--             port map (  entradaA  => saidaRs, 
+-- 						entradaB  => saidaMuxRtImediato,
+-- 					    seletor   => ULActrl,
+-- 						saida     => saidaOpULA);
 
-ULA    : entity work.ULASomaSub  generic map(larguraDados => larguraDados)
+ULAMIPS : entity work.ULA_MIPS_32  generic map(larguraDados => larguraDados)
             port map (  entradaA  => saidaRs, 
-						entradaB  => saidaRt,
-					    seletor   => ULActrl,
-						saida     => saidaOpULA);
+						entradaB  => saidaMuxRtImediato,
+					    ULActrl   => ULActrl,
+						Zero     => saidaZeroULA,
+						saidaULA => saidaOpULA);
+						
+CONTROLE_ULA : entity work.UnidadeDeControleULA
+            port map (  ULAop   => ULAop,
+								funct   => funct,
+								ULActrl => ULActrl);
+
+CONTROLE_FD : entity work.UnidadeDeControle generic map (larguraOpcode => larguraOpcode, larguraControle => larguraControle)
+            port map (  entrada   => opcode,
+						saida     => controle);
 
 PC     : entity work.registradorGenerico  generic map (larguraDados => larguraDados)
              port map (	DIN     => saidaMuxPC, 
@@ -157,7 +188,7 @@ MUX_PC :  entity work.muxGenerico2x1  generic map (larguraDados => larguraDados)
 
 ESTENDE : entity work.estendeSinalGenerico   generic map (larguraDadoEntrada => 16, larguraDadoSaida => larguraDados)
           port map (	estendeSinal_IN => saidaROM(15 downto 0), 
-		  				estendeSinal_OUT =>  sinalEstendidoShiftado);
+		  				estendeSinal_OUT =>  sinalEstendido);
 
 SOMADOR :  entity work.somadorGenerico  generic map (larguraDados => larguraDados)
           port map(  	entradaA => saidaIncPC, 
@@ -174,22 +205,18 @@ RAM_MIPS : entity work.RAMMIPS   generic map (dataWidth => larguraDados, addrWid
 -- shift sinal imediato extentido 
 SHIFT_IMEDIATO_EXT : entity work.shift2   generic map (dataWidth => larguraDados)
 port map (	entrada => sinalEstendido, 
-			saida => sinalEstendidoShiftado
+				saida => sinalEstendidoShiftado
 		);
 
 
 -- shift sinal imediato
-SHIFT_IMEDIATO : entity work.shift2   generic map (dataWidth => larguraDados)
-port map (	entrada => imediato, 
-			saida => saidaShiftPC
+SHIFT_IMEDIATO : entity work.shift2   generic map (dataWidth => larguraImediato)
+port map (	entrada => saidaROM(25 downto 0), 
+				saida => saidaShiftPC
 		);		 
 
 
 controle <= pontosControle;
-
-
-
-
 
 
 end architecture;

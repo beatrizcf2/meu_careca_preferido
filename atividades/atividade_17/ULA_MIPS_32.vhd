@@ -22,10 +22,13 @@ entity ULA_MIPS_32 is
 		entradaB           : in  std_logic_vector(larguraDados-1 downto 0);
 		
 		-- igual para todas as ULAs
-		SelMux_invB        : in  std_logic;
-		SelMux             : in  std_logic_vector(1 downto 0);
+		--SelMux_invB        : in  std_logic;
+		--SelMux             : in  std_logic_vector(1 downto 0);
+
+		ULActrl            : in std_logic_vector(3 downto 0);
 		
-		Zero               : out std_logic
+		Zero               : out std_logic;
+		saidaULA           : out std_logic_vector(larguraDados-1 downto 0)
   );
   
 end entity;
@@ -34,8 +37,15 @@ architecture arquitetura of ULA_MIPS_32 is
 		signal carry_out          : std_logic_vector(larguraDados-1 downto 0);
 		signal overflow_SLT       : std_logic;
 		signal resultado          : std_logic_vector(larguraDados-1 downto 0);
+
+		signal controle           : std_logic_vector(3 downto 0);
+		alias SelMux_invB         : std_logic is controle(2);
+		alias SelMux              : std_logic_vector is controle(1 downto 0);
+
+
 begin
 
+	--n ta faltando o inverte A e o inverte B ???
 ULA0 :  entity work.ULA_MIPS_1bit
         port map(entradaA     => entradaA(0),
                  entradaB     => entradaB(0),
@@ -350,13 +360,14 @@ ULA31 :  entity work.ULA_MIPS_bit31
         port map(entradaA     => entradaA(31),
                  entradaB     => entradaB(31),
                  carry_in     => carry_out(30),
-                 carry_out    => carry_out(31),
 					  SelMux_invB  => SelMux_invB,
 					  SLT          => SLT,
 					  SelMux       => SelMux,
 					  resultado    => resultado(31),
 					  SLT_out      => overflow_SLT);
 
+controle <= ULActrl;
 Zero <= NOT(or_reduce(resultado));
+saidaULA <= resultado;
 
 end architecture;

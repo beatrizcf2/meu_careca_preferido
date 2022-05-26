@@ -3,61 +3,58 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 entity UnidadeDeControle is
-  port ( entrada : in std_logic_vector(3 downto 0);
-         saida : out std_logic_vector(11 downto 0)
+  generic
+  (
+		larguraOpcode    : natural  :=    6;
+		larguraControle  : natural  :=    10
   );
+  port (entrada : in std_logic_vector(larguraOpcode-1 downto 0);
+        saida   : out std_logic_vector(larguraControle-1 downto 0)
+       );
 end entity;
 
 architecture comportamento of UnidadeDeControle is
 
-  constant NOP  : std_logic_vector(3 downto 0) := "0000";
-  constant LDA  : std_logic_vector(3 downto 0) := "0001";
-  constant SUM  : std_logic_vector(3 downto 0) := "0010";
-  constant SUB  : std_logic_vector(3 downto 0) := "0011";
-  constant LDI  : std_logic_vector(3 downto 0) := "0100";
-  constant STA  : std_logic_vector(3 downto 0) := "0101";
-  constant JMP  : std_logic_vector(3 downto 0) := "0110";
-  constant JEQ  : std_logic_vector(3 downto 0) := "0111";
-  constant CEQ  : std_logic_vector(3 downto 0) := "1000";
-  constant JSR  : std_logic_vector(3 downto 0) := "1001";
-  constant RET  : std_logic_vector(3 downto 0) := "1010"; 
+  -- Opcodes
+  constant NOP  : std_logic_vector(larguraOpcode-1 downto 0) := "000000";
+  constant LW   : std_logic_vector(larguraOpcode-1 downto 0) := "000001";
+  constant SW   : std_logic_vector(larguraOpcode-1 downto 0) := "000010";
+  constant ADD  : std_logic_vector(larguraOpcode-1 downto 0) := "000011";
+  constant SUB  : std_logic_vector(larguraOpcode-1 downto 0) := "000100";
+  constant E    : std_logic_vector(larguraOpcode-1 downto 0) := "000101";
+  constant OU   : std_logic_vector(larguraOpcode-1 downto 0) := "000110";
+  constant SLT  : std_logic_vector(larguraOpcode-1 downto 0) := "000111";
+  constant BEQ  : std_logic_vector(larguraOpcode-1 downto 0) := "001000";
+  constant J    : std_logic_vector(larguraOpcode-1 downto 0) := "001001";  
   
+  -- Pontos de controle
+  signal instruction      : std_logic_vector(9 downto 0);
+  alias  habMuxPC         : std_logic is instruction(9);
+  alias  habMuxRtRd       : std_logic is instruction(8);
+  alias  habEscritaReg    : std_logic is instruction(7);
+  alias  habMuxRtImediato : std_logic is instruction(6);
+  alias  ULAop            : std_logic_vector(1 downto 0) is instruction(5 downto 4);
+  alias  habMuxULAmem     : std_logic is instruction(3);
+  alias  habBEQ           : std_logic is instruction(2);
   
-  signal instruction : std_logic_vector(11 downto 0);
-  alias  habEscritaRetorno         : std_logic is instruction(11);
-  alias  jmpI                       : std_logic is instruction(10);
-  alias  retI         : std_logic is instruction(9);
-  alias  jsrI         : std_logic is instruction(8);
+  alias  habLeituraMEM    : std_logic is instruction(1);
+  alias  habEscritaMEM    : std_logic is instruction(0);
   
-  alias  jeqI         : std_logic is instruction(7);
-  alias  selMux         : std_logic is instruction(6);
-  alias  habAcumulador         : std_logic is instruction(5);
-  
-  alias  operacao         : std_logic_vector is instruction(4 downto 3);
-  alias  habFlag         : std_logic is instruction(2);
-  alias  RD         : std_logic is instruction(1);
-  alias  WR         : std_logic is instruction(0);
-  
-  
-
   begin
-	 -- reset (CLRA)
 	 
-	 
-	 WR <= '1' when (entrada = STA) else '0';
-	 RD <= '1' when (entrada = LDA) or (entrada = SUM) or (entrada = SUB) or (entrada = CEQ) else '0';
-	 habFlag <= '1' when (entrada = CEQ) else '0';
-	 operacao <= "00" when (entrada = SUB) or (entrada=CEQ) else 
-					 "01" when (entrada = SUM) else 
-					 "10" when (entrada = LDI) or (entrada = LDA) else 
-					 "00";
-	 habAcumulador <= '1' when (entrada = LDA) or  (entrada = SUM) or  (entrada = SUB) or  (entrada = LDI) else '0';
-	 selMux <= '1' when (entrada = LDI) else '0';
-	 jeqI <= '1' when (entrada = JEQ) else '0';
-	 jsrI <= '1' when (entrada = JSR) else '0';
-	 retI <= '1' when (entrada = RET) else '0';
-	 jmpI <= '1' when (entrada = JMP) else '0';
-	 habEscritaRetorno <= '1' when (entrada = JSR) else '0';
+   -- Ajustando os valores dos pontos de controle
+	 habMuxPC          <= '1' when (entrada = J) else '0';
+   habMuxRtRd        <= '1' when (entrada = ADD) or (entrada = SUB) or (entrada = E) or (entrada = OU) or (entrada = SLT) else '0';
+   habEscritaReg     <= '1' when (entrada = LW) or (entrada = ADD) or (entrada = SUB) or (entrada = OU) or (entrada = E) or (entrada = SLT) else '0';
+   habMuxRtImediato  <= '1' when (entrada = LW) or (entrada = SW) else '0';
+   ULAop             <= "00" when (entrada = LW) or (entrada = SW) or (entrada = ADD) else 
+                        "01" when (entrada = SUB) or (entrada = BEQ) else
+                        "10" when (entrada = E) or (entrada = OU) or (entrada = SLT) else  
+                        "00";
+   habMuxULAmem      <= '1' when (entrada = LW) else '0';
+   habBEQ            <= '1' when (entrada = BEQ) else '0';
+	 habEscritaMEM     <= '1' when (entrada = SW) else '0';
+
 	 
 	 saida <= instruction;
 	

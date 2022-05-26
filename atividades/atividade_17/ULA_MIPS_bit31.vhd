@@ -14,7 +14,6 @@ entity ULA_MIPS_bit31 is
 		entradaA           : in  std_logic;
 		entradaB           : in  std_logic;
 		carry_in           : in  std_logic;
-		carry_out          : out  std_logic;
 		
 		-- Mux 2x1
 		SelMux_invB        : in  std_logic;
@@ -49,7 +48,7 @@ Somador : entity work.SomadorCompleto
         port map (entradaA => saidaMUX_B, 
 			         entradaB => entradaA, 
 						carry_in => carry_in,
-						carry_out=> carry_out,
+						carry_out=> carry_out_overflow,
 			         soma    => saida_somador);
 					
 						
@@ -66,5 +65,7 @@ saida_AND <= saidaMUX_B AND entradaA;
 saida_OR <= saidaMUX_B OR entradaA;
 overflow <= carry_in XOR carry_out_overflow;
 SLT_out <= overflow XOR saida_somador;
+
+
 
 end architecture;

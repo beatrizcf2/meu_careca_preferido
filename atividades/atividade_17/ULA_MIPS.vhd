@@ -43,16 +43,9 @@ MUX2 :  entity work.muxGenericoULA2x1  generic map (larguraDados => 1)
                  entrada1_MUX => (NOT entradaB),
                  seletor_MUX  => SelMux_invB,
                  saida_MUX    => saidaMUX_B);
-
-AND1  : entity work.and1
-        port map(entradaA => saidaMUX_B,
-                 entradaB => entradaA,
-                 saida    => saida_AND);
 					  
-OR1  : entity work.or1
-        port map(entradaA => saidaMUX_B,
-                 entradaB => entradaA,
-                 saida    => saida_OR);
+saida_AND <= saidaMUX_B AND entradaA;
+saida_OR <= saidaMUX_B OR entradaA;
 					  
 Somador : entity work.SomadorCompleto
         port map (entradaA => saidaMUX_B, 
