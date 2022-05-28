@@ -19,8 +19,6 @@ entity instrucoes is
   -- O port é obrigatório e possui o objeto “signal” implícito.
   port    
   (	
-		pontosControle           : in  std_logic_vector(larguraControle-1 downto 0);
-		--opcode                   : out std_logic_vector(larguraOpcode-1 downto 0); -- saida para a unidade de controle
 		-- simulacao
       CLOCK_50      				 : in std_logic;
 		KEY           				 : in std_logic_vector(3 downto 0)
@@ -216,7 +214,6 @@ port map (	entrada => saidaROM(25 downto 0),
 		);		 
 
 
-controle <= pontosControle;
 
 
 end architecture;

@@ -1,0 +1,53 @@
+Quartus Prime Archive log --	/Downloads/6SEMESTRE/DESCOMP/MIPS/meu_careca_preferido/atividades/atividade_17/Aula17.qarlog
+
+Archive:	/Downloads/6SEMESTRE/DESCOMP/MIPS/meu_careca_preferido/atividades/atividade_17/Aula17.qar
+Date:		Wed May 25 23:53:27 2022
+Quartus Prime		20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+	=========== Files Selected: ===========
+/Downloads/6SEMESTRE/DESCOMP/MIPS/meu_careca_preferido/atividades/atividade_17/Aula17.qpf
+/Downloads/6SEMESTRE/DESCOMP/MIPS/meu_careca_preferido/atividades/atividade_17/Aula17.qsf
+/Downloads/6SEMESTRE/DESCOMP/MIPS/meu_careca_preferido/atividades/atividade_17/RAMMIPS.vhd
+/Downloads/6SEMESTRE/DESCOMP/MIPS/meu_careca_preferido/atividades/atividade_17/ROMMIPS.vhd
+/Downloads/6SEMESTRE/DESCOMP/MIPS/meu_careca_preferido/atividades/atividade_17/SomadorCompleto.vhd
+/Downloads/6SEMESTRE/DESCOMP/MIPS/meu_careca_preferido/atividades/atividade_17/ULASomaSub.vhd
+/Downloads/6SEMESTRE/DESCOMP/MIPS/meu_careca_preferido/atividades/atividade_17/ULA_MIPS_1bit.vhd
+/Downloads/6SEMESTRE/DESCOMP/MIPS/meu_careca_preferido/atividades/atividade_17/ULA_MIPS_32.vhd
+/Downloads/6SEMESTRE/DESCOMP/MIPS/meu_careca_preferido/atividades/atividade_17/ULA_MIPS_bit31.vhd
+/Downloads/6SEMESTRE/DESCOMP/MIPS/meu_careca_preferido/atividades/atividade_17/UnidadeDeControle.vhd
+/Downloads/6SEMESTRE/DESCOMP/MIPS/meu_careca_preferido/atividades/atividade_17/UnidadeDeControleULA.vhd
+/Downloads/6SEMESTRE/DESCOMP/MIPS/meu_careca_preferido/atividades/atividade_17/bancoReg.vhd
+/Downloads/6SEMESTRE/DESCOMP/MIPS/meu_careca_preferido/atividades/atividade_17/estendeSinalGenerico.vhd
+/Downloads/6SEMESTRE/DESCOMP/MIPS/meu_careca_preferido/atividades/atividade_17/instrucaoI.vhd
+/Downloads/6SEMESTRE/DESCOMP/MIPS/meu_careca_preferido/atividades/atividade_17/instrucaoR.vhd
+/Downloads/6SEMESTRE/DESCOMP/MIPS/meu_careca_preferido/atividades/atividade_17/instrucoes.vhd
+/Downloads/6SEMESTRE/DESCOMP/MIPS/meu_careca_preferido/atividades/atividade_17/muxGenerico2x1.vhd
+/Downloads/6SEMESTRE/DESCOMP/MIPS/meu_careca_preferido/atividades/atividade_17/muxGenerico4x1.vhd
+/Downloads/6SEMESTRE/DESCOMP/MIPS/meu_careca_preferido/atividades/atividade_17/muxGenericoULA2x1.vhd
+/Downloads/6SEMESTRE/DESCOMP/MIPS/meu_careca_preferido/atividades/atividade_17/registradorGenerico.vhd
+/Downloads/6SEMESTRE/DESCOMP/MIPS/meu_careca_preferido/atividades/atividade_17/shift2.vhd
+/Downloads/6SEMESTRE/DESCOMP/MIPS/meu_careca_preferido/atividades/atividade_17/somaUm.vhd
+/Downloads/6SEMESTRE/DESCOMP/MIPS/meu_careca_preferido/atividades/atividade_17/somadorGenerico.vhd
+c:/intelfpga_lite/20.1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 24 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
+
+
+******* Archived project restoration attempt on Thu May 26 15:55:08 2022
+Source archive file:	//Mac/Home/Downloads/6SEMESTRE/DESCOMP/MIPS/meu_careca_preferido/atividades/atividade_17/Aula17.qar
+Archive was extracted into	//Mac/Home/Downloads/6SEMESTRE/DESCOMP/MIPS/meu_careca_preferido/atividades/atividade_17/Aula17_restored/
+		 - successfully.
+
+
+******* Archived project restoration attempt on Thu May 26 16:27:46 2022
+Source archive file:	//Mac/Home/Downloads/6SEMESTRE/DESCOMP/MIPS/meu_careca_preferido/atividades/atividade_17/Aula17.qar
+Archive was extracted into	//Mac/Home/Downloads/6SEMESTRE/DESCOMP/MIPS/meu_careca_preferido/atividades/atividade_17/Aula17_restored/
+		 - successfully.
+
+
+******* Archived project restoration attempt on Thu May 26 16:29:59 2022
+Source archive file:	//Mac/Home/Downloads/6SEMESTRE/DESCOMP/MIPS/meu_careca_preferido/atividades/atividade_17/Aula17.qar
+Archive was extracted into	//Mac/Home/Downloads/6SEMESTRE/DESCOMP/MIPS/meu_careca_preferido/atividades/atividade_17/Aula17_restored/
+		 - successfully.

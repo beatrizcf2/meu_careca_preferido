@@ -1,14 +1,4 @@
 |instrucoes
-pontosControle[0] => controle[0].IN1
-pontosControle[1] => ~NO_FANOUT~
-pontosControle[2] => controle[2].IN1
-pontosControle[3] => controle[3].IN1
-pontosControle[4] => controle[4].IN1
-pontosControle[5] => ~NO_FANOUT~
-pontosControle[6] => controle[6].IN1
-pontosControle[7] => controle[7].IN1
-pontosControle[8] => controle[8].IN1
-pontosControle[9] => controle[9].IN1
 CLOCK_50 => ~NO_FANOUT~
 KEY[0] => registradorgenerico:PC.CLK
 KEY[0] => bancoreg:BANCO_REG.clk

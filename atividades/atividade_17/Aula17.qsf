@@ -75,7 +75,6 @@ set_global_assignment -name VHDL_FILE instrucaoR.vhd
 set_global_assignment -name VHDL_FILE instrucaoI.vhd
 set_global_assignment -name VHDL_FILE estendeSinalGenerico.vhd
 set_global_assignment -name VHDL_FILE bancoReg.vhd
-set_global_assignment -name VHDL_FILE xor1.vhd
 set_global_assignment -name VHDL_FILE ULA_MIPS_bit31.vhd
 set_global_assignment -name VHDL_FILE ULA_MIPS_32.vhd
 set_global_assignment -name VHDL_FILE ULA_MIPS_1bit.vhd
