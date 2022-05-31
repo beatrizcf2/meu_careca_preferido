@@ -37,12 +37,12 @@ architecture arquitetura of instrucoes is
 		signal saidaIncPC             : std_logic_vector (larguraDados-1 downto 0); -- saida do PC+4
 		
 		-- ROM
-		signal saidaROM                 : std_logic_vector (larguraDados-1 downto 0); -- instrucao da ROM
+		signal saidaROM               : std_logic_vector (larguraDados-1 downto 0); -- instrucao da ROM
 		alias opcode                  : std_logic_vector (larguraOpcode-1 downto 0) is saidaROM(31 downto 26);
 		alias endRs                 	: std_logic_vector (larguraEnd-1 downto 0) is saidaROM(25 downto 21);
 		alias endRt                 	: std_logic_vector (larguraEnd-1 downto 0) is saidaROM(20 downto 16);
 		alias endRd                 	: std_logic_vector (larguraEnd-1 downto 0) is saidaROM(15 downto 11);
-		alias funct                     : std_logic_vector (larguraFunct-1 downto 0) is saidaROM(5 downto 0);
+		alias funct                   : std_logic_vector (larguraFunct-1 downto 0) is saidaROM(5 downto 0);
 		
 		-- BANCO REG
 		-- Dados lidos do Banco Reg
@@ -69,7 +69,7 @@ architecture arquitetura of instrucoes is
 		signal saidaZeroULA            : std_logic;
 
 		-- MUX ULA MEM
-		signal saidaMuxULAMem             : std_logic_vector(larguraDados-1 downto 0);
+		signal saidaMuxULAMem          : std_logic_vector(larguraDados-1 downto 0);
 		
 		-- MUX RT IMEDIATO
 		signal saidaMuxRtImediato      : std_logic_vector(larguraDados-1 downto 0);
@@ -124,8 +124,11 @@ monitor: work.debugMonitor
 						saidaULA => saidaOpULA,
 						dadoLido_RAM => dadoLidoRAM,
 						proxPC => saidaMuxBEQ,
+						MUXProxPCEntradaA => saidaMuxBEQ,
+						MUXProxPCEntradaB => saidaIncPC(31 downto 28) & saidaShiftPC & "00",
 						
 						ULActrl => ULActrl,
+						zeroFLAG => saidaZeroULA,
 						escreveC => habBancoReg,
 						MUXPCBEQJUMP => habMuxPC,
 						MUXRTRD => habMuxRtRd,
@@ -148,13 +151,14 @@ ULAMIPS : entity work.ULA_MIPS_32  generic map(larguraDados => larguraDados)
 						saidaULA => saidaOpULA);
 						
 CONTROLE_ULA : entity work.UnidadeDeControleULA
-            port map (  ULAop   => ULAop,
-								funct   => funct,
-								ULActrl => ULActrl);
+            port map (  opcode   => opcode,
+						funct    => funct,
+						tipoR    => tipoR,
+						ULActrl  => ULActrl);
 
 CONTROLE_FD : entity work.UnidadeDeControle generic map (larguraOpcode => larguraOpcode, larguraControle => larguraControle)
             port map (  entrada   => opcode,
-						     saida     => controle);
+						saida     => controle);
 
 PC     : entity work.registradorGenerico  generic map (larguraDados => larguraDados)
              port map (	DIN     => saidaMuxPC, 

@@ -2,47 +2,36 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 entity UnidadeDeControleULA is
-  port (ULAop   : in std_logic_vector(1 downto 0);
-        funct   : in std_logic_vector(5 downto 0);
-        ULActrl : out std_logic_vector(3 downto 0)
+  port (opcode   : in std_logic_vector(5 downto 0);
+        funct    : in std_logic_vector(5 downto 0);
+        tipoR    : in std_logic;
+        ULActrl  : out std_logic_vector(3 downto 0)
   );
 end entity;
 
 architecture comportamento of UnidadeDeControleULA is
 
-  -- ULAop
-  constant SOMA  : std_logic_vector(1 downto 0) := "00"; -- lw/sw
-  constant SUB  : std_logic_vector(1 downto 0) := "01"; -- beq
-  constant CONSULTA_FUNCT  : std_logic_vector(1 downto 0) := "10"; -- consultar funct (instr R)
+  constant larguraULActrl  : natural := 4;
 
-  -- ULActrl
-  constant ctrlAND  : std_logic_vector(3 downto 0) := "0000";
-  constant ctrlOR   : std_logic_vector(3 downto 0) := "0001";
-  constant ctrlADD  : std_logic_vector(3 downto 0) := "0010";
-  constant ctrlSUB  : std_logic_vector(3 downto 0) := "0110";
-  constant ctrlSLT  : std_logic_vector(3 downto 0) := "0111";
-  
-  -- funct
-  constant funct_and_hex  : std_logic_vector(5 downto 0) := "100100";
-  constant funct_or_hex   : std_logic_vector(5 downto 0) := "100101";
-  constant funct_add_hex  : std_logic_vector(5 downto 0) := "100000";
-  constant funct_sub_hex  : std_logic_vector(5 downto 0) := "100010";
-  constant funct_slt_hex  : std_logic_vector(5 downto 0) := "101010";
-
+  signal decoderFunctOut   : std_logic_vector(3 downto 0);
+  signal decoderOpCodeOut  : std_logic_vector(3 downto 0);
   
   begin
-  -- and = 24hex = 100100
-  -- or  = 25hex = 100101
-  -- add = 20hex = 100000
-  -- sub = 22hex = 100010
-  -- slt = 2Ahex = 101010
 
-   ULActrl <= ctrlADD when (ULAop = SOMA) or ((ULAop = CONSULTA_FUNCT) and (funct = funct_add_hex)) else -- lw/sw no ULAop ou add (instr R)
-              ctrlSUB when (ULAop = SUB) or ((ULAop = CONSULTA_FUNCT) and (funct = funct_sub_hex)) else -- beq no ULAop ou sub (instr R)
-              ctrlAND when (ULAop = CONSULTA_FUNCT) and (funct = funct_and_hex) else -- and (instr R)
-              ctrlOR  when (ULAop = CONSULTA_FUNCT) and (funct = funct_or_hex) else -- or  (instr R)
-              ctrlSLT when (ULAop = CONSULTA_FUNCT) and (funct = funct_slt_hex) else -- slt (instr R)
-              "0000";
+  ULAfunct : entity work.DecoderFunctULActrl
+            port map (funct   => funct,
+                      ULActrl => decoderFunctOut);
+						
+   
+  ULAopcode : entity work.DecoderOpCodeULActrl
+            port map (opcode   => opcode,
+                      ULActrl  => decoderOpCodeOut);    
+
+  MUX_decs  :  entity work.muxGenerico2x1  generic map (larguraDados => larguraULActrl)
+            port map(entradaA_MUX => decoderFunctOut,
+                     entradaB_MUX => decoderOpCodeOut,
+                     seletor_MUX  => tipoR,
+                     saida_MUX    => ULActrl);
 	
 				 
 end architecture;

@@ -36,7 +36,6 @@ architecture comportamento of UnidadeDeControle is
   alias  ULAop            : std_logic_vector(1 downto 0) is instruction(5 downto 4);
   alias  habMuxULAmem     : std_logic is instruction(3);
   alias  habBEQ           : std_logic is instruction(2);
-  
   alias  habLeituraMEM    : std_logic is instruction(1);
   alias  habEscritaMEM    : std_logic is instruction(0);
   
