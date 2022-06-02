@@ -8,7 +8,7 @@ def leProbe():
     # Para Windows, deve colocar o diretório intelFPGA_lite/20.1/quartus/bin64 no PATH.
     programa = ['quartus_stp.exe',  '-t', 'getHW.tcl']
   else:
-    caminho = '/home/paulo/intelFPGA_lite/20.1/quartus/bin/'
+    caminho = '/home/borg/intelFPGA_lite/20.1/quartus/bin/'
     programa = [caminho+'quartus_stp',  '-t', 'getHW.tcl']
 
 # quartus_stp -t getHW.tcl
