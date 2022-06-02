@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2022.05.31.15:11:39"
- outputDirectory="//Mac/Home/Downloads/6SEMESTRE/DESCOMP/MIPS/meu_careca_preferido/atividades/atividade_17/Aula17_restored/db/ip/MIPSMonitor/">
+ date="2022.06.02.19:18:53"
+ outputDirectory="/home/borg/Insper/my_fav_bold/meu_careca_preferido/atividades/atividade_17/Aula17_restored/db/ip/MIPSMonitor/">
  <perimeter>
   <parameter
      name="AUTO_GENERATION_ID"
@@ -46,34 +46,34 @@
  </perimeter>
  <entity
    path=""
-   parameterizationKey="MIPSMonitor:1.0:AUTO_DEVICE=5CEBA4F23C7,AUTO_DEVICE_FAMILY=Cyclone V,AUTO_DEVICE_SPEEDGRADE=7,AUTO_GENERATION_ID=1654020698,AUTO_UNIQUE_ID=(altera_in_system_sources_probes:20.1:create_source_clock=false,create_source_clock_enable=false,device_family=Cyclone V,enable_metastability=NO,gui_use_auto_index=true,instance_id=NONE,probe_width=511,sld_auto_instance_index=YES,sld_instance_index=0,source_initial_value=0,source_width=1)"
+   parameterizationKey="MIPSMonitor:1.0:AUTO_DEVICE=5CEBA4F23C7,AUTO_DEVICE_FAMILY=Cyclone V,AUTO_DEVICE_SPEEDGRADE=7,AUTO_GENERATION_ID=1654208333,AUTO_UNIQUE_ID=(altera_in_system_sources_probes:20.1:create_source_clock=false,create_source_clock_enable=false,device_family=Cyclone V,enable_metastability=NO,gui_use_auto_index=true,instance_id=NONE,probe_width=511,sld_auto_instance_index=YES,sld_instance_index=0,source_initial_value=0,source_width=1)"
    instancePathKey="MIPSMonitor"
    kind="MIPSMonitor"
    version="1.0"
    name="MIPSMonitor">
-  <parameter name="AUTO_GENERATION_ID" value="1654020698" />
+  <parameter name="AUTO_GENERATION_ID" value="1654208333" />
   <parameter name="AUTO_DEVICE" value="5CEBA4F23C7" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
   <parameter name="AUTO_UNIQUE_ID" value="" />
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
   <generatedFiles>
    <file
-       path="//Mac/Home/Downloads/6SEMESTRE/DESCOMP/MIPS/meu_careca_preferido/atividades/atividade_17/Aula17_restored/db/ip/MIPSMonitor/MIPSMonitor.v"
+       path="/home/borg/Insper/my_fav_bold/meu_careca_preferido/atividades/atividade_17/Aula17_restored/db/ip/MIPSMonitor/MIPSMonitor.v"
        type="VERILOG" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="//Mac/Home/Downloads/6SEMESTRE/DESCOMP/MIPS/meu_careca_preferido/atividades/atividade_17/Aula17_restored/db/ip/MIPSMonitor/submodules/altsource_probe_top.v"
+       path="/home/borg/Insper/my_fav_bold/meu_careca_preferido/atividades/atividade_17/Aula17_restored/db/ip/MIPSMonitor/submodules/altsource_probe_top.v"
        type="VERILOG"
        attributes="" />
   </childGeneratedFiles>
   <sourceFiles>
    <file
-       path="//Mac/Home/Downloads/6SEMESTRE/DESCOMP/MIPS/meu_careca_preferido/atividades/atividade_17/Aula17_restored/MIPSMonitor.qsys" />
+       path="/home/borg/Insper/my_fav_bold/meu_careca_preferido/atividades/atividade_17/Aula17_restored/MIPSMonitor.qsys" />
   </sourceFiles>
   <childSourceFiles>
    <file
-       path="C:/intelfpga_lite/20.1/ip/altera/sld/jtag/altera_in_system_sources_probes/altera_in_system_sources_probes_hw.tcl" />
+       path="/home/borg/intelFPGA_lite/20.1/ip/altera/sld/jtag/altera_in_system_sources_probes/altera_in_system_sources_probes_hw.tcl" />
   </childSourceFiles>
   <messages>
    <message level="Debug" culprit="MIPSMonitor">queue size: 0 starting:MIPSMonitor "MIPSMonitor"</message>
@@ -114,14 +114,14 @@
   <parameter name="gui_use_auto_index" value="true" />
   <generatedFiles>
    <file
-       path="//Mac/Home/Downloads/6SEMESTRE/DESCOMP/MIPS/meu_careca_preferido/atividades/atividade_17/Aula17_restored/db/ip/MIPSMonitor/submodules/altsource_probe_top.v"
+       path="/home/borg/Insper/my_fav_bold/meu_careca_preferido/atividades/atividade_17/Aula17_restored/db/ip/MIPSMonitor/submodules/altsource_probe_top.v"
        type="VERILOG"
        attributes="" />
   </generatedFiles>
   <childGeneratedFiles/>
   <sourceFiles>
    <file
-       path="C:/intelfpga_lite/20.1/ip/altera/sld/jtag/altera_in_system_sources_probes/altera_in_system_sources_probes_hw.tcl" />
+       path="/home/borg/intelFPGA_lite/20.1/ip/altera/sld/jtag/altera_in_system_sources_probes/altera_in_system_sources_probes_hw.tcl" />
   </sourceFiles>
   <childSourceFiles/>
   <instantiator instantiator="MIPSMonitor" as="in_system_sources_probes_0" />

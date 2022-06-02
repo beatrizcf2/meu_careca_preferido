@@ -1,5 +1,5 @@
 Flow report for Aula17
-Tue May 31 15:15:23 2022
+Thu Jun  2 19:20:04 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -41,16 +41,16 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Tue May 31 15:15:23 2022       ;
+; Flow Status                     ; Successful - Thu Jun  2 19:20:04 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; Aula17                                      ;
 ; Top-level Entity Name           ; instrucoes                                  ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CEBA4F23C7                                 ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 336 / 18,480 ( 2 % )                        ;
-; Total registers                 ; 654                                         ;
-; Total pins                      ; 15 / 224 ( 7 % )                            ;
+; Logic utilization (in ALMs)     ; 316 / 18,480 ( 2 % )                        ;
+; Total registers                 ; 637                                         ;
+; Total pins                      ; 57 / 224 ( 25 % )                           ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 3,153,920 ( 0 % )                       ;
 ; Total DSP Blocks                ; 0 / 66 ( 0 % )                              ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/31/2022 15:11:19 ;
+; Start date & time ; 06/02/2022 19:18:37 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Aula17              ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 121381010521.165402067909668           ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 216273108262039.165420831759464        ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
@@ -107,26 +107,26 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:42     ; 1.0                     ; 4881 MB             ; 00:00:57                           ;
-; Fitter               ; 00:02:57     ; 1.0                     ; 6008 MB             ; 00:05:10                           ;
-; Assembler            ; 00:00:04     ; 1.0                     ; 4828 MB             ; 00:00:04                           ;
-; Timing Analyzer      ; 00:00:07     ; 1.2                     ; 5056 MB             ; 00:00:07                           ;
-; EDA Netlist Writer   ; 00:00:03     ; 1.0                     ; 4719 MB             ; 00:00:03                           ;
-; Total                ; 00:03:53     ; --                      ; --                  ; 00:06:21                           ;
+; Analysis & Synthesis ; 00:00:34     ; 1.0                     ; 500 MB              ; 00:01:13                           ;
+; Fitter               ; 00:00:34     ; 1.0                     ; 1301 MB             ; 00:00:56                           ;
+; Assembler            ; 00:00:04     ; 1.0                     ; 480 MB              ; 00:00:04                           ;
+; Timing Analyzer      ; 00:00:07     ; 1.2                     ; 725 MB              ; 00:00:08                           ;
+; EDA Netlist Writer   ; 00:00:03     ; 1.0                     ; 675 MB              ; 00:00:03                           ;
+; Total                ; 00:01:22     ; --                      ; --                  ; 00:02:24                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                    ;
-+----------------------+------------------+------------+------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
-+----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; ANDRESABICU3F9D  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; ANDRESABICU3F9D  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; ANDRESABICU3F9D  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; ANDRESABICU3F9D  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; ANDRESABICU3F9D  ; Windows 10 ; 10.0       ; x86_64         ;
-+----------------------+------------------+------------+------------+----------------+
++----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                        ;
++----------------------+------------------+----------------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name        ; OS Version ; Processor type ;
++----------------------+------------------+----------------+------------+----------------+
+; Analysis & Synthesis ; borg             ; Ubuntu 20.04.3 ; 20         ; x86_64         ;
+; Fitter               ; borg             ; Ubuntu 20.04.3 ; 20         ; x86_64         ;
+; Assembler            ; borg             ; Ubuntu 20.04.3 ; 20         ; x86_64         ;
+; Timing Analyzer      ; borg             ; Ubuntu 20.04.3 ; 20         ; x86_64         ;
+; EDA Netlist Writer   ; borg             ; Ubuntu 20.04.3 ; 20         ; x86_64         ;
++----------------------+------------------+----------------+------------+----------------+
 
 
 ------------

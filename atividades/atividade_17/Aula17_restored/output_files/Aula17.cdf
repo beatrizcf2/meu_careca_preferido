@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(5CEBA4F23) Path("//Mac/Home/Downloads/6SEMESTRE/DESCOMP/MIPS/meu_careca_preferido/atividades/atividade_17/Aula17_restored/output_files/") File("Aula17.sof") MfrSpec(OpMask(1));
+		Device PartName(5CEBA4F23) Path("/home/borg/Insper/my_fav_bold/meu_careca_preferido/atividades/atividade_17/Aula17_restored/output_files/") File("Aula17.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

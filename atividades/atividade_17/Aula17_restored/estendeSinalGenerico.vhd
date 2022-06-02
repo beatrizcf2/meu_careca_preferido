@@ -23,9 +23,9 @@ architecture comportamento of estendeSinalGenerico is
     signal estendeSinal_MUX : std_logic;
 begin
 
-MUX_ULA_MEM :  entity work.muxGenericoULA2x1  generic map (larguraDados => larguraDados)
-        port map( 	entradaA_MUX => estendeSinal_IN(larguraDadoEntrada-1),
-                    entradaB_MUX =>  '0',
+MUX_ULA_MEM :  entity work.muxGenericoULA2x1
+        port map( 	entrada0_MUX => estendeSinal_IN(larguraDadoEntrada-1),
+                    entrada1_MUX =>  '0',
                     seletor_MUX => selOriAndi,
                     saida_MUX => estendeSinal_MUX);
 

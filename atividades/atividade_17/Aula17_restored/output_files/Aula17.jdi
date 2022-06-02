@@ -565,7 +565,7 @@
   <sld_infos>
     <sld_info hpath="debugMonitor:monitor|MIPSMonitor:probe0" name="probe0">
       <assignment_values>
-        <assignment_value text="QSYS_NAME MIPSMonitor HAS_SOPCINFO 1 GENERATION_ID 1654020698"/>
+        <assignment_value text="QSYS_NAME MIPSMonitor HAS_SOPCINFO 1 GENERATION_ID 1654208333"/>
       </assignment_values>
       <parameters/>
     </sld_info>

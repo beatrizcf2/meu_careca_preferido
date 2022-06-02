@@ -4,7 +4,7 @@ use ieee.std_logic_1164.all;
 entity DecoderOpCodeULActrl is
   generic
   (
-		larguraOpcode     : natural  := 6;
+		larguraOpcode     : natural  := 6
   );
   port (opcode   : in std_logic_vector(5 downto 0);
         ULActrl : out std_logic_vector(3 downto 0)

@@ -25,9 +25,9 @@ entity debugMonitor is
   zeroFLAG :  in  std_logic;
   escreveC :  in  std_logic;
   MUXPCBEQJUMP :  in  std_logic;
-  MUXRTRD :  in  std_logic;
+  MUXRTRD :  in  std_logic_vector(1 downto 0);
   MUXRTIMED :  in  std_logic;
-  MUXULAMEM :  in  std_logic;
+  MUXULAMEM :  in  std_logic_vector(1 downto 0);
   iBEQ :  in  std_logic;
   WR :  in  std_logic;
   RD :  in  std_logic;
@@ -63,12 +63,14 @@ probe0 : component MIPSMonitor
         probe(319 downto 288) => proxPC,
         probe(351 downto 320) => MUXProxPCEntradaA,
         probe(383 downto 352) => MUXProxPCEntradaB,
-        probe(497 downto 384) =>  open,
+        probe(495 downto 384) =>  open,
+        probe(496) => MUXULAMEM(1),
+        probe(497) => MUXRTRD(1),
         probe(498) => zeroFLAG,
         probe(499) => MUXPCBEQJUMP,
-        probe(500) => MUXRTRD,
+        probe(500) => MUXRTRD(0),
         probe(501) => MUXRTIMED,
-        probe(502) => MUXULAMEM,
+        probe(502) => MUXULAMEM(0),
         probe(503) => iBEQ,
         probe(504) => WR,
         probe(505) => RD,

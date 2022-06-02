@@ -12,24 +12,24 @@ entity instrucoes is
 		larguraShamt     : natural  :=    5;
 		larguraOpcode    : natural  :=    6;
 		larguraImediato  : natural  :=    26;
-		larguraControle  : natural  :=    14;
-		simulacao        : boolean  :=   FALSE	 -- para gravar na placa, altere de TRUE para FALSE
+		larguraControle  : natural  :=    14
   );
   
   -- O port é obrigatório e possui o objeto “signal” implícito.
   port    
   (	
 		-- simulacao
-        CLOCK_50      				 : in std_logic;
-		KEY           				 : in std_logic_vector(3 downto 0);
-		LEDR           : out std_logic_vector(9 downto 0)
+        CLOCK_50      				        : in std_logic;
+		KEY           			           	 : in std_logic_vector(3 downto 0);
+		LEDR                               : out std_logic_vector(9 downto 0);
+		HEX0, HEX1, HEX2, HEX3, HEX4, HEX5 : out std_logic_vector(6 downto 0)
   );
 end entity;   -- Também pode ser utilizado: "end entity";
 
 architecture arquitetura of instrucoes is 
 
                                    
-		signal CLK, clk_TCL, reset            : std_logic;
+		signal CLK, reset            : std_logic;
 		
 		
 		-- PC
@@ -91,7 +91,7 @@ architecture arquitetura of instrucoes is
 		signal saidaMuxPCBEQ           : std_logic_vector(larguraDados-1 downto 0);
 
 		-- MUX ZERO ULA
-		signal saidaMuxZeroULA         : std_logic_vector(1 downto 0);
+		signal saidaMuxZeroULA         : std_logic;
 
 		-- ESTENDE SINAL
 		signal sinalEstendido          : std_logic_vector(larguraDados-1 downto 0);
@@ -112,14 +112,9 @@ architecture arquitetura of instrucoes is
 		
 begin
 
--- Para simular, fica mais simples tirar o edgeDetector
-gravar:  if simulacao generate
-CLK <= KEY(0);
-else generate
 detectorSub0: work.edgeDetector(bordaSubida)
-        port map (clk => CLOCK_50, entrada => (not KEY(0) or clk_TCL), saida => clk);
+        port map (clk => CLOCK_50, entrada => (not KEY(0)), saida => clk);
 
-end generate;
 
 LEDR(3 downto 0) <= ULActrl;
 LEDR(9 downto 4) <= (others => '0');
@@ -144,15 +139,13 @@ monitor: work.debugMonitor
 						ULActrl => ULActrl,
 						zeroFLAG => saidaZeroULA,
 						escreveC => habBancoReg,
-						MUXPCBEQJUMP => habMuxPC,
+						MUXPCBEQJUMP => habMuxPCBEQ,
 						MUXRTRD => habMuxRtRd,
 						MUXRTIMED => habMuxRtImediato,
 						MUXULAMEM => habMuxULAMem,
 						iBEQ => BEQ,
 						WR => WR,
-    					RD => RD,
-						--Output
-  					   clkTCL => clk_TCL);
+    					RD => RD);
 
 -- Instanciando os componentes:
 
@@ -170,16 +163,16 @@ CONTROLE_ULA : entity work.UnidadeDeControleULA
 						tipoR    => tipoR,
 						ULActrl  => ULActrl);
 
-CONTROLE_FD : entity work.UnidadeDeControle generic map (larguraOpcode => larguraOpcode, larguraControle => larguraControle)
+CONTROLE_FD : entity work.UnidadeDeControleFD generic map (larguraOpcode => larguraOpcode, larguraControle => larguraControle)
             port map (  entrada   => opcode,
-						saida     => controle);
+								saida     => controle);
 
 PC     : entity work.registradorGenerico  generic map (larguraDados => larguraDados)
              port map (	DIN     => saidaMuxPC, 
-						DOUT    => saidaPC, 
+						   DOUT    => saidaPC, 
 				   		ENABLE  => '1', 
 				   		CLK     => CLK, 
-				   		RST     => reset);	
+				   		RST     => '0');	
 
 PC_INC :  entity work.somaUm  generic map (larguraDados => larguraDados , constante => 4)
             port map(   entrada   => saidaPC, 
@@ -203,8 +196,8 @@ ROM_MIPS : entity work.ROMMIPS   generic map (dataWidth => larguraDados, addrWid
 MUX_ULA_MEM :  entity work.muxGenerico4x1  generic map (larguraDados => larguraDados)
           port map( 	entrada0_MUX => saidaOpULA,
                  		entrada1_MUX => dadoLidoRAM,
-						entrada2_MUX => saidaIncPC,
-                 		entrada3_MUX => estendeSinalLUI,
+						   entrada2_MUX => saidaIncPC,
+                 		entrada3_MUX => sinalEstendidoLUI,
                  		seletor_MUX  => habMuxULAMem,
                  		saida_MUX    => saidaMuxULAMem);
 
@@ -224,20 +217,26 @@ MUX_RT_RD :  entity work.muxGenerico4x1  generic map (larguraDados => 5)
           port map( 	entrada0_MUX => endRt,
 		  				entrada1_MUX =>  endRd,
 						entrada2_MUX => "11111",
-						entrada3_MUX => '0',
+						entrada3_MUX => "00000",
                  		seletor_MUX => habMuxRtRd,
                  		saida_MUX => saidaMuxRtRd);
 
-MUX_ZERO_ULA :  entity work.muxGenerico2x1  generic map (larguraDados => 1)
-          port map( 	entradaA_MUX => not saidaZeroULA,
-                 		entradaB_MUX =>  saidaZeroULA,
+MUX_ZERO_ULA :  entity work.muxGenericoULA2x1
+          port map( 	entrada0_MUX => not saidaZeroULA,
+                 		entrada1_MUX =>  saidaZeroULA,
                  		seletor_MUX => BEQ,
                  		saida_MUX => saidaMuxZeroULA);
 
-MUX_PC :  entity work.muxGenerico2x1  generic map (larguraDados => larguraDados)
+MUX_PCBEQ :  entity work.muxGenerico2x1  generic map (larguraDados => larguraDados)
           port map( 	entradaA_MUX => saidaMuxBEQ,
                  		entradaB_MUX =>  saidaIncPC(31 downto 28) & saidaShiftPC & "00",
-                 		seletor_MUX => habMuxPC,
+                 		seletor_MUX => habMuxPCBEQ,
+                 		saida_MUX => saidaMuxPCBEQ);
+
+MUX_PC :  entity work.muxGenerico2x1  generic map (larguraDados => larguraDados)
+          port map( 	entradaA_MUX => saidaMuxPCBEQ,
+                 		entradaB_MUX =>  saidaRs,
+                 		seletor_MUX => JR,
                  		saida_MUX => saidaMuxPC);
 
 ESTENDE : entity work.estendeSinalGenerico   generic map (larguraDadoEntrada => 16, larguraDadoSaida => larguraDados)
@@ -260,6 +259,66 @@ RAM_MIPS : entity work.RAMMIPS   generic map (dataWidth => larguraDados, addrWid
 						Dado_in => saidaRt, 
 						Dado_out => dadoLidoRAM, 
 						clk => CLK);
+						
+DECODER_HEX0:  
+	entity work.conversorHex7Seg
+   port map(
+		dadoHex		=> saidaPC(3 downto 0),
+		apaga			=> '0',
+		negativo 	=> '0',
+		overFlow 	=> '0',
+		saida7seg	=> HEX0
+	);
+
+DECODER_HEX1:  
+	entity work.conversorHex7Seg
+   port map(
+		dadoHex		=> saidaPC(7 downto 4),
+		apaga			=> '0',
+		negativo 	=> '0',
+		overFlow 	=> '0',
+		saida7seg	=> HEX1
+	);
+	
+DECODER_HEX2:  
+	entity work.conversorHex7Seg
+   port map(
+		dadoHex		=> saidaPC(11 downto 8),
+		apaga			=> '0',
+		negativo 	=> '0',
+		overFlow 	=> '0',
+		saida7seg	=> HEX2
+	);
+	
+DECODER_HEX3:  
+	entity work.conversorHex7Seg
+   port map(
+		dadoHex		=> saidaPC(15 downto 12),
+		apaga			=> '0',
+		negativo 	=> '0',
+		overFlow 	=> '0',
+		saida7seg	=> HEX3
+	);
+
+DECODER_HEX4:  
+	entity work.conversorHex7Seg
+   port map(
+		dadoHex		=> saidaPC(19 downto 16),
+		apaga			=> '0',
+		negativo 	=> '0',
+		overFlow 	=> '0',
+		saida7seg	=> HEX4
+	);
+	
+DECODER_HEX5:  
+	entity work.conversorHex7Seg
+   port map(
+		dadoHex		=> saidaPC(23 downto 20),
+		apaga			=> '0',
+		negativo 	=> '0',
+		overFlow 	=> '0',
+		saida7seg	=> HEX5
+	);
 
 -- shift sinal imediato extentido 
 SHIFT_IMEDIATO_EXT : entity work.shift2   generic map (dataWidth => larguraDados)
