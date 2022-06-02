@@ -12,7 +12,7 @@ entity instrucoes is
 		larguraShamt     : natural  :=    5;
 		larguraOpcode    : natural  :=    6;
 		larguraImediato  : natural  :=    26;
-		larguraControle  : natural  :=    10;
+		larguraControle  : natural  :=    14;
 		simulacao        : boolean  :=   FALSE	 -- para gravar na placa, altere de TRUE para FALSE
   );
   
@@ -20,7 +20,7 @@ entity instrucoes is
   port    
   (	
 		-- simulacao
-      CLOCK_50      				 : in std_logic;
+        CLOCK_50      				 : in std_logic;
 		KEY           				 : in std_logic_vector(3 downto 0);
 		LEDR           : out std_logic_vector(9 downto 0)
   );
@@ -53,13 +53,17 @@ architecture arquitetura of instrucoes is
 		signal controle                : std_logic_vector (larguraControle-1 downto 0);
 		alias WR                       : std_logic is controle(0);
 		alias RD                       : std_logic is controle(1);
-		alias BEQ                      : std_logic is controle(2);
-		alias habMuxULAMem             : std_logic is controle(3);
-		alias ULAop                    : std_logic_vector(1 downto 0) is controle(5 downto 4);
-		alias habMuxRtImediato         : std_logic is controle(6);
-		alias habBancoReg              : std_logic is controle(7);
-		alias habMuxRtRd               : std_logic is controle(8);
-		alias habMuxPC                 : std_logic is controle(9);
+		alias BNE                      : std_logic is controle(2);
+		alias BEQ                      : std_logic is controle(3);
+		alias habMuxULAMem             : std_logic_vector(1 downto 0) is controle(5 downto 4);
+		alias tipoR                    : std_logic is controle(6);
+		alias habMuxRtImediato         : std_logic is controle(7);
+		alias habBancoReg              : std_logic is controle(8);
+		alias ORIANDI                  : std_logic is controle(9);
+		alias habMuxRtRd               : std_logic_vector(1 downto 0) is controle(11 downto 10);
+		alias habMuxPCBEQ              : std_logic is controle(12);
+		alias JR                       : std_logic is controle(13);
+
 
 		-- Unidade de controle ULA
 		signal ULActrl                 : std_logic_vector (3 downto 0);
@@ -83,9 +87,19 @@ architecture arquitetura of instrucoes is
 		-- MUX BEQ
 		signal saidaMuxBEQ             : std_logic_vector(larguraDados-1 downto 0);
 
+		-- MUX PC BEQ
+		signal saidaMuxPCBEQ           : std_logic_vector(larguraDados-1 downto 0);
+
+		-- MUX ZERO ULA
+		signal saidaMuxZeroULA         : std_logic_vector(1 downto 0);
+
 		-- ESTENDE SINAL
 		signal sinalEstendido          : std_logic_vector(larguraDados-1 downto 0);
 		signal sinalEstendidoShiftado  : std_logic_vector(larguraDados-1 downto 0);
+		signal sinalEstendidoLUI       : std_logic_vector(larguraDados-1 downto 0);
+
+		-- LUI
+		signal saidaLUI                : std_logic_vector(larguraDados-1 downto 0);
 
 		-- RAM
 		signal dadoLidoRAM             : std_logic_vector(larguraDados-1 downto 0);
@@ -186,11 +200,13 @@ ROM_MIPS : entity work.ROMMIPS   generic map (dataWidth => larguraDados, addrWid
 						Endereco => saidaPC, 
 						Dado => saidaROM);
 							
-MUX_ULA_MEM :  entity work.muxGenerico2x1  generic map (larguraDados => larguraDados)
-          port map( 	entradaA_MUX => saidaOpULA,
-                 		entradaB_MUX =>  dadoLidoRAM,
-                 		seletor_MUX => habMuxULAMem,
-                 		saida_MUX => saidaMuxULAMem);
+MUX_ULA_MEM :  entity work.muxGenerico4x1  generic map (larguraDados => larguraDados)
+          port map( 	entrada0_MUX => saidaOpULA,
+                 		entrada1_MUX => dadoLidoRAM,
+						entrada2_MUX => saidaIncPC,
+                 		entrada3_MUX => estendeSinalLUI,
+                 		seletor_MUX  => habMuxULAMem,
+                 		saida_MUX    => saidaMuxULAMem);
 
 MUX_RT_IMEDIATO :  entity work.muxGenerico2x1  generic map (larguraDados => larguraDados)
           port map( 	entradaA_MUX => saidaRt,
@@ -201,14 +217,22 @@ MUX_RT_IMEDIATO :  entity work.muxGenerico2x1  generic map (larguraDados => larg
 MUX_BEQ :  entity work.muxGenerico2x1  generic map (larguraDados => larguraDados)
           port map( 	entradaA_MUX => saidaIncPC,
                  		entradaB_MUX =>  saidaSomador,
-                 		seletor_MUX => saidaZeroULA and BEQ,
+                 		seletor_MUX => saidaMuxZeroULA and (BEQ or BNE),
                  		saida_MUX => saidaMuxBEQ);
 
-MUX_RT_RD :  entity work.muxGenerico2x1  generic map (larguraDados => 5)
-          port map( 	entradaA_MUX => endRt,
-                 		entradaB_MUX =>  endRd,
+MUX_RT_RD :  entity work.muxGenerico4x1  generic map (larguraDados => 5)
+          port map( 	entrada0_MUX => endRt,
+		  				entrada1_MUX =>  endRd,
+						entrada2_MUX => "11111",
+						entrada3_MUX => '0',
                  		seletor_MUX => habMuxRtRd,
                  		saida_MUX => saidaMuxRtRd);
+
+MUX_ZERO_ULA :  entity work.muxGenerico2x1  generic map (larguraDados => 1)
+          port map( 	entradaA_MUX => not saidaZeroULA,
+                 		entradaB_MUX =>  saidaZeroULA,
+                 		seletor_MUX => BEQ,
+                 		saida_MUX => saidaMuxZeroULA);
 
 MUX_PC :  entity work.muxGenerico2x1  generic map (larguraDados => larguraDados)
           port map( 	entradaA_MUX => saidaMuxBEQ,
@@ -217,8 +241,13 @@ MUX_PC :  entity work.muxGenerico2x1  generic map (larguraDados => larguraDados)
                  		saida_MUX => saidaMuxPC);
 
 ESTENDE : entity work.estendeSinalGenerico   generic map (larguraDadoEntrada => 16, larguraDadoSaida => larguraDados)
-          port map (	estendeSinal_IN => saidaROM(15 downto 0), 
-		  				estendeSinal_OUT =>  sinalEstendido);
+          port map (	estendeSinal_IN  => saidaROM(15 downto 0), 
+		  				selOriAndi       => ORIANDI,
+		  				estendeSinal_OUT => sinalEstendido);
+
+ESTENDE_LUI : entity work.LUI    generic map (larguraDadoEntrada => 16, larguraDadoSaida => larguraDados)
+		  port map (	estendeSinal_IN  => saidaROM(15 downto 0), 
+						estendeSinal_OUT => sinalEstendidoLUI);
 
 SOMADOR :  entity work.somadorGenerico  generic map (larguraDados => larguraDados)
           port map(  	entradaA => saidaIncPC, 

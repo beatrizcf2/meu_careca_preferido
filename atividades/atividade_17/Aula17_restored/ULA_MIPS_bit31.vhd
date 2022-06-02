@@ -52,7 +52,7 @@ Somador : entity work.SomadorCompleto
 			         soma    => saida_somador);
 					
 						
-MUX4 :  entity work.muxGenerico4x1  generic map (larguraDados => 1)
+MUX4 :  entity work.muxGenericoULA4x1  generic map (larguraDados => 1)
              port map(entrada0_MUX => saida_AND,
                       entrada1_MUX => saida_OR,
                       entrada2_MUX => saida_somador,
