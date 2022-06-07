@@ -71,15 +71,22 @@ architecture comportamento of UnidadeDeControleFD is
     -- habBEQ            <= '1' when (entrada = opcode_beq) else '0';
   	-- habEscritaMEM     <= '1' when (entrada = opcode_sw) else '0';
 
-  habEscritaMEM        <= 
-	habLeituraMEM        <=
-	habBNE               <=
-	habBEQ               <=
-	habMuxULAMem         <=
-	tipoR                <=
-	habMuxRtImediato     <= 
+
+  habEscritaMEM        <= '1' when (opcode = opcode_sw) else '0';
+	habLeituraMEM        <= '1' when (opcode = opcode_lw) else '0';
+	habBNE               <= '1' when (opcode = opcode_slti);
+	habBEQ               <= '1' when (opcode = opcode_beq) else '0';
+	habMuxULAMem         <= "01" when (opcode = opcode_lw) else
+                          "10" when (opcode = opcode_jal) else
+                          "11" when (opcode = opcode_lui) else
+                          "00";
+	tipoR                <= '1' when (opcode = opcode_R) else '0';
+	habMuxRtImediato     <= '1' when (opcode = opcode_lw) or (opcode = opcode_sw) or (opcode = opcode_lui) or
+                                   (opcode = opcode_addi) or (opcode = opcode_andi) or (opcode = opcode_ori) or
+                                   (opcode = opcode_slti) else '0';
 	habEscritaReg        <= '1' when (opcode = opcode_lw) or (opcode = opcode_lui) or (opcode = opcode_addi) or 
                                    (opcode = opcode_andi) or (opcode = opcode_ori) or (opcode = opcode_slti) or
+                                   (opcode = opcode_jal) or ((opcode = opcode_R) and not (funct = funct_jr)) else '0'; 
 	ORIANDI              <= '1' when (opcode = opcode_ori) or (opcode = opcode_andi) else '0';
 	habMuxRtRd           <= "00" when (not (opcode = opcode_R)) else
                           "01" when (opcode = opcode_R) else

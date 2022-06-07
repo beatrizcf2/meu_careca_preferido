@@ -19,10 +19,11 @@ entity instrucoes is
   port    
   (	
 		-- simulacao
-        CLOCK_50      				        : in std_logic;
+        CLOCK_50      				         : in std_logic;
 		KEY           			           	 : in std_logic_vector(3 downto 0);
-		LEDR                               : out std_logic_vector(9 downto 0);
-		HEX0, HEX1, HEX2, HEX3, HEX4, HEX5 : out std_logic_vector(6 downto 0)
+		SW									 : in std_logic_vector(9 downto 0);
+		LEDR                                 : out std_logic_vector(9 downto 0);
+		HEX0, HEX1, HEX2, HEX3, HEX4, HEX5   : out std_logic_vector(6 downto 0)
   );
 end entity;   -- Também pode ser utilizado: "end entity";
 
@@ -109,6 +110,9 @@ architecture arquitetura of instrucoes is
 
 		-- SHIFT
 		signal saidaShiftPC            : std_logic_vector(larguraImediato-1 downto 0);
+
+		-- DISPLAY
+		signal entradaDisplay          : std_logic_vector(larguraDados-1 downto 0);
 		
 begin
 
@@ -147,8 +151,8 @@ monitor: work.debugMonitor
 						WR => WR,
     					RD => RD);
 
--- Instanciando os componentes:
 
+-- Instanciando os componentes:
 
 ULAMIPS : entity work.ULA_MIPS_32  generic map(larguraDados => larguraDados)
             port map (  entradaA  => saidaRs, 
@@ -164,7 +168,8 @@ CONTROLE_ULA : entity work.UnidadeDeControleULA
 						ULActrl  => ULActrl);
 
 CONTROLE_FD : entity work.UnidadeDeControleFD generic map (larguraOpcode => larguraOpcode, larguraControle => larguraControle)
-            port map (  entrada   => opcode,
+            port map (  opcode   => opcode,
+								funct		=> funct,
 								saida     => controle);
 
 PC     : entity work.registradorGenerico  generic map (larguraDados => larguraDados)
@@ -172,7 +177,7 @@ PC     : entity work.registradorGenerico  generic map (larguraDados => larguraDa
 						   DOUT    => saidaPC, 
 				   		ENABLE  => '1', 
 				   		CLK     => CLK, 
-				   		RST     => '0');	
+				   		RST     => reset);	
 
 PC_INC :  entity work.somaUm  generic map (larguraDados => larguraDados , constante => 4)
             port map(   entrada   => saidaPC, 
@@ -259,11 +264,17 @@ RAM_MIPS : entity work.RAMMIPS   generic map (dataWidth => larguraDados, addrWid
 						Dado_in => saidaRt, 
 						Dado_out => dadoLidoRAM, 
 						clk => CLK);
-						
+					
+MUX_DISPLAY :  entity work.muxGenerico2x1  generic map (larguraDados => larguraDados)
+          port map( 	entradaA_MUX => saidaPC,
+                 		entradaB_MUX =>  saidaOpULA,
+                 		seletor_MUX => SW(0),
+                 		saida_MUX => entradaDisplay);
+
 DECODER_HEX0:  
 	entity work.conversorHex7Seg
    port map(
-		dadoHex		=> saidaPC(3 downto 0),
+		dadoHex		=> entradaDisplay(3 downto 0),
 		apaga			=> '0',
 		negativo 	=> '0',
 		overFlow 	=> '0',
@@ -273,7 +284,7 @@ DECODER_HEX0:
 DECODER_HEX1:  
 	entity work.conversorHex7Seg
    port map(
-		dadoHex		=> saidaPC(7 downto 4),
+		dadoHex		=> entradaDisplay(7 downto 4),
 		apaga			=> '0',
 		negativo 	=> '0',
 		overFlow 	=> '0',
@@ -283,7 +294,7 @@ DECODER_HEX1:
 DECODER_HEX2:  
 	entity work.conversorHex7Seg
    port map(
-		dadoHex		=> saidaPC(11 downto 8),
+		dadoHex		=> entradaDisplay(11 downto 8),
 		apaga			=> '0',
 		negativo 	=> '0',
 		overFlow 	=> '0',
@@ -293,7 +304,7 @@ DECODER_HEX2:
 DECODER_HEX3:  
 	entity work.conversorHex7Seg
    port map(
-		dadoHex		=> saidaPC(15 downto 12),
+		dadoHex		=> entradaDisplay(15 downto 12),
 		apaga			=> '0',
 		negativo 	=> '0',
 		overFlow 	=> '0',
@@ -303,7 +314,7 @@ DECODER_HEX3:
 DECODER_HEX4:  
 	entity work.conversorHex7Seg
    port map(
-		dadoHex		=> saidaPC(19 downto 16),
+		dadoHex		=> entradaDisplay(19 downto 16),
 		apaga			=> '0',
 		negativo 	=> '0',
 		overFlow 	=> '0',
@@ -313,7 +324,7 @@ DECODER_HEX4:
 DECODER_HEX5:  
 	entity work.conversorHex7Seg
    port map(
-		dadoHex		=> saidaPC(23 downto 20),
+		dadoHex		=> entradaDisplay(23 downto 20),
 		apaga			=> '0',
 		negativo 	=> '0',
 		overFlow 	=> '0',
